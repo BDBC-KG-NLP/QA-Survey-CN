@@ -1,6 +1,6 @@
 # QA-Survey
 
-![](https://img.shields.io/github/last-commit/BDBC-KG-NLP/QA-Survey?color=blue) ![](https://img.shields.io/badge/PRs-Welcome-green) [![GitHub license](https://img.shields.io/github/license/BDBC-KG-NLP/QA-Survey?color=red)](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/LICENSE)
+![](https://img.shields.io/github/last-commit/BDBC-KG-NLP/QA-Survey?color=blue) ![](https://img.shields.io/badge/PRs-Welcome-brightgreen) [![GitHub license](https://img.shields.io/github/license/BDBC-KG-NLP/QA-Survey?color=red)](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/LICENSE)
 
 问答系统是人工智能和自然语言处理领域中一个倍受关注并具有广泛发展前景的研究方向，其研究兴起的主要原因是人们对快速、准确地获取信息的需求。在问答系统的研发过程中，北航大数据高精尖中心研究团队重点调研了基于知识图谱的问答系统（KBQA）和基于文本的问答系统（TextQA），并整合了其现有的学术界和工业界的相关理论和技术，共包括以下四部分：
 
