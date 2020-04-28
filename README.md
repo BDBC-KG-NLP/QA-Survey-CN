@@ -13,6 +13,7 @@ Version 1.0：2020年5月1日
 
 ## 致谢
 特此感谢支持数据公开与系统研发工作的北航高精尖中心及参与这项工作的各位团队成员（排名按字母顺序、不分先后）：
+
 [白宇航](https://github.com/lemonadeseason)、[胡志元](https://github.com/zhiyuanhubj)、[李航宇](https://github.com/lhy9816)、[李喣通](https://github.com/Leext)、[田源](https://github.com/xzwj)、[张明辉](https://github.com/bigapple716)、[张淑慧](https://github.com/Hillary060)、[张延钊](https://github.com/zyznull)
 
 ## 参与贡献方式
