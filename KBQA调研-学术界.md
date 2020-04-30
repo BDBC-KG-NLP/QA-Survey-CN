@@ -6,7 +6,7 @@
      * [1.1. 背景](#11-背景)
      * [1.2. 任务定义](#12-任务定义)
      * [1.3. 数据集](#13-数据集)
-     * [1.4. SOTA board](#14-SOTA board)
+     * [1.4. SOTA](#14-SOTA)
      * [1.5. 评测标准](#15-评测标准)
      
      
@@ -21,6 +21,7 @@
      * [3.1. 论文列表](#31-论文列表)
      * [3.2. 论文解读](#32-论文解读)
   * [4.相关链接](#4-相关链接)
+  * [5.参考资源](#4-参考资源)
 
 ## 1. 任务
 
@@ -38,21 +39,23 @@ SPARQL，λ-DCS、FunQL等查询语言可以用于查询以及操作KG中存储�
 给定自然语言问题（NLQ），对问题进行理解和解析，利用KB得到正确答案。 
 
 ### 1.2. 任务定义
-知识库问答（knowledge base question answering,KB-QA）：给定自然语言形式的问题，通过对问题进行语义理解和解析，进而利用知识库进行查询、推理，最终得出答案。
+知识库问答（knowledge based question answering,KB-QA）：给定自然语言形式的问题，通过对问题进行语义理解和解析，进而利用知识库进行查询、推理，最终得出答案。
+![image](https://github.com/lemonadeseason/KBQA-Survey/blob/master/kbqa%20definition.png)
+
+（注：该图来自中科院刘康老师的报告）
 
 ### 1.3. 数据集
 - FREE917:第一个大规模的KBQA数据集，于2013年提出，包含917 个问题，同时提供相应逻辑查询，覆盖600多种freebase上的关系。
 - Webquestions：数据集中有6642个问题答案对，数据集规模虽然较FREE917提高了不少，但有两个突出的缺陷：没有提供对应的查询，不利于基于逻辑表达式模型的训练；另外webquestions中简单问句多而复杂问句少。
 - WebQSP：是WEBQUESTIONS的子集，问题都是需要多跳才能回答，属于multi-relation KBQA dataset，另外补全了对应的查询句。
-- Complexquestion、GRAPHQUESTIONS：分别由Bao et al.(2016), Su et al.(2016)提出，在问句的结构和表达多样性等方面进一步增强了WEBQUESTIONSP，，包括类型约束，显\隐式的时间约束，聚合操作。
+- Complexquestion、GRAPHQUESTIONS：在问句的结构和表达多样性等方面进一步增强了WEBQUESTIONSP，，包括类型约束，显\隐式的时间约束，聚合操作。
 - SimpleQuestions：数据规模较大，共100K，数据形式为(quesition，knowledge base fact)，均为简单问题，只需KB中的一个三元组即可回答,即single-relation dataset。
-- FACTOID QUESTIONS：Serban et al.(2016) 将SimpleQuestion扩展为含30M句的FACTOID QUESTIONS，只包含答案不含问句。
-- QALD-6 (Unger et al., 2016), QALD有几个子任务，QALD-6是英语的QA任务，目标KB是DBpedia。训练集350个问题，测试集100个问题，提供 SPARQL查询和问题相应答案集。虽然数据集规模较小，但是更为口语化、复杂。
-- QALD-9  2018年发布，是QALD1-QALD8的超集。
-- LC-QuAD：Trivedi et al.(2017) 发布，包含5000对问题及其相应的SPARQL查询的问答数据集。目标知识库是DBpedia-April,2016
-- LC-QuAD2：Dubey et al.(2019)发布了大规模的数据集LC-QuAD2，包含30000个问题，同时也提供相应的SPARQL查询。
+- FACTOID QUESTIONS：将SimpleQuestion扩展为含30M句的FACTOID QUESTIONS，只包含答案不含问句。
+- QALD-6：QALD有几个子任务，QALD-6是英语的QA任务，目标KB是DBpedia。训练集350个问题，测试集100个问题，提供 SPARQL查询和问题相应答案集。虽然数据集规模较小，但是更为口语化、复杂。
+- QALD-9：2018年发布，是QALD1-QALD8的超集。
+- LC-QuAD：包含5000对问题及其相应的SPARQL查询的问答数据集。目标知识库是DBpedia-April
+- LC-QuAD2：发布了大规模的数据集LC-QuAD2，包含30000个问题，同时也提供相应的SPARQL查询。
 
-### 1.4. SOTA board
 | 数据集              | 地址                                                         |
 | ------------------- | ------------------------------------------------------------ |
 | Free917              |https://github.com/pks/rebol/tree/master/data/free917         |
@@ -67,65 +70,71 @@ SPARQL，λ-DCS、FunQL等查询语言可以用于查询以及操作KG中存储�
 | QALD-6              | https://github.com/ag-sc/QALD/tree/master/6/data             |
 | QALD-9              | https://github.com/ag-sc/QALD/tree/master/9                  |
 
-### 1.4. SOTA board
+### 1.4. SOTA
+SimpleQuestions：
+| 模型              |ACC                                        |
+| ------------------- | -----------------------------------------|
+|[STAGG](https://www.aclweb.org/anthology/P15-1128.pdf)|90.0| 
+|[AMPCNN](https://www.aclweb.org/anthology/C16-1164.pdf)|91.3| 
+|[ComplexQueryGraphs](https://www.aclweb.org/anthology/D18-1242.pdf)|93.1| 
+|[HR-BiLSTM](https://www.aclweb.org/anthology/P17-1053.pdf) |93.3|
+|[AR-SMCNN](https://arxiv.org/vc/arxiv/papers/1804/1804.03317v2.pdf)|93.7|
+|[MVA-MTQA-net(MTL)](https://www.aclweb.org/anthology/D19-1248.pdf)|95.7|
+
 ComplexWebQuestions:
 | 模型              | P@1                                        |
 | ------------------- | -----------------------------------------|
-|MHQA-GRN|30.10|
-|SIMPQA + PRETRAINED|19.90|
-|SPLITQA + PRETRAINED|25.90|
-|SPLITQA + data augmentation|34.20|
-|PullNet|45.90|
-|SPARQA|31.57|
-|||
-|||
+|[MHQA-GRN](https://arxiv.org/pdf/1809.02040.pdf)|30.10|
+|[SIMPQA + PRETRAINED](https://arxiv.org/pdf/1807.09623.pdf)|19.90|
+|[SPLITQA + PRETRAINED](https://arxiv.org/pdf/1807.09623.pdf)|25.90|
+|[SPLITQA + data augmentation](https://arxiv.org/pdf/1807.09623.pdf)|34.20|
+|[PullNet](https://www.aclweb.org/anthology/D19-1242.pdf)|45.90|
+|[SPARQA](https://arxiv.org/pdf/2003.13956.pdf)|31.57|
+
 
 GraphQuestion:
 | 模型              | F1                                        |
 | ----------------- | ------------------------------------------|
-|SEMPRE|10.80|
-|PARASEMPRE|12.79|
-|JACANA|5.08|
-|UDEPLAMBDA|17.70|
-|SCANNER|17.02|
-|PARA4QA|20.40|
-|SPARQA|21.53|
+|[SEMPRE](https://www.aclweb.org/anthology/D13-1160.pdf)|10.80|
+|[PARASEMPRE](https://www.aclweb.org/anthology/P14-1133.pdf)|12.79|
+|[JACANA](http://cs.jhu.edu/~xuchen/paper/yao-jacana-freebase-acl2014.pdf)|5.08|
+|[UDEPLAMBDA](https://arxiv.org/pdf/1702.03196.pdf)|17.70|
+|[SCANNER](https://arxiv.org/pdf/1704.08387.pdf)|17.02|
+|[PARA4QA](https://arxiv.org/pdf/1708.06022.pdf)|20.40|
+|[SPARQA](https://arxiv.org/pdf/2003.13956.pdf)|21.53|
 
 ComplexQuestions:
 | 模型              | average F1                                        |
 | ----------------- | ------------------------------------------|
-|Aqqu|27.8%|
-|Aqqu++|46.7%|
-|QUINT|49,2%|
-|STF|54.3%|
-|||
-|||
-|||
-
-WebQuestions:
-| 模型              | average F1                                        |
-| ----------------- | ------------------------------------------|
-|Aqqu|49.4%|
-|Aqqu++|49.4%|
-|NFF|49.6%|
-|QUINT|51.0%|
-|STAGG|52.5%|
-|STF|53.6%|
-|||
+|[Aqqu](http://ad-publications.informatik.uni-freiburg.de/freebase-qa.pdf)|27.8%|
+|[Aqqu++](http://ad-publications.informatik.uni-freiburg.de/freebase-qa.pdf)|46.7%|
+|[QUINT](http://papers.www2017.com.au.s3-website-ap-southeast-2.amazonaws.com/proceedings/p1191.pdf)|49,2%|
+|[STF](https://www.aclweb.org/anthology/D18-1234.pdf)|54.3%|
 
 QALD-6:
 | 模型              | F1                                        |
 | ----------------- | ------------------------------------------|
-|U1QA2|0.17|
-|U1QA1|0.25|
 |SemGraphQA|0.37|
-|Aqqu|0.38|
-|gAnswer|0.55|
+|[Aqqu](http://ad-publications.informatik.uni-freiburg.de/freebase-qa.pdf)|0.38|
+|[gAnswer](https://www.researchgate.net/publication/266656635_Natural_language_question_answering_over_RDF_-_A_graph_data_driven_approach)|0.55|
 |KWGAnswer|0.70|
 |UTQA|0.75|
-|STF|0.80|
-|CaNaLi|0.89|
-|||
+|[NFF](https://ieeexplore.ieee.org/document/8085196)|0.78|
+|[STF](https://www.aclweb.org/anthology/D18-1234.pdf)|0.80|
+|[CaNaLi](https://openproceedings.org/2016/conf/edbt/paper-259.pdf)|0.89|
+
+WebQuestions:
+| 模型              | average F1                                        |
+| ----------------- | ------------------------------------------|
+|[Aqqu](http://ad-publications.informatik.uni-freiburg.de/freebase-qa.pdf)|49.4%|
+|[Aqqu++](http://ad-publications.informatik.uni-freiburg.de/freebase-qa.pdf)|49.4%|
+|[NFF](https://ieeexplore.ieee.org/document/8085196)|49.6%|
+|[QUINT](http://papers.www2017.com.au.s3-website-ap-southeast-2.amazonaws.com/proceedings/p1191.pdf)|51.0%|
+|[STAGG](https://www.aclweb.org/anthology/P15-1128.pdf)|52.5%|
+|[STF](https://www.aclweb.org/anthology/D18-1234.pdf)|53.6%|
+
+
+
 
 ### 1.5. 评测标准
 
@@ -146,6 +155,9 @@ QALD-6:
 - 第一步：建立词汇表，将句子中的词映射为KB中的实体或关系。实体采用一些字符串匹配方式进行映射。复杂的部分是将动词短语如“was also born in”，映射到相应的知识库实体关系上，如PlaceOfBirth， 则较难通过字符串匹配的方式建立映射。作者是使用统计的方法来做：在文档中，如果有较多的实体对（entity1，entity2）作为主语和宾语出现在was also born in的两侧，并且，在知识库中，这些实体对也同时出现在包含PlaceOfBirth的三元组中，那么我们可以认为“was also born in”这个短语可以和PlaceOfBirth建立映射。值得注意的是由于自然语言短语和知识库实体关系的对应关系是多对多的，比如“was also born in”可能对应PlaceOfBirth，也可能对应DateOfBrith，需要对此进行区分。作者使用entity1、entity2的类别来区分这种对应关系。
 - 第二步：经过第一步得到语法树的叶节点之后，自上而下构建语法树，文章中对任意两个叶节点都进行了逻辑形式的所有可以进行的操作（join，intersection，aggregation），得到了所有可能的语法树。
 
+如下图片为自然语言问题“where was Oboma born?”转换为逻辑形式的过程：
+![image](https://github.com/lemonadeseason/KBQA-Survey/blob/master/%E8%AF%AD%E4%B9%89%E8%A7%A3%E6%9E%90%E7%94%9F%E6%88%90%E9%80%BB%E8%BE%91%E5%BD%A2%E5%BC%8F.PNG)
+
 经过以上两步可以获得候选语法树，之后训练分类器，求出自然语言问题在代表不同逻辑形式的候选语法树上的概率分布。至此完成了语义解析方法中最重要的步骤。
 
 ### 2.2. 基于信息抽取（Information Extraction）的方法
@@ -158,6 +170,9 @@ QALD-6:
 
 #### 2.2.2. 问题的信息抽取
 将问题的dependency tree转换为question graph，主要操作有：提取问题词qword（how，why，when之类的词），问题焦点qfocus（time，place等），问题主题词qtopic和问题中心动词qverb这四个问题特征，将这些词语在dependency tree上做标注，同时删去dependency tree上不重要的节点（如冠词，标点）。经过这一转换过程，可以找到问题中最关键的要素，完成了对问题的信息抽取。
+
+如下图片中是一个将dependency tree转换为question graph的例子：
+![image](https://github.com/lemonadeseason/KBQA-Survey/blob/master/%E5%B0%86%E4%BE%9D%E5%AD%98%E5%85%B3%E7%B3%BB%E6%A0%91%E8%BD%AC%E6%8D%A2%E4%B8%BA%E9%97%AE%E9%A2%98%E5%9B%BE.PNG)
 
 #### 2.2.3. 训练分类器，判断候选答案是否正确
 分类器的输入特征是问题和某一个候选答案的特征结合形成。
@@ -174,6 +189,7 @@ QALD-6:
 下面介绍一个向量建模的经典方法，来自《Question answering with subgraph embeddings》。
 
 向量建模方法的核心步骤是将问题和候选答案分别映射到低维空间，得到它们的分布式表达。本文的方法如下：
+![image](https://github.com/lemonadeseason/KBQA-Survey/blob/master/%E5%90%91%E9%87%8F%E5%BB%BA%E6%A8%A1.PNG)
 
 **问题的分布式表达：**
 
@@ -322,20 +338,29 @@ in the noisy settings >> state-of-the-art models by a significant margin
 使用了问题中除了实体与关系外的部分用来与知识图谱匹配，会从训练集的gt path中计算rel word与q word的互信息，进而增加q中信息(river mouth就是后选入的)，在链接到知识图谱上的实体/关系后，对这些topic units进行排序，再进行子图上的relation path排序，得到结果。eval结果来看在CWQ，SP以及WQSP的hit1上sota。
 
 > 《Bidirectional Attentive Memory Networks for Question Answering over Knowledge Bases  link》
-
-![image](https://github.com/lemonadeseason/KBQA-Survey/blob/master/NAACL2019_BAMnet.PNG）
+![image](https://github.com/lemonadeseason/KBQA-Survey/blob/master/NAACL2019_BAMnet.PNG)
 本文改进了信息抽取来做KBQA的方法。现有的基于信息抽取的方法大多将问题和KB子图分别emcode，作者认为先验知识（即KB里的知识）可以帮助更好的理解question，同样question本身也可以使得我们关注到KB子图里重要的部分。基于以上想法，作者提出了Bidirectional Attentive Memory network（BAMnet），可以捕捉到问题和KB中重要的信息。在BAMnet网络之上，作者另外使用了two-way attention，帮助模型进一步得到更好的question和KB的representation。最终模型在webquestions上取得了比现有基于信息抽取更好的指标。 
 
 > 《Modeling Semantics with Gated Graph Neural Networks for Knowledge Base Question Answering》
 之前基于语义解析的方法大部分都在“如何选择问题对应最合适的semantic parse”，却忽略了在semantic parse本身结构的研究。复杂问题的semantic parse由多个entity和relation组成，比起简单问题的表示要难很多，因此本文着手解决复杂问题的semantic parse结构。作者提出使用Gated Graph Neural Networks以图的结构来编码语法解析结构。
 
 ## 4. 相关链接
-[综述文章《introduction to neural network based approaches for question answering over knowledge graphs》](https://arxiv.org/pdf/1907.09361.pdf)
-
-[CCKS 2019中文知识图谱问答](https://www.biendata.com/competition/ccks_2019_6/)
-
-[揭开知识库问答KB-QA的神秘面纱](https://zhuanlan.zhihu.com/p/27141786)
 
 [KGQA资源总结](https://github.com/BshoterJ/awesome-kgqa)
 
+[知识图库资源汇总 知识库问答-KBQA模块](https://github.com/husthuke/awesome-knowledge-graph)
+
+[KBQA系统总结](https://naotu.baidu.com/file/5c17a01de73d972501d8b3cd187908cb?token=b9a47b442d527efe)
+
+[KBQA知识库问答领域研究综述](https://blog.csdn.net/u012892939/article/details/79451978)
+
+[openKG中文开放知识图谱](http://openkg.cn/home)
+
+[CCKS 2019中文知识图谱问答](https://www.biendata.com/competition/ccks_2019_6/)
+
 [NLPCC2019](http://tcci.ccf.org.cn/conference/2019/cfpt.php)
+
+## 5. 参考资源
+[综述文章《introduction to neural network based approaches for question answering over knowledge graphs》](https://arxiv.org/pdf/1907.09361.pdf)
+
+[揭开知识库问答KB-QA的神秘面纱](https://zhuanlan.zhihu.com/p/27141786)
