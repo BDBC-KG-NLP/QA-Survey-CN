@@ -222,7 +222,7 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
 - 神经网络中会有两大输入，左边N会输入结构化数据，比如个人属性以及浏览操作历史纪录，右边V会输入一些非结构化数据，比如前几轮问的问题和序列，对于这些非结构化的数据我们会有句子编码器解析这些数据，当需要考虑到句子的语序关系的时候会使用CNN或者RNN网络结构；上层的话，会结合用户的Embedding和句子的Embedding去输出。
 - 工业真正的场景中，用户问题的问题个数是不固定的，所以会把最后一层Softmax更改为多个二分类模型。模型图如下：
 
-<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640.jpeg  width=650 alt=ESIM></div>
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/多个二分类模型.jpeg  width=650 alt=多个二分类模型模型图></div>
 
 #### 2.2.3 基于Siamese networks神经网络架构
 - Siamese networks(孪生神经网络)是一种相似性度量方法，内部采用深度语义匹配模型（DSSM，Deep Structured Semantic Model），该方法在检索场景下使用点击数据来训练语义层次的匹配。
