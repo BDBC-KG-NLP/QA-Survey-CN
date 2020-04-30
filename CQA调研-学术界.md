@@ -56,8 +56,9 @@ Q为问题数目总量。
 
 #### QQ匹配:
 -  [**Quora Question Pairs**](https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs):是Quora发布的一个数据集，旨在识别重复的问题。它由Quora上超过40万对问题组成，每个问题对都用0/1标签标注是否为重复问题。  
-| Method  | ACC|论文题目|年份|论文链接|code|
-| ------------- | ------------- |------------- |------------- |------------- |------------- |
+
+| Method  | ACC | 论文题目 | 年份 | 论文链接 | code |  
+| ------------- | ------------- |------------- |------------- |------------- |------------- |  
 |ALBERT|90.5%|ALBERT: A Lite BERT for Self-supervised Learning of Language Representations|2020|https://arxiv.org/pdf/1909.11942v6.pdf |https://github.com/google-research/ALBERT |
 |T5-11B|90.4%|Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer|2019|https://arxiv.org/pdf/1910.10683v2.pdf |https://github.com/google-research/text-to-text-transfer-transformer |
 |XLNet|90.3%|XLNet: Generalized Autoregressive Pretraining for Language Understanding|2019|https://arxiv.org/pdf/1906.08237v2.pdf |https://github.com/zihangdai/xlnet |
@@ -77,7 +78,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 
 #### QA匹配:
 - [**WikiQA**](https://www.microsoft.com/en-us/download/details.aspx?id=52419) :一组公开可用的问题答案对集合，由Microsoft Research收集和注释以用于开放域答案选择问题的研究。  
-| Method  | MAP|MRR |论文题目|年份|论文链接|code|
+| Method  | MAP| MRR | 论文题目 | 年份 | 论文链接 | code |
 | ------------- | ------------- |------------- |------------- |------------- |------------- |
 |TANDA-ROberta|0.920|0.933|TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|2019|https://arxiv.org/pdf/1911.04118.pdf |https://github.com/alexa/wqa_tanda |
 |Comp-Clip + LM + LC|0.764|0.784|A Compare-Aggregate Model with Latent Clustering for Answer Selection|2019|https://paperswithcode.com/paper/a-compare-aggregate-model-with-latent | -|
