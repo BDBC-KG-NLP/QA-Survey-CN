@@ -6,10 +6,10 @@
   * [2 方法及模型](#2-方法及模型)
     * [2.1 用于FAQ的方法](#21-用于FAQ的方法)
     * [2.2 用于问答匹配的方法](#22-用于问答匹配的方法)
-       * [2.2.1 规则匹配(又称“句式法”)](#221-规则匹配(又称“句式法”))
-       * [2.2.2 深度学习多分类模型（CNN\DNN\LSTM\…）](#222-深度学习多分类模型（CNN\DNN\LSTM\…）)
-       * [2.2.3 基于Siamese networks神经网络架构](#223-基于Siamese networks神经网络架构)
-       * [2.2.4 Interaction-based networks](#224-Interaction-based networks)
+       * 2.2.1 规则匹配(又称“句式法”)
+       * 2.2.2 深度学习多分类模型（CNN\DNN\LSTM\…）
+       * 2.2.3 基于Siamese networks神经网络架构
+       * 2.2.4 Interaction-based networks
     * [2.3 用于Chatbot的方法](#23-用于Chatbot的方法)
     * [2.4 用于机器阅读理解的方法](#24-用于机器阅读理解的方法)
     * [2.5 用于跨领域迁移学习方法](#25-用于跨领域迁移学习方法)
@@ -18,9 +18,11 @@
   * [5 相关资料](#5-相关资料)
   
 ## 1 任务
+
 ### 1.1 任务定义
 - **C**ommunity **Q**uestion **A**nswer，中文名称是社区问答。
 - CQA任务，是在给定问题提供的许多答案中自动搜索相关答案（问题与答案匹配，简称QA匹配），并搜索相关问题以重用其现有答案（问题匹配，简称QQ匹配）。所以，问答匹配方法在CQA任务中尤为重要。
+
 ### 1.2 数据集
 #### 格式
 - 半结构化FAQ数据：问题-答案对。
@@ -178,8 +180,6 @@
   - 具体描述：[链接](https://biendata.com/competition/chip2018/data/)
 - **评测指标**：Precision，Recall和F1值。最终排名以F1值为基准
 
-
-
 ### 1.3 评测标准
 - 查全率：用以评价系统对于潜在答案寻找的全面程度。例如：在回答的前30%中保证一定出现正确答案。
 - 查准率：即准确率，top n个答案包含正确答案的概率。这一项与学术界一致。
@@ -192,8 +192,10 @@
 - 24H未转人工率：指客户咨询了智能机器人后的24H内是否有咨询人工客服
 
 ## 2 方法及模型
+
 ### 2.1 用于FAQ的方法
 Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
+
 #### 实现方法
 1. **QA匹配：用户输入Query与候选的所有Answer的匹配**。通过计算用户输入Query与FAQ语料集中Answer之间的相关度，选出相关度最高的Answer，返回给用户。
 2. **QQ匹配：用户输入Query与历史语料库里找最相似的Query，然后返回找到的Query对应的Answer**。计算用户输入Query和Question的相似度。通过计算用户输入Query与FAQ语料集中Question之间的相似度，选出相似度最高的Question，再通过Q-A map找到相应的答案返回给用户。
@@ -201,6 +203,7 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
 > **工业界使用QQ匹配方式比较多**。如蚂蚁金服的智能机器人利用的是QQ匹配的方式。
 
 ### 2.2 用于问答匹配的方法
+
 #### 2.2.1 规则匹配(又称“句式法”)
 
   - 优点：可控、高效、易于实现
@@ -209,6 +212,7 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
   > 例如，标问“华为mate30现在的价格是多少？”，拆出来“华为mate30”是cellphone概念，“价格是多少”是askMoney概念，“现在”是time概念，那么“华为mate30现在的价格是多少？”就是cellphone+askMoney+time。用户输入"华为mate30现在卖多少钱？"进行分词，可以得到相同的句式和概念组合，就能够命中“华为mate30现在的价格是多少？”这个相似问了。
 
 在拥有较大数据量积累的场景，一般采用有监督的深度神经网络，可以解析文本并抽取高层语义。
+
 #### 2.2.2 深度学习多分类模型（CNN\DNN\LSTM\…）
 
 问答匹配任务在大多数情况下可以转化为二分类或多分类任务。神经网络中会有两大输入，左边N会输入结构化数据，比如个人属性以及浏览操作历史纪录，右边V会输入一些非结构化数据，比如前几轮问的问题和序列，对于这些非结构化的数据我们会有句子编码器解析这些数据，当需要考虑到句子的语序关系的时候会使用CNN或者RNN网络结构；上层的话，会结合用户的Embedding和句子的Embedding去输出。但是工业真正的场景中，用户问题的问题个数是不固定的，所以会把最后一层Softmax更改为多个二分类模型。模型图如下：
@@ -216,7 +220,7 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
 ![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640.jpeg)
 
 #### 2.2.3 基于Siamese networks神经网络架构
-- Siamese networks(孪生神经网络)是一种相似性度量方法，内部采用深度语义匹配模型（DSMM，Deep Structured Semantic Model），该方法在检索场景下使用点击数据来训练语义层次的匹配。
+- Siamese networks(孪生神经网络)是一种相似性度量方法，内部采用深度语义匹配模型（DSSM，Deep Structured Semantic Model），该方法在检索场景下使用点击数据来训练语义层次的匹配。
 - Siamese networks有两个输入(Input1 and Input2),将两个输入feed进入两个神经网络(Network1 and Network2)，这两个神经网络分别将输入映射到新的空间，形成输入在新的空间中的表示。通过Loss的计算，评价两个输入的相似度。
 - 基于Siamese networks神经网络架构，比如有Siamese结构的LSTM、CNN和ESIM等。
 
@@ -259,6 +263,7 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
     - ==此处插入图==
 
 #### 2.2.4 Interaction-based networks
+
   - 同时对问题和答案进行特征加权的Attention方案
   == 待补充 ==
 
