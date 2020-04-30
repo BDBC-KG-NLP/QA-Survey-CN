@@ -81,6 +81,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 
 #### QA匹配:
 - [**WikiQA**](https://www.microsoft.com/en-us/download/details.aspx?id=52419) :一组公开可用的问题答案对集合，由Microsoft Research收集和注释以用于开放域答案选择问题的研究。  
+
 | Method  | MAP| MRR | 论文题目 | 年份 | 论文链接 | code |
 | ------------- | ------------- |------------- |------------- |------------- |------------- |
 |TANDA-ROberta|0.920|0.933|TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|2019|https://arxiv.org/pdf/1911.04118.pdf |https://github.com/alexa/wqa_tanda |
@@ -88,6 +89,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 |RE2|0.7452|0.7618|Simple and Effective Text Matching with Richer Alignment Features|2019|https://www.aclweb.org/anthology/P19-1465/ |https://github.com/alibaba-edu/simple-effective-text-matching |
 
 - [**TRECQA**](https://trec.nist.gov/data/qa.html)从TRECQA8-13的数据中搜集整理的数据集，从每个问题的文档库中自动选择候选答案。该数据集是答案句子选择使用最广泛的基准之一。  
+
 | Method  | MAP| MRR | 论文题目 | 年份 | 论文链接 | code |
 | ------------- | ------------- |------------- |------------- |------------- |------------- |
 |TANDA-ROberta|0.943|0.974|TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|2019|https://arxiv.org/pdf/1911.04118.pdf |https://github.com/alexa/wqa_tanda |
@@ -123,8 +125,8 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 #### TF-IDF介绍
 TF-IDF（term frequency–inverse document frequency）是一种用于资讯检索与文本挖掘的常用加权技术。TF-IDF是一种统计方法，用以评估一字词对于一个文档集或一个语料库中的其中一份文件的重要程度。字词的重要性随着它在文件中出现的次数成正比增加，但同时会随着它在语料库中出现的频率成反比下降。  
 TF：在一份给定的文件里，词频（term frequency，TF）指的是某一个给定的词语在该文件中出现的次数。对于在某一特定文件里的词语ti来说，它的重要性可表示为：
-TF = 某个词在文档中的出现次数/文档中的总词数  
-IDF：逆向文件频率（inverse document frequency，IDF）是一个词语普遍重要性的度量。某一特定词语的IDF，可以由总文件数目除以包含该词语之文件的数目，再将得到的商取对数得到：  
+*TF* = 某个词在文档中的出现次数/文档中的总词数  
+*IDF*：逆向文件频率（inverse document frequency，IDF）是一个词语普遍重要性的度量。某一特定词语的IDF，可以由总文件数目除以包含该词语之文件的数目，再将得到的商取对数得到：  
 IDF = log(语料库中的总文档数/语料库中出现该词的文档数)  
 最终，TF-IDF=TF * IDF  
 
