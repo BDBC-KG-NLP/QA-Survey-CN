@@ -37,7 +37,7 @@
 给定一个问题（后文我们称之为查询）和一个候选问题（后文称为文档）集合,返回根据与查询问题相似性排序的序列  
 **问题-答案匹配**：
 考虑到社区问答网站接收的流量，在发布的众多答案中找到一个好答案的任务本身就是重要的。这个任务通常被建模为答案选择的任务：  
-给定问题q和答案池a1…am，然后试着找到最好的候选答案或者每个答案根据与问题相关性排序的列表。候选答案池可能包含也可能不包含多个gold标签。  
+给定问题q和候选答案集合，然后试着找到最好的候选答案或者每个答案根据与问题相关性排序的列表。候选答案池可能包含也可能不包含多个gold标签。  
 由此可见，社区问答的重点问题是计算文本和文本之间的相似性和相关性的问题。
 
 ### 1.3. 评测标准
@@ -55,7 +55,7 @@ Q为问题数目总量。
 ### 1.4. 数据集
 
 #### QQ匹配:
--  [**Quora Question Pairs**](https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs):是Quora发布的一个数据集，旨在识别重复的问题。它由Quora上超过40万对问题组成，每个问题对都用0/1标签标注是否为重复问题。
+-  [**Quora Question Pairs**](https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs):是Quora发布的一个数据集，旨在识别重复的问题。它由Quora上超过40万对问题组成，每个问题对都用0/1标签标注是否为重复问题。  
 | Method  | ACC|论文题目|年份|论文链接|code|
 | ------------- | ------------- |------------- |------------- |------------- |------------- |
 |ALBERT|90.5%|ALBERT: A Lite BERT for Self-supervised Learning of Language Representations|2020|https://arxiv.org/pdf/1909.11942v6.pdf |https://github.com/google-research/ALBERT |
@@ -63,27 +63,27 @@ Q为问题数目总量。
 |XLNet|90.3%|XLNet: Generalized Autoregressive Pretraining for Language Understanding|2019|https://arxiv.org/pdf/1906.08237v2.pdf |https://github.com/zihangdai/xlnet |
 
 - [**MRPC**](https://www.microsoft.com/en-us/download/details.aspx?id=52398&from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fdownloads%2F607d14d9-20cd-47e3-85bc-a2f65cd28042%2Fdefault.aspx)：MRPC是Microsoft Research Paraphrase 
-Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及指示每对是否捕获释义​​/语义对等关系的人工标注。
+Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及指示每对是否捕获释义​​/语义对等关系的人工标注。  
 | Method  | ACC|论文题目|年份|论文链接|code|
 |ALBERT|94.0%|ALBERT: A Lite BERT for Self-supervised Learning of Language Representations|2020|https://arxiv.org/pdf/1909.11942v6.pdf |https://github.com/google-research/ALBERT |
 |StructBERT|93.9%|StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding|2019|https://arxiv.org/abs/1908.04577 | - |
 |ERNIE2.0|93.5%|ERNIE 2.0: A Continual Pre-training Framework for Language Understanding|2019|https://arxiv.org/abs/1907.12412v1   |https://github.com/PaddlePaddle/ERNIE |
 
-- [**LCQMC**](http://icrc.hitsz.edu.cn/info/1037/1146.htm):百度发布的一个大型中文问题匹配数据集，数据来自百度知道。每条数据为两个问题和它们的相似性标签（用1/0代表相似/不相似)。
+- [**LCQMC**](http://icrc.hitsz.edu.cn/info/1037/1146.htm):百度发布的一个大型中文问题匹配数据集，数据来自百度知道。每条数据为两个问题和它们的相似性标签（用1/0代表相似/不相似)。  
 | Method  | ACC|论文题目|年份|论文链接|code|
 |ERNIE2.0|87.9%|ERNIE 2.0: A Continual Pre-training Framework for Language Understanding|2019|https://arxiv.org/abs/1907.12412v1   |https://github.com/PaddlePaddle/ERNIE |
 |ERNIE1.0|87.4%|ERNIE: Enhanced Representation through Knowledge Integration|https://arxiv.org/abs/1904.09223 |https://github.com/PaddlePaddle/ERNIE |
 |BERT|87.0%|BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding|https://arxiv.org/abs/1810.04805 |https://github.com/google-research/bert |
 
 #### QA匹配:
-- [**WikiQA**](https://www.microsoft.com/en-us/download/details.aspx?id=52419) :一组公开可用的问题答案对集合，由Microsoft Research收集和注释以用于开放域答案选择问题的研究。
+- [**WikiQA**](https://www.microsoft.com/en-us/download/details.aspx?id=52419) :一组公开可用的问题答案对集合，由Microsoft Research收集和注释以用于开放域答案选择问题的研究。  
 | Method  | MAP|MRR |论文题目|年份|论文链接|code|
 | ------------- | ------------- |------------- |------------- |------------- |------------- |
 |TANDA-ROberta|0.920|0.933|TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|2019|https://arxiv.org/pdf/1911.04118.pdf |https://github.com/alexa/wqa_tanda |
 |Comp-Clip + LM + LC|0.764|0.784|A Compare-Aggregate Model with Latent Clustering for Answer Selection|2019|https://paperswithcode.com/paper/a-compare-aggregate-model-with-latent | -|
 |RE2|0.7452|0.7618|Simple and Effective Text Matching with Richer Alignment Features|2019|https://www.aclweb.org/anthology/P19-1465/ |https://github.com/alibaba-edu/simple-effective-text-matching |
 
-- [**TRECQA**](https://trec.nist.gov/data/qa.html)从TRECQA8-13的数据中搜集整理的数据集，从每个问题的文档库中自动选择候选答案。该数据集是答案句子选择使用最广泛的基准之一。
+- [**TRECQA**](https://trec.nist.gov/data/qa.html)从TRECQA8-13的数据中搜集整理的数据集，从每个问题的文档库中自动选择候选答案。该数据集是答案句子选择使用最广泛的基准之一。  
 | Method  | MAP|MRR |论文题目|年份|论文链接|code|
 | ------------- | ------------- |------------- |------------- |------------- |------------- |
 |TANDA-ROberta|0.943|0.974|TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|2019|https://arxiv.org/pdf/1911.04118.pdf |https://github.com/alexa/wqa_tanda |
