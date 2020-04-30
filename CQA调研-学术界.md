@@ -75,6 +75,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 - [**LCQMC**](http://icrc.hitsz.edu.cn/info/1037/1146.html):百度发布的一个大型中文问题匹配数据集，数据来自百度知道。每条数据为两个问题和它们的相似性标签（用1/0代表相似/不相似)。  
 
 | Method  | ACC | 论文题目 | 年份 | 论文链接 | code |
+| ------------- | ------------- |------------- |------------- |------------- |------------- |  
 |ERNIE2.0|87.9%|ERNIE 2.0: A Continual Pre-training Framework for Language Understanding|2019|https://arxiv.org/abs/1907.12412v1   |https://github.com/PaddlePaddle/ERNIE |
 |ERNIE1.0|87.4%|ERNIE: Enhanced Representation through Knowledge Integration|https://arxiv.org/abs/1904.09223 |https://github.com/PaddlePaddle/ERNIE |
 |BERT|87.0%|BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding|https://arxiv.org/abs/1810.04805 |https://github.com/google-research/bert |
@@ -83,7 +84,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 - [**WikiQA**](https://www.microsoft.com/en-us/download/details.aspx?id=52419) :一组公开可用的问题答案对集合，由Microsoft Research收集和注释以用于开放域答案选择问题的研究。    
 
 | Method  | MAP| MRR | 论文题目 | 年份 | 论文链接 | code |
-| ------------- | ------------- |------------- |------------- |------------- |------------- |
+| ------------- | ------------- |------------- |------------- |------------- |------------- |  
 |TANDA-ROberta|0.920|0.933|TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|2019|https://arxiv.org/pdf/1911.04118.pdf |https://github.com/alexa/wqa_tanda |
 |Comp-Clip + LM + LC|0.764|0.784|A Compare-Aggregate Model with Latent Clustering for Answer Selection|2019|https://paperswithcode.com/paper/a-compare-aggregate-model-with-latent | -|
 |RE2|0.7452|0.7618|Simple and Effective Text Matching with Richer Alignment Features|2019|https://www.aclweb.org/anthology/P19-1465/ |https://github.com/alibaba-edu/simple-effective-text-matching |
@@ -91,7 +92,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 - [**TRECQA**](https://trec.nist.gov/data/qa.html)从TRECQA8-13的数据中搜集整理的数据集，从每个问题的文档库中自动选择候选答案。该数据集是答案句子选择使用最广泛的基准之一。  
 
 | Method  | MAP| MRR | 论文题目 | 年份 | 论文链接 | code |
-| ------------- | ------------- |------------- |------------- |------------- |------------- |
+| ------------- | ------------- |------------- |------------- |------------- |------------- |  
 |TANDA-ROberta|0.943|0.974|TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|2019|https://arxiv.org/pdf/1911.04118.pdf |https://github.com/alexa/wqa_tanda |
 |BERT-RNN|0.872|0.899|BAS: An Answer Selection Method Using BERT Language Model
 |https://arxiv.org/ftp/arxiv/papers/1911/1911.01528.pdf |-|
