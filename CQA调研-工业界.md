@@ -276,31 +276,44 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
 
 
 ### 2.3 用于Chatbot的方法
-目前商用的Chatbot正在大量兴起，这种可以自然语言对话的方式来帮助用户解答问题比传统死板的用户界面要更友好。通常来说，Chatbot包括两个部分：IR模块和生成模块。针对用户的问题，IR模块从QA知识库中检索到对应的答案，生成模块再用预训练好的Seq2Seq模型生成最终的答案。但是原有的模型面临的问题是，对于一些长问句或复杂问句往往无法在QA知识库中检索到匹配的条目，并且生成模块也经常生成不匹配或无意义的答案。下面这种新提出的方法将IR和生成模块聚合在一起，用一个 Seq2Seq模型来对搜索结果做评估，从而达到优化的效果。
+- **Chatbot包括两个部分**I
+  - **IR模块**：基于检索的模型
+    - 从QA知识库中检索到对应的答案
+    - 缺点：回复答案可控但无法处理长尾问题，即对于一些长问句或复杂问句往往无法在QA知识库中检索到匹配的条目
+  - **生成模块**：基于Seq2Seq的生成式模型
+    - 用预训练好的Seq2Seq模型生成最终的答案
+    - 缺点：难以保证一致性和合理性。经常生成不匹配或无意义的答案。
+    
+- **新方法**：将IR和生成模块聚合在一起，用一个Seq2Seq模型来对搜索结果做评估，从而达到优化的效果。
+  - 模型从单词层面去分析文本
+  - 整体思路：
+    - 首先利用IR模型从知识库中检索到k个候选QA对
+    - 然后利用rerank模型的打分机制计算出每个候选答案和问题的匹配程度。
+    - 如果得分最高的结果
+      - 大于预设好的阈值：将其当作答案
+      - 小于阈值：用生成模型生成答案。
+- 整个方法分为四个模块
+    
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6cOekP4HJyhRicF38UtiaIf8EtqgNcQRPVuNmZnXfpmCqDcMHCSKP98WA.jpeg  width=650 alt=IR和生成模块聚合方法顶层结构图></div>
+    
+    - 1. **QA知识库** 
+      - 从在线的真人用户服务log里提取问答对作为QA知识库。过滤掉不包含相关关键词的QA，最后得到问答对。 
+    - 2. **IR模块** 
+      - 利用**倒排索引的方法**将每个单词隐射到包含这个单词的一组问句中，并且对这些单词的同义词也做了索引，然后利用**BM25算法**来计算搜索到的问句和输入问句的相似度，取最相似问句的答案。 
+    - 3. **生成模型** 
+      - 生成模型是一个attentive seq2seq的结构。
+      
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6UGKxwDMRMZkvYpGOufORwO3vAL6cf2kn1jQic8GwMrMkOLkSNiaGcOCg.jpeg  width=550 alt=生成模型的attentive-seq2seq结构图></div>
+      
+      - 采用GRU由 question 生成 answer，计算生成单词的概率：
 
-模型从单词层面去分析文本，其整体思路是首先利用IR模型从知识库中检索到k个候选QA对，再利用rerank模型的打分机制计算出每个候选答案和问题的匹配程度。如果得分最高的那个大于预设好的阈值，就将其当作答案，如果小于阈值，就用生成模型生成答案。整个方法分为四个模块，顶层结构如图：
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6gRsb5ZYlGo7icicLJicXccguPeiaQxzicReicTV3iaJrWVkEH1Zz901MtQ20w.png  width=400 alt=生成模型-生成单词的概率></div>
 
-<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6cOekP4HJyhRicF38UtiaIf8EtqgNcQRPVuNmZnXfpmCqDcMHCSKP98WA.jpeg  width=650 alt=ESIM></div>
+      - 其中加了 context 向量，由图中的 α 求得的。α 表示的是当前步的输入单词，和上一步的生成单词之间的匹配度，用了一个 alignment 模型计算。需要注意的一点是，对于各个 QA 长度不等的情况，采用了 bucketing 和 padding 机制。另外用了 softmax 来随机采样词汇表中的单词，而不使用整个词汇表，从而加速了训练过程。还使用了 beam search decoder，每次维护 top-k 个输出，来取代一次一个输出的贪心搜索。
+    - 4. **rerank 模块**
+    - 使用的模型和上面是一样的，根据输入问题来为候选答案打分，使用**平均概率**作为评分函数:
 
-1. QA知识库 
-本文从在线的真人用户服务log里提取问答对作为QA知识库。过滤掉不包含相关关键词的QA，最后得到9164834个问答对。 
-2. IR模块 
-利用倒排索引的方法将每个单词隐射到包含这个单词的一组问句中，并且对这些单词的同义词也做了索引，然后利用BM25算法来计算搜索到的问句和输入问句的相似度，取最相似问句的答案。 
-3. 生成模型 
-生成模型是一个attentive seq2seq的结构，如图所示：
-
-<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6UGKxwDMRMZkvYpGOufORwO3vAL6cf2kn1jQic8GwMrMkOLkSNiaGcOCg.jpeg  width=550 alt=ESIM></div>
-
-采用了一个 GRU，由 question 生成 answer，计算生成单词的概率：
-
-<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6gRsb5ZYlGo7icicLJicXccguPeiaQxzicReicTV3iaJrWVkEH1Zz901MtQ20w.png  width=400 alt=ESIM></div>
-
-其中加了 context 向量，他是由图中的 α 求得的，α 表示的是当前步的输入单词，和上一步的生成单词之间的匹配度，用了一个 alignment 模型计算。需要注意的一点是，对于各个 QA 长度不等的情况，采用了 bucketing 和 padding 机制。另外用了 softmax 来随机采样词汇表中的单词，而不使用整个词汇表，从而加速了训练过程。还是用了 beam search decoder，每次维护 top-k 个输出，来取代一次一个输出的贪心搜索。
-
-4. rerank 模块
-使用的模型和上面是一样的，根据输入问题来为候选答案打分，使用平均概率作为评分函数:
-
-<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6NDcGIMlGicRkD1jQsKfR57W4ov5iar0lJf2RZ54f4csCL1qhkAW8OG4A.png  width=300 alt=ESIM></div>
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6NDcGIMlGicRkD1jQsKfR57W4ov5iar0lJf2RZ54f4csCL1qhkAW8OG4A.png  width=300 alt=></div>
 
 ### 2.4 用于机器阅读理解的方法
 机器阅读理解(Machine Reading)是指计算机对文本进行自动地、无监督地提取信息的过程，从而让计算机具备通过文本数据获取知识和回答问题的能力。研究者们相信这是NLP领域的一个重要分支，同时也是进一步发展人工植呢的一个关键步骤。机器阅读理解的应用领域非常广泛，包括在电商促销期间阅读大量活动规则并回答用户疑虑，阅读法律条文并向公众科普法律知识等等。机器阅读理解相比于人类的优势在于速度和实效性，同时经过了多年的发展在准确率方面已经和人类不分伯仲。
