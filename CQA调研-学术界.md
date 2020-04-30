@@ -72,7 +72,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 |StructBERT|93.9%|StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding|2019|https://arxiv.org/abs/1908.04577 | - |
 |ERNIE2.0|93.5%|ERNIE 2.0: A Continual Pre-training Framework for Language Understanding|2019|https://arxiv.org/abs/1907.12412v1   |https://github.com/PaddlePaddle/ERNIE |
 
-- [**LCQMC**](http://icrc.hitsz.edu.cn/info/1037/1146.htm):百度发布的一个大型中文问题匹配数据集，数据来自百度知道。每条数据为两个问题和它们的相似性标签（用1/0代表相似/不相似)。  
+- [**LCQMC**](http://icrc.hitsz.edu.cn/info/1037/1146.html):百度发布的一个大型中文问题匹配数据集，数据来自百度知道。每条数据为两个问题和它们的相似性标签（用1/0代表相似/不相似)。  
 
 | Method  | ACC | 论文题目 | 年份 | 论文链接 | code |
 |ERNIE2.0|87.9%|ERNIE 2.0: A Continual Pre-training Framework for Language Understanding|2019|https://arxiv.org/abs/1907.12412v1   |https://github.com/PaddlePaddle/ERNIE |
@@ -80,7 +80,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 |BERT|87.0%|BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding|https://arxiv.org/abs/1810.04805 |https://github.com/google-research/bert |
 
 #### QA匹配:
-- [**WikiQA**](https://www.microsoft.com/en-us/download/details.aspx?id=52419) :一组公开可用的问题答案对集合，由Microsoft Research收集和注释以用于开放域答案选择问题的研究。  
+- [**WikiQA**](https://www.microsoft.com/en-us/download/details.aspx?id=52419) :一组公开可用的问题答案对集合，由Microsoft Research收集和注释以用于开放域答案选择问题的研究。    
 
 | Method  | MAP| MRR | 论文题目 | 年份 | 论文链接 | code |
 | ------------- | ------------- |------------- |------------- |------------- |------------- |
