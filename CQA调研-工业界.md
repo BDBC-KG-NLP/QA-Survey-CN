@@ -197,7 +197,7 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
 > **工业界使用QQ匹配方式比较多**。如蚂蚁金服的智能机器人利用的是QQ匹配的方式。
 
 ### 2.2 用于问答匹配的方法
-- **规则匹配(又称“句式法”)**
+#### 规则匹配(又称“句式法”)
 
   - 优点：可控、高效、易于实现
   - 目前，很多机器人都有规则匹配的部分。
@@ -205,16 +205,58 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
   > 例如，标问“华为mate30现在的价格是多少？”，拆出来“华为mate30”是cellphone概念，“价格是多少”是askMoney概念，“现在”是time概念，那么“华为mate30现在的价格是多少？”就是cellphone+askMoney+time。用户输入"华为mate30现在卖多少钱？"进行分词，可以得到相同的句式和概念组合，就能够命中“华为mate30现在的价格是多少？”这个相似问了。
 
 在拥有较大数据量积累的场景，一般采用有监督的深度神经网络，可以解析文本并抽取高层语义。
-- **深度学习多分类模型（CNN\DNN\LSTM\…）**
+#### 深度学习多分类模型（CNN\DNN\LSTM\…）
 
 问答匹配任务在大多数情况下可以转化为二分类或多分类任务。神经网络中会有两大输入，左边N会输入结构化数据，比如个人属性以及浏览操作历史纪录，右边V会输入一些非结构化数据，比如前几轮问的问题和序列，对于这些非结构化的数据我们会有句子编码器解析这些数据，当需要考虑到句子的语序关系的时候会使用CNN或者RNN网络结构；上层的话，会结合用户的Embedding和句子的Embedding去输出。但是工业真正的场景中，用户问题的问题个数是不固定的，所以会把最后一层Softmax更改为多个二分类模型。模型图如下：
 
 ![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640.jpeg)
-- **基于Siamese networks神经网络架构**
+#### 基于Siamese networks神经网络架构
+- Siamese networks(孪生神经网络)是一种相似性度量方法，内部采用深度语义匹配模型（DSMM，Deep Structured Semantic Model），该方法在检索场景下使用点击数据来训练语义层次的匹配。
+- Siamese networks有两个输入(Input1 and Input2),将两个输入feed进入两个神经网络(Network1 and Network2)，这两个神经网络分别将输入映射到新的空间，形成输入在新的空间中的表示。通过Loss的计算，评价两个输入的相似度。
+- 基于Siamese networks神经网络架构，比如有Siamese结构的LSTM、CNN和ESIM等。
 
-  - 这是一种相似性度量方法，内部采用深度语义匹配模型（DSMM，Deep Structured Semantic Model），该方法在检索场景下使用点击数据来训练语义层次的匹配。
-  - 语义匹配的技术，从早期的DSSM，利用词袋模型，计算句之间的相似度；到后面利用LSTM-DSSM来捕捉长时间序列的语义信息；再到现在的基于BERT的语义相似度计算与匹配，本质上，其实都是提取句子的语义特征，再通过数学运算计算相似度。
-![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/20181001215825414.png)
+
+##### DSSM 模型
+- **论文**：[Learning Deep Structured Semantic Models for Web Search using Clickthrough Data](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/cikm2013_DSSM_fullversion.pdf)
+- **原理**
+    - 先把 query 和 document 转换成 BOW 向量形式，然后通过 word hashing 变换做降维得到相对低维的向量，feed给 MLP 网络，输出层对应的低维向量就是 query 和 document 的语义向量（假定为 Q 和 D）。计算(D, Q)的余弦相似度后，用 softmax 做归一化得到的概率值是整个模型的最终输出，该值作为监督信号进行有监督训练。
+- **模型结构**：
+    - ==此处插入图==
+
+##### Siamese LSTM 模型
+- 解读链接：https://zhuanlan.zhihu.com/p/48188731
+- **提出背景**
+>- RNN 模型提出之前，比较两段文本的相似性都习惯用词袋模型或者 TF-IDF 模型，但没有用到上下文的信息，而且词与词之间联系不紧密，词袋模型难以泛化。
+>- LSTM 或者 RNN 模型可以去适应变成的句子，比如通过 RNN 可以将两个长度不同的句子 encode 成一个相同长度的语义向量，这个语义向量包含了各自句子的语义信息，可以直接用来比较相似性。
+> - Siamese Recurrent Architectures 就是将两个不一样长的句子，分别 encode 成相同长度的向量，以此来比较两个句子的相似性。
+
+- **论文**：[Siamese Recurrent Architectures for Learning Sentence Similarity](http://people.csail.mit.edu/jonasmueller/info/MuellerThyagarajan_AAAI16.pdf)
+
+- **模型结构**
+    - 1.**问题的语义表示向量抽取**： 通过LSTM完成，在问题1和问题2的对称网络中，这部分LSTM共享权重。
+    - 2.**语义向量相似性计算**：计算语义表示向量的平方距离和角度，再喂给多层感知机MLP进行分类。
+    - 模型如下所示
+    - ==此处插入图==
+
+##### Siamese CNN 模型
+- 思想：使用不同大小卷积窗口的filter来抽取句子中各种长度元组的信息，然后再计算相似度。
+
+##### ESIM （Enhanced LSTM）
+- **论文**：Enhanced LSTM for Natural Language Inference
+- **源码**：[链接](https://github.com/coetaur0/ESIM)
+- **简介**：
+    - ESIM模型是一个自然语言推理网络
+    - 与前两个Siamese结构的模型不同之处在于，没有直接计算两个句子表示向量的距离，而是利用两个句子的表示进行了匹配。
+- **模型结构**
+    - 由输入编码，局部推理模型和推断合成三部分构成。
+    - 模型使用了双向LSTM，并引入attention机制。
+    - 模型如下所示
+    - ==此处插入图==
+
+#### Interaction-based networks
+  - 同时对问题和答案进行特征加权的Attention方案
+  == 待补充 ==
+
 
 ### 2.3 用于Chatbot的方法
 目前商用的Chatbot正在大量兴起，这种可以自然语言对话的方式来帮助用户解答问题比传统死板的用户界面要更友好。通常来说，Chatbot包括两个部分：IR模块和生成模块。针对用户的问题，IR模块从QA知识库中检索到对应的答案，生成模块再用预训练好的Seq2Seq模型生成最终的答案。但是原有的模型面临的问题是，对于一些长问句或复杂问句往往无法在QA知识库中检索到匹配的条目，并且生成模块也经常生成不匹配或无意义的答案。下面这种新提出的方法将IR和生成模块聚合在一起，用一个 Seq2Seq模型来对搜索结果做评估，从而达到优化的效果。
