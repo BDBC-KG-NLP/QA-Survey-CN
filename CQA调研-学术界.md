@@ -411,6 +411,7 @@ ERNIE2.0构建了多个预训练任务，试图从 3 个层面去更好的理解
 |Sentence Distance|通过一个 3 分类任务，去判断句对 (sentence pairs) 位置关系 (包含邻近句子、文档内非邻近句子、非同文档内句子 3 种类别)，更好的建模语义相关性。|
 |Discourse Relation |通过判断句对 (sentence pairs) 间的修辞关系 (semantic & rhetorical relation)，更好的学习句间语义。|
 |IR Relevance|学习 IR 相关性弱监督信息，更好的建模句对相关性。|
+
 **总结**  
 通过多任务训练，ERNIE2.0在中文训练集上取得了较大的提升，目前是许多中文任务效果最好的模型。
 
