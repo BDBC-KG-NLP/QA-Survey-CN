@@ -267,7 +267,7 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
     - 由输入编码，局部推理模型和推断合成三部分构成。
     - 模型使用了双向LSTM，并引入attention机制。
     - 模型如下所示
-<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-ESIM.png  width=300 alt=ESIM></div>
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-ESIM.png  width=400 alt=ESIM></div>
 
 #### 2.2.4 Interaction-based networks
 
