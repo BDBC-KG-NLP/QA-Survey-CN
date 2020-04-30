@@ -94,8 +94,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 | Method  | MAP| MRR | 论文题目 | 年份 | 论文链接 | code |  
 | ------------- | ------------- |------------- |------------- |------------- |------------- |------------| 
 |TANDA-ROberta|0.943|0.974|TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|2019|https://arxiv.org/pdf/1911.04118.pdf |https://github.com/alexa/wqa_tanda |
-|BERT-RNN|0.872|0.899|BAS: An Answer Selection Method Using BERT Language Model
-|https://arxiv.org/ftp/arxiv/papers/1911/1911.01528.pdf |-|
+|BERT-RNN|0.872|0.899|BAS: An Answer Selection Method Using BERT Language Model|https://arxiv.org/ftp/arxiv/papers/1911/1911.01528.pdf |-|
 |Comp-Clip + LM + LC|0.868|0.928|A Compare-Aggregate Model with Latent Clustering for Answer Selection|2019|https://paperswithcode.com/paper/a-compare-aggregate-model-with-latent | -|
 
 - [**QNLI**](https://gluebenchmark.com/tasks)：SQuAD数据集的修改版本，允许进行答案选择任务。SQuAD中的上下文段落被分成句子，每个句子都与问题配对。当句子包含答案时，将为问题句子对提供真正的标签。有86,308 / 10,385个问题和428,998 / 169,435个问题/答案对。
