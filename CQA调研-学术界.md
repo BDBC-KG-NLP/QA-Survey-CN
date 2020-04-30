@@ -66,13 +66,15 @@ Q为问题数目总量。
 - [**MRPC**](https://www.microsoft.com/en-us/download/details.aspx?id=52398&from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fdownloads%2F607d14d9-20cd-47e3-85bc-a2f65cd28042%2Fdefault.aspx)：MRPC是Microsoft Research Paraphrase 
 Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及指示每对是否捕获释义​​/语义对等关系的人工标注。  
 
-| Method  | ACC|论文题目|年份|论文链接|code|
+| Method  | ACC | 论文题目 | 年份 | 论文链接 | code |
+| ------------- | ------------- |------------- |------------- |------------- |------------- |  
 |ALBERT|94.0%|ALBERT: A Lite BERT for Self-supervised Learning of Language Representations|2020|https://arxiv.org/pdf/1909.11942v6.pdf |https://github.com/google-research/ALBERT |
 |StructBERT|93.9%|StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding|2019|https://arxiv.org/abs/1908.04577 | - |
 |ERNIE2.0|93.5%|ERNIE 2.0: A Continual Pre-training Framework for Language Understanding|2019|https://arxiv.org/abs/1907.12412v1   |https://github.com/PaddlePaddle/ERNIE |
 
 - [**LCQMC**](http://icrc.hitsz.edu.cn/info/1037/1146.htm):百度发布的一个大型中文问题匹配数据集，数据来自百度知道。每条数据为两个问题和它们的相似性标签（用1/0代表相似/不相似)。  
-| Method  | ACC|论文题目|年份|论文链接|code|
+
+| Method  | ACC | 论文题目 | 年份 | 论文链接 | code |
 |ERNIE2.0|87.9%|ERNIE 2.0: A Continual Pre-training Framework for Language Understanding|2019|https://arxiv.org/abs/1907.12412v1   |https://github.com/PaddlePaddle/ERNIE |
 |ERNIE1.0|87.4%|ERNIE: Enhanced Representation through Knowledge Integration|https://arxiv.org/abs/1904.09223 |https://github.com/PaddlePaddle/ERNIE |
 |BERT|87.0%|BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding|https://arxiv.org/abs/1810.04805 |https://github.com/google-research/bert |
@@ -86,7 +88,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 |RE2|0.7452|0.7618|Simple and Effective Text Matching with Richer Alignment Features|2019|https://www.aclweb.org/anthology/P19-1465/ |https://github.com/alibaba-edu/simple-effective-text-matching |
 
 - [**TRECQA**](https://trec.nist.gov/data/qa.html)从TRECQA8-13的数据中搜集整理的数据集，从每个问题的文档库中自动选择候选答案。该数据集是答案句子选择使用最广泛的基准之一。  
-| Method  | MAP|MRR |论文题目|年份|论文链接|code|
+| Method  | MAP| MRR | 论文题目 | 年份 | 论文链接 | code |
 | ------------- | ------------- |------------- |------------- |------------- |------------- |
 |TANDA-ROberta|0.943|0.974|TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|2019|https://arxiv.org/pdf/1911.04118.pdf |https://github.com/alexa/wqa_tanda |
 |BERT-RNN|0.872|0.899|BAS: An Answer Selection Method Using BERT Language Model
@@ -94,7 +96,8 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 |Comp-Clip + LM + LC|0.868|0.928|A Compare-Aggregate Model with Latent Clustering for Answer Selection|2019|https://paperswithcode.com/paper/a-compare-aggregate-model-with-latent | -|
 
 - [**QNLI**](https://gluebenchmark.com/tasks)：SQuAD数据集的修改版本，允许进行答案选择任务。SQuAD中的上下文段落被分成句子，每个句子都与问题配对。当句子包含答案时，将为问题句子对提供真正的标签。有86,308 / 10,385个问题和428,998 / 169,435个问题/答案对。
-| Method  | ACC|论文题目|年份|论文链接|code|
+
+| Method  | ACC | 论文题目 | 年份 | 论文链接 | code |
 | ------------- | ------------- |------------- |------------- |------------- |------------- |
 |ALBERT|99.2%|ALBERT: A Lite BERT for Self-supervised Learning of Language Representations|2020|https://arxiv.org/pdf/1909.11942v6.pdf |https://github.com/google-research/ALBERT |
 |Roberta|98.9%|RoBERTa: A Robustly Optimized BERT Pretraining Approach|2019|https://arxiv.org/pdf/1907.11692v1.pdf |https://github.com/huggingface/transformers |
@@ -386,3 +389,4 @@ ERNIE2.0构建了多个预训练任务，试图从 3 个层面去更好的理解
 [ERNIE及ERNIE 2.0论文笔记](https://www.ramlinbird.com/2019/08/06/ernie%E5%8F%8Aernie-2-0%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/)
 [论文笔记-Multi-cast Attention Networks](https://panxiaoxie.cn/2018/11/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-Multi-cast-Attention-Networks/)
 [文本匹配论文笔记](http://pelhans.com/2019/10/30/text_matching/)
+[常见文本相似度计算方法简介](https://zhuanlan.zhihu.com/p/88938220)
