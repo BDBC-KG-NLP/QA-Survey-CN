@@ -115,21 +115,25 @@
 
 #### 1.4.1 CCKS2019
 
-| 名次 | 队伍                 | F1      |
-| ---- | -------------------- | ------- |
-| 1    | jchl                 | 0.70688 |
-| 2    | hlt217               | 0.70412 |
-| 3    | 网易互娱AIlab-陈垚鑫 | 0.67230 |
-| 4    | 别理我               | 0.66390 |
+| 名次 | 队伍                           | F1      | 论文链接                                                     | 参考解读/源代码                                       |
+| ---- | ------------------------------ | ------- | ------------------------------------------------------------ | ----------------------------------------------------- |
+| 1    | jchl (百度智珠尹存祥团队)      | 0.73545 | [混合语义相似度的中文知识图谱问答系统](https://conference.bj.bcebos.com/ccks2019/eval/webpage/pdfs/eval_paper_6_1.pdf) |                                                       |
+| 2    | hlt217 (SUDA-HUAWEI)           | 0.73075 | [Combining Neural Network Models with Rules for Chinese Knowledge Base Question Answering](https://conference.bj.bcebos.com/ccks2019/eval/webpage/pdfs/eval_paper_6_2.pdf) |                                                       |
+| 3    | 网易互娱AIlab-陈垚鑫           | 0.72514 |                                                              |                                                       |
+| 4    | baseline (平安人寿AI-FudanSDS) | 0.70448 | [Multi-Module System for Open Domain Chinese Question Answering over Knowledge Base](https://conference.bj.bcebos.com/ccks2019/eval/webpage/pdfs/eval_paper_6_3.pdf) | https://zhuanlan.zhihu.com/p/92317079                 |
+| 5    | DUTIR                          | 0.67683 | [DUTIR中文开放域知识库问答评测报告](https://conference.bj.bcebos.com/ccks2019/eval/webpage/pdfs/eval_paper_6_4.pdf) | https://github.com/duterscmy/ccks2019-ckbqa-4th-codes |
 
 #### 1.4.2 CCKS2018
 
-| 名次 | 队伍          | F1      |
-| ---- | ------------- | ------- |
-| 1    | Keenpower     | 0.66609 |
-| 2    | KPQA          | 0.66359 |
-| 3    | zhanghualiang | 0.57666 |
-| 4    | LEQA          | 0.57666 |
+| 名次 | 队伍          | F1      | 论文链接                                                     | 参考解读/源代码                         |
+| ---- | ------------- | ------- | ------------------------------------------------------------ | --------------------------------------- |
+| 1    | Keenpower     | 0.66609 | [A QA search algorithm based on the fusion integration of text similarity and graph computation⋆](http://ceur-ws.org/Vol-2242/paper13.pdf) | https://github.com/songlei1994/ccks2018 |
+| 2    | KPQA          | 0.66359 |                                                              |                                         |
+| 3    | zhanghualiang | 0.57666 |                                                              |                                         |
+| 4    | LEQA          | 0.57666 | [A Joint Model of Entity Linking and Predicate Recognition for Knowledge Base Question Answering](http://ceur-ws.org/Vol-2242/paper14.pdf) |                                         |
+| 5    | xiehe         | 0.57266 |                                                              |                                         |
+| 6    | huawencai     | 0.57051 |                                                              |                                         |
+| 7    | COINQA        | 0.56930 | [Semantic Parsing for Multiple-relation Chinese Question Answering](http://ceur-ws.org/Vol-2242/paper15.pdf) |
 
 
 
