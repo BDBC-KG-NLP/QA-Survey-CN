@@ -11,7 +11,7 @@
     * [2.1. 基于词频的方法](#21-基于词频的方法)
     * [2.2. 基于语义的方法](#22-基于语义的方法)
        * [2.2.1. 基于表示的方法](#221-基于表示的方法)
-       * [2.2.2. 基于交互的方法](#222-基于交互的方法)
+       * [2.2.2. 基于比较的方法](#222-基于比较的方法)
     * [2.3. 训练方法](#23-训练方法)
        * [2.3.1 Pointwise方法](#231-Pointwise方法)
        * [2.3.2 Pairwise方法](#232-Pairwise方法)
@@ -166,9 +166,9 @@ QA-LSTM模型采用双向长期短期记忆（biLSTM）网络和池化层来独�
 训练方法：loss的计算公式如下  
 L = max{0, M − cosine(q, a+) + cosine(q, a−)}
 其中a+为正确答案，a-为错误答案
-![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/基于表示的方法.png)
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/基于表示的方法.png" ></div>  
 
-#### 2.2.2 基于交互的方法
+#### 2.2.2 基于比较的方法
 基于比较的方法通常比较输入句子的较小单位（例如单词），然后将比较结果汇总（例如，通过CNN或RNN），以做出最终决定。与基于表示的方法相比，基于比较的方法可以捕获输入句子之间的更多交互功能，因此在对TrecQA等公共数据集进行评估时，通常具有更好的性能。下图显示了来自《Bilateral Multi-Perspective Matching for Natural Language Sentences》一个典型的基于比较的方法的模型。该模型包括以下五层。  
 1. 单词表示层（Word Representation Layer）  
 该层的目标是用d维向量表示输入句子中的每个单词。BiMPM构造具有两个分量的d维向量：一个字符组成的嵌入和一个预先用GloVe或word2vec训练的词嵌入。  
@@ -180,7 +180,7 @@ L = max{0, M − cosine(q, a+) + cosine(q, a−)}
 该层的目标是汇总来自上一层的比较结果。 BiMPM使用另一个BiLSTM将匹配向量的两个序列聚合为固定长度向量。  
 5. 预测层（Prediction Layer）  
 该层的目标是做出最终预测。 BiMPM使用两层前馈神经网络来消耗前一层的固定长度矢量，并应用softmax函数获得最终分数。  
-![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/基于比较的方法.png)
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/基于比较的方法.png" ></div>  
 
 #### 2.2.3 基于预训练的方法  
 近年来，随着Bert等预训练模型的出现，由于其在大规模的语料库上进行过训练，所以能捕捉到更多的语义信息。近期社区问答领域效果最好的模型通常都采用了基于预训练的方法。这种方法通常将社区问答任务作为一个二分类任务（相似/不相似）来解决，通过[cls]标记将两个句子拼接作为模型的输入，输出为两者为相似的概率。  
@@ -189,7 +189,7 @@ L = max{0, M − cosine(q, a+) + cosine(q, a−)}
 首先将查询和每一个候选文档一起作为Bert模型的输入，开始加入[CLS]标记。查询和文档之间加入[SEP]标记。利用BPE算法等进行分词，得到Bert模型的输入特征向量。  
 2. 相似度计算：  
 将特征向量输入Bert后，经计算将得到BERT的输出（句子中每个词的向量表示），取[CLS]  标记的向量表示，通过一个单层或多层的线性神经网络，得到两个文档的相似度得分（相似的概率)。  
-![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/基于预训练的方法.png)
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/基于预训练的方法.png" ></div>  
 
 ### 2.3 训练方法
 基于语义的方法的训练方法通常可以分为pointwise，pairwise，listwise三种  
@@ -305,7 +305,7 @@ listwise 类存在的主要缺陷是：一些排序算法需要基于排列来�
 **模型**  
 1. ARC-I  
 模型结构如下图所示
-![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ARC-I.jpg)
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ARC-I.jpg" ></div>  
 比较经典的基于表示的匹配模型结构，对于查询和文档分别进行特征提取得到固定维度的向量，而后用MLP进行聚合和分类。因此重点是CNN的用法：
 - 运用了多层卷积+pooling的方法
 - 卷积操作采用窗口宽度为k1的卷积核，采用宽度为2的max-pooling提取特征，max-pooling可以提取最重要的特征，进而得到查询和文档的表示。
@@ -313,7 +313,7 @@ listwise 类存在的主要缺陷是：一些排序算法需要基于排列来�
 - 虽然多层 CNN 的堆叠通过感受野的扩张可以得一定的全局信息，但对于序列信息还是不敏感。对语义依赖强的任务效果一般。
 
 2. ARC-II
-![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ARC-II.jpg)
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ARC-II.jpg" ></div>  
 ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维卷积提取特征，而后用多层二维卷积 + 池化进行计算，最终输入 MLP进行分类。下面介绍卷积层的具体做法：
 - 先构建矩阵，假设查询的长度为m，嵌入维度为H，文档长度为n，嵌入维度为H。则矩阵中每个元素是查询中的第i个词向量与 文档中第j个词向量进行拼接得到的向量。因此矩阵的维度是 [m, n, 2H] 。
 - 用1维卷积进行扫描。通过这种方式即可以得到查询和文档间的匹配关系，还保留了语义和位置信息。
@@ -325,7 +325,7 @@ ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维�
 
 >《DRr-Net: Dynamic Re-read Network for Sentence Semantic Matching》
 
-![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/dr-net.png)
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/dr-net.png" ></div>  
 **介绍**  
 语义匹配一直是一项十分重要的任务，目前，注意力机制大大提升了语义匹配的效果。不过过去的注意力机制通常是一次性关注所有关键词，而人类阅读过程中对关键词的注意往往是变化的。为此，本文提出了一种动态关注关键词的模型  
 **模型**  
@@ -357,11 +357,11 @@ ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维�
 通过两个句子encoder输出的差，点积和拼接等，通过线性变换得到新的表示。  
 
 **总结**  
-本文充分结合了基于表示的模型和基于交互的模型的特点，没有选择去尝试复杂的神经网络结构，仅仅通过多层的简单结构，就在自然语言推理，意图识别，答案选择三种任务上取得了最好的效果。
+本文充分结合了基于表示的模型和基于比较的模型的特点，没有选择去尝试复杂的神经网络结构，仅仅通过多层的简单结构，就在自然语言推理，意图识别，答案选择三种任务上取得了最好的效果。
 
 > 《TANDA: Transfer and Adapt Pre-Trained Transformer Models》
 
-![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/bert.png)
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/bert.png" ></div>  
 
 **介绍**   
 这篇文章主要是通过利用预训练模型来解决答案选择任务。本文提出了一种用于自然语言任务的预训练变换模型精调的有效技术-TANDA( Transfer AND Adapt)。为解决答案选择问题的数据稀缺性问题和精调步骤的不稳定性提供了有效的解决方案。  
@@ -387,13 +387,14 @@ ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维�
 
 **总结**  
 基于上述的这3个设计，ALBERT能够扩展为更大的版本，在参数量仍然小于BERT-large的同时，性能可以显著提升。本文在GLUE、SQuAD 和 RACE 这3个自然语言理解基准测试上都刷新了记录：在 RACE 上的准确率为 89.4%，在 GLUE 上的得分为 89.4，在 SQuAD2.0上的 F1 得分为 92.2。
-![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ALBERT.png)
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ALBERT.png" ></div>  
 
-> 《ERNIE 2.0: A Continual Pre-training Framework for Language Understanding》
+> 《ERNIE 2.0: A Continual Pre-training Framework for Language Understanding》  
+
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ERNIE2.0.png" ></div>  
 
 **介绍**  
-在ERNIE1.0中，通过将BERT中的随机masking改为实体或短语级别（entity or phrase）的masking，使得模型能够从中学习到更多句法语义知识，在许多中文任务上取得SOTA。ERNIE2.0是对ERNIE1.0的一种改进模型，它提出了一种基于持续学习的语义理解预训练框架，使用多任务学习增量式构建预训练任务。ERNIE2.0中，新构建的预训练任务类型可以无缝的加入训练框架，持续的进行语义理解学习。 通过新增的实体预测、句子因果关系判断、文章句子结构重建等语义任务，ERNIE 2.0 语义理解预训练模型从训练数据中获取了词法、句法、语义等多个维度的自然语言信息，极大地增强了通用语义表示能力。
-！[image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ERNIE2.0.png)
+在ERNIE1.0中，通过将BERT中的随机masking改为实体或短语级别（entity or phrase）的masking，使得模型能够从中学习到更多句法语义知识，在许多中文任务上取得SOTA。ERNIE2.0是对ERNIE1.0的一种改进模型，它提出了一种基于持续学习的语义理解预训练框架，使用多任务学习增量式构建预训练任务。ERNIE2.0中，新构建的预训练任务类型可以无缝的加入训练框架，持续的进行语义理解学习。 通过新增的实体预测、句子因果关系判断、文章句子结构重建等语义任务，ERNIE2.0语义理解预训练模型从训练数据中获取了词法、句法、语义等多个维度的自然语言信息，极大地增强了通用语义表示能力。  
 
 **模型**  
 ERNIE2.0构建了多个预训练任务，试图从 3 个层面去更好的理解训练语料中蕴含的信息：
@@ -417,16 +418,23 @@ ERNIE2.0构建了多个预训练任务，试图从 3 个层面去更好的理解
 
 ## 4. 相关资料
 
+[社区问答之QA匹配问题探索](http://skyhigh233.com/blog/2018/04/26/cqa-intro/)  
+[社区问答系统精准匹配信息和人，满足你对获取知识的迫切需求](https://www.jiqizhixin.com/articles/2019-02-19-10)  
+[Community Question Answer分享](https://zhuanlan.zhihu.com/p/37216096)  
+[Community Question Answering | MIT CSAIL](https://www.csail.mit.edu/research/community-question-answering)  
+[Question Answering-Paper with code](https://paperswithcode.com/task/question-answering)  
+[自动问答之《社区问答技术调查》](https://www.cnblogs.com/szxspark/p/8424884.html)  
+[《基于社区问答的对话式问答系统研究与实现》](https://gb-oversea-cnki-net.e2.buaa.edu.cn/KCMS/detail/detail.aspx?filename=1018813345.nh&dbcode=CMFD&dbname=CMFDREF)  
 [2020问答系统（QA）最新论文、书籍、数据集、竞赛、课程资源分析](https://zhuanlan.zhihu.com/p/98688910)  
 [Awesome Neural Models for Semantic Match](https://github.com/NTMC-Community/awesome-neural-models-for-semantic-match)  
 [《A Review on Deep Learning Techniques Applied to Answer Selection》](https://www.aclweb.org/anthology/C18-1181)  
 [用BERT做语义相似度匹配任务：计算相似度的方式](https://www.cnblogs.com/shona/p/12021304.html)  
 [自然语言处理中N-Gram模型介绍](https://zhuanlan.zhihu.com/p/32829048)  
 [搜索中的权重度量利器: TF-IDF和BM25](https://my.oschina.net/stanleysun/blog/1617727)  
-[《基于社区问答的对话式问答系统研究与实现》](https://gb-oversea-cnki-net.e2.buaa.edu.cn/KCMS/detail/detail.aspx?filename=1018813345.nh&dbcode=CMFD&dbname=CMFDREF)
-[Learning to rank基本算法小结](https://zhuanlan.zhihu.com/p/26539920)
-[文献阅读笔记-ALBERT ： A lite BERT for self-supervised learning of language representations](https://blog.csdn.net/ljp1919/article/details/101680220)
-[ERNIE及ERNIE 2.0论文笔记](https://www.ramlinbird.com/2019/08/06/ernie%E5%8F%8Aernie-2-0%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/)
-[论文笔记-Multi-cast Attention Networks](https://panxiaoxie.cn/2018/11/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-Multi-cast-Attention-Networks/)
-[文本匹配论文笔记](http://pelhans.com/2019/10/30/text_matching/)
-[常见文本相似度计算方法简介](https://zhuanlan.zhihu.com/p/88938220)
+[Learning to rank基本算法小结](https://zhuanlan.zhihu.com/p/26539920)  
+[文献阅读笔记-ALBERT ： A lite BERT for self-supervised learning of language representations](https://blog.csdn.net/ljp1919/article/details/101680220)  
+[ERNIE及ERNIE 2.0论文笔记](https://www.ramlinbird.com/2019/08/06/ernie%E5%8F%8Aernie-2-0%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/)  
+[论文笔记-Multi-cast Attention Networks](https://panxiaoxie.cn/2018/11/04/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-Multi-cast-Attention-Networks/)  
+[文本匹配论文笔记](http://pelhans.com/2019/10/30/text_matching/)  
+[常见文本相似度计算方法简介](https://zhuanlan.zhihu.com/p/88938220)  
+
