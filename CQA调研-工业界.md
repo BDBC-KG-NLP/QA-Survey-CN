@@ -42,9 +42,12 @@
   - **人工标注关联度的方法**：从事技术转移工作的专职工作人员，阅读技术需求文本和技术成果文本，根据个人经验予以标注。关联度分为四个层级：强相关、较强相关、弱相关、无相关。
 - **数据具体说明**：https://www.datafountain.cn/competitions/359/datasets
 - **评价指标**：使用MAE系数
-  - 平均绝对差值是用来衡量模型预测结果对标准结果的接近程度一种衡量方法.MAE的值越小，说明预测数据与真实数据越接近。==此处是MAE图片==
-  - 最终结果越接近1分数越高.==此处是score图片==
-
+  - 平均绝对差值是用来衡量模型预测结果对标准结果的接近程度一种衡量方法.MAE的值越小，说明预测数据与真实数据越接近。
+ 
+  <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-MAE.png  width=200 alt=MAE公式></div>
+  <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-score.png  width=180 alt=最终结果></div>
+  - 最终结果越接近1分数越高。
+  
 
 - **top1方案及结果**
   - 解决方案：https://www.sohu.com/a/363245873_787107 
@@ -215,9 +218,11 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
 
 #### 2.2.2 深度学习多分类模型（CNN\DNN\LSTM\…）
 
-问答匹配任务在大多数情况下可以转化为二分类或多分类任务。神经网络中会有两大输入，左边N会输入结构化数据，比如个人属性以及浏览操作历史纪录，右边V会输入一些非结构化数据，比如前几轮问的问题和序列，对于这些非结构化的数据我们会有句子编码器解析这些数据，当需要考虑到句子的语序关系的时候会使用CNN或者RNN网络结构；上层的话，会结合用户的Embedding和句子的Embedding去输出。但是工业真正的场景中，用户问题的问题个数是不固定的，所以会把最后一层Softmax更改为多个二分类模型。模型图如下：
+- 问答匹配任务在大多数情况下可以转化为二分类或多分类任务。
+- 神经网络中会有两大输入，左边N会输入结构化数据，比如个人属性以及浏览操作历史纪录，右边V会输入一些非结构化数据，比如前几轮问的问题和序列，对于这些非结构化的数据我们会有句子编码器解析这些数据，当需要考虑到句子的语序关系的时候会使用CNN或者RNN网络结构；上层的话，会结合用户的Embedding和句子的Embedding去输出。
+- 工业真正的场景中，用户问题的问题个数是不固定的，所以会把最后一层Softmax更改为多个二分类模型。模型图如下：
 
-![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640.jpeg)
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640.jpeg  width=650 alt=ESIM></div>
 
 #### 2.2.3 基于Siamese networks神经网络架构
 - Siamese networks(孪生神经网络)是一种相似性度量方法，内部采用深度语义匹配模型（DSSM，Deep Structured Semantic Model），该方法在检索场景下使用点击数据来训练语义层次的匹配。
@@ -230,7 +235,8 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
 - **原理**
     - 先把 query 和 document 转换成 BOW 向量形式，然后通过 word hashing 变换做降维得到相对低维的向量，feed给 MLP 网络，输出层对应的低维向量就是 query 和 document 的语义向量（假定为 Q 和 D）。计算(D, Q)的余弦相似度后，用 softmax 做归一化得到的概率值是整个模型的最终输出，该值作为监督信号进行有监督训练。
 - **模型结构**：
-    - ==此处插入图==
+
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-DSSM.png  width=650 alt=DSSM></div>
 
 ##### Siamese LSTM 模型
 - 解读链接：https://zhuanlan.zhihu.com/p/48188731
@@ -245,7 +251,8 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
     - 1.**问题的语义表示向量抽取**： 通过LSTM完成，在问题1和问题2的对称网络中，这部分LSTM共享权重。
     - 2.**语义向量相似性计算**：计算语义表示向量的平方距离和角度，再喂给多层感知机MLP进行分类。
     - 模型如下所示
-    - ==此处插入图==
+    
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-siamese%20LSTM.png    width=500 alt=CQA-industry-siamese LSTM 模型></div>
 
 ##### Siamese CNN 模型
 - 思想：使用不同大小卷积窗口的filter来抽取句子中各种长度元组的信息，然后再计算相似度。
@@ -260,7 +267,7 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
     - 由输入编码，局部推理模型和推断合成三部分构成。
     - 模型使用了双向LSTM，并引入attention机制。
     - 模型如下所示
-    - ==此处插入图==
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-ESIM.png  width=300 alt=ESIM></div>
 
 #### 2.2.4 Interaction-based networks
 
@@ -273,23 +280,28 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
 
 模型从单词层面去分析文本，其整体思路是首先利用IR模型从知识库中检索到k个候选QA对，再利用rerank模型的打分机制计算出每个候选答案和问题的匹配程度。如果得分最高的那个大于预设好的阈值，就将其当作答案，如果小于阈值，就用生成模型生成答案。整个方法分为四个模块，顶层结构如图：
 
-![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6cOekP4HJyhRicF38UtiaIf8EtqgNcQRPVuNmZnXfpmCqDcMHCSKP98WA.jpeg)
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6cOekP4HJyhRicF38UtiaIf8EtqgNcQRPVuNmZnXfpmCqDcMHCSKP98WA.jpeg  width=650 alt=ESIM></div>
+
 1. QA知识库 
 本文从在线的真人用户服务log里提取问答对作为QA知识库。过滤掉不包含相关关键词的QA，最后得到9164834个问答对。 
 2. IR模块 
 利用倒排索引的方法将每个单词隐射到包含这个单词的一组问句中，并且对这些单词的同义词也做了索引，然后利用BM25算法来计算搜索到的问句和输入问句的相似度，取最相似问句的答案。 
 3. 生成模型 
 生成模型是一个attentive seq2seq的结构，如图所示：
-![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6UGKxwDMRMZkvYpGOufORwO3vAL6cf2kn1jQic8GwMrMkOLkSNiaGcOCg.jpeg)
+
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6UGKxwDMRMZkvYpGOufORwO3vAL6cf2kn1jQic8GwMrMkOLkSNiaGcOCg.jpeg  width=550 alt=ESIM></div>
+
 采用了一个 GRU，由 question 生成 answer，计算生成单词的概率：
 
-![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6gRsb5ZYlGo7icicLJicXccguPeiaQxzicReicTV3iaJrWVkEH1Zz901MtQ20w.png)
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6gRsb5ZYlGo7icicLJicXccguPeiaQxzicReicTV3iaJrWVkEH1Zz901MtQ20w.png  width=400 alt=ESIM></div>
 
 其中加了 context 向量，他是由图中的 α 求得的，α 表示的是当前步的输入单词，和上一步的生成单词之间的匹配度，用了一个 alignment 模型计算。需要注意的一点是，对于各个 QA 长度不等的情况，采用了 bucketing 和 padding 机制。另外用了 softmax 来随机采样词汇表中的单词，而不使用整个词汇表，从而加速了训练过程。还是用了 beam search decoder，每次维护 top-k 个输出，来取代一次一个输出的贪心搜索。
 
 4. rerank 模块
 使用的模型和上面是一样的，根据输入问题来为候选答案打分，使用平均概率作为评分函数:
-![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6NDcGIMlGicRkD1jQsKfR57W4ov5iar0lJf2RZ54f4csCL1qhkAW8OG4A.png)
+
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/VBcD02jFhgkDdMnpz4O4ByPrUWVcT3N6NDcGIMlGicRkD1jQsKfR57W4ov5iar0lJf2RZ54f4csCL1qhkAW8OG4A.png  width=300 alt=ESIM></div>
+
 ### 2.4 用于机器阅读理解的方法
 机器阅读理解(Machine Reading)是指计算机对文本进行自动地、无监督地提取信息的过程，从而让计算机具备通过文本数据获取知识和回答问题的能力。研究者们相信这是NLP领域的一个重要分支，同时也是进一步发展人工植呢的一个关键步骤。机器阅读理解的应用领域非常广泛，包括在电商促销期间阅读大量活动规则并回答用户疑虑，阅读法律条文并向公众科普法律知识等等。机器阅读理解相比于人类的优势在于速度和实效性，同时经过了多年的发展在准确率方面已经和人类不分伯仲。
 Machine Reading步骤：
@@ -307,12 +319,15 @@ Machine Reading步骤：
 
 下图是其中一种阅读理解的模型图(来自阿里小蜜)：
 
-![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/Screen%20Shot%202020-04-29%20at%202.46.13%20PM.png)
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/Screen%20Shot%202020-04-29%20at%202.46.13%20PM.png width=600 alt=ESIM></div>
+
+
 ### 2.5 用于跨领域迁移学习方法
 迁移学习的模型有两类，一种是unsupervised，另外一种是supervised。前者假设完全没有目标领域的标注数据，后者假设仅有少部分目标领域的标注数据。在实际的商业应用中主要以supervised的迁移学习技术为主，同时结合深度神经网络（DNN）。在这个设定下主要有两种框架：
 - Fully-Shared Model:用于比较相似的两个领域。
 - Specific-Shared Model: 用于相差较大的两个领域。
-![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/Screen%20Shot%202020-04-20%20at%207.36.26%20PM.png)
+
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/Screen%20Shot%202020-04-20%20at%207.36.26%20PM.png width=650 alt=ESIM></div>
 
 ## 3 产品案例
 ### 产品1: YiBot
@@ -385,25 +400,25 @@ Machine Reading步骤：
 
 第一个是新的设计思路：将原来以 Intent 为中心的设计思路转变为以 Dialog 为中心的设计思路。第二个是新的开发模式：从原先表单开发方式转变为可视化拖拽式开发。第三个是 End-to-End AI-Powered：从原来只提供单点的 NLU、DM 模型 AI 赋能方式转变为 End-to-End AI-Powered 平台，在整个生命周期的各个阶段都会用 AI 来赋能开发者。基于这样的想法，阿里的团队打造了对话工厂（Dialog Studio）这个产品，属于小蜜机器人解决方案中的一个核心基础能力，该产品已经嵌入到小蜜家族（阿里小蜜，店小蜜，钉钉小蜜，云小蜜等）的各个平台中，支持了包括阿里电商，电信，政务，金融，教育等领域的各个场景的对话机器人业务。这就是为什么要做一个平台型对话机器人产品的初衷。
 
-![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640-4.jpeg)
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640-4.jpeg width=650 alt=ESIM></div>
 
-下面针对这三点进行具体介绍：
+- 下面针对这三点进行具体介绍：
 
-1. 从 Intent 为中心到以 Dialog 为中心
+  - 1. 从 Intent 为中心到以 Dialog 为中心
 以 Intent 为中心的方式每次要创建单个的意图，如果遇到一个复杂场景，需要创建很多个意图堆积在一起，每次开发只能看到当前正在创建的意图，因为该技术起源于原来的 Slot Filling 方式，只能解决简单的，Slot Filling 这种任务形式对话，任务场景比较受限。而以 Dialog 为中心的设计思路，把人机对话过程通过图的方式展现出来，对话步骤用图上的节点进行抽象，开发者在设计对话流的时候，这种方式能提供一个全局的视野，而且图的节点抽象比较底层，可以进行各种任务的配置，适用场景比较广泛。
 
-![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640-3.jpeg)
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640-3.jpeg width=650 alt=ESIM></div>
 
-2. 从表单式开发到可视化拖拽式开发
+  - 2. 从表单式开发到可视化拖拽式开发
 在开发模式上将原来的表单式开发方式变成了可视化拖拽式开发方式。原来表单式开发方式以 Intent 为中心，所以对于开发者来说更像做一道一道表单填空题，只能单点控制，整个对话流程非常不直观，所有 Intent 压缩在一个表单，填写复杂。在可视化拖拽方式中，整个对话流过程的每一个节点都可以通过简单拖拽方式进行完整描述，拥有全局视野，整体可控。
 
-![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640-2.jpeg)
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640-2.jpeg width=650 alt=ESIM></div>
 
-3. 从单点模型到全生命周期 AI-Powered
+  - 3. 从单点模型到全生命周期 AI-Powered
 
 第三点是从原来单点 NLU、DM 模型到全生命周期 AI-Powered，在对话机器人开发的各个阶段都利用了 AI 算法能力赋能开发者，加速开发过程和降低开发成本。在设计阶段尝试了半自动对话流设计辅助，让开发者从冷启动阶段就能够设置出第一版的对话流。在对话流的构建阶段，我们推出了智能荐句功能，也就是说在编写用户话术的时候，机器人可以进行话术推荐和联想。在测试阶段，我们推出了机器人诊断机器人功能，可以大大减少测试的工作量，增速测试过程。在在线服务阶段，会有全套的 AI-Powered 对话引擎，包括 NLU、DM 等算法。在数据回流阶段，通过 Active Learning 将日志数据进行自动标注，用于后续模型迭代训练。在持续学习阶段，我们构建了一套完整自动模型训练、评测、发布 Pipeline，自动提升线上机器人效果。
 
-![image](https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640.jpeg)
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640.jpeg width=650 alt=ESIM></div>
 
 **阿里小蜜的核心算法之一：自然语言理解(NLU)方法**
 
@@ -414,19 +429,10 @@ Machine Reading步骤：
 ## 4 问题难点及未来研究的方向
 
 ## 5 相关资料
+
 - [阿里小蜜新一代智能对话开发平台技术解析](https://mp.weixin.qq.com/s?__biz=MzU1NTMyOTI4Mw==&mid=2247494321&idx=1&sn=7f58bafd7f1962e17f3162ef0917c431&chksm=fbd758ddcca0d1cb19c452c40697c816f788d29b90af4f703a0fc776897f80b087d0a3bc885a&scene=27#wechat_redirect)
-- [阿里小蜜：知识结构化推动智能客服升级](https://mp.weixin.qq.com/s/x9CkAyLKgLj7E7K1F2Q6iA)
 - [阿里云小蜜对话机器人背后的核心算法](https://mp.weixin.qq.com/s/ksVbQq42ay5lxcfqNwBgxA)
-- [大中台、小前台，阿里小蜜这样突破对话机器人发展瓶颈](https://www.infoq.cn/article/8cN5eZ6Bgg*CWM5z5jYr)
-- [机器如何猜你所想？阿里小蜜预测平台揭秘](https://mp.weixin.qq.com/s/L5yNtibL-D9Rv9hd-WLN3g)
 - [阿里小蜜：智能服务技术实践及场景探索](https://mp.weixin.qq.com/s/uzmcISuDbf7EkralufAKhA)
-- [云小蜜：在中国移动的落地实践](https://mp.weixin.qq.com/s/3ylhIZf7OyTu24WeynHzxA)
-- [阿里小蜜这一年，经历了哪些技术变迁？](https://zhuanlan.zhihu.com/p/33596423?utm_source=wechat_timeline&utm_medium=social&utm_oi=32105543237632&from=timeline)
-- [论文导读 | 阿里小蜜背后的技术秘密](https://mp.weixin.qq.com/s/2Y66uCi1qS0VTaizyCg3cA)
-- [拆开阿里小蜜的内核，看智能人机交互的实现逻辑](https://mp.weixin.qq.com/s/lmHWo9MUdv7ZMI7ARNmTSw)
-- [揭秘阿里小蜜：基于检索模型和生成模型相结合的聊天引擎 | PaperDaily #25](https://mp.weixin.qq.com/s/bzjRlFfh7tz4OWVpGnNPwQ)
 - [干货 | 阿里小蜜-电商领域的智能助理技术实践](https://mp.weixin.qq.com/s/eFm89Q_AMeYFTrJl4uLOgA)
-- [多语言阿里小蜜——七步构建跨越语言鸿沟的对话机器人](https://www.infoq.cn/article/1pUDF9_bdC523fwHJh02)
-- [阿里小蜜中的情绪回复能力](https://mp.weixin.qq.com/s?__biz=MzU1NTMyOTI4Mw==&mid=2247490526&idx=1&sn=4012fe053aeff0cd76b1aaa95421d06b&chksm=fbd4a9b2cca320a4018ed35b6b2f0a0cb21669198f28776cbb9cf4239eb6b86974a647643f4d&scene=21#wechat_redirect)
 - [阿里小蜜机器阅读理解技术揭秘](https://myslide.cn/slides/6148#)
 - [从学术前沿到工业领先：解密阿里小蜜机器阅读的实践之路](https://zhuanlan.zhihu.com/p/62217668)
