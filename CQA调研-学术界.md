@@ -29,6 +29,7 @@
 ![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/智能问答历史.png)
 #### 社区问答
 随着网络与信息技术的快速发展，网络上产生了海量信息，人们需要更加快速直接获取有用而准确地信息，推动问答系统的发展。根据系统处理的数据格式，问答系统又可以分为：基于结构化数据的问答系统、基于自由文本数据的问答系统、基于问题答案对数据的问答系统。其中基于问题答案对的问答系统主要分为两种，一种是利用各个公司或者组织在网站上提供的常用问题列表(FAQ)FAQ具有限定领域、质量高、组织好等优点，使得系统回答问题的水平大大提高，但FAQ的获取成本高，这个缺点又制约了基于FAQ的问答系统的应用范围。另一种便是利用问答社区中用户自己产生的问答对的社区问答系统（Community Question Answering, CQA）。随着问答社区的兴起，如 Yahoo!Answers， Quora，StackOverflow，百度知道和知乎等，一种新的问答形式开始大量出现。通过使用社区问答系统，人们不但可以发布问题进行提问以满足自己的信息需求，而且还可以回答其他用户提问的问题来分享自己的知识，让用户所拥有的隐性知识转化成显性知识。
+
 ![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/zhihu.png)
 
 ### 1.2. 任务定义
@@ -44,13 +45,13 @@
 - ACC:判断两个文档是否相似的准确率
 - P@1:判断排序第一的答案是否正确
 - MAP(Mean Average Precision): 评测整个排序的质量。  
-![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MAP1.svg)
+![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MAP1.svg)  
 其中R表示相关文档的总个数，position(r)表示，结果列表从前往后看，第r个相关文档在列表中的位置。比如，有三个相关文档，位置分别为1、3、6，那么AveP=1/3 * (1/1+2/3+3/6)。
-最后，MAP计算所有Query的平均准确率分数：
-![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MAP2.svg)
+最后，MAP计算所有Query的平均准确率分数：  
+![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MAP2.svg)  
 Q为问题数目总量。
-- MRR(Mean Reciprocal Rank)：是把标准答案在被评价系统给出结果中的排序取倒数作为它的准确度，再对所有的问题取平均  
-![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRR.svg)
+- MRR(Mean Reciprocal Rank)：是把标准答案在被评价系统给出结果中的排序取倒数作为它的准确度，再对所有的问题取平均    
+![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRR.svg)  
 
 ### 1.4. 数据集
 
@@ -63,14 +64,17 @@ Q为问题数目总量。
 |T5-11B|90.4%|Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer|2019|https://arxiv.org/pdf/1910.10683v2.pdf |https://github.com/google-research/text-to-text-transfer-transformer |
 |XLNet|90.3%|XLNet: Generalized Autoregressive Pretraining for Language Understanding|2019|https://arxiv.org/pdf/1906.08237v2.pdf |https://github.com/zihangdai/xlnet |
 
+
 - [**MRPC**](https://www.microsoft.com/en-us/download/details.aspx?id=52398&from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fdownloads%2F607d14d9-20cd-47e3-85bc-a2f65cd28042%2Fdefault.aspx)：MRPC是Microsoft Research Paraphrase 
 Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及指示每对是否捕获释义​​/语义对等关系的人工标注。  
+
 
 | Method  | ACC | 论文题目 | 年份 | 论文链接 | code |
 | ------------- | ------------- |------------- |------------- |------------- |------------- |  
 |ALBERT|94.0%|ALBERT: A Lite BERT for Self-supervised Learning of Language Representations|2020|https://arxiv.org/pdf/1909.11942v6.pdf |https://github.com/google-research/ALBERT |
 |StructBERT|93.9%|StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding|2019|https://arxiv.org/abs/1908.04577 | - |
 |ERNIE2.0|93.5%|ERNIE 2.0: A Continual Pre-training Framework for Language Understanding|2019|https://arxiv.org/abs/1907.12412v1   |https://github.com/PaddlePaddle/ERNIE |
+
 
 - [**LCQMC**](http://icrc.hitsz.edu.cn/info/1037/1146.html):百度发布的一个大型中文问题匹配数据集，数据来自百度知道。每条数据为两个问题和它们的相似性标签（用1/0代表相似/不相似)。  
 
@@ -79,6 +83,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 |ERNIE2.0|87.9%|ERNIE 2.0: A Continual Pre-training Framework for Language Understanding|2019|https://arxiv.org/abs/1907.12412v1   |https://github.com/PaddlePaddle/ERNIE |
 |ERNIE1.0|87.4%|ERNIE: Enhanced Representation through Knowledge Integration|https://arxiv.org/abs/1904.09223 |https://github.com/PaddlePaddle/ERNIE |
 |BERT|87.0%|BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding|https://arxiv.org/abs/1810.04805 |https://github.com/google-research/bert |
+
 
 #### QA匹配:
 - [**WikiQA**](https://www.microsoft.com/en-us/download/details.aspx?id=52419) :一组公开可用的问题答案对集合，由Microsoft Research收集和注释以用于开放域答案选择问题的研究。    
@@ -89,6 +94,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 |Comp-Clip + LM + LC|0.764|0.784|A Compare-Aggregate Model with Latent Clustering for Answer Selection|2019|https://paperswithcode.com/paper/a-compare-aggregate-model-with-latent | -|
 |RE2|0.7452|0.7618|Simple and Effective Text Matching with Richer Alignment Features|2019|https://www.aclweb.org/anthology/P19-1465/ |https://github.com/alibaba-edu/simple-effective-text-matching |
 
+
 - [**TRECQA**](https://trec.nist.gov/data/qa.html)从TRECQA8-13的数据中搜集整理的数据集，从每个问题的文档库中自动选择候选答案。该数据集是答案句子选择使用最广泛的基准之一。  
 
 | Method  | MAP| MRR | 论文题目 | 年份 | 论文链接 | code |  
@@ -96,6 +102,7 @@ Corpus的缩写。它包含从网络新闻源中提取的5,800对句子，以及
 |TANDA-ROberta|0.943|0.974|TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|2019|https://arxiv.org/pdf/1911.04118.pdf |https://github.com/alexa/wqa_tanda |
 |BERT-RNN|0.872|0.899|BAS: An Answer Selection Method Using BERT Language Model|https://arxiv.org/ftp/arxiv/papers/1911/1911.01528.pdf |-|
 |Comp-Clip + LM + LC|0.868|0.928|A Compare-Aggregate Model with Latent Clustering for Answer Selection|2019|https://paperswithcode.com/paper/a-compare-aggregate-model-with-latent | -|
+
 
 - [**QNLI**](https://gluebenchmark.com/tasks)：SQuAD数据集的修改版本，允许进行答案选择任务。SQuAD中的上下文段落被分成句子，每个句子都与问题配对。当句子包含答案时，将为问题句子对提供真正的标签。有86,308 / 10,385个问题和428,998 / 169,435个问题/答案对。
 
@@ -289,9 +296,9 @@ listwise 类存在的主要缺陷是：一些排序算法需要基于排列来�
 ### 3.2. 论文解读
 
 > 《Convolutional Neural Network Architectures for Matching Natural Language Sentences》
+
 *介绍*
 匹配模型需要对文本的表示以及它们之间的交互进行建模。之前的模型通常只考虑直接对查询和文档序列进行编码，并且没有考虑查询和文档间的交互作用。本论文针对这两个缺点，提取ARC-I和ARC-II两个模型。前者是基于表示的模型，利用CNN去提取文档特征再计算相似度。后者是基于匹配的模型，首先得到匹配矩阵再用CNN提取特征。
-
 *模型*
 1. ARC-I  
 模型结构如下图所示
@@ -310,6 +317,7 @@ ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维�
 - 对得到的结果用2维卷积进行处理，池化。池化层的宽度也为2，之后得到最终的表示。
 
 >《DRr-Net: Dynamic Re-read Network for Sentence Semantic Matching》
+
 ![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/dr-net.png)
 介绍：  
 语义匹配一直是一项十分重要的任务，目前，注意力机制大大提升了语义匹配的效果。不过过去的注意力机制通常是一次性关注所有关键词，而人类阅读过程中对关键词的注意往往是变化的。为此，本文提出了一种动态关注关键词的模型  
@@ -338,6 +346,7 @@ ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维�
 通过两个句子encoder输出的差，点积和拼接等，通过线性变换得到新的表示。
 
 > 《TANDA: Transfer and Adapt Pre-Trained Transformer Models》
+
 ![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/bert.png)
 *介绍*   
 这篇文章主要是通过利用预训练模型来解决答案选择任务。本文提出了一种用于自然语言任务的预训练变换模型精调的有效技术-TANDA( Transfer AND Adapt)。为解决答案选择问题的数据稀缺性问题和精调步骤的不稳定性提供了有效的解决方案。  
@@ -346,6 +355,7 @@ ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维�
 首先，使用 AS2 的大型通用数据集完成标准的精调处理。这个步骤应该将语言模型迁移到具体的答案选择任务。由于目标域的特殊性，所得到的模型在目标域的数据上无法达到最佳性能，此时采用第二个精调步骤使分类器适应目标域。
 
 > 《ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS》
+
 *介绍*：预训练模型通常通过增加模型大小来提升性能。但随着模型的规模越来越大，进一步增加模型大小将带来以下困难：(1)GPU/TPU内存不足(2)训练时间会更长(3)模型退化。  
 所以，为了解决上述这些问题，本文提出通过两种参数精简技术来降低内存消耗，并加快BERT的训练速度。此外，本文还引入一个自监督损失(self-supervised loss)，用于对句子连贯性(inter-sentence coherence)建模，并证明该损失函数能够提升多句子作为输入的下游任务的性能。本文所提出的模型ALBERT在 GLUE、RACE 和 SQuAD 这3个基准上都取得了新的SOTA结果，且参数量还少于 BERT-large。  
 *模型*  
@@ -358,6 +368,7 @@ ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维�
 ！[image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ALBERT.png)
 
 > 《ERNIE 2.0: A Continual Pre-training Framework for Language Understanding》
+
 *介绍*  
 在ERNIE1.0中，通过将BERT中的随机masking改为实体或短语级别（entity or phrase）的masking，使得模型能够从中学习到更多句法语义知识，在许多中文任务上取得SOTA。ERNIE2.0是对ERNIE1.0的一种改进模型，它提出了一种基于持续学习的语义理解预训练框架，使用多任务学习增量式构建预训练任务。ERNIE2.0中，新构建的预训练任务类型可以无缝的加入训练框架，持续的进行语义理解学习。 通过新增的实体预测、句子因果关系判断、文章句子结构重建等语义任务，ERNIE 2.0 语义理解预训练模型从训练数据中获取了词法、句法、语义等多个维度的自然语言信息，极大地增强了通用语义表示能力。
 ！[image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ERNIE2.0.png)
@@ -367,8 +378,9 @@ ERNIE2.0构建了多个预训练任务，试图从 3 个层面去更好的理解
 - Structure-aware Tasks: 语法 (syntactic) 级别信息的学习
 - Semantic-aware Tasks: 语义 (semantic) 级别信息的学习
 同时，针对不同的 pre-training 任务，ERNIE 2.0 引入了Task Embedding来精细化地建模不同类型的任务。不同的任务用从0 到N的ID表示，每个ID代表了不同的预训练任务。
-|任务名称|任务详情|
-| ------------- | ------------- |
+
+|任务名称|任务详情|  
+| ------------- | ------------- |  
 |Knowledge Masking|ERNIE 1.0 中已经引入的 phrase & named entity 知识增强 masking 策略。相较于 sub-word masking, 该策略可以更好的捕捉输入样本局部和全局的语义信息。|
 |Capitalization Prediction|针对英文首字母大写词汇（如 Apple）所包含的特殊语义信息,在英文 Pre-training 训练中构造了一个分类任务去学习该词汇是否为大写。|
 |Token-Document Relation Prediction|针对一个 segment 中出现的词汇，去预测该词汇是否也在原文档的其他 segments 中出现。|
