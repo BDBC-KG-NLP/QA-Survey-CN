@@ -14,6 +14,7 @@
     * [2.4 用于机器阅读理解的方法](#24-用于机器阅读理解的方法)
     * [2.5 用于跨领域迁移学习方法](#25-用于跨领域迁移学习方法)
   * [3 产品举例](#3-产品举例)
+  	* [3.1 YiBot](#31-[YiBot](https://www.jiqizhixin.com/articles/2017-09-07-4))
   * [4 总结](#4-总结)
   * [5 相关资料](#5-相关资料)
   
@@ -381,7 +382,7 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
 <div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/Screen%20Shot%202020-04-20%20at%207.36.26%20PM.png width=650 alt=迁移学习模型></div>
 
 ## 3 产品案例
-### 产品1: [YiBot](https://www.jiqizhixin.com/articles/2017-09-07-4)
+### 3.1 [YiBot](https://www.jiqizhixin.com/articles/2017-09-07-4)
 - **简介**
     - YiBot是由追一科技自主研发，为企业级客户提供的一套智能客服机器人系统。
     - 滴滴的客服系统背后就是追一科技提供的自然语言语义理解技术。
