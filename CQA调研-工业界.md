@@ -14,7 +14,10 @@
     * [2.4 用于机器阅读理解的方法](#24-用于机器阅读理解的方法)
     * [2.5 用于跨领域迁移学习方法](#25-用于跨领域迁移学习方法)
   * [3 产品举例](#3-产品举例)
-  	* [3.1 YiBot](#31-[YiBot](https://www.jiqizhixin.com/articles/2017-09-07-4))
+  	* [3.1 YiBot](#31-YiBot)
+	* [3.2 YiBot](#32-YiBot)
+	* [3.3 YiBot](#33-YiBot)
+	* [3.4 YiBot](#34-YiBot)
   * [4 总结](#4-总结)
   * [5 相关资料](#5-相关资料)
   
@@ -382,7 +385,9 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
 <div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/Screen%20Shot%202020-04-20%20at%207.36.26%20PM.png width=650 alt=迁移学习模型></div>
 
 ## 3 产品案例
-### 3.1 [YiBot](https://www.jiqizhixin.com/articles/2017-09-07-4)
+### 3.1 YiBot
+[产品链接](https://www.jiqizhixin.com/articles/2017-09-07-4)
+
 - **简介**
     - YiBot是由追一科技自主研发，为企业级客户提供的一套智能客服机器人系统。
     - 滴滴的客服系统背后就是追一科技提供的自然语言语义理解技术。
@@ -416,7 +421,8 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
                 分析头部场景，回答应用文本、图片、自动化解决方案等多元化方式
                 > 比如在电商场景中，经常会有查询发货到货时间、订单状态等的场景。利用图示指引、具体订单处理等方式让用户操作更便捷。
 
-### 产品2: [百度AnyQ--ANswer Your Questions](https://github.com/baidu/AnyQ)
+### 3.2 百度AnyQ
+[产品链接](https://github.com/baidu/AnyQ)
 
 - **简介**
     - AnyQ开源项目主要包含面向FAQ集合的问答系统框架、文本语义匹配工具SimNet。
@@ -437,7 +443,10 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
         - AnyQ 使用 SimNet 语义匹配模型构建文本语义相似度，克服了传统基于字面匹配方法的局限，增强 AnyQ 系统的语义检索和语义匹配能力。
     - 其他：针对无任何训练数据的开发者，AnyQ 还包含了基于百度海量数据训练的语义匹配模型，开发者可零成本直接使用。
 
-### 产品3: [腾讯知文--结构化FAQ问答引擎](https://cloud.tencent.com/developer/article/1172017)
+### 3.3 腾讯知文--结构化FAQ问答引擎
+
+[产品链接](https://cloud.tencent.com/developer/article/1172017)
+
 - **简介**
     - 腾讯知文的communityQA，用来解决FAQ（常见问题问答集）的query 
 - **基于结构化的FAQ的问答引擎流程**
@@ -462,7 +471,10 @@ Frequently Asked Questions的缩写，意思是“**常见问题解答**”。
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-知文-Siamese-cnn-arc1.jpeg  width=500 alt=知文-Siamese-cnn-arc1></div>
 
 
-### 产品4: [阿里小蜜](https://www.alixiaomi.com/#/)
+### 3.4 阿里小蜜
+
+[产品链接](https://www.alixiaomi.com/#/)
+
 - **为什么要做阿里小蜜？**
     - 阿里小蜜出现之前团队发现的问题有2个，第一个是需要对话机器人的业务很多，第二点是独立开发者的开发成本又很高。
     - 为了解决这两个问题，团队需要做一套平台产品来赋能开发者。如果做一个平台能够提供一些非常易于操作的开发工具，有丰富的内置能力，有强大的 AI 算法能力，以及全生命周期的配套工具，那么这些独立的开发者或者企业就能够做到零代码开发，快速交付具有鲁棒对话的机器人，并且该机器人可以在线上进行持续迭代优化。
