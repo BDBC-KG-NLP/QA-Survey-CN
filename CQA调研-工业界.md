@@ -9,7 +9,7 @@
   	* [2.2.1 规则匹配(又称“句式法”)](#221-规则匹配(又称“句式法”))
   	* 2.2.2 深度学习多分类模型（CNN\DNN\LSTM\…）
   	* 2.2.3 基于Siamese networks神经网络架构
-  	* 2.2.4 Interaction-based networks
+  	* [2.2.4 Interaction-based networks](#224-Interaction-based networks)
   * [2.3 用于Chatbot的方法](#23-用于Chatbot的方法)
   * [2.4 用于机器阅读理解的方法](#24-用于机器阅读理解的方法)
   * [2.5 用于跨领域迁移学习方法](#25-用于跨领域迁移学习方法)
