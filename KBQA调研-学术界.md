@@ -72,14 +72,16 @@ SPARQL，λ-DCS、FunQL等查询语言可以用于查询以及操作KG中存储�
 
 ### 1.4. SOTA
 SimpleQuestions：
-| 模型              |ACC                                        |
-| ------------------- | -----------------------------------------|
-|[STAGG](https://www.aclweb.org/anthology/P15-1128.pdf)|90.0| 
-|[AMPCNN](https://www.aclweb.org/anthology/C16-1164.pdf)|91.3| 
-|[ComplexQueryGraphs](https://www.aclweb.org/anthology/D18-1242.pdf)|93.1| 
-|[HR-BiLSTM](https://www.aclweb.org/anthology/P17-1053.pdf) |93.3|
-|[AR-SMCNN](https://arxiv.org/vc/arxiv/papers/1804/1804.03317v2.pdf)|93.7|
-|[MVA-MTQA-net(MTL)](https://www.aclweb.org/anthology/D19-1248.pdf)|95.7|
+| 模型              |ACC                                        |论文题目|年份|论文链接|code|
+| ------------------- | -----------------------------------------|--|--|--|--|
+|STAGG|90.0|Semantic Parsing via Staged Query Graph Generation:Question Answering with Knowledge Base| 2015|https://www.aclweb.org/anthology/P15-1128.pdf|https://github.com/scottyih/STAGG|
+|AMPCNN|91.3|Simple Question Answering by Attentive Convolutional Neural Network|2016|https://www.aclweb.org/anthology/C16-1164.pdf|| 
+|ComplexQueryGraphs|93.1|Knowledge Base Question Answering via Encoding of Complex Query Graphs|2018|https://www.aclweb.org/anthology/D18-1242.pdf|https://github.com/FengliLin/EMNLP2018-KBQA|
+|HR-BiLSTM|93.3|Improved Neural Relation Detection for Knowledge Base Question Answering|2017|https://www.aclweb.org/anthology/P17-1053.pdf|https://github.com/StevenWD/HR-BiLSTM|
+|AR-SMCNN|93.7|Question Answering over Freebase via Attentive RNN
+with Similarity Matrix based CNN|2018|https://arxiv.org/vc/arxiv/papers/1804/1804.03317v2.pdf|https://github.com/quyingqi/kbqa-ar-smcnn|
+|MVA-MTQA-net(MTL)|95.7|Multi-Task Learning for Conversational Question Answering
+over a Large-Scale Knowledge Base|2019|https://www.aclweb.org/anthology/D19-1248.pdf|https://github.com/taoshen58/MaSP|
 
 ComplexWebQuestions:
 | 模型              | P@1                                        |
