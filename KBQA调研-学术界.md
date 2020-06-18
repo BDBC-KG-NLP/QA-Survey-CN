@@ -82,14 +82,14 @@ SimpleQuestions：
 |MVA-MTQA-net(MTL)|95.7|Multi-Task Learning for Conversational Question Answering over a Large-Scale Knowledge Base|2019|https://www.aclweb.org/anthology/D19-1248.pdf|https://github.com/taoshen58/MaSP|
 
 ComplexWebQuestions:
-| 模型              | P@1                                        |
+| 模型              | P@1                                        |论文题目|年份|论文链接|code|
 | ------------------- | -----------------------------------------|
-|[MHQA-GRN](https://arxiv.org/pdf/1809.02040.pdf)|30.10|
-|[SIMPQA + PRETRAINED](https://arxiv.org/pdf/1807.09623.pdf)|19.90|
-|[SPLITQA + PRETRAINED](https://arxiv.org/pdf/1807.09623.pdf)|25.90|
-|[SPLITQA + data augmentation](https://arxiv.org/pdf/1807.09623.pdf)|34.20|
-|[PullNet](https://www.aclweb.org/anthology/D19-1242.pdf)|45.90|
-|[SPARQA](https://arxiv.org/pdf/2003.13956.pdf)|31.57|
+|MHQA-GRN|30.10|Exploring Graph-structured Passage Representation for Multi-hop Reading Comprehension with Graph Neural Networks|2018|https://arxiv.org/pdf/1809.02040.pdf||
+|SIMPQA + PRETRAINED|19.90|Repartitioning of the COMPLEXWEBQUESTIONS Dataset|2018|https://arxiv.org/pdf/1807.09623.pdf||
+|SPLITQA + PRETRAINED|25.90|Repartitioning of the COMPLEXWEBQUESTIONS Dataset|2018|https://arxiv.org/pdf/1807.09623.pdf||
+|SPLITQA + data augmentation|34.20|Repartitioning of the COMPLEXWEBQUESTIONS Dataset|2018|https://arxiv.org/pdf/1807.09623.pdf||
+|PullNet|45.90|PullNet: Open Domain Question Answering with Iterative Retrieval on Knowledge Bases and Text|2019|https://www.aclweb.org/anthology/D19-1242.pdf||
+|SPARQA|31.57|SPARQA: Skeleton-based Semantic Parsing for Complex Questions over Knowledge Bases|2020|https://arxiv.org/pdf/2003.13956.pdf|https://github.com/nju-websoft/SPARQA|
 
 
 GraphQuestion:
