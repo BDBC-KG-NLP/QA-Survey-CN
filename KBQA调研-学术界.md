@@ -99,7 +99,7 @@ ComplexWebQuestions:
 
 GraphQuestion:
 | 模型              | F1                                        |论文题目|年份|论文链接|code|
-| ----------------- | ------------------------------------------|
+| ------------------- | -----------------------------------------|--|--|--|--|
 |SPARQA|21.53|SPARQA: Skeleton-based Semantic Parsing for Complex Questions over Knowledge Bases|2020|https://arxiv.org/pdf/2003.13956.pdf|https://arxiv.org/pdf/2003.13956.pdf|https://github.com/nju-websoft/SPARQA|
 |PARA4QA|20.40|Learning to Paraphrase for Question Answering|2017|https://arxiv.org/pdf/1708.06022.pdf|-|
 |UDEPLAMBDA|17.70|Universal Semantic Parsing|2017|https://arxiv.org/pdf/1702.03196.pdf|https://github.com/sivareddyg/udeplambda|
@@ -114,7 +114,7 @@ for Semantic Parsing|2017|https://arxiv.org/pdf/1704.08387.pdf||
 
 ComplexQuestions:
 | 模型              | average F1                                        |论文题目|年份|论文链接|code|
-| ----------------- | ------------------------------------------|
+| ------------------- | -----------------------------------------|--|--|--|--|
 |STF|54.3%|A State-transition Framework to Answer Complex Questions over Knowledge Base|2018|https://www.aclweb.org/anthology/D18-1234.pdf||
 |QUINT|49.2%|Automated Template Generation for Question Answering over Knowledge Graphs|2017|
 http://papers.www2017.com.au.s3-website-ap-southeast-2.amazonaws.com/proceedings/p1191.pdf||
