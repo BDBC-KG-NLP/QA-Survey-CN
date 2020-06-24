@@ -123,26 +123,36 @@ ComplexQuestions:
 
 
 QALD-6:
-| 模型              | F1                                        |
-| ----------------- | ------------------------------------------|
-|SemGraphQA|0.37|
-|[Aqqu](http://ad-publications.informatik.uni-freiburg.de/freebase-qa.pdf)|0.38|
-|[gAnswer](https://www.researchgate.net/publication/266656635_Natural_language_question_answering_over_RDF_-_A_graph_data_driven_approach)|0.55|
-|KWGAnswer|0.70|
-|UTQA|0.75|
-|[NFF](https://ieeexplore.ieee.org/document/8085196)|0.78|
-|[STF](https://www.aclweb.org/anthology/D18-1234.pdf)|0.80|
-|[CaNaLi](https://openproceedings.org/2016/conf/edbt/paper-259.pdf)|0.89|
+| 模型              | F1                                        |论文题目|年份|论文链接|code|
+| ----------------- | ------------------------------------------|--|--|--|--|
+|CaNaLi|0.89|Answering Controlled Natural Language Questions on RDF Knowledge Bases|2016|https://openproceedings.org/2016/conf/edbt/paper-259.pdf||
+|STF|0.80|A State-transition Framework to Answer Complex Questions over Knowledge Base|2018|https://www.aclweb.org/anthology/D18-1234.pdf||
+|NFF|0.78|Answering natural language questions by subgraph matching over knowledge graphs|2017|https://ieeexplore.ieee.org/document/8085196|https://github.com/pkumod/gAnswer|
+|UTQA|0.75|||||
+|KWGAnswer|0.70||||
+|gAnswer|0.55|Natural language question answering over RDF - A graph data driven approach|2014|https://www.researchgate.net/publication/266656635_Natural_language_question_answering_over_RDF_-_A_graph_data_driven_approach||
+|Aqqu|0.38|More Accurate Question Answering on Freebase|2015|http://ad-publications.informatik.uni-freiburg.de/freebase-qa.pdf|https://github.com/ad-freiburg/aqqu|
+|SemGraphQA|0.37|SemGraphQA@QALD-5: LIMSI participation at QALD-5@CLEF|2015|https://pdfs.semanticscholar.org/59e5/b01f7a634218cace37c47484073bbdd25138.pdf|-|
+
+
+
+
+
+
 
 WebQuestions:
-| 模型              | average F1                                        |
-| ----------------- | ------------------------------------------|
-|[Aqqu](http://ad-publications.informatik.uni-freiburg.de/freebase-qa.pdf)|49.4%|
-|[Aqqu++](http://ad-publications.informatik.uni-freiburg.de/freebase-qa.pdf)|49.4%|
-|[NFF](https://ieeexplore.ieee.org/document/8085196)|49.6%|
-|[QUINT](http://papers.www2017.com.au.s3-website-ap-southeast-2.amazonaws.com/proceedings/p1191.pdf)|51.0%|
-|[STAGG](https://www.aclweb.org/anthology/P15-1128.pdf)|52.5%|
-|[STF](https://www.aclweb.org/anthology/D18-1234.pdf)|53.6%|
+| 模型              | average F1                                        |论文题目|年份|论文链接|code|
+| ----------------- | ------------------------------------------|--|--|--|--|
+|STF|53.6%|A State-transition Framework to Answer Complex Questions over Knowledge Base|2018|https://www.aclweb.org/anthology/D18-1234.pdf||
+|STAGG|52.5%|Semantic Parsing via Staged Query Graph Generation:Question Answering with Knowledge Base|2015|https://www.aclweb.org/anthology/P15-1128.pdf|https://github.com/scottyih/STAGG|
+|QUINT|51.0%|Automated Template Generation for Question Answering over Knowledge Graphs|2017|http://papers.www2017.com.au.s3-website-ap-southeast-2.amazonaws.com/proceedings/p1191.pdf||
+|NFF|49.6%|Answering natural language questions by subgraph matching over knowledge graphs|2017|https://ieeexplore.ieee.org/document/8085196|https://github.com/pkumod/gAnswer|
+|Aqqu|49.4%|More Accurate Question Answering on Freebase|2015|http://ad-publications.informatik.uni-freiburg.de/freebase-qa.pdf|https://github.com/ad-freiburg/aqqu|
+
+
+
+
+
 
 
 
@@ -152,6 +162,7 @@ WebQuestions:
 - Accuracy：当预测答案属于提供的问题答案之一时就算正确。
 - average f1
 - Hits@1
+- P@1:Precision@1
 
 ## 2. 方法总结
 可以划分为三类：基于语义解析（Semantic Parsing）的方法，基于信息抽取（Information Extraction）的方法，基于向量建模（Vector Modeling）的方法。
