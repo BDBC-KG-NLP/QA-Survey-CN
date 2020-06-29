@@ -5,12 +5,12 @@
    * [1.2 任务分类](#12-任务分类)
    * [1.3 评测标准](#13-评测标准)
    * [1.4  数据集](#14--数据集)  
-         * [“技术需求”与“技术成果”项目之间关联度计算模型（需求与成果匹配)](#技术需求与技术成果项目之间关联度计算模型需求与成果匹配)  
-         * [智能客服问题相似度算法设计——第三届魔镜杯大赛](#智能客服问题相似度算法设计第三届魔镜杯大赛)  
-         * [CCKS 2018 微众银行智能客服问句匹配大赛](#ccks-2018-微众银行智能客服问句匹配大赛)  
-         * [AFQMC 蚂蚁金融语义相似度](#afqmc-蚂蚁金融语义相似度)  
-         * [OPPO手机搜索排序query-title语义匹配数据集](#oppo手机搜索排序query-title语义匹配数据集)  
-         * [医疗问题相似度衡量竞赛数据集](#医疗问题相似度衡量竞赛数据集)
+       * [“技术需求”与“技术成果”项目之间关联度计算模型（需求与成果匹配)](#技术需求与技术成果项目之间关联度计算模型需求与成果匹配)  
+       * [智能客服问题相似度算法设计——第三届魔镜杯大赛](#智能客服问题相似度算法设计第三届魔镜杯大赛)  
+       * [CCKS 2018 微众银行智能客服问句匹配大赛](#ccks-2018-微众银行智能客服问句匹配大赛)  
+       * [AFQMC 蚂蚁金融语义相似度](#afqmc-蚂蚁金融语义相似度)  
+       * [OPPO手机搜索排序query-title语义匹配数据集](#oppo手机搜索排序query-title语义匹配数据集)  
+       * [医疗问题相似度衡量竞赛数据集](#医疗问题相似度衡量竞赛数据集)  
 * [2 方法及模型](#2-方法及模型)
    * [2.1 无监督方法](#21-无监督方法)
       * [2.1.1 规则匹配](#211-规则匹配)
@@ -33,7 +33,7 @@
    * [产品1 <a href="https://github.com/baidu/AnyQ">百度AnyQ--ANswer Your Questions</a>](#产品1-百度anyq--answer-your-questions)
    * [产品2: <a href="https://cloud.tencent.com/developer/article/1172017" rel="nofollow">腾讯知文--结构化FAQ问答 引擎</a>](#产品2-腾讯知文--结构化faq问答引擎)
    * [产品3: <a href="https://www.alixiaomi.com/#/" rel="nofollow">阿里小蜜</a>](#产品3-阿里小蜜)
-* [4 总结](#4总结)
+* [4 总结](#4-总结)
 * [5 相关资料](#5-相关资料)
 
 ## 1 任务
@@ -167,7 +167,7 @@
   - 所有语料来自原始的银行领域智能客服日志，并经过了筛选和人工的意图匹配标注。
 - **数据具体说明**：https://biendata.com/competition/CCKS2018_3/data/
 - **评价指标**：Precision、Recall、F1值、ACC
-- **top1评测论文**：An Enhanced ESIM Model for Sentence Pair Matching with Self-Attentionhttp://ceur-ws.org/Vol-2242/paper09.pdf?crazycache=1
+- **top1评测论文**：[An Enhanced ESIM Model for Sentence Pair Matching with Self-Attention](http://ceur-ws.org/Vol-2242/paper09.pdf?crazycache=1)
 
 
 
@@ -398,8 +398,8 @@
   	- **层次化卷积步骤**
         	- 1.Ai和Bj距离度量方式：完全一样 (Indicator），余弦相似度 (Cosine)，点乘 (Dot Product)。
                 	- 2.卷积，RELU激活，动态pooling（pooling size等于内容大小除以kernel大小）
-                   	- 3.卷积核第一层分别算，第二层求和算。可以见下图3*3的kernel分别算，2*4*4求和算。
-                   	- 4.MLP拟合相似度，两层，使用sigmoid激活，最后使用softmax，交叉熵损失函数。
+                         	- 3.卷积核第一层分别算，第二层求和算。可以见下图3*3的kernel分别算，2*4*4求和算。
+                                     	- 4.MLP拟合相似度，两层，使用sigmoid激活，最后使用softmax，交叉熵损失函数。
 
 <div align=center><img src=https://img-blog.csdn.net/20171219172641689  width=400 alt=MatchPyramid-Hierarchical-Convolution></div>
 
@@ -484,7 +484,7 @@ FAQ拆分是当一个FAQ里包含多个意图或者说多种情况的时候，Yi
 - 无监督学习，基于快速检索
 - 有监督的学习，基于深度匹配
 
-<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-知文-基于Attention机制的Interaction-based_networks.jpeg  width=500 alt=知文-基于Attention机制的Interaction-based_networks></div>
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-%E7%9F%A5%E6%96%87-%E5%9F%BA%E4%BA%8EAttention%E6%9C%BA%E5%88%B6%E7%9A%84Interaction-based%20networks.jpeg  width=500 alt=知文-基于Attention机制的Interaction-based_networks></div>
 
 采用了三个层次的方法来实现快速检索的方法
 
@@ -516,12 +516,13 @@ FAQ拆分是当一个FAQ里包含多个意图或者说多种情况的时候，Yi
 **意图识别介绍：结合用户行为deep-learning模型的实践**
 
 通常将意图识别抽象成机器学习中的分类问题，在阿里小蜜的技术方案中除了传统的文本特征之外，考虑到本身在对话领域中存在语义意图不完整的情况，我们也加入了用实时、离线用户本身的行为及用户本身相关的特征，通过深度学习方案构建模型，对用户意图进行预测, 具体如下图：
-https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/640-2.jpeg
+
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/640-2.jpeg  width=400 alt=意图识别></div>
+
+
 在基于深度学习的分类预测模型上，我们有两种具体的选型方案：一种是多分类模型，一种是二分类模型。多分类模型的优点是性能快，但是对于需要扩展分类领域是整个模型需要重新训练；而二分类模型的优点就是扩展领域场景时原来的模型都可以复用，可以平台进行扩展，缺点也很明显需要不断的进行二分，整体的性能上不如多分类好，因此在具体的场景和数据量上可以做不同的选型。
 
-小蜜用DL做意图分类的整体技术思路是将行为因子与文本特征分别进行Embedding处理，通过向量叠加之后再进行多分类或者二分类处理。这里的文本特征维度可以选择通过传统的bag of words的方法，也可使用Deep Learning的方法进行向量化。具体如图所示：
 
-https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/640.jpeg
 
 **行业三大匹配模型**
 
@@ -554,7 +555,7 @@ https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/640.jpeg
 		- **有监督的深度模型匹配**方式
 	  		- 文本语义表达的Siamese networks深度模型。应用广泛的模型只要有DSSM、ESIM，MAtchPyramid等
 	      		- **DSSM(采用了词袋模型，损失了上下文信息，可选用CNN-DSSM等优化模型)**
-	        		- **ESIM(适用于短文本)**
+	                 		- **ESIM(适用于短文本)**
     		- 	**MatchPyramid() 基于交互的深度模型)**
 - 问答对较少等情况下可以将IR模块改为分类任务（意图识别）进行。
 - 如果在数据不充足，或数据效果质量不高的情况下，可以使用迁移学习，以训练好的模型为基础。
