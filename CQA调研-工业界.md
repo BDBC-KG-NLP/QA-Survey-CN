@@ -30,9 +30,9 @@
       * [FAQ发现](#faq发现)
       * [FAQ答案优化](#faq答案优化)
 * [3 产品案例](#3-产品案例)
-   * [产品1 <a href="https://github.com/baidu/AnyQ">百度AnyQ--ANswer Your Questions</a>](#产品1-百度anyq--answer-your-questions)
-   * [产品2: <a href="https://cloud.tencent.com/developer/article/1172017" rel="nofollow">腾讯知文--结构化FAQ问答 引擎</a>](#产品2-腾讯知文--结构化faq问答引擎)
-   * [产品3: <a href="https://www.alixiaomi.com/#/" rel="nofollow">阿里小蜜</a>](#产品3-阿里小蜜)
+   * [产品1 百度AnyQ--ANswer Your Questions](#产品1-百度anyq--answer-your-questions)
+   * [产品2:腾讯知文--结构化FAQ问答 引擎](#产品2-腾讯知文--结构化faq问答引擎)
+   * [产品3: 阿里小蜜](#产品3-阿里小蜜)
 * [4 总结](#4-总结)
 * [5 相关资料](#5-相关资料)
 
