@@ -6,12 +6,11 @@
    * [1.3 评测标准](#13-评测标准)
    * [1.4  数据集](#14--数据集)  
          * [“技术需求”与“技术成果”项目之间关联度计算模型（需求与成果匹配)](#技术需求与技术成果项目之间关联度计算模型需求与成果匹配)  
-         * [cMedQA2 （医疗问答匹配）](#cmedqa2-医疗问答匹配)  
          * [智能客服问题相似度算法设计——第三届魔镜杯大赛](#智能客服问题相似度算法设计第三届魔镜杯大赛)  
          * [CCKS 2018 微众银行智能客服问句匹配大赛](#ccks-2018-微众银行智能客服问句匹配大赛)  
          * [AFQMC 蚂蚁金融语义相似度](#afqmc-蚂蚁金融语义相似度)  
          * [OPPO手机搜索排序query-title语义匹配数据集](#oppo手机搜索排序query-title语义匹配数据集)  
-             * [医疗问题相似度衡量竞赛数据集](#医疗问题相似度衡量竞赛数据集)
+         * [医疗问题相似度衡量竞赛数据集](#医疗问题相似度衡量竞赛数据集)
 * [2 方法及模型](#2-方法及模型)
    * [2.1 无监督方法](#21-无监督方法)
       * [2.1.1 规则匹配](#211-规则匹配)
@@ -34,9 +33,7 @@
    * [产品1 <a href="https://github.com/baidu/AnyQ">百度AnyQ--ANswer Your Questions</a>](#产品1-百度anyq--answer-your-questions)
    * [产品2: <a href="https://cloud.tencent.com/developer/article/1172017" rel="nofollow">腾讯知文--结构化FAQ问答 引擎</a>](#产品2-腾讯知文--结构化faq问答引擎)
    * [产品3: <a href="https://www.alixiaomi.com/#/" rel="nofollow">阿里小蜜</a>](#产品3-阿里小蜜)
-* [4 问题难点及未来研究的方向](#4-问题难点及未来研究的方向)
-   * [难点](#难点)
-   * [未来研究方向](#未来研究方向)
+* [4 总结](#4总结)
 * [5 相关资料](#5-相关资料)
 
 ## 1 任务
@@ -138,25 +135,6 @@
   - 主要利用损失函数为 Triplet Loss 的 Rank 模型来解决三元组的相对相似的问题、只提取并采用三个文书文本特征、基于Bert的多模型离线的多模型融合、解决Triple Loss 过拟合
   - 最高得分：71.88
   - 代码：https://github.com/GuidoPaul/CAIL2019
-
-##### [cMedQA2](https://www.mdpi.com/2076-3417/7/8/767)（医疗问答匹配）
-- **数据来源**
-  - 寻医寻药网站中的提问和回答， 数据集做过匿名处理
-- **数据分布**
-  - 总量有108,000个问题，203,569个答案
-    - 训练集中有100,000个问题，188,490个答案
-    - 验证集有4,000个问题，有7527个答案
-    - 测试集有4,000个问题，有7552个答案。
-- **top1 解决方案**：[Multi-Scale Attentive Interaction Networks for Chinese Medical Question Answer Selection](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8548603)
-
-
-##### [cMedQA v1.0](https://www.mdpi.com/2076-3417/7/8/767)（医疗问答匹配）
-- 与cMedQA2相同来源
-- 数据分布
-  - 总量54,000个问题，101,743个答案。
-      - 训练集中有50,000个问题，94,134个答案
-      - 验证集有2,000个问题，有3774个答案
-      - 测试集有2,000个问题，有3835个答案
 
 ##### [智能客服问题相似度算法设计——第三届魔镜杯大赛](https://ai.ppdai.com/mirror/goToMirrorDetail?mirrorId=1)
 - **任务目标**
@@ -395,8 +373,6 @@
 ##### Sentence Bert
 
 - **论文地址**：[Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks](https://arxiv.org/pdf/1908.10084.pdf)
-
-- **源码** :
 
 - **模型简介**
 
