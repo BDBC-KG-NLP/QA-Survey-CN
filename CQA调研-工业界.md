@@ -1,42 +1,42 @@
 CQA--工业界
 
-- [1 任务](#1---)
-  
-  * [1.1 任务定义](#11-----)
-  * [1.2 任务分类](#12-----)
-  * [1.3 评测标准](#13-----)
-  * [1.4  数据集](#14-----)
-      - [“技术需求”与“技术成果”项目之间关联度计算模型（需求与成果匹配)](#---------------------------------)
-      - [cMedQA2 （医疗问答匹配）](#cmedqa2---------)
-      - [智能客服问题相似度算法设计——第三届魔镜杯大赛](#-----------------------)
-      - [CCKS 2018 微众银行智能客服问句匹配大赛](#ccks-2018---------------)
-      - [AFQMC 蚂蚁金融语义相似度](#afqmc----------)
-      - [OPPO手机搜索排序query-title语义匹配数据集](#oppo------query-title-------)
-      - [医疗问题相似度衡量竞赛数据集（医疗问题匹配、意图匹配）](#---------------------------)
-- [2 方法及模型](#2------)
-  * [2.1 无监督方法](#21------)
-    + [2.1.1 规则匹配](#211-----)
-  * [2.1.2 无监督文本表示](#212--------)
-  * [2.5 用于跨领域迁移学习方法](#25------------)
-- [2.2 有监督匹配算法](#22--------)
-    + [2.2.1 基于意图识别的算法](#221----------)
-    + [2.2.2深度文本匹配模型](#222--------)
-    + [表示型模型](#-----)
-      - [Siamese networks模型](#siamese-networks--)
-      - [DSSＭ 模型](#dss----)
-    + [Sentence Bert](#sentence-bert)
-    + [2.1.4 交互型模型](#214------)
-      - [ESIM （Enhanced LSTM）](#esim--enhanced-lstm-)
-  
-  * [2.3 FAQ发现与优化](#23-faq-----)
-- [3 产品案例](#3-----)
-  * [产品1 [百度AnyQ--ANswer Your Questions](https://github.com/baidu/AnyQ)](#--1----anyq--answer-your-questions--https---githubcom-baidu-anyq-)
-  * [产品2: [腾讯知文--结构化FAQ问答引擎](https://cloud.tencent.com/developer/article/1172017  )](#--2------------faq------https---cloudtencentcom-developer-article-1172017---)
-  * [产品3: [阿里小蜜](https://www.alixiaomi.com/#/)](#--3---------https---wwwalixiaomicom----)
-- [4 问题难点及未来研究的方向](#4-------------)
-  * [难点](#--)
-  * [未来研究方向](#------)
-- [5 相关资料](#5-----)
+* [1 任务](#1-任务)
+   * [1.1 任务定义](#11-任务定义)
+   * [1.2 任务分类](#12-任务分类)
+   * [1.3 评测标准](#13-评测标准)
+   * [1.4  数据集](#14--数据集)
+         * [“技术需求”与“技术成果”项目之间关联度计算模型（需求与成果匹配)](#技术需求与技术成果项目之间关联度计算模型需求与成果匹配)
+         * [cMedQA2 （医疗问答匹配）](#cmedqa2-医疗问答匹配)
+         * [智能客服问题相似度算法设计——第三届魔镜杯大赛](#智能客服问题相似度算法设计第三届魔镜杯大赛)
+         * [CCKS 2018 微众银行智能客服问句匹配大赛](#ccks-2018-微众银行智能客服问句匹配大赛)
+         * [AFQMC 蚂蚁金融语义相似度](#afqmc-蚂蚁金融语义相似度)
+         * [OPPO手机搜索排序query-title语义匹配数据集](#oppo手机搜索排序query-title语义匹配数据集)
+         * [医疗问题相似度衡量竞赛数据集（医疗问题匹配、意图匹配）](#医疗问题相似度衡量竞赛数据集医疗问题匹配意图 匹配)
+* [2 方法及模型](#2-方法及模型)
+   * [2.1 无监督方法](#21-无监督方法)
+      * [2.1.1 规则匹配](#211-规则匹配)
+      * [2.1.2 无监督文本表示](#212-无监督文本表示)
+      * [2.1.3 用于跨领域迁移学习方法](#213-用于跨领域迁移学习方法)
+* [2.2 有监督匹配算法](#22-有监督匹配算法)
+   * [2.2.1 基于意图识别的算法](#221-基于意图识别的算法)
+   * [2.2.2深度文本匹配模型](#222深度文本匹配模型)
+      * [表示型模型](#表示型模型)
+         * [Siamese networks模型](#siamese-networks模型)
+         * [DSSＭ 模型](#dssｍ-模型)
+         * [Sentence Bert](#sentence-bert)
+      * [交互型模型](#交互型模型)
+         * [ESIM （Enhanced LSTM）](#esim-enhanced-lstm)
+   * [2.3 FAQ发现与优化](#23-faq发现与优化)
+      * [FAQ发现](#faq发现)
+      * [FAQ答案优化](#faq答案优化)
+* [3 产品案例](#3-产品案例)
+   * [产品1 <a href="https://github.com/baidu/AnyQ">百度AnyQ--ANswer Your Questions</a>](#产品1-百度anyq--answer-your-questions)
+   * [产品2: <a href="https://cloud.tencent.com/developer/article/1172017" rel="nofollow">腾讯知文--结构化FAQ问答 引擎</a>](#产品2-腾讯知文--结构化faq问答引擎)
+   * [产品3: <a href="https://www.alixiaomi.com/#/" rel="nofollow">阿里小蜜</a>](#产品3-阿里小蜜)
+* [4 问题难点及未来研究的方向](#4-问题难点及未来研究的方向)
+   * [难点](#难点)
+   * [未来研究方向](#未来研究方向)
+* [5 相关资料](#5-相关资料)
 
 ## 1 任务
 
@@ -243,7 +243,7 @@ CQA--工业界
 
 在基于规则的匹配中, 如何进行规则的自动发现与更新、检验与评估是最关键的问题。究其原因, 由人工维护的产生式规则需要高水平的、具备丰富的领域知识的专家.在问答系统所应用的领域较为狭窄时， 这有可能得到满足。然而, 随着问答系统涉及知识的广度和深度不断提高, 依赖于专家知识对管理规则的难度也大为提高。
 
-### 2.1.2 无监督文本表示
+####  2.1.2 无监督文本表示
 
 在缺少标记数据的场景，我们可以利用算法对文本本身进行表示，再利用常用的向量距离计算方法（如余弦距离，欧式距离等）进行相似性度量。常见的无监督文本表示方法主要可以分为两种，一种是基于词频信息的方法，一种是基于词向量的方法。
 
@@ -263,7 +263,7 @@ CQA--工业界
 
     
 
-    ![img](D:\docs\QA-Survey\image\PLSA.jpg)
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/PLSA.jpg　width=650 alt=PLSA></div>
 
     其中p(z|d)和P（w|z）是需要学习的参数。P(z|d)参数数目是主题数和文档数乘的关系，p(w|z)是词表数乘主题数的关系，参数空间很大，容易过拟合。
 
@@ -271,7 +271,7 @@ CQA--工业界
 
     如果说pLSA是频度学派代表，那LDA就是**贝叶斯学派**代表。LDA通过引入Dirichlet分布作为多项式共轭先验，在数学上完整解释了一个文档生成过程，其概率图模型如图所示。
 
-    ![img](D:\docs\QA-Survey\image\LDA.jpg)
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/LDA.jpg　width=650 alt=LDA></div>
 
     我们可以看出LDA中每篇文章的生成过程如下：
 
@@ -293,7 +293,7 @@ CQA--工业界
 
     第一步主要是对TFIDF加权平均词向量表示句子的方法进行改进。论文提出了一种**平滑倒词频** (smooth inverse frequency, SIF)方法用于计算每个词的加权系数，具体地，单词的权重为a/(a+p(w))a/(a+p(w))，其中a为平滑参数，p(w)为（估计的）词频。直观理解SIF，就是说**频率越低的词在当前句子出现了，说明它在句子中的重要性更大，也就是加权系数更大**。对于第二步，通过移出所有句子的共有信息，因此保留下来的句子向量更能够表示本身并与其它句子向量产生差距。
 
-    ![SIF](D:\docs\QA-Survey\image\SIF.png)
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/SIF.png　width=650 alt=SIF算法流程></div>
 
   - WMD
 
@@ -301,17 +301,17 @@ CQA--工业界
 
     Word2Vec得到的词向量可以反映词与词之间的语义差别，WMD距离即对两个文档中的任意两个词所对应的词向量求欧氏距离然后再加权求和，大概是这样的形式：
 
-    ![WMD_eq](D:\docs\QA-Survey\image\WMD_eq.png)
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/wmd_eq.png　width=650 alt=语言模型></div>
 
     其中c(i,j)为i，j两个词所对应的词向量的欧氏距离。矩阵T代表了文档1中的一个词转移到文档2中一个词的权重。即解决如下线性规划问题（|d1|代表文档1的长度，|d2|代表文档2长度）：
 
-    ![wmd_eq2](D:\docs\QA-Survey\image\wmd_eq2.png)
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/wmd_eq2.png　width=650 alt=wmd_eq2></div>
 
     通过最小化矩阵Ｔ，我们就可以得到两个文档的ＷＭＤ距离。具体例子如下：
 
-    ![Word Mover's Distance的示意图，来自论文《From Word Embeddings To Document Distances》](D:\docs\QA-Survey\image\ＷＭＤ.png)
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/WMD.png　width=650 alt=语言模型></div>
 
-### 2.5 用于跨领域迁移学习方法
+#### 2.1.3 用于跨领域迁移学习方法
 
 - **背景**
 
@@ -336,7 +336,7 @@ CQA--工业界
 
 ## 2.2 有监督匹配算法
 
-#### 2.2.1 基于意图识别的算法
+### 2.2.1 基于意图识别的算法
 
 - 问答匹配任务在大多数情况下可以转化为二分类或多分类任务。
 - 神经网络中会有两大输入，左边N会输入结构化数据，比如个人属性以及浏览操作历史纪录，右边V会输入一些非结构化数据，比如前几轮问的问题和序列，对于这些非结构化的数据我们会有句子编码器解析这些数据，当需要考虑到句子的语序关系的时候会使用CNN或者RNN网络结构；上层的话，会结合用户的Embedding和句子的Embedding去输出。
@@ -344,7 +344,7 @@ CQA--工业界
 
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/多个二分类模型.jpeg  width=650 alt=多个二分类模型模型图></div>
 
-#### 2.2.2深度文本匹配模型
+### 2.2.2深度文本匹配模型
 
 一般来说，深度文本匹配模型分为两种类型，表示型和交互型。
 
@@ -369,7 +369,7 @@ CQA--工业界
 
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-DSSM.png  width=650 alt=DSSM></div>
 
-#### Sentence Bert
+##### Sentence Bert
 
 - **论文地址**：[Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks](https://arxiv.org/pdf/1908.10084.pdf)
 
@@ -383,9 +383,9 @@ CQA--工业界
 
 - **模型结构** :
 
-  ![img](D:\docs\QA-Survey\image\使用孪生BERT网络生成句子的嵌入表示.png)
+  <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/使用孪生BERT网络生成句子的嵌入表示.png  width=400 alt=Ssentence Bert></div>
 
-#### 2.1.4 交互型模型
+#### 交互型模型
 
 交互型模型认为全局的匹配度依赖于局部的匹配度，在输入层就进行词语间的先匹配，之后利用单词级别的匹配结果进行全局的匹配。它的优势是可以很好的把握语义焦点，对上下文重要性合理建模。由于模型效果显著，业界都在逐渐尝试交互型的方法。
 
@@ -393,14 +393,14 @@ CQA--工业界
 
 - **MatchPyramid模型**
   - **论文地址**：[Text Matching as Image Recognition](https://arxiv.org/pdf/1602.06359.pdf)
-  - **简介**
-    - 先将文本使用相似度计算构造相似度矩阵，然后卷积来提取特征。
+  - **模型简介**
+    - 先将文本使用相似度计算构造相似度矩阵，然后CNN网络来提取特征。
     - 模型可以学习到Down the ages（n-gram特征），noodles and dumplings与dumplings and noodles（打乱顺序的n-term特征）、were famous Chinese food和were popular in China（相似语义的n-term特征）
-  - **层次化卷积步骤**
-    - 1.Ai和Bj距离度量方式：完全一样 (Indicator），余弦相似度 (Cosine)，点乘 (Dot Product)。
-    - 2.卷积，RELU激活，动态pooling（pooling size等于内容大小除以kernel大小）
-    - 3.卷积核第一层分别算，第二层求和算。可以见下图3*3的kernel分别算，2*4*4求和算。
-    - 4.MLP拟合相似度，两层，使用sigmoid激活，最后使用softmax，交叉熵损失函数。
+  	- **层次化卷积步骤**
+    	- 1.Ai和Bj距离度量方式：完全一样 (Indicator），余弦相似度 (Cosine)，点乘 (Dot Product)。
+    	- 2.卷积，RELU激活，动态pooling（pooling size等于内容大小除以kernel大小）
+    	- 3.卷积核第一层分别算，第二层求和算。可以见下图3*3的kernel分别算，2*4*4求和算。
+    	- 4.MLP拟合相似度，两层，使用sigmoid激活，最后使用softmax，交叉熵损失函数。
 
 <div align=center><img src=https://img-blog.csdn.net/20171219172641689  width=400 alt=MatchPyramid-Hierarchical-Convolution></div>
 
@@ -431,7 +431,7 @@ CQA--工业界
 
 ### 2.3 FAQ发现与优化
 
-**FAQ发现**
+#### FAQ发现
 
 将用户问句进行聚类，对比已有的FAQ，发现并补足未覆盖的知识点。将FAQ与知识点一一对应。
 
@@ -449,7 +449,7 @@ FAQ拆分是当一个FAQ里包含多个意图或者说多种情况的时候，Yi
 
 分析历史日志，采用淘汰机制淘汰废弃知识点，如已下线业务知识点等。
 
-**FAQ答案优化**
+#### FAQ答案优化
 
 - **挖掘对话，进行答案优化**
 
