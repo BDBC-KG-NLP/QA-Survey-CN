@@ -420,10 +420,10 @@ CQA--工业界
     - 先将文本使用相似度计算构造相似度矩阵，然后CNN网络来提取特征。
     - 模型可以学习到Down the ages（n-gram特征），noodles and dumplings与dumplings and noodles（打乱顺序的n-term特征）、were famous Chinese food和were popular in China（相似语义的n-term特征）
   	- **层次化卷积步骤**
-    	- 1.Ai和Bj距离度量方式：完全一样 (Indicator），余弦相似度 (Cosine)，点乘 (Dot Product)。
-    	- 2.卷积，RELU激活，动态pooling（pooling size等于内容大小除以kernel大小）
-    	- 3.卷积核第一层分别算，第二层求和算。可以见下图3*3的kernel分别算，2*4*4求和算。
-    	- 4.MLP拟合相似度，两层，使用sigmoid激活，最后使用softmax，交叉熵损失函数。
+        	- 1.Ai和Bj距离度量方式：完全一样 (Indicator），余弦相似度 (Cosine)，点乘 (Dot Product)。
+        	- 2.卷积，RELU激活，动态pooling（pooling size等于内容大小除以kernel大小）
+        	- 3.卷积核第一层分别算，第二层求和算。可以见下图3*3的kernel分别算，2*4*4求和算。
+        	- 4.MLP拟合相似度，两层，使用sigmoid激活，最后使用softmax，交叉熵损失函数。
 
 <div align=center><img src=https://img-blog.csdn.net/20171219172641689  width=400 alt=MatchPyramid-Hierarchical-Convolution></div>
 
@@ -569,23 +569,19 @@ https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/640.jpeg
     - 构建一个三层的模型，最底层是具有较强迁移能力的通用模型 BERT，在此基础上构建不同行业的模型，最后用相对较少的企业数据来训练模型。这样构建出来的企业的 NLU 分类模型，F1 基本都在90%+。性能方面，因为模型的结构比较复杂，在线预测的延时比较长，因此通过知识蒸馏的方法来进行模型压缩，在效果相当的同时预测效率更快了。
 
 ## 4 总结
-- 整个CQA问答，可能经过的模块共两个：IR检索模块和生成模块。（如果每个意图有相同的答案，则意图识别功能在IR模块实现，否则在IR检索之前先做意图分类，再进行对应数据类别的数据检索）
-  - **IR检索模块**
-	- **无监督的匹配**方式
-	    - TF-IDF、BM25、规则等
-	- **有监督的深度模型匹配**方式
-		- 文本语义表达的Siamese networks深度模型。应用广泛的模型只要有DSSM、ESIM
-		
-		  - **DSSM(采用了词袋模型，损失了上下文信息，可选用CNN-DSSM等优化模型)**
-		  - **ESIM(适用于短文本)**
-		- 基于交互的深度模型：如MatchPyramid
-  - **生成模块**
-	- 如，采用机器阅读理解方式。
-	
-  - IR检索模块对长问句或复杂问句往往无法在QA知识库中检索到匹配的数据，而生成模块难以保证一致性和合理性。经常生成不匹配或无意义的答案。所以可以将IR和生成模块聚合在一起，用一个Seq2Seq模型来对搜索结果做评估，从而达到优化的效果。
-
+- 整个CQA问答，可能经过的模块共两个：召回模块和检索模块。
+	- **召回模块**
+		-主要采用传统信息检索方法实现 	
+	- **IR检索模块**
+		- **无监督的匹配**方式
+	    - 规则，LDA，Sentence bert等
+		- **有监督的深度模型匹配**方式
+	  	- 文本语义表达的Siamese networks深度模型。应用广泛的模型只要有DSSM、ESIM，MAtchPyramid等
+	    	- **DSSM(采用了词袋模型，损失了上下文信息，可选用CNN-DSSM等优化模型)**
+	    	- **ESIM(适用于短文本)**
+    		- **MatchPyramid() 基于交互的深度模型)**
+- 问答对较少等情况下可以将IR模块改为分类任务（意图识别）进行。
 - 如果在数据不充足，或数据效果质量不高的情况下，可以使用迁移学习，以训练好的模型为基础。
-
 - 在系统设计初期，根据数据的不同情况，可参考阿里小蜜自然语言理解(NLU)方法中的无样本冷启动方法、小样本方法、多样本方法的思路。
 
 ###  难点
