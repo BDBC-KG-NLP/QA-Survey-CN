@@ -25,7 +25,7 @@
          * [DSSＭ 模型](#dssｍ-模型)
          * [Sentence Bert](#sentence-bert)
       * [交互型模型](#交互型模型)
-         * [MatchPyramid模型](# matchpyramid模型)
+         * [MatchPyramid模型](#matchpyramid模型)
          * [ESIM （Enhanced LSTM）](#esim-enhanced-lstm)
    * [2.3 FAQ发现与优化](#23-faq发现与优化)
       * [FAQ发现](#faq发现)
@@ -325,11 +325,11 @@
 
     Word2Vec得到的词向量可以反映词与词之间的语义差别，WMD距离即对两个文档中的任意两个词所对应的词向量求欧氏距离然后再加权求和，大概是这样的形式：
 
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/WMD_eq.png  width=650 alt=WMD_eq></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/WMD_eq.png   alt=WMD_eq></div>
 
     其中c(i,j)为i，j两个词所对应的词向量的欧氏距离。矩阵T代表了文档1中的一个词转移到文档2中一个词的权重。即解决如下线性规划问题（|d1|代表文档1的长度，|d2|代表文档2长度）：
 
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/wmd_eq2.png  width=650 alt=wmd_eq2></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/wmd_eq2.png  alt=wmd_eq2></div>
 
     通过最小化矩阵Ｔ，我们就可以得到两个文档的ＷＭＤ距离。具体例子如下：
 
