@@ -6,12 +6,12 @@ CQA--工业界
    * [1.3 评测标准](#13-评测标准)
    * [1.4  数据集](#14--数据集)  
          * [“技术需求”与“技术成果”项目之间关联度计算模型（需求与成果匹配)](#技术需求与技术成果项目之间关联度计算模型需求与成果匹配)  
-             * [cMedQA2 （医疗问答匹配）](#cmedqa2-医疗问答匹配)  
-             * [智能客服问题相似度算法设计——第三届魔镜杯大赛](#智能客服问题相似度算法设计第三届魔镜杯大赛)  
-             * [CCKS 2018 微众银行智能客服问句匹配大赛](#ccks-2018-微众银行智能客服问句匹配大赛)  
-             * [AFQMC 蚂蚁金融语义相似度](#afqmc-蚂蚁金融语义相似度)  
-             * [OPPO手机搜索排序query-title语义匹配数据集](#oppo手机搜索排序query-title语义匹配数据集)  
-             * [医疗问题相似度衡量竞赛数据集（医疗问题匹配、意图匹配）](#医疗问题相似度衡量竞赛数据集医疗问题匹配意图 匹配)
+         * [cMedQA2 （医疗问答匹配）](#cmedqa2-医疗问答匹配)  
+         * [智能客服问题相似度算法设计——第三届魔镜杯大赛](#智能客服问题相似度算法设计第三届魔镜杯大赛)  
+         * [CCKS 2018 微众银行智能客服问句匹配大赛](#ccks-2018-微众银行智能客服问句匹配大赛)  
+         * [AFQMC 蚂蚁金融语义相似度](#afqmc-蚂蚁金融语义相似度)  
+         * [OPPO手机搜索排序query-title语义匹配数据集](#oppo手机搜索排序query-title语义匹配数据集)  
+         * [医疗问题相似度衡量竞赛数据集（医疗问题匹配、意图匹配）](#医疗问题相似度衡量竞赛数据集医疗问题匹配意图 匹配)
 * [2 方法及模型](#2-方法及模型)
    * [2.1 无监督方法](#21-无监督方法)
       * [2.1.1 规则匹配](#211-规则匹配)
@@ -25,6 +25,7 @@ CQA--工业界
          * [DSSＭ 模型](#dssｍ-模型)
          * [Sentence Bert](#sentence-bert)
       * [交互型模型](#交互型模型)
+         * [MatchPyramid模型](# matchpyramid模型)
          * [ESIM （Enhanced LSTM）](#esim-enhanced-lstm)
    * [2.3 FAQ发现与优化](#23-faq发现与优化)
       * [FAQ发现](#faq发现)
@@ -413,7 +414,7 @@ CQA--工业界
 
 
 
-- **MatchPyramid模型**
+##### MatchPyramid模型
   - **论文地址**：[Text Matching as Image Recognition](https://arxiv.org/pdf/1602.06359.pdf)
   - **模型简介**
     - 先将文本使用相似度计算构造相似度矩阵，然后CNN网络来提取特征。
@@ -430,54 +431,16 @@ CQA--工业界
 
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-MatchPyramid.png  width=400 alt=MatchPyramid-overview></div>
 
-
 ##### ESIM （Enhanced LSTM）
-- **论文**：[Enhanced LSTM for Natural Language Inference](https://arxiv.org/pdf/1609.06038.pdf)
+
+- **论文地址**：Enhanced LSTM for Natural Language Inference
+
 - **源码**：[链接](https://github.com/coetaur0/ESIM)
-- **解读文章**：[短文本匹配的利器-ESIM](https://zhuanlan.zhihu.com/p/47580077)
-- **简介**
-    - ESIM模型是一个自然语言推理网络
-    - 与前两个Siamese结构的模型不同之处在于，没有直接计算两个句子表示向量的距离，而是利用两个句子的表示进行了匹配。
-    - **优点**
-        - 与其他短文本分类算法相比
-            1. ESIM模型有精细的设计序列式的推断结构
-            2. 考虑局部推断和全局推断。主要是用句子间的注意力机制(intra-sentence attention)，来实现局部的推断，进一步实现全局的推断。
-- **模型结构**
-    - 由input encoding(输入编码)、local inference modeling(局部推理模型) 和 inference composition(推断合成)三部分构成。
-    - 模型使用了双向LSTM，并引入attention机制。
 
-<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-ESIM.png  width=400 alt=ESIM></div>
+- **模型简介**
 
-#### 2.2.4 Interaction-based networks深度语义模型
-- **背景**：
-    - DSSM等基于 Siamese networks 的模型，是先将两个文本映射到同一空间，再计算相似度，属于representation-based 模型。
-    - representation-based 模型缺点是两个短文本的编码完全独立进行，无法考虑任何短文本内部之间的关联
-    - Interaction-based模型为了解决上述问题，提前将编码的过程加入了短文本内部之间的关联参数矩阵，更好地把握了语义焦点，能对上下文重要性进行更好的建模
-- **简介**
-  - Interaction based 方法提前算出 query 里每个词和 title 里每个词的相似性，得到相似性矩阵。之后直接用例如 CNN 图像卷积的方法处理该矩阵，计算相似度。
-  - 模型有ARC-II、MatchPyramid、MVLSTM等
-  - **优缺点**
-    - 优：很好的把握语义焦点，对上下文重要性合理建模；可解释性好
-    - 缺：在线计算代价大
-
-- **MatchPyramid模型**
-  - **论文地址**：[Text Matching as Image Recognition](https://arxiv.org/pdf/1602.06359.pdf)
-  - **简介**
-    - 先将文本使用相似度计算构造相似度矩阵，然后卷积来提取特征。
-    - 模型可以学习到Down the ages（n-gram特征），noodles and dumplings与dumplings and noodles（打乱顺序的n-term特征）、were famous Chinese food和were popular in China（相似语义的n-term特征）
-  - **层次化卷积步骤**
-    - 1.Ai和Bj距离度量方式：完全一样 (Indicator），余弦相似度 (Cosine)，点乘 (Dot Product)。
-    - 2.卷积，RELU激活，动态pooling（pooling size等于内容大小除以kernel大小）
-    - 3.卷积核第一层分别算，第二层求和算。可以见下图3*3的kernel分别算，2*4*4求和算。
-    - 4.MLP拟合相似度，两层，使用sigmoid激活，最后使用softmax，交叉熵损失函数。
-
-<div align=center><img src=https://img-blog.csdn.net/20171219172641689  width=400 alt=MatchPyramid-Hierarchical-Convolution></div>
-
-  - **结构**
-<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-MatchPyramid.png  width=400 alt=MatchPyramid-overview></div>
->>>>>>> d3d7369e35d20adb8132d75d8518098a3d65ae2e
-
-  - 输入编码：采用BiLSTM（双向LSTM）对输入的两个句子分别编码。
+  Enhanced LSTM for Natural Language Inference(ESIM)是2017年提出的一个文本相似度计算模型，是一种转为自然语言推断而生的加强版LSTM，由原文中知这种精心设计的链式LSTM顺序推理模型可以胜过以前很多复杂的模型。ESIM的模型主要包括３个部分：编码层，推理层和预测层。
+  - 编码层：采用BiLSTM（双向LSTM）对输入的两个句子分别编码。
   - 推理层：模型的核心部分，首先计算两个句子和另外句子相关的表示向量，然后计算该向量和原始向量的点积，差值等。之后利用各种不同的池化方式得到最后的句子表示，将两个句子的表示拼接，得到预测层的输出ｖ。
   - 预测层：在这一层中，本模型将上述得到的固定长度向量 ｖ，连接两层全连接层，第一层采用tanh激活函数，第二层采用softmax激活函数，最后得到文本蕴含的结果。
 
@@ -525,7 +488,6 @@ FAQ拆分是当一个FAQ里包含多个意图或者说多种情况的时候，Yi
     - 框架中包含的功能均通过插件形式加入，如Analysis中的中文切词，Retrieval中的倒排索引、语义索引，Matching中的Jaccard特征、SimNet语义匹配特征，当前共开放了20+种插件。
 
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-AnyQFramework.png  width=400 alt=AnyQ-FAQ问答系统框></div>
->>>>>>> d3d7369e35d20adb8132d75d8518098a3d65ae2e
 
 - **特色**
     - **框架设计灵活，插件功能丰富**
@@ -538,19 +500,6 @@ FAQ拆分是当一个FAQ里包含多个意图或者说多种情况的时候，Yi
         - AnyQ 使用 SimNet 语义匹配模型构建文本语义相似度，克服了传统基于字面匹配方法的局限，增强 AnyQ 系统的语义检索和语义匹配能力。
     - 其他：针对无任何训练数据的开发者，AnyQ 还包含了基于百度海量数据训练的语义匹配模型，开发者可零成本直接使用。
 
-- **特色1 框架设计灵活，插件功能丰富，有助于开发者快速构建、快速定制适用于特定业务场景的 FAQ 系统**
-
-> AnyQ 系统集成了检索和匹配的丰富插件，通过配置的方式生效；以相似度计算为例，包括字面匹配相似度 Cosine、Jaccard、BM25 等，同时包含了语义匹配相似度。且所有功能都是通过插件形式加入，用户自定义插件，只需实现对应的接口即可，如 Question 分析方法、检索方式、匹配相似度、排序方式等。
-
-- **特色2 极速语义检索**
-
-> 语义检索技术将用户问题和 FAQ 集合的相似问题通过深度神经网络映射到语义表示空间的临近位置，检索时，通过高速向量索引技术对相似问题进行检索。
-
-- **特色3 业界领先语义匹配技术 SimNet**
-
-> AnyQ 使用 SimNet 语义匹配模型构建文本语义相似度，克服了传统基于字面匹配方法的局限，增强 AnyQ 系统的语义检索和语义匹配能力。
-
-- **其他**：针对无任何训练数据的开发者，AnyQ 还包含了基于百度海量数据训练的语义匹配模型，开发者可零成本直接使用。
 
 ### 产品2: [腾讯知文--结构化FAQ问答引擎](https://cloud.tencent.com/developer/article/1172017  )
 
