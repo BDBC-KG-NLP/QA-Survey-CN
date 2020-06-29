@@ -1,25 +1,15 @@
 CQA--工业界
 
-## 目录
-  * [1 任务](#1-任务)
-    * [1.1 任务定义](#11-任务定义)
-    * [1.2 数据集](#12-数据集)
-  * [2 方法及模型](#2-方法及模型)
-    * [2.2 用于问答匹配的方法](#22-用于问答匹配的方法)
-       * 2.2.1 规则匹配(又称“句式法”)
-       * 2.2.2 深度学习多分类模型（CNN\DNN\LSTM\…）
-       * 2.2.3 基于Siamese networks神经网络架构
-       * 2.2.4 Interaction-based networks
-    * [2.3 用于Chatbot的方法](#23-用于Chatbot的方法)
-    * [2.4 用于机器阅读理解的方法](#24-用于机器阅读理解的方法)
-    * [2.5 用于跨领域迁移学习方法](#25-用于跨领域迁移学习方法)
-  * [3 产品举例](#3-产品举例)
-  * [4 问题难点及未来研究的方向](#4-问题难点及未来研究的方向)
-  * [5 相关资料](#5-相关资料)
+
+
+[toc]
+
+
 
 ## 1 任务
 
 ### 1.1 任务定义
+
 **C**ommunity **Q**uestion **A**nswer，中文名称是社区问答。是利用半结构化的数据（问答对形式）来回答用户的提问，其流程通常可以分为三部分。
 
 1. 问题解析，对用户输入的问题进行分词，纠错等预处理步骤。
@@ -33,10 +23,12 @@ CQA--工业界
 ### 1.2 任务分类
 
 通常，根据应用场景的不同，可以将CQA任务分为两类：
+
 - FAQ问答: 在智能客服的业务场景中，对于用户频繁会问到的业务知识类问题的自动解答（以下简称为FAQ）是一个非常关键的需求，可以说是智能客服最为核心的用户场景，可以最为显著地降低人工客服的数量与成本。这个场景中，知识通常是封闭的，而且变化较为缓慢，通常可以利用已有的客服回复记录提取出高质量的问答对作为知识库。
 - 社区问答: 问答对来自于社区论坛中用户的提问和回答，较为容易获取，但是相对质量较低。而且通常是面向开放域的，知识变化与更新速度较快。
 
 ### 1.3 评测标准
+
 - 查全率：用以评价系统对于潜在答案寻找的全面程度。例如：在回答的前30%中保证一定出现正确答案。
 - 查准率：即准确率，top n个答案包含正确答案的概率。这一项与学术界一致。
 - 问题解决率：与具体业务和应用场景紧密相关
@@ -47,80 +39,89 @@ CQA--工业界
 - 拦截率：机器人代替人工解决的用户咨询比例
 - 24H未转人工率：指客户咨询了智能机器人后的24H内是否有咨询人工客服
 
-### 1.4 难点
-- 有标记的相似文本训练数据标注难以自动获取
-- 高质量的问答对数据获取与维护成本较高
-- 用户可能的输入类型较多，匹配模型的鲁棒性无法保证
-
-### 1.5  数据集
 
 
+### 1.4  数据集
+
+由于工业界的数据集通常来自其自身业务的记录，并不对外公开，故以下只举例介绍相关比赛中出现的数据集：
 
 ##### “技术需求”与“技术成果”项目之间关联度计算模型（需求与成果匹配)  
 
 - **比赛链接**：https://www.datafountain.cn/competitions/359
 
 - **任务目标**
-  
+
   - 根据项目信息的文本含义，为供需双方提供关联度较高的对应信息（需求——成果智能匹配
-  
+
 - **数据来源**
+
   - 数据来自中国·河南开放创新暨跨国技术转移大会云服务平台（www.nttzzc.com）
   - **人工标注关联度的方法**：从事技术转移工作的专职工作人员，阅读技术需求文本和技术成果文本，根据个人经验予以标注。关联度分为四个层级：强相关、较强相关、弱相关、无相关。
 
 - **数据具体说明**：https://www.datafountain.cn/competitions/359/datasets
 
 - **评价指标**：使用MAE系数
+
   - 平均绝对差值是用来衡量模型预测结果对标准结果的接近程度一种衡量方法.MAE的值越小，说明预测数据与真实数据越接近。
 
   <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-MAE.png  width=200 alt=MAE公式></div>
   <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-score.png  width=180 alt=最终结果></div>
+
   - 最终结果越接近1分数越高。
-  
+
 - **top1方案及结果**
+
   - 解决方案：https://www.sohu.com/a/363245873_787107 
-  
+
   - 主要利用数据清洗、数据增广、孪生BERT模型
-  
+
   - 最高得分：0.80285150
-  
+
     
-  
 
 ##### cMedQA2 （医疗问答匹配）
+
 - **比赛链接**：https://www.mdpi.com/2076-3417/7/8/767
 - **数据来源**
-   - 寻医寻药网站中的提问和回答， 数据集做过匿名处理
+  - 寻医寻药网站中的提问和回答， 数据集做过匿名处理
 - **数据分布**
   - 总量有108,000个问题，203,569个答案
-      - 训练集中有100,000个问题，188,490个答案
-      - 验证集有4,000个问题，有7527个答案
-      - 测试集有4,000个问题，有7552个答案。
+    - 训练集中有100,000个问题，188,490个答案
+    - 验证集有4,000个问题，有7527个答案
+    - 测试集有4,000个问题，有7552个答案。
 - **top1 解决方案**：[Multi-Scale Attentive Interaction Networks for Chinese Medical Question Answer Selection](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8548603)
 
 
 
 ##### 智能客服问题相似度算法设计——第三届魔镜杯大赛
+
 - **比赛链接**：https://ai.ppdai.com/mirror/goToMirrorDetail?mirrorId=1
+
 - **任务目标**
-  
-    - 计算客户提出问题与知识库问题的相似度
+
+  - 计算客户提出问题与知识库问题的相似度
+
 - **数据来源**
-  
-    - 智能客服聊天机器人真实数据
+
+  - 智能客服聊天机器人真实数据
+
 - **数据分布及描述**
-  
-    - https://ai.ppdai.com/mirror/goToMirrorDetail?mirrorId=1
+
+  - https://ai.ppdai.com/mirror/goToMirrorDetail?mirrorId=1
+
 - **评价指标**：logloss，logloss分数越低越好
+
 - **方案及结果**
-    - [rank6方法](https://qrfaction.github.io/2018/07/25/%E9%AD%94%E9%95%9C%E6%9D%AF%E6%AF%94%E8%B5%9B%E7%AD%94%E8%BE%A9PPT/)(rank6结果0.145129，top1结果0.142658)
+
+  - [rank6方法](https://qrfaction.github.io/2018/07/25/%E9%AD%94%E9%95%9C%E6%9D%AF%E6%AF%94%E8%B5%9B%E7%AD%94%E8%BE%A9PPT/)(rank6结果0.145129，top1结果0.142658)
+
+    - 主要利用传统特征(如最长公共子序列、编辑距离等)，结构特征(构造图结构。将q_id作为node，(qi,qj)作为edge，得到一个单种边的同构图，然后计算qi,qj的公共边权重和等结构)，还有半监督、相似传递性、早停优化等
+
       
-      - 主要利用传统特征(如最长公共子序列、编辑距离等)，结构特征(构造图结构。将q_id作为node，(qi,qj)作为edge，得到一个单种边的同构图，然后计算qi,qj的公共边权重和等结构)，还有半监督、相似传递性、早停优化等
-      
-        
 
 
 ##### CCKS 2018 微众银行智能客服问句匹配大赛
+
 - **比赛链接**：https://biendata.com/competition/CCKS2018_3/
 - **任务目标** 
   - 针对中文的真实客服语料，进行问句意图匹配
@@ -133,6 +134,7 @@ CQA--工业界
 
 
 ##### AFQMC 蚂蚁金融语义相似度
+
 - **比赛链接**：https://dc.cloud.alipay.com/index?click_from=MAIL&_bdType=acafbbbiahdahhadhiih#/topic/intro?id=3
 - **任务目标**
   - 给定客服里用户描述的两句话，用算法来判断是否表示了相同的语义
@@ -143,44 +145,55 @@ CQA--工业界
   - 具体说明：[链接](https://dc.cloud.alipay.com/index?click_from=MAIL&_bdType=acafbbbiahdahhadhiih#/topic/data?id=3)
 - **评测指标**：F1-score为准（得分相同时，参照accuracy排序）
 - **top1解决方案**：[链接](https://www.jiqizhixin.com/articles/2018-10-15-14 )。
-    - 主要利用char-level feature、ESIM 模型、ensemble
+  - 主要利用char-level feature、ESIM 模型、ensemble
 
 
 
 ##### OPPO手机搜索排序query-title语义匹配数据集
+
 - **比赛链接**：[OGeek算法挑战赛--实时搜索场景下搜索结果ctr预估](https://tianchi.aliyun.com/competition/entrance/231688/introduction)
+
 - **数据集链接**：https://pan.baidu.com/s/1Hg2Hubsn3GEuu4gubbHCzw (密码7p3n)
+
 - **数据来源**
-  
+
   - 该数据集来自于OPPO手机搜索排序优化实时搜索场景, 该场景就是在用户不断输入过程中，实时返回查询结果。 该数据集在此基础上做了相应的简化， 提供了一个query-title语义匹配。
+
 - **数据分布**
+
   - 初赛数据约235万 训练集200万，验证集5万，A榜测试集5万，B榜测试集25万
   - 具体说明：https://tianchi.aliyun.com/competition/entrance/231688/information
+
 - **评测指标**：F1 score 指标，正样本为1
+
 - **top1 解决方案**
+
   - 答辩链接：[链接](https://tianchi.aliyun.com/course/video?spm=5176.12586971.1001.83.1770262auKlrTZ&liveId=41001)(00:42开始)
-  
+
   - 主要应用：数据预处理、CTR问题的特征挖掘、TextCNN&TF-IDF、attention net、数据增强、回归CTR模型融合lightGBM、阈值选择。（rank 1,rank2两只队伍都是使用了lightGBM模型和模型融合）
-  
+
   - 最后得分：0.7502
-  
+
     
 
 
 ##### 医疗问题相似度衡量竞赛数据集（医疗问题匹配、意图匹配）
+
 - **比赛链接**：[中国健康信息处理会议举办的医疗问题相似度 衡量竞赛](https://biendata.com/competition/chip2018/) 
 
 - **任务目标**：针对中文的真实患者健康咨询语料，进行问句意图匹配。给定两个语句，要求判定两者意图是否相同或者相近
 
 - **数据来源**
+
   - 来源于真实问答语料库，该任务更加接近于智能医疗助手等自然语言处理任务的实际需求
   - 所有语料来自互联网上患者真实的问题，并经过了筛选和人工的意图匹配标注。
-  
+
 - **数据分布**
+
   - 训练集包含20000条左右标注好的数据（经过脱敏处理，包含标点符号），供参赛人员进行训练和测试。
   - 测试集包含10000条左右无label的数据（经过脱敏处理，包含标点符号）
   - 具体描述：[链接](https://biendata.com/competition/chip2018/data/)
-  
+
 - **评测指标**：Precision，Recall和F1值。最终排名以F1值为基准
 
   
@@ -190,18 +203,17 @@ CQA--工业界
 
 ### 2.1 无监督方法
 
-#### 2.1.1 规则匹配(又称“句式法”)
+#### 2.1.1 规则匹配
 
-  - 优点：可控、高效、易于实现
-  - 目前，很多机器人都有规则匹配的部分。
-  - **具体做法**：针对FAQ库中的标问和相似问进行分词、提炼出大量的概念，并将上述概念组合，构成大量的句式，句式再进行组合形成标问。
-  > 例如，标问“华为mate30现在的价格是多少？”，拆出来“华为mate30”是cellphone概念，“价格是多少”是askMoney概念，“现在”是time概念，那么“华为mate30现在的价格是多少？”就是cellphone+askMoney+time。用户输入"华为mate30现在卖多少钱？"进行分词，可以得到相同的句式和概念组合，就能够命中“华为mate30现在的价格是多少？”这个相似问了。
+目前，流行的问答系统中依旧大量应用着规则匹配的方法。基于规则的方法拥有可解释性强，易于控制，效率高，易于实现，不需要标注数据等优势。针对FAQ库中的标问和相似问进行分词、应用正则表达式等方法提炼出大量的概念，并将这些概念进行组合，构成大量的句式，句式再进行组合形成标问。
 
-在拥有较大数据量积累的场景，一般采用有监督的深度神经网络，可以解析文本并抽取高层语义。
+- 例如，标问“华为mate30现在的价格是多少？”，拆出来“华为mate30”是cellphone概念，“价格是多少”是askMoney概念，“现在”是time概念，那么“华为mate30现在的价格是多少？”就是cellphone+askMoney+time。用户输入"华为mate30现在卖多少钱？"进行分词，可以得到相同的句式和概念组合，就能够命中“华为mate30现在的价格是多少？”这个相似问了。
 
-### 2.1.3 无监督文本表示
+在基于规则的匹配中, 如何进行规则的自动发现与更新、检验与评估是最关键的问题。究其原因, 由人工维护的产生式规则需要高水平的、具备丰富的领域知识的专家.在问答系统所应用的领域较为狭窄时， 这有可能得到满足。然而, 随着问答系统涉及知识的广度和深度不断提高, 依赖于专家知识对管理规则的难度也大为提高。
 
-在缺少标记数据的场景，我们可以利用算法对文本本身进行表示，再利用常用的向量距离计算方法（如WSD，余弦距离，欧式距离等）进行相似性度量。常见的无监督文本表示方法主要可以分为两种，一种是基于词频信息的方法，一种是基于词向量的方法。
+### 2.1.2 无监督文本表示
+
+在缺少标记数据的场景，我们可以利用算法对文本本身进行表示，再利用常用的向量距离计算方法（如余弦距离，欧式距离等）进行相似性度量。常见的无监督文本表示方法主要可以分为两种，一种是基于词频信息的方法，一种是基于词向量的方法。
 
 - 基于词频信息的方法：传统的文本表示方法通常是基于词频特征的，例如TF-IDF，语言模型等。
 
@@ -209,23 +221,35 @@ CQA--工业界
 
   - 语言模型：根据现有的文本对每个单词由一篇文档生成的概率根据词频进行建模，将一段文本由另一段文本生成的概率作为其相似度得分。
 
-  - <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/language model.png  width=650 alt=语言模型></div>
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/language model.png　width=650 alt=语言模型></div>
 
-- 基于浅层语义的方法，如LSA，LDA等。
+- 基于浅层语义的方法，如PLSA，LDA等。
 
-  - LSA 
+  - PLSA 
 
-    LSA在潜在语义分析之上引入了主题概念。它是一种语义含义，对文档的主题建模不再是矩阵分解，而是概率分布（比如多项式分布），这样就能解决多义词的分布问题，并且主题是有明确含义的。但这种分析的基础仍然是文档和词的共现频率，分析的目标是建立词/文档与这些潜在主题的关系，而这种潜在主题进而成为语义关联的一种桥梁。
-
-  - LDA
-
-    如果说pLSA是频度学派代表，那LDA就是贝叶斯学派代表。LDA通过引入Dirichlet分布作为多项式共轭先验，在数学上完整解释了一个文档生成过程，其概率图模型如图所示。
+    PLSA假设整个词频矩阵服从多项式分布，并引入了主题（z）的概念。假设每篇文章都由若干主题构成，每个主题的概率是p(z|d)，在给定主题的条件下，每个词都以一定的概率p(w|z)产生。这样就能解决多义词的分布问题。这种分析的基础仍然是文档和词的共现频率，分析的目标是建立词/文档与这些潜在主题的关系，而这种潜在主题进而成为语义关联的一种桥梁。其概率图模型如下：
 
     
 
-    和pLSA概率图模型不太一样，LDA概率图模型引入了两个随机变量α和β，它们就是控制参数分布的分布，即文档-主题符合多项式分布。这个多项式分布的产生受Dirichlet先验分布控制，可以使用变分期望最大化（Variational EM）和吉布斯采样（Gibbs Sampling）来推导参数，这里不展开叙述。
+    ![img](D:\docs\QA-Survey\image\PLSA.jpg)
 
-    总体来讲，主题模型引入了“Topic”这个有物理含义的概念，并且模型通过共现信息能学到同义、多义、语义相关等信息。得到的主题概率分布作为表示，变得更加合理有意义。有了文档的表示，在匹配时，我们不仅可以使用之前的度量方式，还可以引入KL等度量分布的公式，这在文本匹配领域应用很多。当然，主题模型会存在一些问题，比如对短文本推断效果不好、训练参数多速度慢、引入随机过程建模避免主题数目人工设定不合理问题等。随着研究进一步发展，这些问题基本都有较好解决，比如针对训练速度慢的问题，从LDA到SparseLDA、AliasLDA, 再到LightLDA、WarpLDA等，采样速度从O(K)降低O(1)到。
+    其中p(z|d)和P（w|z）是需要学习的参数。P(z|d)参数数目是主题数和文档数乘的关系，p(w|z)是词表数乘主题数的关系，参数空间很大，容易过拟合。
+
+  - LDA
+
+    如果说pLSA是频度学派代表，那LDA就是**贝叶斯学派**代表。LDA通过引入Dirichlet分布作为多项式共轭先验，在数学上完整解释了一个文档生成过程，其概率图模型如图所示。
+
+    ![img](D:\docs\QA-Survey\image\LDA.jpg)
+
+    我们可以看出LDA中每篇文章的生成过程如下：
+
+    1. 选择单词数N服从泊松分布，N~Possion(β)。
+    2. 文档θ服从狄利克雷分布，θ~Dir(α)。
+    3. 对于文档内N个单词中的每个单词
+       a. 选择一个主题z，服从多项分布Mult(θ)
+       b. 以概率p（w|z，β）生成单词w，其中p（w|z，β）表示在主题z上的条件多项式概率。
+
+    和pLSA不太一样，LDA概率图模型引入了两个随机变量α和β，它们就是控制参数分布的分布，即文档-主题符合多项式分布。这个多项式分布的产生受Dirichlet先验分布控制，这样就解决了PLSA参数量过大的问题。
 
   
 
@@ -233,12 +257,50 @@ CQA--工业界
 
   - SIF
 
-### 2.1.4 领域迁徙
+    发表于2016年的论文[A simple but tough-to-beat baseline for sentence embeddings](https://github.com/llhthinker/NLP-Papers/blob/master/distributed representations/sentence-embedding/note.md#a-simple-but-tough-to-beat-baseline-for-sentence-embeddings)提出了一种非常简单但很有一定竞争力的句子向量表示算法。算法包括两步，第一步是对句子中所有的词向量进行加权平均，得到平均向量；第二步是移出（减去）在所有句子向量组成的矩阵的第一个**主成分**上的投影。
 
-迁移学习的模型有两类，一种是unsupervised，另外一种是supervised。前者假设完全没有目标领域的标注数据，后者假设仅有少部分目标领域的标注数据。在实际的商业应用中主要以supervised的迁移学习技术为主，同时结合深度神经网络（DNN）。在这个设定下主要有两种框架：
+    第一步主要是对TFIDF加权平均词向量表示句子的方法进行改进。论文提出了一种**平滑倒词频** (smooth inverse frequency, SIF)方法用于计算每个词的加权系数，具体地，单词的权重为a/(a+p(w))a/(a+p(w))，其中a为平滑参数，p(w)为（估计的）词频。直观理解SIF，就是说**频率越低的词在当前句子出现了，说明它在句子中的重要性更大，也就是加权系数更大**。对于第二步，通过移出所有句子的共有信息，因此保留下来的句子向量更能够表示本身并与其它句子向量产生差距。
 
-- Fully-Shared Model:用于比较相似的两个领域。
-- Specific-Shared Model: 用于相差较大的两个领域。
+    ![SIF](D:\docs\QA-Survey\image\SIF.png)
+
+  - WMD
+
+    WMD是一种基于word embeddings 计算两个文本间的距离，即测量一个文本转化为另一个文本的最小距离。其将文本距离度量问题转化为一个最优传输（translation）问题。
+
+    Word2Vec得到的词向量可以反映词与词之间的语义差别，WMD距离即对两个文档中的任意两个词所对应的词向量求欧氏距离然后再加权求和，大概是这样的形式：
+
+    ![WMD_eq](D:\docs\QA-Survey\image\WMD_eq.png)
+
+    其中c(i,j)为i，j两个词所对应的词向量的欧氏距离。矩阵T代表了文档1中的一个词转移到文档2中一个词的权重。即解决如下线性规划问题（|d1|代表文档1的长度，|d2|代表文档2长度）：
+
+    ![wmd_eq2](D:\docs\QA-Survey\image\wmd_eq2.png)
+
+    通过最小化矩阵Ｔ，我们就可以得到两个文档的ＷＭＤ距离。具体例子如下：
+
+    ![Word Mover's Distance的示意图，来自论文《From Word Embeddings To Document Distances》](D:\docs\QA-Survey\image\ＷＭＤ.png)
+
+### 2.5 用于跨领域迁移学习方法
+
+- **背景**
+
+  - **迁移学习**
+    - 一种机器学习的方法。指的是一个预训练的模型被重新用在另一个任务中，一般两种任务之间需要有一定的相似性和关联性
+  - **为什么要迁移学习**
+    - 随着近年来NLP的发展，研究发现，有监督的方法虽然准确率高，但是有标数据的获取成本太高，因此迁移学习的效果越来越凸显出来，并在各种NLP（包括短文本相似度）场景出现了革命性进展
+
+- **模型有两种**
+
+  - **unsupervised**：假设完全没有目标领域的标注数据
+  - **supervised**：假设仅有少部分目标领域的标注数据。
+
+  **在实际的商业应用中主要以supervised的迁移学习技术为主，同时结合深度神经网络（DNN）**。
+
+  在这个设定下主要有两种框架：
+
+  - **Fully**-Shared Model：用于**比较相似的两个领域**。
+  - **Specific**-Shared Model：用于**相差较大的两个领域**。
+
+<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/Screen%20Shot%202020-04-20%20at%207.36.26%20PM.png width=650 alt=迁移学习模型></div>
 
 ## 2.2 有监督匹配算法
 
@@ -256,7 +318,8 @@ CQA--工业界
 
 
 #### 表示型模型
-表示型模型更侧重对表示层的构建，它首先将两个文本表示成固定长度的向量，之后计算两个文本向量的距离来衡量其相似度。这种模型的问题是没有考虑到两个句子词级别的关联性。容易失去语义交代呢。
+
+表示型模型更侧重对表示层的构建，它首先将两个文本表示成固定长度的向量，之后计算两个文本向量的距离来衡量其相似度。这种模型的问题是没有考虑到两个句子词级别的关联性。容易失去语义焦点。
 
 ##### Siamese networks模型
 
@@ -265,78 +328,109 @@ CQA--工业界
 - 基于Siamese networks神经网络架构，比如有Siamese结构的LSTM、CNN和ESIM等。
 
 
-##### DSSM 模型
-- **论文**：[Learning Deep Structured Semantic Models for Web Search using Clickthrough Data](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/cikm2013_DSSM_fullversion.pdf)
+##### DSSＭ 模型
+
+- **论文地址**：[Learning Deep Structured Semantic Models for Web Search using Clickthrough Data](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/cikm2013_DSSM_fullversion.pdf)
 - **模型简介**
-    - 先把 query 和 document 转换成 BOW 向量形式，然后通过 word hashing 变换做降维得到相对低维的向量，feed给 MLP 网络，输出层对应的低维向量就是 query 和 document 的语义向量（假定为 Q 和 D）。计算(D, Q)的余弦相似度后，用 softmax 做归一化得到的概率值是整个模型的最终输出，该值作为监督信号进行有监督训练。
+  - 先把 query 和 document 转换成 BOW 向量形式，然后通过 word hashing 变换做降维得到相对低维的向量，feed给 MLP 网络，输出层对应的低维向量就是 query 和 document 的语义向量（假定为 Q 和 D）。计算(D, Q)的余弦相似度后，用 softmax 做归一化得到的概率值是整个模型的最终输出，该值作为监督信号进行有监督训练。
 - **模型结构**：
 
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-DSSM.png  width=650 alt=DSSM></div>
 
-##### Siamese LSTM 模型
-- 解读链接：https://zhuanlan.zhihu.com/p/48188731
+#### Sentence Bert
+
+- **论文地址**：[Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks](https://arxiv.org/pdf/1908.10084.pdf)
+
+- **源码** :
+
 - **模型简介**
->- RNN 模型提出之前，比较两段文本的相似性都习惯用词袋模型或者 TF-IDF 模型，但没有用到上下文的信息，而且词与词之间联系不紧密，词袋模型难以泛化。
->- LSTM 或者 RNN 模型可以去适应变成的句子，比如通过 RNN 可以将两个长度不同的句子 encode 成一个相同长度的语义向量，这个语义向量包含了各自句子的语义信息，可以直接用来比较相似性。
-> - Siamese Recurrent Architectures 就是将两个不一样长的句子，分别 encode 成相同长度的向量，以此来比较两个句子的相似性。
 
-- **论文**：[Siamese Recurrent Architectures for Learning Sentence Similarity](http://people.csail.mit.edu/jonasmueller/info/MuellerThyagarajan_AAAI16.pdf)
+  Sentence BERT(Sbert) 网络是通过 SNLI 数据集（标注了一对句子之间的关系，可能是蕴含、矛盾或者中立）进行预训练。模型使用孪生网络，即两个一模一样共享参数的Bert网络进行推理。首先将第一个句子输入到BERT，通过不同的Pooling方法获得句子的Embedding表示，第二个句子同样如此，然后将这两个Embedding变换后通过Softmax输出这对句子之间关系的概率进行训练（类似分类问题）。在训练完毕后，就可以将下面的BERT和pooling层拿出来，将句子输入得到其Embedding，再进行其他操作（比如计算相似度可以直接使用余弦）。
 
-- **模型结构**
-    - 1.**问题的语义表示向量抽取**： 通过LSTM完成，在问题1和问题2的对称网络中，这部分LSTM共享权重。
-    - 2.**语义向量相似性计算**：计算语义表示向量的平方距离和角度，再喂给多层感知机MLP进行分类。
-    - 模型如下所示
-    
-<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-siamese%20LSTM.png    width=500 alt=CQA-industry-siamese LSTM 模型></div>
+  原始的Bert模型如果要为一个句子寻找最相似的句子，需要两两计算其相似度，这样的时间消耗是ｎ的平方级别的。Sentence Bert可以首先计算出每个句子的向量表示，然后直接计算句子间的相似度，这样可以将时间消耗减少到Ｏ（ｎ）的级别，同时论文中的实验证明这样的方法并没有降低模型的效果。
+
+- **模型结构** :
+
+  ![img](D:\docs\QA-Survey\image\使用孪生BERT网络生成句子的嵌入表示.png)
 
 #### 2.1.4 交互型模型
 
 交互型模型认为全局的匹配度依赖于局部的匹配度，在输入层就进行词语间的先匹配，之后利用单词级别的匹配结果进行全局的匹配。它的优势是可以很好的把握语义焦点，对上下文重要性合理建模。由于模型效果显著，业界都在逐渐尝试交互型的方法。
+
+
+
+- **MatchPyramid模型**
+  - **论文地址**：[Text Matching as Image Recognition](https://arxiv.org/pdf/1602.06359.pdf)
+  - **简介**
+    - 先将文本使用相似度计算构造相似度矩阵，然后卷积来提取特征。
+    - 模型可以学习到Down the ages（n-gram特征），noodles and dumplings与dumplings and noodles（打乱顺序的n-term特征）、were famous Chinese food和were popular in China（相似语义的n-term特征）
+  - **层次化卷积步骤**
+    - 1.Ai和Bj距离度量方式：完全一样 (Indicator），余弦相似度 (Cosine)，点乘 (Dot Product)。
+    - 2.卷积，RELU激活，动态pooling（pooling size等于内容大小除以kernel大小）
+    - 3.卷积核第一层分别算，第二层求和算。可以见下图3*3的kernel分别算，2*4*4求和算。
+    - 4.MLP拟合相似度，两层，使用sigmoid激活，最后使用softmax，交叉熵损失函数。
+
+<div align=center><img src=https://img-blog.csdn.net/20171219172641689  width=400 alt=MatchPyramid-Hierarchical-Convolution></div>
+
+  - **结构**
+
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-MatchPyramid.png  width=400 alt=MatchPyramid-overview></div>
+
 ##### ESIM （Enhanced LSTM）
-- **论文**：Enhanced LSTM for Natural Language Inference
+
+- **论文地址**：Enhanced LSTM for Natural Language Inference
+
 - **源码**：[链接](https://github.com/coetaur0/ESIM)
+
+- **模型简介**
+
+  Enhanced LSTM for Natural Language Inference(ESIM)是2017年提出的一个文本相似度计算模型，是一种转为自然语言推断而生的加强版LSTM，由原文中知这种精心设计的链式LSTM顺序推理模型可以胜过以前很多复杂的模型。ESIM的模型主要包括３个部分：输入编码，局部推理建模和预测层。
+
+  - 输入编码：采用BiLSTM（双向LSTM）对输入的两个句子分别编码。
+  - 推理层：模型的核心部分，首先计算两个句子和另外句子相关的表示向量，然后计算该向量和原始向量的点积，差值等。之后利用各种不同的池化方式得到最后的句子表示，将两个句子的表示拼接，得到预测层的输出ｖ。
+  - 预测层：在这一层中，本模型将上述得到的固定长度向量 ｖ，连接两层全连接层，第一层采用tanh激活函数，第二层采用softmax激活函数，最后得到文本蕴含的结果。
+
 - **模型结构**
-    - 由输入编码，局部推理模型和推断合成三部分构成。
-    - 模型使用了双向LSTM，并引入attention机制。
-    - 模型如下所示
+
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-ESIM.png  width=400 alt=ESIM></div>
-  - 同时对问题和答案进行特征加权的Attention方案
-    
 
 
 
-#### Bimpm(Bilateral Multi-perspective Matching) 
 
-- 论文： Bilateral Multi-Perspective Matching for Natural Language Sentences
-- 源码： [链接](https://github.com/zhiguowang/BiMPM)
-- 模型简介
-- **模型结构**
-  - 
+### 2.3 FAQ发现与优化
 
-## 3 产品案例
-### 产品1: YiBot
-**简介**
-- YiBot是由深圳追一科技有限公司自主研发，应用目前最前沿的自然语言处理及深度学习算法，为企业级客户提供的一套智能客服机器人系统。
+**FAQ发现**
 
-**FAQ问题优化**
-> YiBot的FAQ问题优化是从用户问题和智能客服机器人的回答出发，合理拆分、合并已有FAQ，并优化问句和答案；同时采用问句聚类技术，挖掘新知识点，补充更新已有知识点，淘汰废弃知识点，形成一个正向循环，不断优化知识结构，提高拦截率。
-- **FAQ发现**
-> 将用户问句进行聚类，对比已有的FAQ，发现并补足未覆盖的知识点。将FAQ与知识点一一对应。
-- **FAQ的拆分与合并**
-> FAQ拆分是当一个FAQ里包含多个意图或者说多种情况的时候，YiBot后台会自动分析触达率较高的FAQ，聚类FAQ对应的问句，按照意图将其拆分开来。
+将用户问句进行聚类，对比已有的FAQ，发现并补足未覆盖的知识点。将FAQ与知识点一一对应。
+
+
+- **FAQ的拆分与合并** 
+
+
+FAQ拆分是当一个FAQ里包含多个意图或者说多种情况的时候，YiBot后台会自动分析触达率较高的FAQ，聚类FAQ对应的问句，按照意图将其拆分开来。
+
 - **FAQ合并**
-> 最终希望希望用户的每一个意图能对应到唯一的FAQ，这样用户每次提问的时候，系统就可以根据这个意图对应的FAQ直接给出答案。而如果两个FAQ意思过于相近，那么当用户问到相关问题时，就不会出现一个直接的回答，而是两个意图相关的推荐问题，这样用户就要再进行一步选择操作。这时候YiBot就会在后台同样是分析触达率较高的FAQ，分析哪一些问句总是被推荐相同的答案，将问句对应的意图合并。
+
+最终希望希望用户的每一个意图能对应到唯一的FAQ，这样用户每次提问的时候，系统就可以根据这个意图对应的FAQ直接给出答案。而如果两个FAQ意思过于相近，那么当用户问到相关问题时，就不会出现一个直接的回答，而是两个意图相关的推荐问题，这样用户就要再进行一步选择操作。这时候YiBot就会在后台同样是分析触达率较高的FAQ，分析哪一些问句总是被推荐相同的答案，将问句对应的意图合并。
+
 - **淘汰机制**
-> 分析历史日志，采用淘汰机制淘汰废弃知识点，如已下线业务知识点等。
+
+分析历史日志，采用淘汰机制淘汰废弃知识点，如已下线业务知识点等。
 
 **FAQ答案优化**
+
 - **挖掘对话，进行答案优化**
 
-> 如果机器人已经正确识别意图但最后仍然转人工，说明知识库的答案不对，需要进一步修正这一类知识点相对应的答案。
-- **分析头部场景，回答应用文本、图片、自动化解决方案等多元化方式**
-> 比如在电商场景中，经常会有查询发货到货时间、订单状态等的场景。利用图示指引、具体订单处理等方式让用户操作更便捷。
+如果机器人已经正确识别意图但最后仍然转人工，说明知识库的答案不对，需要进一步修正这一类知识点相对应的答案。
 
-### 产品2: [百度AnyQ--ANswer Your Questions](https://github.com/baidu/AnyQ)
+- **分析头部场景，回答应用文本、图片、自动化解决方案等多元化方式**
+
+比如在电商场景中，经常会有查询发货到货时间、订单状态等的场景。利用图示指引、具体订单处理等方式让用户操作更便捷。
+
+## 3 产品案例
+
+
+### 产品1 [百度AnyQ--ANswer Your Questions](https://github.com/baidu/AnyQ)
 
 **简介**
 
@@ -350,21 +444,30 @@ CQA--工业界
 **特色**
 
 - **特色1 框架设计灵活，插件功能丰富，有助于开发者快速构建、快速定制适用于特定业务场景的 FAQ 系统**
+
 > AnyQ 系统集成了检索和匹配的丰富插件，通过配置的方式生效；以相似度计算为例，包括字面匹配相似度 Cosine、Jaccard、BM25 等，同时包含了语义匹配相似度。且所有功能都是通过插件形式加入，用户自定义插件，只需实现对应的接口即可，如 Question 分析方法、检索方式、匹配相似度、排序方式等。
+
 - **特色2 极速语义检索**
+
 > 语义检索技术将用户问题和 FAQ 集合的相似问题通过深度神经网络映射到语义表示空间的临近位置，检索时，通过高速向量索引技术对相似问题进行检索。
+
 - **特色3 业界领先语义匹配技术 SimNet**
+
 > AnyQ 使用 SimNet 语义匹配模型构建文本语义相似度，克服了传统基于字面匹配方法的局限，增强 AnyQ 系统的语义检索和语义匹配能力。
+
 - **其他**：针对无任何训练数据的开发者，AnyQ 还包含了基于百度海量数据训练的语义匹配模型，开发者可零成本直接使用。
 
-### 产品3: [腾讯知文--结构化FAQ问答引擎](https://cloud.tencent.com/developer/article/1172017  )
+### 产品2: [腾讯知文--结构化FAQ问答引擎](https://cloud.tencent.com/developer/article/1172017  )
+
 基于结构化的FAQ的问答引擎流程由两条技术路线来解决
+
 - 无监督学习，基于快速检索
 - 有监督的学习，基于深度匹配
 
 **无监督的快速检索方法**
 
 采用了三个层次的方法来实现快速检索的方法
+
 - **层次1：基础的TFIDF提取query的关键词，用BM25来计算query和FAQ库中问题的相似度**。这是典型的词汇统计的方法，该方法可以对rare word比较鲁棒，但同时也存在词汇匹配缺失的问题。
 - **层次2：采用了language model（简写LM）的方法**。主要使用的是Jelinek-Mercer平滑法和Dirichlet平滑法，对于上面的词汇匹配问题表现良好，但是也存在平滑敏感的问题。
 - **层次3：最后一层使用Embedding，采用了LSA/word2vec和腾讯知文自己提出的Weighted Sum/WMD方法**，以此来表示语义层面的近似，但是也同样引发了歧义问题。
@@ -372,10 +475,12 @@ CQA--工业界
 **监督的深度匹配方法**
 
 采用了两条思路
+
 - **思路1 基于Siamese networks神经网络架构**。这是一种相似性度量方法，内部采用深度语义匹配模型（DSMM，Deep Structured Semantic Model），该方法在检索场景下使用点击数据来训练语义层次的匹配
 - **思路2 Interaction-based networks，同时对问题和答案进行特征加权的Attention方案**。
 
-### 产品4: [阿里小蜜](https://www.alixiaomi.com/#/)
+### 产品3: [阿里小蜜](https://www.alixiaomi.com/#/)
+
 **为什么要做阿里小蜜？**
 
 阿里小蜜出现之前团队发现的问题有2个，第一个是需要对话机器人的业务很多，第二点是独立开发者的开发成本又很高。为了解决这两个问题，团队需要做一套平台产品来赋能开发者。如果做一个平台能够提供一些非常易于操作的开发工具，有丰富的内置能力，有强大的 AI 算法能力，以及全生命周期的配套工具，那么这些独立的开发者或者企业就能够做到零代码开发，快速交付具有鲁棒对话的机器人，并且该机器人可以在线上进行持续迭代优化。
@@ -389,12 +494,12 @@ CQA--工业界
 - 下面针对这三点进行具体介绍：
 
   - 1. 从 Intent 为中心到以 Dialog 为中心
-以 Intent 为中心的方式每次要创建单个的意图，如果遇到一个复杂场景，需要创建很多个意图堆积在一起，每次开发只能看到当前正在创建的意图，因为该技术起源于原来的 Slot Filling 方式，只能解决简单的，Slot Filling 这种任务形式对话，任务场景比较受限。而以 Dialog 为中心的设计思路，把人机对话过程通过图的方式展现出来，对话步骤用图上的节点进行抽象，开发者在设计对话流的时候，这种方式能提供一个全局的视野，而且图的节点抽象比较底层，可以进行各种任务的配置，适用场景比较广泛。
+       以 Intent 为中心的方式每次要创建单个的意图，如果遇到一个复杂场景，需要创建很多个意图堆积在一起，每次开发只能看到当前正在创建的意图，因为该技术起源于原来的 Slot Filling 方式，只能解决简单的，Slot Filling 这种任务形式对话，任务场景比较受限。而以 Dialog 为中心的设计思路，把人机对话过程通过图的方式展现出来，对话步骤用图上的节点进行抽象，开发者在设计对话流的时候，这种方式能提供一个全局的视野，而且图的节点抽象比较底层，可以进行各种任务的配置，适用场景比较广泛。
 
 <div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640-3.jpeg width=650 alt=ESIM></div>
 
   - 2. 从表单式开发到可视化拖拽式开发
-在开发模式上将原来的表单式开发方式变成了可视化拖拽式开发方式。原来表单式开发方式以 Intent 为中心，所以对于开发者来说更像做一道一道表单填空题，只能单点控制，整个对话流程非常不直观，所有 Intent 压缩在一个表单，填写复杂。在可视化拖拽方式中，整个对话流过程的每一个节点都可以通过简单拖拽方式进行完整描述，拥有全局视野，整体可控。
+       在开发模式上将原来的表单式开发方式变成了可视化拖拽式开发方式。原来表单式开发方式以 Intent 为中心，所以对于开发者来说更像做一道一道表单填空题，只能单点控制，整个对话流程非常不直观，所有 Intent 压缩在一个表单，填写复杂。在可视化拖拽方式中，整个对话流过程的每一个节点都可以通过简单拖拽方式进行完整描述，拥有全局视野，整体可控。
 
 <div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640-2.jpeg width=650 alt=ESIM></div>
 
@@ -412,6 +517,17 @@ CQA--工业界
 
 ## 4 问题难点及未来研究的方向
 
+###  难点
+
+- 有标记的相似文本训练数据标注难以自动获取
+- 高质量的问答对数据获取与维护成本较高
+- 用户可能的输入类型较多，匹配模型的鲁棒性无法保证
+
+### 未来研究方向
+
+- 利用预训练模型解决文本匹配问题
+- FAQ的发现与优化的自动化
+
 ## 5 相关资料
 
 - [阿里小蜜新一代智能对话开发平台技术解析](https://mp.weixin.qq.com/s?__biz=MzU1NTMyOTI4Mw==&mid=2247494321&idx=1&sn=7f58bafd7f1962e17f3162ef0917c431&chksm=fbd758ddcca0d1cb19c452c40697c816f788d29b90af4f703a0fc776897f80b087d0a3bc885a&scene=27#wechat_redirect)
@@ -421,4 +537,4 @@ CQA--工业界
 - [阿里小蜜机器阅读理解技术揭秘](https://myslide.cn/slides/6148#)
 - [从学术前沿到工业领先：解密阿里小蜜机器阅读的实践之路](https://zhuanlan.zhihu.com/p/62217668)
 - [云知声：深度文本匹配在智能客服中的应用](https://www.jiqizhixin.com/articles/2018-10-23-15)
-- [[NLP点滴——文本相似度](https://www.cnblogs.com/xlturing/p/6136690.html)](https://www.cnblogs.com/xlturing/p/6136690.html#simhash)
+- [[NLP点滴——文本相似度](https://www.cnblogs.com/xlturing/p/6136690.html#simhash)
