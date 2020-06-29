@@ -1,4 +1,4 @@
-CQA--工业界
+# CQA--工业界
 
 * [1 任务](#1-任务)
    * [1.1 任务定义](#11-任务定义)
@@ -273,15 +273,15 @@ CQA--工业界
 
 - 基于词频信息的方法：传统的文本表示方法通常是基于词频特征的，例如TF-IDF，语言模型等。
 
-  - TF-IDF：将文档表示为其每个单词的TF-IDF值向量形式，并通过计算两个文本向量表示的余弦相似度来衡量其相似性。
+  - **TF-IDF**：将文档表示为其每个单词的TF-IDF值向量形式，并通过计算两个文本向量表示的余弦相似度来衡量其相似性。
 
-  - 语言模型：根据现有的文本对每个单词由一篇文档生成的概率根据词频进行建模，将一段文本由另一段文本生成的概率作为其相似度得分。
+  - **语言模型**：根据现有的文本对每个单词由一篇文档生成的概率根据词频进行建模，将一段文本由另一段文本生成的概率作为其相似度得分。
 
-<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/language model.png　width=650 alt=语言模型></div>
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/languagemodel.png  width=650 alt=语言模型></div>
 
-- 基于浅层语义的方法，如PLSA，LDA等。
+- 基于浅层语义的方法，这些方法对文档的浅层语义分布进行建模，用来估计文档的生成概率，如PLSA，LDA等。
 
-  - PLSA 
+  - **PLSA** 
 
     PLSA假设整个词频矩阵服从多项式分布，并引入了主题（z）的概念。假设每篇文章都由若干主题构成，每个主题的概率是p(z|d)，在给定主题的条件下，每个词都以一定的概率p(w|z)产生。这样就能解决多义词的分布问题。这种分析的基础仍然是文档和词的共现频率，分析的目标是建立词/文档与这些潜在主题的关系，而这种潜在主题进而成为语义关联的一种桥梁。其概率图模型如下：
 
@@ -291,13 +291,13 @@ CQA--工业界
 
     其中p(z|d)和P（w|z）是需要学习的参数。P(z|d)参数数目是主题数和文档数乘的关系，p(w|z)是词表数乘主题数的关系，参数空间很大，容易过拟合。
 
-  - LDA
+  - **LDA**
 
     如果说pLSA是频度学派代表，那LDA就是**贝叶斯学派**代表。LDA通过引入Dirichlet分布作为多项式共轭先验，在数学上完整解释了一个文档生成过程，其概率图模型如图所示。
 
     <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/LDA.jpg  width=650 alt=LDA></div>
 
-    我们可以看出LDA中每篇文章的生成过程如下：
+    我们可以看出LDA中每篇文章的**生成过程**如下：
 
     1. 选择单词数N服从泊松分布，N~Possion(β)。
     2. 文档θ服从狄利克雷分布，θ~Dir(α)。
@@ -311,29 +311,29 @@ CQA--工业界
 
 - 基于词向量的方法： word embedding技术如word2vec，glove等已经广泛应用于NLP，极大地推动了NLP的发展。既然词可以embedding，句子也可以。该类算法通常是基于词袋模型的算法，如TF-IDF加权平均，SIF等。
 
-  - SIF
+  - **SIF**
 
     发表于2016年的论文[A simple but tough-to-beat baseline for sentence embeddings](https://github.com/llhthinker/NLP-Papers/blob/master/distributed representations/sentence-embedding/note.md#a-simple-but-tough-to-beat-baseline-for-sentence-embeddings)提出了一种非常简单但很有一定竞争力的句子向量表示算法。算法包括两步，第一步是对句子中所有的词向量进行加权平均，得到平均向量；第二步是移出（减去）在所有句子向量组成的矩阵的第一个**主成分**上的投影。
 
     第一步主要是对TFIDF加权平均词向量表示句子的方法进行改进。论文提出了一种**平滑倒词频** (smooth inverse frequency, SIF)方法用于计算每个词的加权系数，具体地，单词的权重为a/(a+p(w))，其中a为平滑参数，p(w)为（估计的）词频。直观理解SIF，就是说**频率越低的词在当前句子出现了，说明它在句子中的重要性更大，也就是加权系数更大**。对于第二步，通过移出所有句子的共有信息，因此保留下来的句子向量更能够表示本身并与其它句子向量产生差距。
 
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/SIF.png　width=650 alt=SIF算法流程></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/SIF.png  width=650 alt=SIF算法流程></div>
 
-  - WMD
+  - **WMD**
 
     WMD是一种基于word embeddings 计算两个文本间的距离，即测量一个文本转化为另一个文本的最小距离。其将文本距离度量问题转化为一个最优传输（translation）问题。
 
     Word2Vec得到的词向量可以反映词与词之间的语义差别，WMD距离即对两个文档中的任意两个词所对应的词向量求欧氏距离然后再加权求和，大概是这样的形式：
 
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/wmd_eq.png　width=650 alt=语言模型></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/WMD_eq.png  width=650 alt=WMD_eq></div>
 
     其中c(i,j)为i，j两个词所对应的词向量的欧氏距离。矩阵T代表了文档1中的一个词转移到文档2中一个词的权重。即解决如下线性规划问题（|d1|代表文档1的长度，|d2|代表文档2长度）：
 
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/wmd_eq2.png　width=650 alt=wmd_eq2></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/wmd_eq2.png  width=650 alt=wmd_eq2></div>
 
     通过最小化矩阵Ｔ，我们就可以得到两个文档的ＷＭＤ距离。具体例子如下：
 
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/WMD.png　width=650 alt=语言模型></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ＷＭＤ.png  width=650 alt=WMD></div>
 
 #### 2.1.3 用于跨领域迁移学习方法
 
