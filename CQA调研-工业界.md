@@ -11,7 +11,7 @@ CQA--工业界
          * [CCKS 2018 微众银行智能客服问句匹配大赛](#ccks-2018-微众银行智能客服问句匹配大赛)  
          * [AFQMC 蚂蚁金融语义相似度](#afqmc-蚂蚁金融语义相似度)  
          * [OPPO手机搜索排序query-title语义匹配数据集](#oppo手机搜索排序query-title语义匹配数据集)  
-         * [医疗问题相似度衡量竞赛数据集（医疗问题匹配、意图匹配）](#医疗问题相似度衡量竞赛数据集医疗问题匹配意图 匹配)
+             * [医疗问题相似度衡量竞赛数据集](#医疗问题相似度衡量竞赛数据集)
 * [2 方法及模型](#2-方法及模型)
    * [2.1 无监督方法](#21-无监督方法)
       * [2.1.1 规则匹配](#211-规则匹配)
@@ -233,7 +233,7 @@ CQA--工业界
 
     
 
-#####[ 医疗问题相似度衡量竞赛数据集（医疗问题匹配、意图匹配）](https://biendata.com/competition/chip2018/) 
+##### [ 医疗问题相似度衡量竞赛数据集](https://biendata.com/competition/chip2018/) 
 
 - **比赛链接**：
 
@@ -287,7 +287,7 @@ CQA--工业界
 
     
 
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/PLSA.jpg　width=650 alt=PLSA></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/PLSA.jpg  width=650 alt=PLSA></div>
 
     其中p(z|d)和P（w|z）是需要学习的参数。P(z|d)参数数目是主题数和文档数乘的关系，p(w|z)是词表数乘主题数的关系，参数空间很大，容易过拟合。
 
@@ -295,7 +295,7 @@ CQA--工业界
 
     如果说pLSA是频度学派代表，那LDA就是**贝叶斯学派**代表。LDA通过引入Dirichlet分布作为多项式共轭先验，在数学上完整解释了一个文档生成过程，其概率图模型如图所示。
 
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/LDA.jpg　width=650 alt=LDA></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/LDA.jpg  width=650 alt=LDA></div>
 
     我们可以看出LDA中每篇文章的生成过程如下：
 
@@ -421,9 +421,9 @@ CQA--工业界
     - 模型可以学习到Down the ages（n-gram特征），noodles and dumplings与dumplings and noodles（打乱顺序的n-term特征）、were famous Chinese food和were popular in China（相似语义的n-term特征）
   	- **层次化卷积步骤**
         	- 1.Ai和Bj距离度量方式：完全一样 (Indicator），余弦相似度 (Cosine)，点乘 (Dot Product)。
-        	- 2.卷积，RELU激活，动态pooling（pooling size等于内容大小除以kernel大小）
-        	- 3.卷积核第一层分别算，第二层求和算。可以见下图3*3的kernel分别算，2*4*4求和算。
-        	- 4.MLP拟合相似度，两层，使用sigmoid激活，最后使用softmax，交叉熵损失函数。
+                	- 2.卷积，RELU激活，动态pooling（pooling size等于内容大小除以kernel大小）
+                   	- 3.卷积核第一层分别算，第二层求和算。可以见下图3*3的kernel分别算，2*4*4求和算。
+                   	- 4.MLP拟合相似度，两层，使用sigmoid激活，最后使用softmax，交叉熵损失函数。
 
 <div align=center><img src=https://img-blog.csdn.net/20171219172641689  width=400 alt=MatchPyramid-Hierarchical-Convolution></div>
 
@@ -577,8 +577,8 @@ https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/640.jpeg
 	    		- 规则，LDA，Sentence bert等
 		- **有监督的深度模型匹配**方式
 	  		- 文本语义表达的Siamese networks深度模型。应用广泛的模型只要有DSSM、ESIM，MAtchPyramid等
-	    		- **DSSM(采用了词袋模型，损失了上下文信息，可选用CNN-DSSM等优化模型)**
-	    		- **ESIM(适用于短文本)**
+	      		- **DSSM(采用了词袋模型，损失了上下文信息，可选用CNN-DSSM等优化模型)**
+	        		- **ESIM(适用于短文本)**
     		- 	**MatchPyramid() 基于交互的深度模型)**
 - 问答对较少等情况下可以将IR模块改为分类任务（意图识别）进行。
 - 如果在数据不充足，或数据效果质量不高的情况下，可以使用迁移学习，以训练好的模型为基础。
