@@ -315,7 +315,7 @@ CQA--工业界
 
     发表于2016年的论文[A simple but tough-to-beat baseline for sentence embeddings](https://github.com/llhthinker/NLP-Papers/blob/master/distributed representations/sentence-embedding/note.md#a-simple-but-tough-to-beat-baseline-for-sentence-embeddings)提出了一种非常简单但很有一定竞争力的句子向量表示算法。算法包括两步，第一步是对句子中所有的词向量进行加权平均，得到平均向量；第二步是移出（减去）在所有句子向量组成的矩阵的第一个**主成分**上的投影。
 
-    第一步主要是对TFIDF加权平均词向量表示句子的方法进行改进。论文提出了一种**平滑倒词频** (smooth inverse frequency, SIF)方法用于计算每个词的加权系数，具体地，单词的权重为a/(a+p(w))a/(a+p(w))，其中a为平滑参数，p(w)为（估计的）词频。直观理解SIF，就是说**频率越低的词在当前句子出现了，说明它在句子中的重要性更大，也就是加权系数更大**。对于第二步，通过移出所有句子的共有信息，因此保留下来的句子向量更能够表示本身并与其它句子向量产生差距。
+    第一步主要是对TFIDF加权平均词向量表示句子的方法进行改进。论文提出了一种**平滑倒词频** (smooth inverse frequency, SIF)方法用于计算每个词的加权系数，具体地，单词的权重为a/(a+p(w))，其中a为平滑参数，p(w)为（估计的）词频。直观理解SIF，就是说**频率越低的词在当前句子出现了，说明它在句子中的重要性更大，也就是加权系数更大**。对于第二步，通过移出所有句子的共有信息，因此保留下来的句子向量更能够表示本身并与其它句子向量产生差距。
 
     <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/SIF.png　width=650 alt=SIF算法流程></div>
 
@@ -574,12 +574,12 @@ https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/640.jpeg
 		-主要采用传统信息检索方法实现 	
 	- **IR检索模块**
 		- **无监督的匹配**方式
-	    - 规则，LDA，Sentence bert等
+	    		- 规则，LDA，Sentence bert等
 		- **有监督的深度模型匹配**方式
-	  	- 文本语义表达的Siamese networks深度模型。应用广泛的模型只要有DSSM、ESIM，MAtchPyramid等
-	    	- **DSSM(采用了词袋模型，损失了上下文信息，可选用CNN-DSSM等优化模型)**
-	    	- **ESIM(适用于短文本)**
-    		- **MatchPyramid() 基于交互的深度模型)**
+	  		- 文本语义表达的Siamese networks深度模型。应用广泛的模型只要有DSSM、ESIM，MAtchPyramid等
+	    		- **DSSM(采用了词袋模型，损失了上下文信息，可选用CNN-DSSM等优化模型)**
+	    		- **ESIM(适用于短文本)**
+    		- 	**MatchPyramid() 基于交互的深度模型)**
 - 问答对较少等情况下可以将IR模块改为分类任务（意图识别）进行。
 - 如果在数据不充足，或数据效果质量不高的情况下，可以使用迁移学习，以训练好的模型为基础。
 - 在系统设计初期，根据数据的不同情况，可参考阿里小蜜自然语言理解(NLU)方法中的无样本冷启动方法、小样本方法、多样本方法的思路。
