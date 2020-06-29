@@ -77,10 +77,7 @@ CQA--工业界
 
 由于工业界的数据集通常来自其自身业务的记录，并不对外公开，故以下只举例介绍相关比赛中出现的数据集：
 
-##### “技术需求”与“技术成果”项目之间关联度计算模型（需求与成果匹配)  
-
-- **比赛链接**：https://www.datafountain.cn/competitions/359
-
+##### [“技术需求”与“技术成果”项目之间关联度计算模型](https://www.datafountain.cn/competitions/359)（需求与成果匹配）
 - **任务目标**
 
   - 根据项目信息的文本含义，为供需双方提供关联度较高的对应信息（需求——成果智能匹配
@@ -104,16 +101,44 @@ CQA--工业界
 - **top1方案及结果**
 
   - 解决方案：https://www.sohu.com/a/363245873_787107 
-
   - 主要利用数据清洗、数据增广、孪生BERT模型
 
-  - 最高得分：0.80285150
+##### [平安医疗科技疾病问答迁移学习比赛](https://www.biendata.com/competition/chip2019/)（疾病问句匹配）
+- **任务目标**
+  - 针对中文的疾病问答数据，进行病种间的迁移学习。具体是给定来自5个不同病种的问句对，要求判定两个句子语义是否相同或者相近。简单描述是语义匹配问题
+- **数据来源**
+  - 所有语料来自互联网上患者真实的问题，并经过了筛选和人工的意图匹配标注。
+- **数据分布及说明**
+  - 具体说明：https://www.biendata.com/competition/chip2019/data/
+  - 给参赛选手的文件由train.csv、dev.csv、test.csv三个文件构成
+    - 训练集，包含2万对人工标注好的疾病问答数据，由5个病种构成，其中diabetes10000对，hypertension、hepatitis、aids、breast_cancer各2500对
+    - 验证集，包含10000对无label的疾病问答数据，由5个病种构成，各2000对
+    - 测试集，包含5万对人工标注好的疾病问答数据，其中只有部分数据供验证。
+
+- **评价指标**
+  - Precision、Recall、F1值
+- **top1方案及结果**
+  - 解决方案：https://zhuanlan.zhihu.com/p/97227793 
+  - 主要利用基于BERT与提升树模型的语义匹配方法
+  - 最高得分：0.88312
+
 
     
+##### [CAIL2019相似案例匹配大赛](https://github.com/china-ai-law-challenge/CAIL2019/tree/master/scm)（法律文书匹配）
+- **任务目标**
+  - “中国裁判文书网”公开的民间借贷相关法律文书，每组数据由三篇法律文书组成。文书主要为案件的事实描述部分，选手需要从两篇候选集文书中找到与询问文书案件性质更为相似的一篇文书。
+- **数据具体说明**
+  - 链接：同上述比赛链接
+  - 内容：对于每份数据，用三元组(A,B,C)来代表该组数据，其中A,B,C均对应某一篇文书。文书数据A与B的相似度总是大于A与C的相似度的，即sim(A,B)>sim(A,C)
+  - 数据量：比赛第一阶段训练数据有500组三元文书，第二阶段有5102组训练数据，第三阶段为封闭式评测
+- **评价指标**：acc
+- **top1方案及结果**
+  - 解决方案：https://www.leiphone.com/news/201910/Yf2J8ktyPE7lh4iR.html 
+  - 主要利用损失函数为 Triplet Loss 的 Rank 模型来解决三元组的相对相似的问题、只提取并采用三个文书文本特征、基于Bert的多模型离线的多模型融合、解决Triple Loss 过拟合
+  - 最高得分：71.88
+  - 代码：https://github.com/GuidoPaul/CAIL2019
 
-##### cMedQA2 （医疗问答匹配）
-
-- **比赛链接**：https://www.mdpi.com/2076-3417/7/8/767
+##### [cMedQA2](https://www.mdpi.com/2076-3417/7/8/767)（医疗问答匹配）
 - **数据来源**
   - 寻医寻药网站中的提问和回答， 数据集做过匿名处理
 - **数据分布**
@@ -124,11 +149,15 @@ CQA--工业界
 - **top1 解决方案**：[Multi-Scale Attentive Interaction Networks for Chinese Medical Question Answer Selection](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8548603)
 
 
+##### [cMedQA v1.0](https://www.mdpi.com/2076-3417/7/8/767)（医疗问答匹配）
+- 与cMedQA2相同来源
+- 数据分布
+  - 总量54,000个问题，101,743个答案。
+      - 训练集中有50,000个问题，94,134个答案
+      - 验证集有2,000个问题，有3774个答案
+      - 测试集有2,000个问题，有3835个答案
 
-##### 智能客服问题相似度算法设计——第三届魔镜杯大赛
-
-- **比赛链接**：https://ai.ppdai.com/mirror/goToMirrorDetail?mirrorId=1
-
+##### [智能客服问题相似度算法设计——第三届魔镜杯大赛](https://ai.ppdai.com/mirror/goToMirrorDetail?mirrorId=1)
 - **任务目标**
 
   - 计算客户提出问题与知识库问题的相似度
@@ -152,10 +181,8 @@ CQA--工业界
       
 
 
-##### CCKS 2018 微众银行智能客服问句匹配大赛
-
-- **比赛链接**：https://biendata.com/competition/CCKS2018_3/
-- **任务目标** 
+##### [CCKS 2018 微众银行智能客服问句匹配大赛](https://biendata.com/competition/CCKS2018_3/)
+- **任务目标**
   - 针对中文的真实客服语料，进行问句意图匹配
 - **数据来源**
   - 所有语料来自原始的银行领域智能客服日志，并经过了筛选和人工的意图匹配标注。
@@ -165,9 +192,7 @@ CQA--工业界
 
 
 
-##### AFQMC 蚂蚁金融语义相似度
-
-- **比赛链接**：https://dc.cloud.alipay.com/index?click_from=MAIL&_bdType=acafbbbiahdahhadhiih#/topic/intro?id=3
+##### [AFQMC 蚂蚁金融语义相似度](https://dc.cloud.alipay.com/index?click_from=MAIL&_bdType=acafbbbiahdahhadhiih#/topic/intro?id=3)
 - **任务目标**
   - 给定客服里用户描述的两句话，用算法来判断是否表示了相同的语义
 - **数据来源**
@@ -181,9 +206,8 @@ CQA--工业界
 
 
 
-##### OPPO手机搜索排序query-title语义匹配数据集
+##### [OPPO手机搜索排序query-title语义匹配数据集](https://tianchi.aliyun.com/competition/entrance/231688/introduction)
 
-- **比赛链接**：[OGeek算法挑战赛--实时搜索场景下搜索结果ctr预估](https://tianchi.aliyun.com/competition/entrance/231688/introduction)
 
 - **数据集链接**：https://pan.baidu.com/s/1Hg2Hubsn3GEuu4gubbHCzw (密码7p3n)
 
@@ -207,11 +231,9 @@ CQA--工业界
   - 最后得分：0.7502
 
     
+#####[ 医疗问题相似度衡量竞赛数据集（医疗问题匹配、意图匹配）](https://biendata.com/competition/chip2018/) 
 
-
-##### 医疗问题相似度衡量竞赛数据集（医疗问题匹配、意图匹配）
-
-- **比赛链接**：[中国健康信息处理会议举办的医疗问题相似度 衡量竞赛](https://biendata.com/competition/chip2018/) 
+- **比赛链接**：
 
 - **任务目标**：针对中文的真实患者健康咨询语料，进行问句意图匹配。给定两个语句，要求判定两者意图是否相同或者相近
 
@@ -228,7 +250,7 @@ CQA--工业界
 
 - **评测指标**：Precision，Recall和F1值。最终排名以F1值为基准
 
-  
+
 
 
 ## 2 方法及模型
@@ -247,6 +269,7 @@ CQA--工业界
 
 在缺少标记数据的场景，我们可以利用算法对文本本身进行表示，再利用常用的向量距离计算方法（如余弦距离，欧式距离等）进行相似性度量。常见的无监督文本表示方法主要可以分为两种，一种是基于词频信息的方法，一种是基于词向量的方法。
 
+<<<<<<< HEAD
 - 基于词频信息的方法：传统的文本表示方法通常是基于词频特征的，例如TF-IDF，语言模型等。
 
   - TF-IDF：将文档表示为其每个单词的TF-IDF值向量形式，并通过计算两个文本向量表示的余弦相似度来衡量其相似性。
@@ -336,10 +359,10 @@ CQA--工业界
 
 ## 2.2 有监督匹配算法
 
-### 2.2.1 基于意图识别的算法
 
-- 问答匹配任务在大多数情况下可以转化为二分类或多分类任务。
-- 神经网络中会有两大输入，左边N会输入结构化数据，比如个人属性以及浏览操作历史纪录，右边V会输入一些非结构化数据，比如前几轮问的问题和序列，对于这些非结构化的数据我们会有句子编码器解析这些数据，当需要考虑到句子的语序关系的时候会使用CNN或者RNN网络结构；上层的话，会结合用户的Embedding和句子的Embedding去输出。
+#### 2.2.2 问题意图分类--深度学习多分类模型（CNN\DNN\LSTM\…）
+
+- 问答匹配任务在大多数情况下可以用意图分类解决，如先匹配用户问题意图，然后给出对应意图的答案。进而问答匹配任转化为二分类或多分类任务。
 - 工业真正的场景中，用户问题的问题个数是不固定的，所以会把最后一层Softmax更改为多个二分类模型。模型图如下：
 
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/多个二分类模型.jpeg  width=650 alt=多个二分类模型模型图></div>
@@ -358,7 +381,6 @@ CQA--工业界
 - Siamese networks(孪生神经网络)是一种相似性度量方法，内部采用深度语义匹配模型（DSSM，Deep Structured Semantic Model），该方法在检索场景下使用点击数据来训练语义层次的匹配。
 - Siamese networks有两个输入(Input1 and Input2),将两个输入feed进入两个神经网络(Network1 and Network2)，这两个神经网络分别将输入映射到新的空间，形成输入在新的空间中的表示。通过Loss的计算，评价两个输入的相似度。
 - 基于Siamese networks神经网络架构，比如有Siamese结构的LSTM、CNN和ESIM等。
-
 
 ##### DSSＭ 模型
 
@@ -408,15 +430,52 @@ CQA--工业界
 
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-MatchPyramid.png  width=400 alt=MatchPyramid-overview></div>
 
+
 ##### ESIM （Enhanced LSTM）
-
-- **论文地址**：Enhanced LSTM for Natural Language Inference
-
+- **论文**：[Enhanced LSTM for Natural Language Inference](https://arxiv.org/pdf/1609.06038.pdf)
 - **源码**：[链接](https://github.com/coetaur0/ESIM)
+- **解读文章**：[短文本匹配的利器-ESIM](https://zhuanlan.zhihu.com/p/47580077)
+- **简介**
+    - ESIM模型是一个自然语言推理网络
+    - 与前两个Siamese结构的模型不同之处在于，没有直接计算两个句子表示向量的距离，而是利用两个句子的表示进行了匹配。
+    - **优点**
+        - 与其他短文本分类算法相比
+            1. ESIM模型有精细的设计序列式的推断结构
+            2. 考虑局部推断和全局推断。主要是用句子间的注意力机制(intra-sentence attention)，来实现局部的推断，进一步实现全局的推断。
+- **模型结构**
+    - 由input encoding(输入编码)、local inference modeling(局部推理模型) 和 inference composition(推断合成)三部分构成。
+    - 模型使用了双向LSTM，并引入attention机制。
 
-- **模型简介**
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-ESIM.png  width=400 alt=ESIM></div>
 
-  Enhanced LSTM for Natural Language Inference(ESIM)是2017年提出的一个文本相似度计算模型，是一种转为自然语言推断而生的加强版LSTM，由原文中知这种精心设计的链式LSTM顺序推理模型可以胜过以前很多复杂的模型。ESIM的模型主要包括３个部分：输入编码，局部推理建模和预测层。
+#### 2.2.4 Interaction-based networks深度语义模型
+- **背景**：
+    - DSSM等基于 Siamese networks 的模型，是先将两个文本映射到同一空间，再计算相似度，属于representation-based 模型。
+    - representation-based 模型缺点是两个短文本的编码完全独立进行，无法考虑任何短文本内部之间的关联
+    - Interaction-based模型为了解决上述问题，提前将编码的过程加入了短文本内部之间的关联参数矩阵，更好地把握了语义焦点，能对上下文重要性进行更好的建模
+- **简介**
+  - Interaction based 方法提前算出 query 里每个词和 title 里每个词的相似性，得到相似性矩阵。之后直接用例如 CNN 图像卷积的方法处理该矩阵，计算相似度。
+  - 模型有ARC-II、MatchPyramid、MVLSTM等
+  - **优缺点**
+    - 优：很好的把握语义焦点，对上下文重要性合理建模；可解释性好
+    - 缺：在线计算代价大
+
+- **MatchPyramid模型**
+  - **论文地址**：[Text Matching as Image Recognition](https://arxiv.org/pdf/1602.06359.pdf)
+  - **简介**
+    - 先将文本使用相似度计算构造相似度矩阵，然后卷积来提取特征。
+    - 模型可以学习到Down the ages（n-gram特征），noodles and dumplings与dumplings and noodles（打乱顺序的n-term特征）、were famous Chinese food和were popular in China（相似语义的n-term特征）
+  - **层次化卷积步骤**
+    - 1.Ai和Bj距离度量方式：完全一样 (Indicator），余弦相似度 (Cosine)，点乘 (Dot Product)。
+    - 2.卷积，RELU激活，动态pooling（pooling size等于内容大小除以kernel大小）
+    - 3.卷积核第一层分别算，第二层求和算。可以见下图3*3的kernel分别算，2*4*4求和算。
+    - 4.MLP拟合相似度，两层，使用sigmoid激活，最后使用softmax，交叉熵损失函数。
+
+<div align=center><img src=https://img-blog.csdn.net/20171219172641689  width=400 alt=MatchPyramid-Hierarchical-Convolution></div>
+
+  - **结构**
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-MatchPyramid.png  width=400 alt=MatchPyramid-overview></div>
+>>>>>>> d3d7369e35d20adb8132d75d8518098a3d65ae2e
 
   - 输入编码：采用BiLSTM（双向LSTM）对输入的两个句子分别编码。
   - 推理层：模型的核心部分，首先计算两个句子和另外句子相关的表示向量，然后计算该向量和原始向量的点积，差值等。之后利用各种不同的池化方式得到最后的句子表示，将两个句子的表示拼接，得到预测层的输出ｖ。
@@ -426,18 +485,13 @@ CQA--工业界
 
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-ESIM.png  width=400 alt=ESIM></div>
 
-
-
-
 ### 2.3 FAQ发现与优化
 
 #### FAQ发现
 
 将用户问句进行聚类，对比已有的FAQ，发现并补足未覆盖的知识点。将FAQ与知识点一一对应。
 
-
 - **FAQ的拆分与合并** 
-
 
 FAQ拆分是当一个FAQ里包含多个意图或者说多种情况的时候，YiBot后台会自动分析触达率较高的FAQ，聚类FAQ对应的问句，按照意图将其拆分开来。
 
@@ -464,16 +518,25 @@ FAQ拆分是当一个FAQ里包含多个意图或者说多种情况的时候，Yi
 
 ### 产品1 [百度AnyQ--ANswer Your Questions](https://github.com/baidu/AnyQ)
 
-**简介**
+- **简介**
+    - AnyQ开源项目主要包含面向FAQ集合的问答系统框架、文本语义匹配工具SimNet。
+- **FAQ问答系统框架**
+    - AnyQ系统框架主要由Question Analysis、Retrieval、Matching、Re-Rank等部分组成。
+    - 框架中包含的功能均通过插件形式加入，如Analysis中的中文切词，Retrieval中的倒排索引、语义索引，Matching中的Jaccard特征、SimNet语义匹配特征，当前共开放了20+种插件。
 
-- AnyQ开源项目主要包含面向FAQ集合的问答系统框架、文本语义匹配工具SimNet。
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-industry-AnyQFramework.png  width=400 alt=AnyQ-FAQ问答系统框></div>
+>>>>>>> d3d7369e35d20adb8132d75d8518098a3d65ae2e
 
-**系统框架**
-
-- AnyQ系统框架主要由Question Analysis、Retrieval、Matching、Re-Rank等部分组成。
-- 框架中包含的功能均通过插件形式加入，如Analysis中的中文切词，Retrieval中的倒排索引、语义索引，Matching中的Jaccard特征、SimNet语义匹配特征，当前共开放了20+种插件。
-
-**特色**
+- **特色**
+    - **框架设计灵活，插件功能丰富**
+        - AnyQ 系统AnyQ 系统集成了检索和匹配的丰富插件，通过配置的方式生效；以相似度计算为例，包括字面匹配相似度 Cosine、Jaccard、BM25 等，同时包含了语义匹配相似度。
+        - 用户自定义插件只需实现对应的接口即可，如 Question 分析方法、检索方式、匹配相似度、排序方式等。
+        
+    - **极速语义检索**
+        - 语义检索技术将用户问题和 FAQ 集合的相似问题通过深度神经网络映射到语义表示空间的临近位置，检索时，通过高速向量索引技术对相似问题进行检索。
+    - **SimNet 语义匹配模型**：
+        - AnyQ 使用 SimNet 语义匹配模型构建文本语义相似度，克服了传统基于字面匹配方法的局限，增强 AnyQ 系统的语义检索和语义匹配能力。
+    - 其他：针对无任何训练数据的开发者，AnyQ 还包含了基于百度海量数据训练的语义匹配模型，开发者可零成本直接使用。
 
 - **特色1 框架设计灵活，插件功能丰富，有助于开发者快速构建、快速定制适用于特定业务场景的 FAQ 系统**
 
@@ -496,7 +559,7 @@ FAQ拆分是当一个FAQ里包含多个意图或者说多种情况的时候，Yi
 - 无监督学习，基于快速检索
 - 有监督的学习，基于深度匹配
 
-**无监督的快速检索方法**
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/CQA-知文-基于Attention机制的Interaction-based_networks.jpeg  width=500 alt=知文-基于Attention机制的Interaction-based_networks></div>
 
 采用了三个层次的方法来实现快速检索的方法
 
@@ -504,50 +567,77 @@ FAQ拆分是当一个FAQ里包含多个意图或者说多种情况的时候，Yi
 - **层次2：采用了language model（简写LM）的方法**。主要使用的是Jelinek-Mercer平滑法和Dirichlet平滑法，对于上面的词汇匹配问题表现良好，但是也存在平滑敏感的问题。
 - **层次3：最后一层使用Embedding，采用了LSA/word2vec和腾讯知文自己提出的Weighted Sum/WMD方法**，以此来表示语义层面的近似，但是也同样引发了歧义问题。
 
-**监督的深度匹配方法**
 
-采用了两条思路
-
-- **思路1 基于Siamese networks神经网络架构**。这是一种相似性度量方法，内部采用深度语义匹配模型（DSMM，Deep Structured Semantic Model），该方法在检索场景下使用点击数据来训练语义层次的匹配
-- **思路2 Interaction-based networks，同时对问题和答案进行特征加权的Attention方案**。
 
 ### 产品3: [阿里小蜜](https://www.alixiaomi.com/#/)
 
-**为什么要做阿里小蜜？**
+[产品链接](https://www.alixiaomi.com/#/)
 
-阿里小蜜出现之前团队发现的问题有2个，第一个是需要对话机器人的业务很多，第二点是独立开发者的开发成本又很高。为了解决这两个问题，团队需要做一套平台产品来赋能开发者。如果做一个平台能够提供一些非常易于操作的开发工具，有丰富的内置能力，有强大的 AI 算法能力，以及全生命周期的配套工具，那么这些独立的开发者或者企业就能够做到零代码开发，快速交付具有鲁棒对话的机器人，并且该机器人可以在线上进行持续迭代优化。
+**意图与匹配分层的技术架构体系**
 
-**为什么阿里小蜜是新一代的对话开发平台？**
+在阿里小蜜这样在电子商务领域的场景中，对接的有客服、助理、聊天几大类的机器人。这些机器人，由于本身的目标不同，就导致不能用同一套技术框架来解决。因此，我们先采用分领域分层分场景的方式进行架构抽象，然后再根据不同的分层和分场景采用不同的机器学习方法进行技术设计。首先我们将对话系统从分成两层：
 
-第一个是新的设计思路：将原来以 Intent 为中心的设计思路转变为以 Dialog 为中心的设计思路。第二个是新的开发模式：从原先表单开发方式转变为可视化拖拽式开发。第三个是 End-to-End AI-Powered：从原来只提供单点的 NLU、DM 模型 AI 赋能方式转变为 End-to-End AI-Powered 平台，在整个生命周期的各个阶段都会用 AI 来赋能开发者。基于这样的想法，阿里的团队打造了对话工厂（Dialog Studio）这个产品，属于小蜜机器人解决方案中的一个核心基础能力，该产品已经嵌入到小蜜家族（阿里小蜜，店小蜜，钉钉小蜜，云小蜜等）的各个平台中，支持了包括阿里电商，电信，政务，金融，教育等领域的各个场景的对话机器人业务。这就是为什么要做一个平台型对话机器人产品的初衷。
+1、意图识别层：识别语言的真实意图，将意图进行分类并进行意图属性抽取。意图决定了后续的领域识别流程，因此意图层是一个结合上下文数据模型与领域数据模型不断对意图进行明确和推理的过程；
 
-<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640-4.jpeg width=650 alt=ESIM></div>
+2、问答匹配层：对问题进行匹配识别及生成答案的过程。在阿里小蜜的对话体系中我们按照业务场景进行了3种典型问题类型的划分，并且依据3种类型会采用不同的匹配流程和方法：
+- 问答型：例如“密码忘记怎么办？”→ 采用基于知识图谱构建+检索模型匹配方式
+- 任务型：例如“我想订一张明天从杭州到北京的机票”→ 意图决策+slots filling的匹配以及基于深度强化学习的方式
+- 语聊型：例如“我心情不好”→ 检索模型与Deep Learning相结合的方式
 
-- 下面针对这三点进行具体介绍：
+下图表示了阿里小蜜的意图和匹配分层的技术架构。
 
-  - 1. 从 Intent 为中心到以 Dialog 为中心
-       以 Intent 为中心的方式每次要创建单个的意图，如果遇到一个复杂场景，需要创建很多个意图堆积在一起，每次开发只能看到当前正在创建的意图，因为该技术起源于原来的 Slot Filling 方式，只能解决简单的，Slot Filling 这种任务形式对话，任务场景比较受限。而以 Dialog 为中心的设计思路，把人机对话过程通过图的方式展现出来，对话步骤用图上的节点进行抽象，开发者在设计对话流的时候，这种方式能提供一个全局的视野，而且图的节点抽象比较底层，可以进行各种任务的配置，适用场景比较广泛。
+![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/640.png)
 
-<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640-3.jpeg width=650 alt=ESIM></div>
+**意图识别介绍：结合用户行为deep-learning模型的实践**
 
-  - 2. 从表单式开发到可视化拖拽式开发
-       在开发模式上将原来的表单式开发方式变成了可视化拖拽式开发方式。原来表单式开发方式以 Intent 为中心，所以对于开发者来说更像做一道一道表单填空题，只能单点控制，整个对话流程非常不直观，所有 Intent 压缩在一个表单，填写复杂。在可视化拖拽方式中，整个对话流过程的每一个节点都可以通过简单拖拽方式进行完整描述，拥有全局视野，整体可控。
+通常将意图识别抽象成机器学习中的分类问题，在阿里小蜜的技术方案中除了传统的文本特征之外，考虑到本身在对话领域中存在语义意图不完整的情况，我们也加入了用实时、离线用户本身的行为及用户本身相关的特征，通过深度学习方案构建模型，对用户意图进行预测, 具体如下图：
+https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/640-2.jpeg
+在基于深度学习的分类预测模型上，我们有两种具体的选型方案：一种是多分类模型，一种是二分类模型。多分类模型的优点是性能快，但是对于需要扩展分类领域是整个模型需要重新训练；而二分类模型的优点就是扩展领域场景时原来的模型都可以复用，可以平台进行扩展，缺点也很明显需要不断的进行二分，整体的性能上不如多分类好，因此在具体的场景和数据量上可以做不同的选型。
 
-<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640-2.jpeg width=650 alt=ESIM></div>
+小蜜用DL做意图分类的整体技术思路是将行为因子与文本特征分别进行Embedding处理，通过向量叠加之后再进行多分类或者二分类处理。这里的文本特征维度可以选择通过传统的bag of words的方法，也可使用Deep Learning的方法进行向量化。具体如图所示：
 
-  - 3. 从单点模型到全生命周期 AI-Powered
+https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/640.jpeg
 
-第三点是从原来单点 NLU、DM 模型到全生命周期 AI-Powered，在对话机器人开发的各个阶段都利用了 AI 算法能力赋能开发者，加速开发过程和降低开发成本。在设计阶段尝试了半自动对话流设计辅助，让开发者从冷启动阶段就能够设置出第一版的对话流。在对话流的构建阶段，我们推出了智能荐句功能，也就是说在编写用户话术的时候，机器人可以进行话术推荐和联想。在测试阶段，我们推出了机器人诊断机器人功能，可以大大减少测试的工作量，增速测试过程。在在线服务阶段，会有全套的 AI-Powered 对话引擎，包括 NLU、DM 等算法。在数据回流阶段，通过 Active Learning 将日志数据进行自动标注，用于后续模型迭代训练。在持续学习阶段，我们构建了一套完整自动模型训练、评测、发布 Pipeline，自动提升线上机器人效果。
+**行业三大匹配模型**
 
-<div align=center><img src=https://github.com/BDBC-KG-NLP/CQA-Survey/blob/master/images/640.jpeg width=650 alt=ESIM></div>
+目前主流的智能匹配技术分为如下3种方法：
+1、基于模板匹配(Rule-Based)
+2、基于检索模型(Retrieval Model)
+3、基于深度学习模型(Deep Learning)
+
+在阿里小蜜的技术场景下，我们采用了基于模板匹配，检索模型以及深度学习模型为基础的方法原型来进行分场景(问答型、任务型、语聊型)的会话系统构建。
 
 **阿里小蜜的核心算法之一：自然语言理解(NLU)方法**
 
-- 无样本冷启动方法：写一套简单易懂的规则表示语法
-- 小样本方法：我们先整理出一个大数量级的数据，每一个类目几十条数据，为它建立 meta-learning 任务。对于一个具体任务来说：构建支撑集和预测集，通过 few-shot learning 的方法训练出 model，同时与预测集的 query 进行比较，计算 loss 并更新参数，然后不断迭代让其收敛。这只是一个 meta-learning 任务，我们可以反复抽样获得一系列这样的任务，不断优化同一个模型。在线预测阶段，用户标注的少量样本就是支撑集，将 query 输入模型获得分类结果。模型的神经网络结构分为3部分，首先是 Encoder 将句子变成句子向量，然后再通过 Induction Network 变成类向量，最后通过 Relation Network 计算向量距离，输出最终的结果。具体地，Induction Network中把样本向量抽象到类向量的部分，采用 matrix transformation 的方法，转换后类边界更清晰，更利于下游 relation 的计算。在 Induction Network 的基础上，又可以引入了 memory 机制，形成Memory-based Induction Network ，目的是模仿人类的记忆和类比能力，在效果上又有进一步提升。
-- 多样本方法：构建一个三层的模型，最底层是具有较强迁移能力的通用模型 BERT，在此基础上构建不同行业的模型，最后用相对较少的企业数据来训练模型。这样构建出来的企业的 NLU 分类模型，F1 基本都在90%+。性能方面，因为模型的结构比较复杂，在线预测的延时比较长，因此通过知识蒸馏的方法来进行模型压缩，在效果相当的同时预测效率更快了。
+- **无样本冷启动方法**
+  - 写一套简单易懂的规则表示语法
+- **小样本方法**
+    - 先整理出一个大数量级的数据，每一个类目几十条数据，为它建立 meta-learning 任务。对于一个具体任务来说：构建支撑集和预测集，通过 few-shot learning 的方法训练出 model，同时与预测集的 query 进行比较，计算 loss 并更新参数，然后不断迭代让其收敛。
+    - 这只是一个 meta-learning 任务，可以反复抽样获得一系列这样的任务，不断优化同一个模型。在线预测阶段，用户标注的少量样本就是支撑集，将 query 输入模型获得分类结果。
+    - 模型的神经网络结构分为3部分，首先是 Encoder 将句子变成句子向量，然后再通过 Induction Network 变成类向量，最后通过 Relation Network 计算向量距离，输出最终的结果。
+    - 具体地，Induction Network中把样本向量抽象到类向量的部分，采用 matrix transformation 的方法，转换后类边界更清晰，更利于下游 relation 的计算。在 Induction Network 的基础上，又可以引入了 memory 机制，形成Memory-based Induction Network ，目的是模仿人类的记忆和类比能力，在效果上又有进一步提升。
+- **多样本方法**
+    - 构建一个三层的模型，最底层是具有较强迁移能力的通用模型 BERT，在此基础上构建不同行业的模型，最后用相对较少的企业数据来训练模型。这样构建出来的企业的 NLU 分类模型，F1 基本都在90%+。性能方面，因为模型的结构比较复杂，在线预测的延时比较长，因此通过知识蒸馏的方法来进行模型压缩，在效果相当的同时预测效率更快了。
 
-## 4 问题难点及未来研究的方向
+## 4 总结
+- 整个CQA问答，可能经过的模块共两个：IR检索模块和生成模块。（如果每个意图有相同的答案，则意图识别功能在IR模块实现，否则在IR检索之前先做意图分类，再进行对应数据类别的数据检索）
+  - **IR检索模块**
+	- **无监督的匹配**方式
+	    - TF-IDF、BM25、规则等
+	- **有监督的深度模型匹配**方式
+		- 文本语义表达的Siamese networks深度模型。应用广泛的模型只要有DSSM、ESIM
+		
+		  - **DSSM(采用了词袋模型，损失了上下文信息，可选用CNN-DSSM等优化模型)**
+		  - **ESIM(适用于短文本)**
+		- 基于交互的深度模型：如MatchPyramid
+  - **生成模块**
+	- 如，采用机器阅读理解方式。
+	
+  - IR检索模块对长问句或复杂问句往往无法在QA知识库中检索到匹配的数据，而生成模块难以保证一致性和合理性。经常生成不匹配或无意义的答案。所以可以将IR和生成模块聚合在一起，用一个Seq2Seq模型来对搜索结果做评估，从而达到优化的效果。
+
+- 如果在数据不充足，或数据效果质量不高的情况下，可以使用迁移学习，以训练好的模型为基础。
+
+- 在系统设计初期，根据数据的不同情况，可参考阿里小蜜自然语言理解(NLU)方法中的无样本冷启动方法、小样本方法、多样本方法的思路。
 
 ###  难点
 
@@ -561,7 +651,12 @@ FAQ拆分是当一个FAQ里包含多个意图或者说多种情况的时候，Yi
 - FAQ的发现与优化的自动化
 
 ## 5 相关资料
-
+- [智能客服FAQ问答任务的技术选型探讨](https://zhuanlan.zhihu.com/p/50799128)
+- [不是所有的智能机器人都能做好客服——浅谈智能客服机器人评价指标新趋势](https://mp.weixin.qq.com/s/n-uicubtTFyOH00HAvRgMQ)
+- [百度开源 FAQ 问答系统—AnyQ](https://www.jiqizhixin.com/articles/2018-08-24-17)
+- [腾讯知文，从0到1打造下一代智能问答引擎【CCF-GAIR】](https://cloud.tencent.com/developer/article/1172017)
+- [你问我答之「YiBot知识体系运营知多少」](https://mp.weixin.qq.com/s/9-HUoePmGvv40JVWcPtHew)
+- [短文本相似度在金融智能客服中的应用 - 专注金融科技与创新](https://www.weiyangx.com/338587.html)
 - [阿里小蜜新一代智能对话开发平台技术解析](https://mp.weixin.qq.com/s?__biz=MzU1NTMyOTI4Mw==&mid=2247494321&idx=1&sn=7f58bafd7f1962e17f3162ef0917c431&chksm=fbd758ddcca0d1cb19c452c40697c816f788d29b90af4f703a0fc776897f80b087d0a3bc885a&scene=27#wechat_redirect)
 - [阿里云小蜜对话机器人背后的核心算法](https://mp.weixin.qq.com/s/ksVbQq42ay5lxcfqNwBgxA)
 - [阿里小蜜：智能服务技术实践及场景探索](https://mp.weixin.qq.com/s/uzmcISuDbf7EkralufAKhA)

@@ -119,7 +119,7 @@ Wikiqa是一个答案选择数据集，由Bing查询日志中的问题和从Wiki
 | Method  | MAP| MRR | 论文题目 | 年份 | 论文链接 | code |  
 | ------------- | ------------- |------------- |------------- |------------- |------------- |------------|
 |TANDA-ROberta|0.943|0.974|TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|2019|https://arxiv.org/pdf/1911.04118.pdf |https://github.com/alexa/wqa_tanda |
-|BERT-RNN|0.872|0.899|BAS: An Answer Selection Method Using BERT Language Model|https://arxiv.org/ftp/arxiv/papers/1911/1911.01528.pdf |-|
+|BERT-RNN|0.872|0.899|BAS: An Answer Selection Method Using BERT Language Model|2019|https://arxiv.org/ftp/arxiv/papers/1911/1911.01528.pdf |-|
 |Comp-Clip + LM + LC|0.868|0.928|A Compare-Aggregate Model with Latent Clustering for Answer Selection|2019|https://paperswithcode.com/paper/a-compare-aggregate-model-with-latent | -|
 
 
