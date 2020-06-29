@@ -313,7 +313,7 @@
 
   - **SIF**
 
-    发表于2016年的论文[A simple but tough-to-beat baseline for sentence embeddings](https://github.com/llhthinker/NLP-Papers/blob/master/distributed representations/sentence-embedding/note.md#a-simple-but-tough-to-beat-baseline-for-sentence-embeddings)提出了一种非常简单但很有一定竞争力的句子向量表示算法。算法包括两步，第一步是对句子中所有的词向量进行加权平均，得到平均向量；第二步是移出（减去）在所有句子向量组成的矩阵的第一个**主成分**上的投影。
+    发表于2016年的论文[A simple but tough-to-beat baseline for sentence embeddings](https://openreview.net/pdf?id=SyK00v5xx)提出了一种非常简单但很有一定竞争力的句子向量表示算法。算法包括两步，第一步是对句子中所有的词向量进行加权平均，得到平均向量；第二步是移出（减去）在所有句子向量组成的矩阵的第一个**主成分**上的投影。
 
     第一步主要是对TFIDF加权平均词向量表示句子的方法进行改进。论文提出了一种**平滑倒词频** (smooth inverse frequency, SIF)方法用于计算每个词的加权系数，具体地，单词的权重为a/(a+p(w))，其中a为平滑参数，p(w)为（估计的）词频。直观理解SIF，就是说**频率越低的词在当前句子出现了，说明它在句子中的重要性更大，也就是加权系数更大**。对于第二步，通过移出所有句子的共有信息，因此保留下来的句子向量更能够表示本身并与其它句子向量产生差距。
 
