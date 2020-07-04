@@ -70,7 +70,7 @@ SPARQL，λ-DCS、FunQL等查询语言可以用于查询以及操作KG中存储�
 | QALD-6              | https://github.com/ag-sc/QALD/tree/master/6/data             |
 | QALD-9              | https://github.com/ag-sc/QALD/tree/master/9                  |
 
-### 1.4. SOTA
+### 1.4. SOTA(leaderboard)
 
 
 
