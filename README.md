@@ -11,8 +11,19 @@
 
 希望能为问答系统与自然语言处理领域的相关学者和研究人员提供帮助。本survey将保持定期持续更新、持续跟踪前沿技术，如有不足请大家批评指正，欢迎各位问答系统与自然语言处理研究者取用，也欢迎大家共同完善此调研。
 
-## 版本更新
-Version 1.0：2020年5月1日
+## 相关成果
+
+### 学术论文
+
+- Richong Zhang, Yue Wang, Yongyi Mao and Jinpeng Huai: Question Answering in Knowledge Bases: A Verification Assisted Model with Iterative Training. ACM Transactions on Information Systems. 37(4): 40:1-40:26 (2019)
+
+- Yue Wang, Richong Zhang, Cheng Xu and Yongyi Mao: The APVA-TURBO Approach To Question Answering in Knowledge Base. COLING2018
+
+### 应用产品
+
+- 知行知识图谱智能问答
+
+- 机场智能问答系统
 
 ## 致谢
 特此感谢支持数据公开与系统研发工作的北航高精尖中心及参与这项工作的各位团队成员（排名按字母顺序、不分先后）：
@@ -24,17 +35,3 @@ Version 1.0：2020年5月1日
 
 ## 关于我们
 [北京市大数据科学与脑机智能高精尖创新中心](http://bdbc.buaa.edu.cn/?lang=zh)
-
-## 相关成果
-
-### 学术论文
-
-Richong Zhang, Yue Wang, Yongyi Mao and Jinpeng Huai: Question Answering in Knowledge Bases: A Verification Assisted Model with Iterative Training. ACM Transactions on Information Systems. 37(4): 40:1-40:26 (2019)
-
-Yue Wang, Richong Zhang, Cheng Xu and Yongyi Mao: The APVA-TURBO Approach To Question Answering in Knowledge Base. COLING2018
-
-### 应用产品
-
-知行知识图谱智能问答
-
-机场智能问答系统
