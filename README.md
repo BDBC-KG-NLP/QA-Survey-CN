@@ -25,4 +25,16 @@ Version 1.0：2020年5月1日
 ## 关于我们
 [北京市大数据科学与脑机智能高精尖创新中心](http://bdbc.buaa.edu.cn/?lang=zh)
 
-## English version will come soon
+## 相关成果
+
+### 学术论文
+
+Richong Zhang, Yue Wang, Yongyi Mao and Jinpeng Huai: Question Answering in Knowledge Bases: A Verification Assisted Model with Iterative Training. ACM Transactions on Information Systems. 37(4): 40:1-40:26 (2019)
+
+Yue Wang, Richong Zhang, Cheng Xu and Yongyi Mao: The APVA-TURBO Approach To Question Answering in Knowledge Base. COLING2018
+
+### 应用产品
+
+知行知识图谱智能问答
+
+机场智能问答系统
