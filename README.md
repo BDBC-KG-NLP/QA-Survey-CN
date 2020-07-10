@@ -19,6 +19,12 @@
 
 - Yue Wang, Richong Zhang, Cheng Xu and Yongyi Mao: The APVA-TURBO Approach To Question Answering in Knowledge Base. COLING2018
 
+###  专利
+
+- 一种基于知识图谱的问答方法
+- 一种机场服务的社区问答方法
+- 一种值机场景的多轮对话方法
+
 ### 应用产品
 
 - 知行知识图谱智能问答
