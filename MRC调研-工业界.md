@@ -168,7 +168,8 @@ CoQA | 英文维基百科、文学、故事、考试、新闻 | 自由问答 | �
 - **下载地址**：[链接](https://rajpurkar.github.io/SQuAD-explorer/)
 - **论文**：[《SQuAD:100000+ Question for Machine Comprehension of Test》](https://arxiv.org/pdf/1606.05250.pdf)
 - **内容**
-    - 阅读材料来自536篇英文维基百科，问题和答案主要通过众包的方式，标注人员基于每篇文章，提出最多５个问题并给出对应答案（答案出现在原文中）。目前该数据集共有 536 篇文章、107785 个问答对，答案为原文中的片段。
+    - 阅读材料来自536篇英文维基百科，问题和答案主要通过众包的方式，标注人员基于每篇文章，提出最多５个问题并给出对应答案（答案出现在原文中）。目前该数据集共有 536 篇文章、107785 个问答对，**答案为原文中的片段**。
+    - 任务是**预测答案文本的起始和结束位置**
 - **答案形式**：词、短语、句子
 - **数据集**：
     - 包含10万个三元组(问题、原文、答案)
@@ -353,8 +354,9 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
 
 
 ## 3 模型介绍
-- 近年来模型的总体框架图
+- 近年来模型总体框架图
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%80%BB%E4%BD%93%E6%A1%86%E6%9E%B6%E5%9B%BE.jpeg  width=650 alt=近年来模型的总体框架图></div>
+    
 
 ### 3.1 BIDAF--Allen AI
 - **论文**：[Bidirectional Attention Flow for Machine Comprehension ](https://arxiv.org/pdf/1611.01603.pdf)
@@ -453,12 +455,29 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
     2. 速度
     <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/QANet-speed.png  width=650 alt=QANET速度></div>
 
-### 3.4 GPT & BERT
+### 3.4 BERT
 - **简介**
+    - 由 Google发布，刷新了自然语言处理的11项记录
+    
+    - 在BERT的出现之前最好的模型基本都是使用的Seq2Seq方法，分五步走，相当复杂。BERT出现后，只需要在BERT后面加上简单的网络就可达到特别好的效果
+    - 中文阅读理解任务，只有Base版模型
+    
+- **论文**：[BERT: Pre-training of Deep Bidirectional Transformers for
+Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
+- **创新**
     - 句子级别信息的迁移，整体使用transformer结构 
-    - 改变的是输入数据流：问题+分隔符+文章的顺序序列
-    - 迁移学习：特征维度的迁移
+    
+    - 改变的是输入数据流：问题+分隔符+段落的顺序序列
+    - 迁移学习：句子信息的迁移
+- **模型架构**
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/BERT%20MRC.png  width=450 alt=BERT MRC></div>
 
+    1. 输入数据流：**[CLS]标记+问题+special tokens[SEP]分隔符+段落**拼接
+        - BERT首先在问题前面添加special classification token[CLS]标记，然后问题和段落连在一起，中间使用special tokens[SEP]分开。
+        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/BERT%20embedding.png  width=650 alt=BERT Embedding></div>
+    2. **Embedding**
+        - 序列通过token Embedding、segment embedding 和 positional embedding输入到BERT
+    3. 最后，通过**全连接层和softmax函数**将BERT的最终隐藏状态转换为**答案跨度的概率**。
 
 ## 4  产品案例
 ### 4.1 SMRC 阅读理解工具包--搜狗
@@ -565,8 +584,17 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
     - 阅读理解模型能根据患者症状描述自动查阅大量病历和医学论文，找到可能的病因并输出诊疗方案。
 
 ## 总结
+- **机器阅读**与**人类阅读**的步骤对应关系
+    
+    步骤 | 机器阅读理解步骤 | 人类做阅读题思路
+    --- | --- | ---
+    1 | **Embedding** | 
+    2 | **Encode the question and context** <br>（通常采用rnn或cnn） | 通读文章、通读问题
+    3 | **交互层:Attention Layer** | 带着问题读文章
+    4 | **Selecting the span of context**  | 选出答案范围
+
 1. 应用最多的模型是R-Net和BIDAF
-1. 工业界应用大多用到了注意力机制
+1. 交互层都用到了注意力机制(Attention Layer)
 
 ## 参考文献
 - [【NLP】详聊NLP中的阅读理解（MRC）](https://blog.csdn.net/hacker_long/article/details/104604146)
@@ -584,4 +612,5 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
 - [法研杯2019阅读理解赛道冠军方案分享（含PPT）](https://mp.weixin.qq.com/s?__biz=MjM5ODkzMzMwMQ==&mid=2650411097&idx=1&sn=b6988b9e3ac5c2d4fd5b8ff4e92e2065&utm_source=tuicool&utm_medium=referral)
 - [追一科技CoQA冠军方案分享：基于对抗训练和知识蒸馏的机器阅读理解方案](https://www.leiphone.com/news/201911/g5eqn6CjbLPI5GDU.html)
 - [BiDAF：机器理解之双向注意力流](https://zhuanlan.zhihu.com/p/53470020)
-- [[论文笔记]QANet: Combining Local Convolution with Global Self-Attention for Reading Comprehension ](https://qianqianqiao.github.io/2018/10/14/new/)
+- [论文笔记QANet: Combining Local Convolution with Global Self-Attention for Reading Comprehension ](https://qianqianqiao.github.io/2018/10/14/new/)
+- [详解BERT阅读理解](https://www.codercto.com/a/92889.html)
