@@ -24,7 +24,7 @@
 
     - **完形填空式（Cloze Test）**
         - 在原文中除去若干关键词，需要模型填入正确单词或短语。
-        - 典型数据集：**CNN & Daily Mail、CBT (The Children’s Book Test)、LAMBADA(LAnguage Modeling" Boardened to Account for Discourse Aspects)、Who-did-What、CLOTH、CliCR**
+        - 典型数据集：**CNN & Daily Mail、CBT (The Children’s Book Test)、LAMBADA(LAnguage Modeling Boardened to Account for Discourse Aspects)、Who-did-What、CLOTH、CliCR**
         - 评测指标：**准确率(Accuracy)**
         <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E5%AE%8C%E5%BD%A2%E5%A1%AB%E7%A9%BA%E5%BC%8F.png"  width=550 alt=完形填空></div>
 
@@ -88,7 +88,7 @@ MRC任务类型 | 优点 | 缺点
     - 相比于EM，F1分数大致测量了预测值和真实值之间的平均重叠。
     <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/F1.png  width=250 alt=F1></div>
     
-- **ROUGE-L (Recall-Oriented Understudy for Gisting" Evaluation)**
+- **ROUGE-L (Recall-Oriented Understudy for Gisting Evaluation)**
     - 表示评测答案和预测值之间的相似性
     
     - 用于：**自由问答式**任务
@@ -99,7 +99,7 @@ MRC任务类型 | 优点 | 缺点
     - 是一种双语互译质量辅助工具，最初用于衡量翻译性能，表示机器翻译文本与参考文本之间的相似程度
     
     - 用于**自由问答式任务**，表示测量预测值和真实值之间的相似度
-    - 具体公式见论文：[Neural Machine Reading" Comprehension:Methods and Trends ](https://arxiv.org/pdf/1907.01118v3.pdf)
+    - 具体公式见论文：[Neural Machine Reading Comprehension:Methods and Trends ](https://arxiv.org/pdf/1907.01118v3.pdf)
 
 ### 2 数据集
 预览：
@@ -112,10 +112,10 @@ MCTest | 英文儿童读物 | 选择题 | 660 | 个虚构故事 | 微软
 CNN/DailyMail | 英文新闻 | 完形填空 | CNN：90k文章和380k问题Dailymail：197k文章和879k问题 | DeepMind
 RACE | 英语阅读理解 | 选择题  | 2.8w+文章和10w问题 | CMU
 HFL-RC | 中文新闻、儿童读物 | 完形填空 | 87w | 哈工大讯飞联合实验室（HFL）
-SQuAD | 1.0 | 英文维基百科 | 完型填空 | 10w三元组(问题、原文、答案) | Stanford
-SQuAD | 2.0 | 英文维基百科 | 完型填空 | 500多篇文章，2w多个段落，10w个问题 | Stanford
+SQuAD 1.0 | 英文维基百科 | 完型填空 | 10w三元组(问题、原文、答案) | Stanford
+SQuAD 2.0 | 英文维基百科 | 完型填空 | 500多篇文章，2w多个段落，10w个问题 | Stanford
 DuReade | 中文百度搜索和百度知道 | 自由问答 | 30w多个问题，140w个证据文档和660K个人工生成的答案 | 百度
-第二届“军事智能机器阅读”挑战赛 | 数据集 | 中文军事类复杂问题 | 自由问答 | 可下载问答对：train:2.5w / test:0.5w | 
+第二届“军事智能机器阅读”挑战赛 数据集 | 中文军事类复杂问题 | 自由问答 | 可下载问答对：train:2.5w / test:0.5w | 
 ReCoRD | 英文新闻 | 完形填空 | 12w | 约翰斯·霍普金斯大学、微软研究院
 CMRC2019 | 中文新闻、儿童读物 | 完形填空 | 10w段落和100w问题 | 哈工大讯飞联合实验室（HFL）
 ChID | 中文新闻、小说、论文 | 完形填空 | 58.1w段落和72.9w个空 | 
@@ -138,14 +138,14 @@ CoQA | 英文维基百科、文学、故事、考试、新闻 | 自由问答 | �
 
 ### 2.3 CNN/DailyMail-DeepMind( 完形填空)
 - **下载地址**：[链接](https://github.com/deepmind/rc-data)
-- **论文**：《Teaching" Machines to Read and Comprehend》
+- **论文**：《Teaching Machines to Read and Comprehend》
 - **内容**：从CNN和Daily Mail上摘取了大量真实新闻语料，然后将每篇文章对应的总结以及复述句子作为问题原型，并从问题中去除某个实体，要求机器能够根据文章内容自动找出答案。要求回答被抽掉的实体，实体在文中出现过
 - **数据量**：数据量大。CNN数据集约有90k文章和380k问题，Dailymail数据集有197k文章和879k问题。
 
 
 ### 2.4 RACE-CMU（选择题）
 - **下载地**址：[链接](http://www.cs.cmu.edu/~glai1/data/race/)
-- **论文**：《RACE：Large-scale Reading" Comprehension Dataset From Examinations》
+- **论文**：《RACE：Large-scale Reading Comprehension Dataset From Examinations》
 - **内容**
     - 中国中学生英语阅读理解题目，给定一篇文章和 5 道 4 选 1 的题目，包括了 28000+ passages 和 100,000 问题。
     - 规模比MCTest大，且相对CNN&Dailymail和SQuAD，RACE更注重推理能力。
@@ -159,7 +159,7 @@ CoQA | 英文维基百科、文学、故事、考试、新闻 | 自由问答 | �
 
 ### 2.5 HFL-RC 讯飞和哈工大的中文数据集( 完形填空)
 - **下载地址**：[链接](https://github.com/ymcui/Chinese-RC-Dataset)
-- **论文**：[《Consensus Attention-based Neural Networks for Chinese Reading" Comprehension》](https://arxiv.org/abs/1607.02250)
+- **论文**：[《Consensus Attention-based Neural Networks for Chinese Reading Comprehension》](https://arxiv.org/abs/1607.02250)
 - **内容**：《人民日报》新闻数据集和《儿童童话》数据集
 - **数据量**：数量较大，共87万篇
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/HFL-RC%20dataset.png  width=650 alt=HFL-RC dataset.png></div>
@@ -194,7 +194,7 @@ CoQA | 英文维基百科、文学、故事、考试、新闻 | 自由问答 | �
 ### 2.8 百度DuReader-2018机器阅读理解技术竞赛（多任务中文数据集）
 - **竞赛地址**：[2018机器阅读理解技术竞赛](http://mrc2018.cipsc.org.cn/)
 - **下载地址**：[链接](http://ai.baidu.com/broad/download?dataset=dureader)
-- **论文**：[《DuReader: a Chinese Machine Reading" Comprehension Dataset from Real-world Applications》](https://arxiv.org/abs/1711.05073)
+- **论文**：[《DuReader: a Chinese Machine Reading Comprehension Dataset from Real-world Applications》](https://arxiv.org/abs/1711.05073)
 - **内容**：文档和答案从百度搜索和百度知道中获得，答案是由人类回答的，每个问题都对应多个答案
 - **任务（问题）类型**：Entity（实体）、Description（描述）和YesNo（是非）
 - **答案形式**
@@ -244,8 +244,8 @@ YesNo（是非） | 24460 | 797 | 1777
 
 ### 2.10 ReCoRD-约翰斯·霍普金斯大学&微软研究院（完形填空）
 - **下载地址**：[链接](https://sheng-z.github.io/ReCoRD-explorer/)
-- **论文**：[ReCoRD: Bridging" the Gap between Human
-and Machine Commonsense Reading" Comprehension](https://arxiv.org/pdf/1810.12885.pdf)
+- **论文**：[ReCoRD: Bridging the Gap between Human
+and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.pdf)
 - **内容**：包含来自70,000多个新闻文章的120,000多个问题。 与现有的阅读理解数据集不同，ReCoRD包含很大一部分需要常识推理的问题
 - **数据量**：总12万问题，其中训练集10万，验证集、测试集各1万
 <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/ReCoRD.%E6%95%B0%E6%8D%AE%E9%9B%86.png"  width=450 alt=ReCoRD数据集></div>
@@ -253,14 +253,14 @@ and Machine Commonsense Reading" Comprehension](https://arxiv.org/pdf/1810.12885
 - **评价指标**：精准匹配分数EM、F1
 - **rank2**：平安智慧医疗与上海交大
     - 得分：EM 83.09，F1 83.74
-    - 论文：[《Pingan Smart Health and SJTU at COIN - Shared Task: utilizing" Pre-trained Language Models and Common-sense Knowledge in Machine Reading" Tasks》](https://www.aclweb.org/anthology/D19-6011.pdf)
+    - 论文：[《Pingan Smart Health and SJTU at COIN - Shared Task: utilizing Pre-trained Language Models and Common-sense Knowledge in Machine Reading Tasks》](https://www.aclweb.org/anthology/D19-6011.pdf)
     - 技术：XLNetKGNet、Multi-head Attention、DistMult模型、利用Aho-Corasick算法将段落中的短语与WordNet中的实体进行匹配、KGNet
     - 模型架构
     <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E5%B9%B3%E5%AE%89%E6%99%BA%E6%85%A7%E5%8C%BB%E7%96%97%E4%B8%8E%E4%B8%8A%E6%B5%B7%E4%BA%A4%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.png"  width=550 alt=平安智慧医疗与上海交大模型架构></div>
 
 ### 2.11 CMRC2019：第三届“讯⻜杯”中⽂机器阅读理解评测（句⼦级完形填空）
 - **下载地址**：[链接](https://github.com/ymcui/cmrc2019)
-- **论文地址**：[A Sentence Cloze Dataset for Chinese Machine Reading" Comprehension](https://arxiv.org/abs/2004.03116)
+- **论文地址**：[A Sentence Cloze Dataset for Chinese Machine Reading Comprehension](https://arxiv.org/abs/2004.03116)
 - **答案类型**：句子
 - **数据量**：1w文档和10w问题
 <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/CMRC2019dataset.png"  width=550 alt=CMRC2019dataset></div>
@@ -310,7 +310,7 @@ and Machine Commonsense Reading" Comprehension](https://arxiv.org/pdf/1810.12885
 
 ### 2.13 法研杯CAIL2019（自由回答）
 - **下载地址**：[链接](https://github.com/china-ai-law-challenge/CAIL2019)
-- **论文**：[《CJRC: A Reliable Human-Annotated Benchmark DataSet for Chinese Judicial Reading" Comprehension》](https://arxiv.org/abs/1912.09156)
+- **论文**：[《CJRC: A Reliable Human-Annotated Benchmark DataSet for Chinese Judicial Reading Comprehension》](https://arxiv.org/abs/1912.09156)
 
 - **内容**
     - 数据内容来自中国法官文书网，主要涉及民事和刑事的一审判决书，总共约1万份数据。属于篇章片段抽取型阅读理解比赛
@@ -334,7 +334,7 @@ and Machine Commonsense Reading" Comprehension](https://arxiv.org/pdf/1810.12885
 ### 2.14 CoQA stanford(自由回答)
 - **下载地址**：[链接](https://stanfordnlp.github.io/coqa/)
 
-- **论文**：[《CoQA: A Conversational Question Answering" Challenge》](https://arxiv.org/abs/1808.07042)
+- **论文**：[《CoQA: A Conversational Question Answering Challenge》](https://arxiv.org/abs/1808.07042)
 - **内容**
     - 数据来自儿童故事、文学、初高中英语考试、新闻、维基百科、Reddit和科学等七个不同的领域文章，包含127,000多个问题，并从8000多个对话中收集了答案。每次对话都是通过将两名群众工作者配对以问题和答案的形式聊聊一段段落而收集的。
     - CoQA的独特功能包括：1）问题是对话性的；2）答案可以是自由格式的文本；3）每个答案还带有一个在段落中突出显示的证据子序列；和4）段落是从七个不同的领域收集的。
@@ -367,11 +367,11 @@ and Machine Commonsense Reading" Comprehension](https://arxiv.org/pdf/1810.12885
     - 一层的interaction，只有文章和问题的相关性：计算了 query-to-context(Q2C)和 context-to-query(C2Q)两个方向的 attention 信息，认为 C2Q 和 Q2C 实际上能够相互补充。
 - **模型架构**
     - BiDAF共有6层，依次是
-        - Character Embedding" Layer
-        - Word Embedding" Layer
-        - Contextual Embedding" Layer
+        - Character Embedding Layer
+        - Word Embedding Layer
+        - Contextual Embedding Layer
         - Attention Flow Layer
-        - Modeling" Layer
+        - Modeling Layer
         - Output Layer
     - 其中前三层是一个多层级上下文不同粒度的表征编码器。第四层则是双向注意流层，这是原文的核心层。第五层是一个编码层，编码第四层输出的问题感知的上下文表征。第六层就是一个预测答案的范围。
     <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/BIDAF.png  width=650 alt=BIDAF></div>
@@ -381,23 +381,22 @@ and Machine Commonsense Reading" Comprehension](https://arxiv.org/pdf/1810.12885
 - **解读文章**：[BiDAF：机器理解之双向注意力流 ](https://zhuanlan.zhihu.com/p/53470020)
 
 ### 3.2 R-NET--微软
-- **论文**：[R-NET: Machine Reading" Comprehension with Self-matching" Networks ](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/05/r-net.pdf)
+- **论文**：[R-NET: Machine Reading Comprehension with Self-matching Networks ](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/05/r-net.pdf)
 
 - **简介**：
     - 基于自匹配网络的机器阅读理解
     - R-NET是首个在某些指标中接近人类的深度学习模型。
 - **创新**：
-    - 两层的interaction
-    - 提出self-matching的注意力机制通过将文本自身进行匹配来优化表示，从而有效地对整个段落中的信息进行编码。
+    - 两层的interaction，与BIDAF相比新提出self-matching的注意力机制通过将文本自身进行匹配来优化表示，从而有效地对整个段落中的信息进行编码。
 - **模型架构**
     - 用于阅读理解和问题回答的端到端神经网络模型，由以下四部分组成：
     - 1）**Question & Passage Encoding**
         - 多层的双向循环神经网络编码器，用于为问题和文本建立表示	
     - 2）**Question-Passage Matching**
-        - 门控匹配层（gated matching" layer），用于匹配问题和文本
+        - 门控匹配层（gated matching layer），用于匹配问题和文本
         - 这一层将问题中的向量和文本中的向量做一个比对，这样就能找出那些问题和哪些文字部分比较接近。
     - 3）**Passage Self-Matching**
-        - 自匹配层（self-matching" layer），用于整合整个段落的信息
+        - 自匹配层（self-matching layer），用于整合整个段落的信息
         - 将问题和文本的匹配结果放在全局中进行比对。这些都是通过注意力机制（attention）达到的。
     - 4）**Answer Prediction**
         - 基于答案边界预测层的提示网络（pointer-network）
@@ -412,15 +411,15 @@ and Machine Commonsense Reading" Comprehension](https://arxiv.org/pdf/1810.12885
 - **解读文章**：[R-NET机器阅读理解（原理解析）](https://zhuanlan.zhihu.com/p/36855204)
 
 ### 3.3 QANET-- Google
-- **论文**：[QANet: Combining" Local Convolution with Global Self-Attention for Reading" Comprehension ](https://openreview.net/pdf?id=B14TlG-RW)
+- **论文**：[QANet: Combining Local Convolution with Global Self-Attention for Reading Comprehension ](https://openreview.net/pdf?id=B14TlG-RW)
 
 - **简介**
-    - recurrent的部分负责读入sequential的数据，而attention的部分负责处理long-term的特征。但是这种模型的缺点是train/test的时候速度都很慢，不利于实时实时处理。因此作者提出了一种新的不需要RNN结构的QA模型QANet，从而在很大程度改进了QA模型的速度。
+    - 之前RNN模型的缺点是**train/test的时候速度都很慢，不利于实时实时处理**。因此作者提出了一种新的不需要RNN结构的QA模型-QANet，在很大程度改进了QA模型的速度。
     
-    - 这个模型用卷积负责学习局部特征，而self-attention负责全局特征。相比之前的模型它的速度更快，且在更长时间下能够得到更好的结果。
+    - 这个模型用**卷积负责学习局部特征，而self-attention负责全局特征**。相比之前的模型它的速度更快，且在更长时间下能够得到更好的结果。
     
 - **创新**
-    - 在普通阅读理解模型的embedding和modeling" encoder layer中只用卷积和self-attention而没有用RNN(比只用self-attention↑2.7F1)。
+    - 在普通阅读理解模型的embedding和modeling encoder layer中**只用卷积和self-attention而没有用RNN**(比只用self-attention↑2.7F1)。
     
     - 这种做法的好处是，
         - 可以并行处理输入数据，使得模型的速度大大加快；
@@ -428,8 +427,8 @@ and Machine Commonsense Reading" Comprehension](https://arxiv.org/pdf/1810.12885
         
 - **亮点**：速度快。训练速度和推理速度都比之前提高很多
 - **模型架构**：模型共有5层，依次是
-    1. **Input Embedding" Layer**
-    2. **Embedding" Encoder Layer**
+    1. **Input Embedding Layer**
+    2. **Embedding Encoder Layer**
         - 主要由三部分组成: [convolution_layer  + self-attention_layer + feed-forward_layer]
         
         - 用的是占空间更小的depthwise separable convolution
@@ -479,7 +478,7 @@ and Machine Commonsense Reading" Comprehension](https://arxiv.org/pdf/1810.12885
         <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/SMRCarchitecture.png  width=650 alt=SMRC architecture></div>
 
 ### 4.2 SLQA -- 阿里
-- **全称**：Semantic Learning" for Question Answering
+- **全称**：Semantic Learning for Question Answering
 - **应用场景**：
     <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E5%88%86%E9%A2%86%E5%9F%9F%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81.jpg  width=650 alt=分领域的模型支持></div>
     
@@ -578,11 +577,11 @@ and Machine Commonsense Reading" Comprehension](https://arxiv.org/pdf/1810.12885
 - [机器阅读理解打破人类记录，解读阿里iDST SLQA 技术](https://blog.csdn.net/Uwr44UOuQcNsUQb60zk2/article/details/79060596?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase)
 - [阿里小蜜机器阅读理解技术揭秘-张佶](https://myslide.cn/slides/6148?vertical=1)
 - [机器阅读理解方向-前沿跟进资源整理](https://zhuanlan.zhihu.com/p/128453331)
-- [MRC综述: Neural MRC: Methods and TrendsNeural Machine Reading" Comprehension: Methods and Trends](https://arxiv.org/pdf/1907.01118v3.pdf)
+- [MRC综述: Neural MRC: Methods and TrendsNeural Machine Reading Comprehension: Methods and Trends](https://arxiv.org/pdf/1907.01118v3.pdf)
 - [机器阅读理解中你需要知道的几个经典数据集](https://www.imooc.com/article/24766)
 - [DuReader：百度大规模的中文机器阅读理解数据集](https://www.imooc.com/article/24845)
 - [从短句到长文，计算机如何学习阅读理解-微软研究院](https://www.msra.cn/zh-cn/news/features/machine-text-comprehension-20170508)
 - [法研杯2019阅读理解赛道冠军方案分享（含PPT）](https://mp.weixin.qq.com/s?__biz=MjM5ODkzMzMwMQ==&mid=2650411097&idx=1&sn=b6988b9e3ac5c2d4fd5b8ff4e92e2065&utm_source=tuicool&utm_medium=referral)
 - [追一科技CoQA冠军方案分享：基于对抗训练和知识蒸馏的机器阅读理解方案](https://www.leiphone.com/news/201911/g5eqn6CjbLPI5GDU.html)
 - [BiDAF：机器理解之双向注意力流](https://zhuanlan.zhihu.com/p/53470020)
-- [[论文笔记]QANet: Combining" Local Convolution with Global Self-Attention for Reading" Comprehension ](https://qianqianqiao.github.io/2018/10/14/new/)
+- [[论文笔记]QANet: Combining Local Convolution with Global Self-Attention for Reading Comprehension ](https://qianqianqiao.github.io/2018/10/14/new/)
