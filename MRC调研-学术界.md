@@ -26,7 +26,7 @@
 
 **MCTest**
 
-- 由 Microsoft于 2013年在《 MCTest: A Challenge Dataset for the Open-Domain Machine Comprehension of Text》一文中发布
+- 由 Microsoft于 2013年在《MCTest: A Challenge Dataset for the Open-Domain Machine Comprehension of Text》一文中发布
 - 开放域机器理解的挑战数据集，有660个阅读理解
 
 **RACE**
@@ -60,40 +60,40 @@
 
  **Cloze Test** 任务数据集
 
-|      数据集      |              Paper               |                         Data                         |
-| :--------------: | :------------------------------: | :--------------------------------------------------: |
-| CNN & Daily Mail | https://arxiv.org/abs/1506.03340 |            https://cs.nyu.edu/~kcho/DMQA/            |
-|       CBT        | https://arxiv.org/abs/1511.02301 |       https://research.fb.com/downloads/babi/        |
-|     LAMBADA      |                                  |                                                      |
-|   Who-did-What   |                                  | https://tticnlp.github.io/who_did_what/download.html |
-|      CLOTH       |                                  |                                                      |
-|      CliCR       |                                  |                                                      |
+|      数据集      |                            Paper                             |                             Data                             |
+| :--------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| CNN & Daily Mail | [Teaching Machines to Read and Comprehend](https://arxiv.org/abs/1506.03340) |            [链接](https://cs.nyu.edu/~kcho/DMQA/)            |
+|       CBT        | [The Goldilocks Principle: Reading Children’s Books with Explicit Memory Representations](https://arxiv.org/abs/1511.02301) |       [链接](https://research.fb.com/downloads/babi/)        |
+|     LAMBADA      |                                                              |                                                              |
+|   Who-did-What   |                                                              | [链接](https://tticnlp.github.io/who_did_what/download.html) |
+|      CLOTH       |                                                              |                                                              |
+|      CliCR       |                                                              |                                                              |
 
  **Multiple Choice** 任务数据集
 
 | 数据集 |                            Paper                             |                             Data                             |
 | :----: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| MCTest | https://www.microsoft.com/en-us/research/publication/mctest-challenge-dataset-open-domain-machine-comprehension-text/ | https://github.com/mcobzarenco/mctest/tree/master/data/MCTest |
-|  RACE  |               https://arxiv.org/abs/1704.04683               |           https://www.cs.cmu.edu/~glai1/data/race/           |
+| MCTest | [MCTest: A Challenge Dataset for the Open-Domain Machine Comprehension of Text](https://www.microsoft.com/en-us/research/publication/mctest-challenge-dataset-open-domain-machine-comprehension-text/) | [链接](https://github.com/mcobzarenco/mctest/tree/master/data/MCTest) |
+|  RACE  | [RACE: Large-scale ReAding Comprehension Dataset From Examinations](https://arxiv.org/abs/1704.04683) |       [链接](https://www.cs.cmu.edu/~glai1/data/race/)       |
 
  **Span Extraction** 任务数据集
 
-| 数据集   | Paper                            | Data                                        |
-| -------- | -------------------------------- | ------------------------------------------- |
-| SQuAD    | https://arxiv.org/abs/1606.05250 | https://rajpurkar.github.io/SQuAD-explorer/ |
-| NewsQA   | https://arxiv.org/abs/1611.09830 | https://github.com/Maluuba/newsqa           |
-| TriviaQA |                                  |                                             |
-| DuoRC    |                                  |                                             |
+|  数据集  |                            Paper                             |                        Data                         |
+| :------: | :----------------------------------------------------------: | :-------------------------------------------------: |
+|  SQuAD   | [SQuAD: 100,000+ Questions for Machine Comprehension of Text](https://arxiv.org/abs/1606.05250) | [链接](https://rajpurkar.github.io/SQuAD-explorer/) |
+|  NewsQA  | [NewsQA: A Machine Comprehension Dataset](https://arxiv.org/abs/1611.09830) |      [链接](https://github.com/Maluuba/newsqa)      |
+| TriviaQA |                                                              |                                                     |
+|  DuoRC   |                                                              |                                                     |
 
  **Free Answering** 任务数据集
 
-| 数据集      | Paper                            | Data                                    |
-| ----------- | -------------------------------- | --------------------------------------- |
-| bAbI        | https://arxiv.org/abs/1611.09268 | https://research.fb.com/downloads/babi/ |
-| MS MARCO    | https://arxiv.org/abs/1611.09268 | https://microsoft.github.io/msmarco/    |
-| SearchQA    |                                  |                                         |
-| NarrativeQA |                                  |                                         |
-| DuReader    |                                  |                                         |
+|   数据集    |                            Paper                             |                      Data                       |
+| :---------: | :----------------------------------------------------------: | :---------------------------------------------: |
+|    bAbI     | [Towards AI-Complete Question Answering: A Set of Prerequisite Toy Tasks](https://arxiv.org/abs/1611.09268) | [链接](https://research.fb.com/downloads/babi/) |
+|  MS MARCO   | [MS MARCO: A Human Generated MAchine Reading COmprehension Dataset](https://arxiv.org/abs/1611.09268) |  [链接](https://microsoft.github.io/msmarco/)   |
+|  SearchQA   |                                                              |                                                 |
+| NarrativeQA |                                                              |                                                 |
+|  DuReader   |                                                              |                                                 |
 
 ### 1.4 SOTA
 
@@ -103,7 +103,7 @@ SA-Net on Albert (ensemble)	90.724	EM
 
 SA-Net on Albert (ensemble)	93.011 F1
 
-https://rajpurkar.github.io/SQuAD-explorer/
+**官网：**[链接](https://rajpurkar.github.io/SQuAD-explorer/)
 
 **MS MARCO Question Answering**
 
@@ -111,14 +111,14 @@ Multi-doc Enriched BERT Ming Yan of Alibaba Damo NLP   0.540 Rouge-L
 
 Multi-doc Enriched BERT Ming Yan of Alibaba Damo NLP   0.565 Bleu-1
 
-https://microsoft.github.io/msmarco/
+**官网：**[链接](https://microsoft.github.io/msmarco/)
 
 ### 1.5 评测标准
 
-- Accuracy
-- average f1
-- rouge-L
-- bleu
+- Accuracy（主要用于Cloze Test 和 Multiple Choice）
+- Exact Match（主要用于Span Prediction）
+- Rouge-L（主要用于Free Answering）
+- Bleu（主要用于Free Answering）
 
 ## 2 方法总结
 
@@ -139,64 +139,64 @@ https://microsoft.github.io/msmarco/
 
 ### 3.1 经典论文
 
-| 会议名称  | 论文名称                                                     | 下载链接 |
-| --------- | ------------------------------------------------------------ | -------- |
-| NIPS 2015 | Teaching machines to read and comprehend                     |          |
-| ACL 2016  | Text understanding with the attention sum reader network     |          |
-| ACL 2016  | A Through Examination of the CNN_Daily Mail Reading Comprehension Task |          |
-| ACL 2017  | Attention-over-Attention Neural Networks for Reading Comprehension |          |
-| ICLR 2017 | Bidirectional Attention Flow for Machine Comprehension       |          |
-| ACL 2017  | Gated Self-Matching Networks for Reading Comprehension and Question Answering |          |
-| ACL 2018  | Simple and Effective Multi-Paragraph Reading Comprehension   |          |
+| 会议名称  |                           论文名称                           |
+| :-------: | :----------------------------------------------------------: |
+| NIPS 2015 |           Teaching machines to read and comprehend           |
+| ACL 2016  |  【Text understanding with the attention sum reader network  |
+| ACL 2016  | A Through Examination of the CNN_Daily Mail Reading Comprehension Task |
+| ACL 2017  | Attention-over-Attention Neural Networks for Reading Comprehension |
+| ICLR 2017 |    Bidirectional Attention Flow for Machine Comprehension    |
+| ACL 2017  | Gated Self-Matching Networks for Reading Comprehension and Question Answering |
+| ACL 2018  |  Simple and Effective Multi-Paragraph Reading Comprehension  |
 
 ### 3.2 近3年论文
 
-| 会议名称   | 论文名称                                                     | 下载链接 |
-| ---------- | ------------------------------------------------------------ | -------- |
-| AAAI 2020  | SG-Net: Syntax-Guided Machine Reading Comprehension.         |          |
-| AAAI 2020  | Generating Well-Formed Answers by Machine Reading with Stochastic Selector Networks. |          |
-| AAAI 2020  | A Robust Adversarial Training Approach to Machine Reading Comprehension. |          |
-| AAAI 2020  | Multi-Task Learning with Generative Adversarial Training for Multi-Passage Machine Reading Comprehension. |          |
-| AAAI 2020  | Distill BERT to Traditional Models in Chinese Machine Reading Comprehension (Student Abstract). |          |
-| AAAI 2020  | Assessing the Benchmarking Capacity of Machine Reading Comprehension Datasets. |          |
-| AAAI 2020  | A Multi-Task Learning Machine Reading Comprehension Model for Noisy Document (Student Abstract) |          |
-| AAAI 2020  | Rception: Wide and Deep Interaction Networks for Machine Reading Comprehension (Student Abstract). |          |
-| AAAI 2019  | Read + Verify: Machine Reading Comprehension with Unanswerable Questions. |          |
-| AAAI 2019  | Teaching Machines to Extract Main Content for Machine Reading Comprehension. |          |
-| AAAI 2018  | Byte-Level Machine Reading Across Morphologically Varied Languages. |          |
-| AAAI 2018  | S-Net: From Answer Extraction to Answer Synthesis for Machine Reading Comprehension. |          |
-| EMNLP 2019 | Incorporating External Knowledge into Machine Reading for Generative Question Answering. |          |
-| EMNLP 2019 | Cross-Lingual Machine Reading Comprehension.                 |          |
-| EMNLP 2019 | A Span-Extraction Dataset for Chinese Machine Reading Comprehension. |          |
-| EMNLP 2019 | Cosmos QA: Machine Reading Comprehension with Contextual Commonsense Reasoning. |          |
-| EMNLP 2019 | Towards Machine Reading for Interventions from Humanitarian-Assistance Program Literature. |          |
-| EMNLP 2019 | Revealing the Importance of Semantic Retrieval for Machine Reading at Scale. |          |
-| EMNLP 2019 | Machine Reading Comprehension Using Structural Knowledge Graph-aware Network. |          |
-| EMNLP 2019 | NumNet: Machine Reading Comprehension with Numerical Reasoning. |          |
-| EMNLP 2019 | Adversarial Domain Adaptation for Machine Reading Comprehension. |          |
-| ACL 2020   | Explicit Memory Tracker with Coarse-to-Fine Reasoning for Conversational Machine Reading. |          |
-| ACL 2020   | Recurrent Chunking Mechanisms for Long-Text Machine Reading Comprehension. |          |
-| ACL 2020   | A Frame-based Sentence Representation for Machine Reading Comprehension. |          |
-| ACL 2020   | Machine Reading of Historical Events.                        |          |
-| ACL 2020   | A Self-Training Method for Machine Reading Comprehension with Soft Evidence Extraction. |          |
-| ACL 2020   | Enhancing Answer Boundary Detection for Multilingual Machine Reading Comprehension. |          |
-| ACL 2020   | Document Modeling with Graph Attention Networks for Multi-grained Machine Reading Comprehension. |          |
-| ACL 2019   | Conversing by Reading: Contentful Neural Conversation with On-demand Machine Reading. |          |
-| ACL 2019   | Explicit Utilization of General Knowledge in Machine Reading Comprehension. |          |
-| ACL 2019   | Enhancing Pre-Trained Language Representations with Rich Knowledge for Machine Reading Comprehension. |          |
-| ACL 2019   | MC\2: Multi-perspective Convolutional Cube for Conversational Machine Reading Comprehension. |          |
-| ACL 2019   | E3: Entailment-driven Extracting and Editing for Conversational Machine Reading. |          |
-| ACL 2019   | Learning to Ask Unanswerable Questions for Machine Reading Comprehension. |          |
-| ACL 2018   | Stochastic Answer Networks for Machine Reading Comprehension. |          |
-| ACL 2018   | Jack the Reader - A Machine Reading Framework.               |          |
-| ACL 2018   | Multi-Passage Machine Reading Comprehension with Cross-Passage Answer Verification. |          |
-| ACL 2018   | Multi-Relational Question Answering from Narratives: Machine Reading and Reasoning in Simulated Worlds. |          |
-| IJCAI 2020 | LogiQA: A Challenge Dataset for Machine Reading Comprehension with Logical Reasoning. |          |
-| IJCAI 2020 | An Iterative Multi-Source Mutual Knowledge Transfer Framework for Machine Reading Comprehension. |          |
-| IJCAI 2020 | Asking Effective and Diverse Questions: A Machine Reading Comprehension based Framework for Joint Entity-Relation Extraction. |          |
-| IJCAI 2018 | Reinforced Mnemonic Reader for Machine Reading Comprehension. |          |
-| CIKM 2019  | Machine Reading Comprehension: Matching and Orders.          |          |
-| CIKM 2018  | An Option Gate Module for Sentence Inference on Machine Reading Comprehension. |          |
+|  会议名称  |                           论文名称                           |
+| :--------: | :----------------------------------------------------------: |
+| AAAI 2020  |     SG-Net: Syntax-Guided Machine Reading Comprehension.     |
+| AAAI 2020  | Generating Well-Formed Answers by Machine Reading with Stochastic Selector Networks. |
+| AAAI 2020  | A Robust Adversarial Training Approach to Machine Reading Comprehension. |
+| AAAI 2020  | Multi-Task Learning with Generative Adversarial Training for Multi-Passage Machine Reading Comprehension. |
+| AAAI 2020  | Distill BERT to Traditional Models in Chinese Machine Reading Comprehension (Student Abstract). |
+| AAAI 2020  | Assessing the Benchmarking Capacity of Machine Reading Comprehension Datasets. |
+| AAAI 2020  | A Multi-Task Learning Machine Reading Comprehension Model for Noisy Document (Student Abstract) |
+| AAAI 2020  | Rception: Wide and Deep Interaction Networks for Machine Reading Comprehension (Student Abstract). |
+| AAAI 2019  | Read + Verify: Machine Reading Comprehension with Unanswerable Questions. |
+| AAAI 2019  | Teaching Machines to Extract Main Content for Machine Reading Comprehension. |
+| AAAI 2018  | Byte-Level Machine Reading Across Morphologically Varied Languages. |
+| AAAI 2018  | S-Net: From Answer Extraction to Answer Synthesis for Machine Reading Comprehension. |
+| EMNLP 2019 | Incorporating External Knowledge into Machine Reading for Generative Question Answering. |
+| EMNLP 2019 |         Cross-Lingual Machine Reading Comprehension.         |
+| EMNLP 2019 | A Span-Extraction Dataset for Chinese Machine Reading Comprehension. |
+| EMNLP 2019 | Cosmos QA: Machine Reading Comprehension with Contextual Commonsense Reasoning. |
+| EMNLP 2019 | Towards Machine Reading for Interventions from Humanitarian-Assistance Program Literature. |
+| EMNLP 2019 | Revealing the Importance of Semantic Retrieval for Machine Reading at Scale. |
+| EMNLP 2019 | Machine Reading Comprehension Using Structural Knowledge Graph-aware Network. |
+| EMNLP 2019 | NumNet: Machine Reading Comprehension with Numerical Reasoning. |
+| EMNLP 2019 | Adversarial Domain Adaptation for Machine Reading Comprehension. |
+|  ACL 2020  | Explicit Memory Tracker with Coarse-to-Fine Reasoning for Conversational Machine Reading. |
+|  ACL 2020  | Recurrent Chunking Mechanisms for Long-Text Machine Reading Comprehension. |
+|  ACL 2020  | A Frame-based Sentence Representation for Machine Reading Comprehension. |
+|  ACL 2020  |            Machine Reading of Historical Events.             |
+|  ACL 2020  | A Self-Training Method for Machine Reading Comprehension with Soft Evidence Extraction. |
+|  ACL 2020  | Enhancing Answer Boundary Detection for Multilingual Machine Reading Comprehension. |
+|  ACL 2020  | Document Modeling with Graph Attention Networks for Multi-grained Machine Reading Comprehension. |
+|  ACL 2019  | Conversing by Reading: Contentful Neural Conversation with On-demand Machine Reading. |
+|  ACL 2019  | Explicit Utilization of General Knowledge in Machine Reading Comprehension. |
+|  ACL 2019  | Enhancing Pre-Trained Language Representations with Rich Knowledge for Machine Reading Comprehension. |
+|  ACL 2019  | MC\2: Multi-perspective Convolutional Cube for Conversational Machine Reading Comprehension. |
+|  ACL 2019  | E3: Entailment-driven Extracting and Editing for Conversational Machine Reading. |
+|  ACL 2019  | Learning to Ask Unanswerable Questions for Machine Reading Comprehension. |
+|  ACL 2018  | Stochastic Answer Networks for Machine Reading Comprehension. |
+|  ACL 2018  |        Jack the Reader - A Machine Reading Framework.        |
+|  ACL 2018  | Multi-Passage Machine Reading Comprehension with Cross-Passage Answer Verification. |
+|  ACL 2018  | Multi-Relational Question Answering from Narratives: Machine Reading and Reasoning in Simulated Worlds. |
+| IJCAI 2020 | LogiQA: A Challenge Dataset for Machine Reading Comprehension with Logical Reasoning. |
+| IJCAI 2020 | An Iterative Multi-Source Mutual Knowledge Transfer Framework for Machine Reading Comprehension. |
+| IJCAI 2020 | Asking Effective and Diverse Questions: A Machine Reading Comprehension based Framework for Joint Entity-Relation Extraction. |
+| IJCAI 2018 | Reinforced Mnemonic Reader for Machine Reading Comprehension. |
+| CIKM 2019  |     Machine Reading Comprehension: Matching and Orders.      |
+| CIKM 2018  | An Option Gate Module for Sentence Inference on Machine Reading Comprehension. |
 
 ## 4 相关链接
 
