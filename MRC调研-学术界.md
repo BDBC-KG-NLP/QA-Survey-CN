@@ -1,4 +1,4 @@
-# MRC调研——学术界
+MRC调研——学术界
 
 ## 1.任务
 
@@ -12,19 +12,19 @@
 
 #### 1.2.1 完形填空（Cloze Test）
 
-给定上下文![](http://latex.codecogs.com/gif.latex?C)，一个词或实体![](http://latex.codecogs.com/gif.latex?a(a \in C))被移除，完形填空任务要求模型使用正确的词或实体进行填空，最大化条件概率![](http://latex.codecogs.com/gif.latex?P(a | C - \{a\}))。
+给定上下文![](http://latex.codecogs.com/gif.latex?C)，一个词或实体![](http://latex.codecogs.com/gif.latex?a(a\in{C}))被移除，完形填空任务要求模型使用正确的词或实体进行填空，最大化条件概率![](http://latex.codecogs.com/gif.latex?P(a|C-\{a\}))。
 
 #### 1.2.2 多项选择（Multiple Choice）
 
-给定上下文![](http://latex.codecogs.com/gif.latex?C)，问题![](http://latex.codecogs.com/gif.latex?Q)，候选答案列表![](http://latex.codecogs.com/gif.latex?A = \{a_{1}, a_{2}, ...,a_{n}\} )，多项选择任务要求模型从A中选择正确的答案$ a_{i}$，最大化条件概率![](http://latex.codecogs.com/gif.latex?P(a_{i}, C, Q, A))。与完形填空任务的区别就是答案不再局限于单词或实体，并且候选答案列表是必须要提供的。
+给定上下文![](http://latex.codecogs.com/gif.latex?C)，问题![](http://latex.codecogs.com/gif.latex?Q)，候选答案列表![](http://latex.codecogs.com/gif.latex?A=\{a_{1},a_{2},...,a_{n}\})，多项选择任务要求模型从A中选择正确的答案$ a_{i}$，最大化条件概率![](http://latex.codecogs.com/gif.latex?P(a_{i},C,Q,A))。与完形填空任务的区别就是答案不再局限于单词或实体，并且候选答案列表是必须要提供的。
 
 #### 1.2.3 片段抽取（Span Extraction）
 
-给定上下文![](http://latex.codecogs.com/gif.latex?C)和问题![](http://latex.codecogs.com/gif.latex?Q)，其中![](http://latex.codecogs.com/gif.latex?C = \{t_{1}, t_{2}, ...,t_{n}\})，片段抽取任务要求模型从![](http://latex.codecogs.com/gif.latex?C)中抽取连续的子序列![](http://latex.codecogs.com/gif.latex?a = \{t_{i}, t_{i+1},...,t_{i+k}\}(1 \leq i \leq i+k \leq n))作为正确答案，最大化条件概率![](http://latex.codecogs.com/gif.latex?P(a | C, Q))。
+给定上下文![](http://latex.codecogs.com/gif.latex?C)和问题![](http://latex.codecogs.com/gif.latex?Q)，其中![](http://latex.codecogs.com/gif.latex?C=\{t_{1},t_{2},...,t_{n}\})，片段抽取任务要求模型从![](http://latex.codecogs.com/gif.latex?C)中抽取连续的子序列![](http://latex.codecogs.com/gif.latex?a=\{t_{i},t_{i+1},...,t_{i+k}\}(1\leq{i}\leq{i+k}\leq{n}))作为正确答案，最大化条件概率![](http://latex.codecogs.com/gif.latex?P(a|C,Q))。
 
 #### 1.2.4 自由回答（ Free Answering）
 
-给定上下文![](http://latex.codecogs.com/gif.latex?C)和问题![](http://latex.codecogs.com/gif.latex?Q)，在自由回答任务中正确答案可能不是C中的一个子序列，![](http://latex.codecogs.com/gif.latex?a \subseteq C)或![](http://latex.codecogs.com/gif.latex?a \not\subseteq C)，自由回答任务需要预测正确答案![](http://latex.codecogs.com/gif.latex?a)，并且最大化条件概率![](http://latex.codecogs.com/gif.latex?P(a | C, Q))。
+给定上下文![](http://latex.codecogs.com/gif.latex?C)和问题![](http://latex.codecogs.com/gif.latex?Q)，在自由回答任务中正确答案可能不是C中的一个子序列，![](http://latex.codecogs.com/gif.latex?a\subseteq{C})或![](http://latex.codecogs.com/gif.latex?a\not\subseteq{C})，自由回答任务需要预测正确答案![](http://latex.codecogs.com/gif.latex?a)，并且最大化条件概率![](http://latex.codecogs.com/gif.latex?P(a|C,Q))。
 
 #### 1.2.5 基于知识的机器阅读理解（Knowledge-Based MRC）
 
