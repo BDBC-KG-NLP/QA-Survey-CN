@@ -12,25 +12,25 @@
 
 #### 1.2.1 完形填空（Cloze Test）
 
-给定上下文$C$，一个词或实体$a (a \in C)$被移除，完形填空任务要求模型使用正确的词或实体进行填空，最大化条件概率$P(a | C - \{a\})$。
+给定上下文![](http://latex.codecogs.com/gif.latex?C)，一个词或实体![](http://latex.codecogs.com/gif.latex?a(a \in C))被移除，完形填空任务要求模型使用正确的词或实体进行填空，最大化条件概率![](http://latex.codecogs.com/gif.latex?P(a | C - \{a\}))。
 
 #### 1.2.2 多项选择（Multiple Choice）
 
-给定上下文$C$，问题$Q$，候选答案列表$A = \{a_{1}, a_{2}, ...,a_{n}\} $，多项选择任务要求模型从A中选择正确的答案$ a_{i}$，最大化条件概率$ P(a_{i}, C, Q, A)$。与完形填空任务的区别就是答案不再局限于单词或实体，并且候选答案列表是必须要提供的。
+给定上下文![](http://latex.codecogs.com/gif.latex?C)，问题![](http://latex.codecogs.com/gif.latex?Q)，候选答案列表![](http://latex.codecogs.com/gif.latex?A = \{a_{1}, a_{2}, ...,a_{n}\} )，多项选择任务要求模型从A中选择正确的答案$ a_{i}$，最大化条件概率![](http://latex.codecogs.com/gif.latex?P(a_{i}, C, Q, A))。与完形填空任务的区别就是答案不再局限于单词或实体，并且候选答案列表是必须要提供的。
 
 #### 1.2.3 片段抽取（Span Extraction）
 
-给定上下文$C$和问题$Q$，其中$C = \{t_{1}, t_{2}, ...,t_{n}\}$，片段抽取任务要求模型从C中抽取连续的子序列$a = \{t_{i}, t_{i+1},...,t_{i+k}\}(1 \leq i \leq i+k \leq n)$作为正确答案，最大化条件概率$P(a | C, Q)$。
+给定上下文![](http://latex.codecogs.com/gif.latex?C)和问题![](http://latex.codecogs.com/gif.latex?Q)，其中![](http://latex.codecogs.com/gif.latex?C = \{t_{1}, t_{2}, ...,t_{n}\})，片段抽取任务要求模型从![](http://latex.codecogs.com/gif.latex?C)中抽取连续的子序列![](http://latex.codecogs.com/gif.latex?a = \{t_{i}, t_{i+1},...,t_{i+k}\}(1 \leq i \leq i+k \leq n))作为正确答案，最大化条件概率![](http://latex.codecogs.com/gif.latex?P(a | C, Q))。
 
 #### 1.2.4 自由回答（ Free Answering）
 
-给定上下文$C$和问题$Q$，在自由回答任务中正确答案可能不是C中的一个子序列，$a \subseteq C$或$ a \not\subseteq C$，自由回答任务需要预测正确答案$a$，并且最大化条件概率$P(a | C, Q)$。
+给定上下文![](http://latex.codecogs.com/gif.latex?C)和问题![](http://latex.codecogs.com/gif.latex?Q)，在自由回答任务中正确答案可能不是C中的一个子序列，![](http://latex.codecogs.com/gif.latex?a \subseteq C)或![](http://latex.codecogs.com/gif.latex?a \not\subseteq C)，自由回答任务需要预测正确答案![](http://latex.codecogs.com/gif.latex?a)，并且最大化条件概率![](http://latex.codecogs.com/gif.latex?P(a | C, Q))。
 
 #### 1.2.5 基于知识的机器阅读理解（Knowledge-Based MRC）
 
  有时候，我们只根据context是无法回答问题的，需要借助外部知识。因此，基于外部知识的MRC应运而生。KBMRC和MRC的不同主要在输入部分，MRC的输入是context和question，而KBMRC的输入是context、question、knowledge。 
 
- ![img](https://pic2.zhimg.com/80/v2-7639ff4b878691078a327a083329f728_720w.jpg)
+<img src="https://pic2.zhimg.com/80/v2-7639ff4b878691078a327a083329f728_720w.jpg" alt="img"/>
 
 相比传统的MRC，KBMRC的挑战在于：
 
@@ -41,7 +41,7 @@
 
  有一个潜在的假设就是MRC任务中正确答案总是存在于给定的上下文中。显然这是不现实的，上下文覆盖的知识是有限的，存在一些问题是无法只根据上下文就可以回答的。因此，MRC系统应该区分这些无法回答的问题。 
 
-![img](http://5b0988e595225.cdn.sohucs.com/images/20190725/1914f31124a542a682461f1c6cd28b09.jpeg)
+<img src="http://5b0988e595225.cdn.sohucs.com/images/20190725/1914f31124a542a682461f1c6cd28b09.jpeg" alt="img" style="zoom: 67%;" />
 
 相比传统的MRC，MRC UQ的挑战在于：
 
@@ -52,21 +52,21 @@
 
  在MRC任务中，相关的段落是预定义好的，这与人类的问答流程矛盾。因为人们通常先提出一个问题，然后再去找所有相关的段落，最后在这些段落中找答案。因此研究学者提出了multi-passage machine reading comprehension，相关数据集有MS MARCO、TriviaQA、SearchQA、Dureader、QUASAR。 
 
- ![img](https://pic2.zhimg.com/80/v2-440cd6d5068a467954c83340a209880b_720w.jpg)
+ <img src="https://pic2.zhimg.com/80/v2-440cd6d5068a467954c83340a209880b_720w.jpg" alt="img"/>
 
 相比传统的MRC，MP MRC的挑战在于：
 
 - 海量文件语料的检索（Massive Document Corpus）： 如何从多篇文档中检索到与回答问题相关的文档
 - 含噪音的文件检索（Noisy Document Retrieval）：一些文档中可能存在标记答案，但是这些答案与问题可能存在答非所问的情况 
 - 无答案（No Answer）
-- 多个答案（Multiple Answers）：例如问“美国总统是谁”，特朗普和奥巴马都是可能的答案，但是哪一个是正确答案还需要结合语境进行推断 
+- 多个答案（Multiple Answers）：例如问“美国总统是谁”，特朗普和奥巴马都是可能的答案，但哪一个是正确答案还需要结合语境进行推断 
 -  对多条线索进行汇总（Evidence Aggregation）：回答问题的线索可能出现在多篇文档中，需要对其进行总结归纳才能得出正确答案 
 
 #### 1.2.8 对话型问题回答（Conversational Question Answering）
 
  MRC系统理解了给定段落的语义后回答问题，问题之间是相互独立的。然而，人们获取知识的最自然方式是通过一系列相互关联的问答过程。比如，给定一个问答，A提问题，B回复答案，然后A根据答案继续提问题。这个方式有点类似多轮对话。 
 
-![img](http://5b0988e595225.cdn.sohucs.com/images/20190725/99fb049c813e4702b540ee1a5edc46d5.jpeg)
+<img src="http://5b0988e595225.cdn.sohucs.com/images/20190725/99fb049c813e4702b540ee1a5edc46d5.jpeg" alt="img" style="zoom:67%;" />
 
 相比传统的MRC，CQA的挑战在于：
 
@@ -217,7 +217,7 @@ Multi-doc Enriched BERT Ming Yan of Alibaba Damo NLP   0.565 Bleu-1
 
  上述的方法在某些简单的阅读理解任务中能够起到较好的效果。但是对于某些需要引入外部知识进行更深层次推理、几乎不可能仅仅通过相似度匹配得到的结果的阅读理解任务来说，上述方法几乎起不到作用。一个最典型的例子就是Berant等人提出的Biological Processes。该问题需要机器阅读一篇与生化过程有关的文章，并且根据文章回答问题。文中给出的一个例子如图所示。可以看到该问题涉及到大量的知识推理以及理解方面的内容。 
 
- <img src="http://bbs-10075040.file.myqcloud.com/uploads/images/201610/14/23/YanABAeemB.png" alt="file" style="zoom:80%;" />
+ <img src="http://bbs-10075040.file.myqcloud.com/uploads/images/201610/14/23/YanABAeemB.png" alt="img" style="zoom:80%;" />
 
  针对上述问题，Berant 等人提出了一种基于图匹配的方法。该方法首先通过类似于语义角色标注的方法，将整篇文章转化成一个图结构。然后将问题与答案组合（称为查询），也转化为一个图结构，最后考虑文章的图结构与查询的图结构之间的匹配度。
 
