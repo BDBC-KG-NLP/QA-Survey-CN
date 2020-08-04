@@ -48,14 +48,14 @@
 
 #### 1.2.7 多文本机器阅读理解（Multi-passage MRC）
 
- 在MRC任务中，相关的段落是预定义好的，这与人类的问答流程矛盾。因为人们通常先提出一个问题，然后再去找所有相关的段落，最后在这些段落中找答案。因此研究学者提出了multi-passage machine reading comprehension，相关数据集有MS MARCO、TriviaQA、SearchQA、Dureader、QUASAR。 
+ 在MRC任务中，相关的段落是预定义好的，这与人类的问答流程矛盾。因为人们通常先提出一个问题，然后再去找所有相关的段落，最后在这些段落中找答案。因此研究学者提出了multi-passage machine reading comprehension。 
 
  <div align=center><img src="https://pic2.zhimg.com/80/v2-440cd6d5068a467954c83340a209880b_720w.jpg" width=650 alt="img" /></div>
 相比传统的MRC，MP MRC的挑战在于：
 
 - **海量文件语料的检索**（Massive Document Corpus）： 如何从多篇文档中检索到与回答问题相关的文档
 - **含噪音的文件检索**（Noisy Document Retrieval）：一些文档中可能存在标记答案，但是这些答案与问题可能存在答非所问的情况 
-- **无答案**（No Answer）
+- **无答案**（No Answer）：在文档中没有相应问题的答案
 - **多个答案**（Multiple Answers）：例如问“美国总统是谁”，特朗普和奥巴马都是可能的答案，但哪一个是正确答案还需要结合语境进行推断 
 -  **对多条线索进行汇总**（Evidence Aggregation）：回答问题的线索可能出现在多篇文档中，需要对其进行总结归纳才能得出正确答案 
 
