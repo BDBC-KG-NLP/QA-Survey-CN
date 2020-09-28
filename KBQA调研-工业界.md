@@ -109,8 +109,7 @@
 - 问题类型：简单问题（单跳问题）
 - 训练集：14609
 - 验证集 + 测试集：9870
-- 资源地址：[知识库](https://pan.baidu.com/s/1dEYcQXz)，[问答集](http://tcci.ccf.org.cn/conference/2018/dldoc/tasktestdata07.zip)，[比赛官网(2018年)](http://tcci.ccf.org.cn/conference/2018/taskdata.php
-)
+- 资源地址：[知识库](https://pan.baidu.com/s/1dEYcQXz)，[问答集](http://tcci.ccf.org.cn/conference/2018/taskdata.php)
 
 ### 1.4 SOTA Board
 
