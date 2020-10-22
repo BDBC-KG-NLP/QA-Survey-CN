@@ -9,7 +9,6 @@
      * [1.4. SOTA](#14-SOTA)
      * [1.5. 评测标准](#15-评测标准)
      
-     
   * [2. 方法总结](#2-方法总结)
      * [2.1. 基于语义解析（Semantic Parsing）的方法](#21-基于语义解析semantic-parsing的方法)
      * [2.2. 基于信息抽取（Information Extraction）的方法](#22-基于信息抽取information-extraction的方法)
@@ -53,22 +52,29 @@ SPARQL，λ-DCS、FunQL等查询语言可以用于查询以及操作KG中存储�
 - FACTOID QUESTIONS：将SimpleQuestion扩展为含30M句的FACTOID QUESTIONS，只包含答案不含问句。
 - QALD-6：QALD有几个子任务，QALD-6是英语的QA任务，目标KB是DBpedia。训练集350个问题，测试集100个问题，提供 SPARQL查询和问题相应答案集。虽然数据集规模较小，但是更为口语化、复杂。
 - QALD-9：2018年发布，是QALD1-QALD8的超集。
-- LC-QuAD：包含5000对问题及其相应的SPARQL查询的问答数据集。目标知识库是DBpedia-April
+- LC-QuAD：包含5000对问题及其相应的SPARQL查询的问答数据集。目标知识库是DBpedia-April。
 - LC-QuAD2：发布了大规模的数据集LC-QuAD2，包含30000个问题，同时也提供相应的SPARQL查询。
+- MetaQA：基于MovieQA的电影KBQA数据集，数据集中已将问题按跳数进行了区分，其中1跳116045个问题答案对，2跳148724组问题答案对，3跳142744个问题答案对。
+- PQ：采用Freebase的两个子集和模板来构造的数据集，通过搜索互联网和两个现实世界的数据集WebQuestions和WikiAnswers，为关系提供了解释模板和同义词，提高了语言的多样性。
+- PQL：使用更大的KB来构造数据，并且相对于PQ提供更少的训练集，整体难度高于PQ。
 
-| 数据集              | 地址                                                         |
-| ------------------- | ------------------------------------------------------------ |
-| Free917              |https://github.com/pks/rebol/tree/master/data/free917         |
-| WebQuestions        | https://github.com/brmson/dataset-factoid-webquestions       |
-| WebQuestionsSP      | https://www.microsoft.com/en-us/download/details.aspx?id=52763 |
-| ComplexWebQuestions | https://www.tau-nlp.org/compwebq                            |
-| SimpleQuestions     | https://research.fb.com/downloads/babi/                      |
-| FACTOID QUESTIONS   |  http://academictorrents.com/details/973fb709bdb9db6066213bbc5529482a190098ce|
-| GraphQuestions      | https://github.com/ysu1989/GraphQuestions                    |
-| LC-QuAD             | https://github.com/AskNowQA/LC-QuAD                          |
-| LC-QuAD 2.0         | http://lc-quad.sda.tech/                                     |
-| QALD-6              | https://github.com/ag-sc/QALD/tree/master/6/data             |
-| QALD-9              | https://github.com/ag-sc/QALD/tree/master/9                  |
+| 数据集              | 数据规模                                                | 地址                                                         |
+| ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Free917              |917         |https://github.com/pks/rebol/tree/master/data/free917         |
+| WebQuestions        | 5810  | https://github.com/brmson/dataset-factoid-webquestions       |
+| WebQuestionsSP      | 5810 | https://www.microsoft.com/en-us/download/details.aspx?id=52763 |
+| ComplexQuestions | 2100 | https://github.com/JunweiBao/MulCQA/tree/ComplexQuestions |
+| ComplexWebQuestions | 34689                       | https://www.tau-nlp.org/compwebq                            |
+| SimpleQuestions     | 100K                  | https://research.fb.com/downloads/babi/                      |
+| FACTOID QUESTIONS   | 30M |  http://academictorrents.com/details/973fb709bdb9db6066213bbc5529482a190098ce|
+| GraphQuestions      | 5166                | https://github.com/ysu1989/GraphQuestions                    |
+| LC-QuAD             | 5000                      | https://github.com/AskNowQA/LC-QuAD                          |
+| LC-QuAD 2.0         | 30000                                | http://lc-quad.sda.tech/                                     |
+| QALD-6              | 450          | https://github.com/ag-sc/QALD/tree/master/6/data             |
+| QALD-9              | 350               | https://github.com/ag-sc/QALD/tree/master/9                  |
+| MetaQA | 407513 | https://github.com/yuyuz/MetaQA |
+| PQ | 7106 | https://github.com/zmtkeke/IRN |
+| PQL | 2625 | https://github.com/zmtkeke/IRN |
 
 ### 1.4. SOTA(leaderboard)
 
@@ -104,7 +110,7 @@ SimpleQuestions：
 |AR-SMCNN|93.7|Question Answering over Freebase via Attentive RNN with Similarity Matrix based CNN|2018|https://arxiv.org/vc/arxiv/papers/1804/1804.03317v2.pdf|https://github.com/quyingqi/kbqa-ar-smcnn|
 |HR-BiLSTM|93.3|Improved Neural Relation Detection for Knowledge Base Question Answering|2017|https://www.aclweb.org/anthology/P17-1053.pdf|https://github.com/StevenWD/HR-BiLSTM|
 |ComplexQueryGraphs|93.1|Knowledge Base Question Answering via Encoding of Complex Query Graphs|2018|https://www.aclweb.org/anthology/D18-1242.pdf|https://github.com/FengliLin/EMNLP2018-KBQA|
-|AMPCNN|91.3|Simple Question Answering by Attentive Convolutional Neural Network|2016|https://www.aclweb.org/anthology/C16-1164.pdf|| 
+|AMPCNN|91.3|Simple Question Answering by Attentive Convolutional Neural Network|2016|https://www.aclweb.org/anthology/C16-1164.pdf||
 |STAGG|90.0|Semantic Parsing via Staged Query Graph Generation:Question Answering with Knowledge Base| 2015|https://www.aclweb.org/anthology/P15-1128.pdf|https://github.com/scottyih/STAGG|
 
 
@@ -147,16 +153,6 @@ QALD-6:
 |gAnswer|0.55|Natural language question answering over RDF - A graph data driven approach|2014|https://www.researchgate.net/publication/266656635_Natural_language_question_answering_over_RDF_-_A_graph_data_driven_approach||
 |Aqqu|0.38|More Accurate Question Answering on Freebase|2015|http://ad-publications.informatik.uni-freiburg.de/freebase-qa.pdf|https://github.com/ad-freiburg/aqqu|
 |SemGraphQA|0.37|SemGraphQA@QALD-5: LIMSI participation at QALD-5@CLEF|2015|https://pdfs.semanticscholar.org/59e5/b01f7a634218cace37c47484073bbdd25138.pdf|-|
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -243,13 +239,19 @@ QALD-6:
 | EMNLP2018  | knowledge base question answering via encoding of complex query graphs  |https://www.aclweb.org/anthology/D18-1242.pdf|
 | EMNLP2018 |  Open Domain Question Answering Using Early Fusion of Knowledge Bases and Text |https://arxiv.org/pdf/1809.00782.pdf|
 | EMNLP2017  |  QUINT:Interpretable Question Answering over Knowledge Bases |https://www.aclweb.org/anthology/D17-2011.pdf|
-| ACL2019  |  Improving Question Answering over Incomplete KBs with Knowledge-Aware Reader |https://www.aclweb.org/anthology/P19-1417.pdf|
+| ACL2020 | Query Graph Generation for Answering Multi-hop Complex Questions from Knowledge Bases |https://www.aclweb.org/anthology/2020.acl-main.91.pdf|
+| ACL2020 | Improving Multi-hop Question Answering over Knowledge Graphs using Knowledge Base Embeddings |https://www.aclweb.org/anthology/2020.acl-main.412.pdf|
+| ACL2019 | Improving Question Answering over Incomplete KBs with Knowledge-Aware Reader |https://www.aclweb.org/anthology/P19-1417.pdf|
 | ACL2017 | Question Answering on Knowledge Bases and Text using Universal Schema and Memory Networks  |https://arxiv.org/pdf/1704.08384.pdf|
 | CIKM2019 |  Improving Question Answering over Incomplete KBs with Knowledge-Aware Reader |https://www.aclweb.org/anthology/P19-1417.pdf|
 | CIKM2019 | Learning to Answer Complex Questionsover Knowledge Bases with Query Composition |https://www.researchgate.net/publication/337017270_Learning_to_Answer_Complex_Questions_over_Knowledge_Bases_with_Query_Composition|
 | CIKM2019  |  Message Passing for Complex Question Answering over Knowledge Graphs |https://arxiv.org/pdf/1908.06917.pdf|
+| IJCAI2020 | Two-Phase Hypergraph Based Reasoning with Dynamic Relations for Multi-Hop KBQA. |https://www.ijcai.org/Proceedings/2020/0500.pdf|
+| IJCAI2020 | Formal Query Building with Query Structure Prediction for Complex Question Answering over Knowledge Base |https://www.ijcai.org/Proceedings/2020/0519.pdf|
 | IJCAI2019  |  Neural Program Induction for KBQA Without Gold Programs or Query Annotations |https://www.ijcai.org/Proceedings/2019/0679.pdf|
 | IJCAI2019|  Knowledge Base Question Answering with Topic Units |https://www.ijcai.org/Proceedings/2019/0701.pdf|
+| NAACL2019 | Enhancing Key-Value Memory Neural Networks for Knowledge Based Question Answering |https://www.aclweb.org/anthology/N19-1301.pdf|
+| NAACL2019 | UHop: An Unrestricted-Hop Relation Extraction Framework for Knowledge-Based Question Answering |https://arxiv.org/pdf/1904.01246.pdf|
 |NAACL2019|Bidirectional Attentive Memory Networks for Question Answering over Knowledge Bases|https://arxiv.org/pdf/1903.02188.pdf|
 |COLING2018|Modeling Semantics with Gated Graph Neural Networks for Knowledge Base Question Answering|https://www.aclweb.org/anthology/C18-1280.pdf|
 |COLING2018|The APVA-TURBO Approach To Question Answering in Knowledge Base|https://www.aclweb.org/anthology/C18-1170.pdf|
