@@ -14,7 +14,7 @@
 
  目前，与表格相关的自然语言处理研究刚刚起步，方法尚未成熟，对应的标注数据集也相对有限。我们按照MSRA的相关工作，将任务定义为以下五类。
 
-![1603701823050](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1603701823050.png)
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/TQA_X_1.png" alt="img" width=650" /></div>
 
 - 表格检索：从表格集合中找到与输入问题最相关的表格
 - 语义解析：将自然语言问题转换成可被机器理解的语义表示（meaning representation，一般指SQL语句），在表格中执行该表示即可获得答案
@@ -28,13 +28,13 @@
 
 对于给定的自然语言q和给定的表格全集T={T1, T2, .., Tn}，表格检索任务的目的是从T中找到与q内容最相关的表格，如下图所示。每个表格通常由三部分构成：表头/列名（table header）、表格单元（table cell）和表格标题（table caption）。
 
-![1603761659039](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1603761659039.png)
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/TQA_X_2.png" alt="img" width=650" /></div>
 
 #### 1.2.3 答案生成 (Answer Generation)
 
 给定输入问题Q和表格T，答案生成负责基于T生成Q所对应的答案。在该任务中，Q的答案既可以是T中包含的一个或多个表格单元，也可以是T中推理出来的、并未出现的值。如果将表格看作一个微型知识图谱，答案生成可以看作是一种特殊的知识图谱问答任务。基于表格的答案生成方法大致可以分为三类：基于答案排序的方法，基于语义分析的方法，基于神经网络的方法。以下所示的是基于语义分析的方法的一个示例。
 
-![1603891068360](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\1603891068360.png)
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/TQA_X_3.png" alt="img" width=650" /></div>
 
 ### 1.3. 评测标准
 
