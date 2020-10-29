@@ -38,9 +38,9 @@
 
 ### 1.3. 评测标准
 
-- ![](http://latex.codecogs.com/gif.latex?Accuracy@1 / Precision@1)（主要用于评估查询语句执行后答案的质量）
+- ![](http://latex.codecogs.com/gif.latex?Accuracy@1/Precision@1)（主要用于评估查询语句执行后答案的质量）
 - ![](http://latex.codecogs.com/gif.latex?Accuracy_{lf})   (测量与正确SQL查询具有完全匹配的字符串的生成SQL查询的百分比)
-- <img src="http://latex.codecogs.com/gif.latex?F1 \ scores"  />（主要用于评估SQL关键词匹配的效果）
+- <img src="http://latex.codecogs.com/gif.latex?F1\ scores"  />（主要用于评估SQL关键词匹配的效果）
 - ![](http://latex.codecogs.com/gif.latex?Recall)（主要用于多答案问题的答案查询效果）
 
 ### 1.4. 数据集
@@ -141,9 +141,9 @@
 
 表格候选打分负责计算表格子集T中每个表格和问题Q的相关度，并选择与Q相关度最高的表格![](http://latex.codecogs.com/gif.latex?T_{best})作为表格检索的结果：
 
-![](http://latex.codecogs.com/gif.latex?T_{best} = argmax_{T_{i} \in T} \sum_{i=1}^{N} \lambda_{i}  \cdot  h_{i}(Q, T_{i}))
+![](http://latex.codecogs.com/gif.latex?T_{best} = argmax_{T_{i}\in{T}}\sum_{i=1}^{N}\lambda_{i}\cdot{h_{i}(Q,T_{i})})
 
-其中![](http://latex.codecogs.com/gif.latex?\{h_{i}(Q, T_{i})\}_{i=1}^{N})表示N个特征函数，每个特征函数用来衡量Q和![](http://latex.codecogs.com/gif.latex?T_{i})的某种相关性。![](http://latex.codecogs.com/gif.latex?\{\lambda_{i}\}_{i=1}^{N})是特征函数集合对应的特征权重集合，它通过在标注数据上使用机器学习算法训练得到。
+其中![](http://latex.codecogs.com/gif.latex?\{h_{i}(Q,T_{i})\}_{i=1}^{N})表示N个特征函数，每个特征函数用来衡量Q和![](http://latex.codecogs.com/gif.latex?T_{i})的某种相关性。![](http://latex.codecogs.com/gif.latex?\{\lambda_{i}\}_{i=1}^{N})是特征函数集合对应的特征权重集合，它通过在标注数据上使用机器学习算法训练得到。
 
 - 如果将表格看作文档，可以采用文本检索中最常见的BM25作为一个表格候选打分特征。
 
