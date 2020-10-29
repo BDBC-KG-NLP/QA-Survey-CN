@@ -6,6 +6,8 @@
 
 - [CQA调研-学术界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/CQA%E8%B0%83%E7%A0%94-%E5%AD%A6%E6%9C%AF%E7%95%8C.md)
 - [CQA调研-工业界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/CQA%E8%B0%83%E7%A0%94-%E5%B7%A5%E4%B8%9A%E7%95%8C.md)
+- [MRC调研-学术界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/MRC%E8%B0%83%E7%A0%94-%E5%AD%A6%E6%9C%AF%E7%95%8C.md)
+- [MRC调研-工业界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/MRC%E8%B0%83%E7%A0%94-%E5%B7%A5%E4%B8%9A%E7%95%8C.md)
 - [KBQA调研-学术界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/KBQA%E8%B0%83%E7%A0%94-%E5%AD%A6%E6%9C%AF%E7%95%8C.md)
 - [KBQA调研-工业界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/KBQA%E8%B0%83%E7%A0%94-%E5%B7%A5%E4%B8%9A%E7%95%8C.md)
 
@@ -17,7 +19,7 @@
 
 - Richong Zhang, Yue Wang, Yongyi Mao and Jinpeng Huai: Question Answering in Knowledge Bases: A Verification Assisted Model with Iterative Training. ACM Transactions on Information Systems. 37(4): 40:1-40:26 (2019)
 
-- Yue Wang, Richong Zhang, Cheng Xu and Yongyi Mao: The APVA-TURBO Approach To Question Answering in Knowledge Base. COLING2018
+- Yue Wang, Richong Zhang, Cheng Xu and Yongyi Mao: The APVA-TURBO Approach To Question Answering in Knowledge Base. COLING2018  [Code](https://github.com/wavewangyue/kbqa/tree/master/apva-turbo)
 
 ###  专利
 
@@ -27,7 +29,7 @@
 
 ### 应用产品
 
-- 知行知识图谱智能问答[https://www.actkg.com/search/]
+- [知行知识图谱智能问答](https://www.actkg.com/search/)
 
 - 机场智能问答系统
 
