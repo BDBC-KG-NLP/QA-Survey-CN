@@ -62,7 +62,7 @@ SPARQL，λ-DCS、FunQL等查询语言可以用于查询以及操作KG中存储�
 | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Free917              |917         |https://github.com/pks/rebol/tree/master/data/free917         |
 | WebQuestions        | 5810  | https://github.com/brmson/dataset-factoid-webquestions       |
-| WebQuestionsSP      | 5810 | https://www.microsoft.com/en-us/download/details.aspx?id=52763 |
+| WebQuestionsSP      | 4737 | https://www.microsoft.com/en-us/download/details.aspx?id=52763 |
 | ComplexQuestions | 2100 | https://github.com/JunweiBao/MulCQA/tree/ComplexQuestions |
 | ComplexWebQuestions | 34689                       | https://www.tau-nlp.org/compwebq                            |
 | SimpleQuestions     | 100K                  | https://research.fb.com/downloads/babi/                      |
