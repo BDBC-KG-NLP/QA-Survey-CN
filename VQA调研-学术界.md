@@ -36,7 +36,7 @@ VQA相关扩展任务有：（1）图像集问答 （2）视频问答 （3）图
 
 对于VQA数据集，注释者为每个问题生成了十个答案。精确度指标的变化形式为
 
-<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/VQA评估公式.jpeg" alt="img" width=200" /></div>
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/VAQ评估公式.jpeg" alt="img" width=200"/></div>
 
 其中n是与算法具有相同答案的注释者总数。	
 
@@ -52,30 +52,30 @@ VQA相关扩展任务有：（1）图像集问答 （2）视频问答 （3）图
 
 #### 1）DAQUAR
 
-**介绍：**最早也是最小的VQA数据集，包含了6795张训练数据和5673张测试数据，所有图像来自于数据集NYU-DepthV2 Dataset，只包含室内场景。该数据集质量较差，一些图像杂乱无章，分辨率低，而且问答对具有明显的语法错误，这使得正确回答问题变得非常困难，即使人类也只能取得50.2%的准确率。
+介绍：最早也是最小的VQA数据集，包含了6795张训练数据和5673张测试数据，所有图像来自于数据集NYU-DepthV2 Dataset，只包含室内场景。该数据集质量较差，一些图像杂乱无章，分辨率低，而且问答对具有明显的语法错误，这使得正确回答问题变得非常困难，即使人类也只能取得50.2%的准确率。
 
-**下载地址：**https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/vision-and-language/visual-turing-challenge/
+下载地址：https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/research/vision-and-language/visual-turing-challenge/
 
 参考文献：M. Malinowski and M. Fritz, \A multi-world approach to question answering about realworld scenes based on uncertain input," *in Advances in Neural Information Processing Systems (NIPS)*, 2014.
 
 #### 2）COCO-QA
 
-**介绍：**QA pairs是由NLP算法生成的，图像来自COCO数据集，一共有78736个训练QA pairs和38948个测试QA pairs，大部分的问题是关于图像中的目标（69.84%），其他问题是关于颜色（16.59%），计数（7.47%），位置（6.10%）。所有问题的答案都是一个单词，只有435个独一无二的答案。数据集最大的缺点在于QA pairs是用NLP算法生成的，是将长句子划分成短句子处理的，这就忽视了句子中的语法和从句问题，算法结果不够智能；另外，数据集只有4类问题。
+介绍：QA pairs是由NLP算法生成的，图像来自COCO数据集，一共有78736个训练QA pairs和38948个测试QA pairs，大部分的问题是关于图像中的目标（69.84%），其他问题是关于颜色（16.59%），计数（7.47%），位置（6.10%）。所有问题的答案都是一个单词，只有435个独一无二的答案。数据集最大的缺点在于QA pairs是用NLP算法生成的，是将长句子划分成短句子处理的，这就忽视了句子中的语法和从句问题，算法结果不够智能；另外，数据集只有4类问题。
 
-**下载地址：**http://www.cs.toronto.edu/~mren/imageqa/data/cocoqa/
+下载地址：http://www.cs.toronto.edu/~mren/imageqa/data/cocoqa/
 
 参考文献：M. Ren, R. Kiros, and R. Zemel, \Exploring models and data for image questionanswering," *in Advances in Neural Information Processing Systems (NIPS)*, 2015.
 
 #### 3）FM-IQA（Freestyle Multilingual Image Question Answering）
 
-**介绍：**基于COCO的一个数据集。数据集的QA都是人类生成的，最初是中文数据集，现在也提供了英文版本，FM-IQA 允许回答是一个句子。作者建议人类专家来判断生成的答案是否由人类提供，并以0~2的分数对答案的质量进行评估。
+介绍：基于COCO的一个数据集。数据集的QA都是人类生成的，最初是中文数据集，现在也提供了英文版本，FM-IQA 允许回答是一个句子。作者建议人类专家来判断生成的答案是否由人类提供，并以0~2的分数对答案的质量进行评估。
 下载地址：
 
 参考文献：H. Gao, J. Mao, J. Zhou, Z. Huang, L. Wang, and W. Xu, \Are you talking to a machine? Dataset and methods for multilingual image question answering," *in Advances in Neural Information Processing Systems (NIPS)*, 2015.
 
 #### 5）Visual Genome
 
-**介绍：**图像来源是YFCC100M和COCO数据集，包含图像108077张和1700000个QA Pairs（平均每张图片17个QA Pairs），问题类型是6W（what, where, how, when, who, why）。包含两种模式：
+介绍：图像来源是YFCC100M和COCO数据集，包含图像108077张和1700000个QA Pairs（平均每张图片17个QA Pairs），问题类型是6W（what, where, how, when, who, why）。包含两种模式：
 
 - **free-form method**：可以针对图像提出任意问题；人类标注者通常会趋向于提出类似的问题。
 - **regionspecific method**：针对图像的指定区域提问；
@@ -86,21 +86,21 @@ VQA相关扩展任务有：（1）图像集问答 （2）视频问答 （3）图
 
 在Visual Genome中出现频率最高的1000个答案只覆盖了数据集中所有答案的65%，而对于CoCo-VQA，它们覆盖了82%，对于数据CoCo-VQA，它们覆盖了100%。Visual Genome的长尾分布也可以在答案的长度上观察到。只有57%的答案是单个单词，相比之下，COCO-VQA有88%的答案，COCO-QA有100%的答案，DAQUAR有90%的答案。答案的多样性使得开放式评估更具挑战性。
 
-**下载地址：**http://visualgenome.org/api/v0/api_home.html
+下载地址：http://visualgenome.org/api/v0/api_home.html
 
 参考文献：Ranjay Krishna, Yuke Zhu, Oliver Groth, Justin Johnson, Kenji Hata, Joshua Kravitz, Stephanie Chen, Yannis Kalantidis, Li-Jia Li, David A. Shamma, Michael S. Bernstein, and Li Fei-Fei. Visual genome: Connecting language and vision using crowdsourced dense image annotations. *Int. J. Comp. Vis.*, 123(1):32–73, 2017.
 
 #### 6）Visual7W
 
-**介绍：**是Visual Genome数据集的一个子集，7W 指的是 "What, Where, How, When, Who, Why, Which."。数据规模：有47300张图像和139868个QA pairs。包含两类问题，‘telling’问题和Visual Genome一样，答案是基于文本。‘pointing’类型是以“which”开头的问题，要求算法在可选的多个候选答案中，选择正确的边界框。数据集不包含是否问题。
+介绍：是Visual Genome数据集的一个子集，7W 指的是 "What, Where, How, When, Who, Why, Which."。数据规模：有47300张图像和139868个QA pairs。包含两类问题，‘telling’问题和Visual Genome一样，答案是基于文本。‘pointing’类型是以“which”开头的问题，要求算法在可选的多个候选答案中，选择正确的边界框。数据集不包含是否问题。
 
-**下载地址：**http://web.stanford.edu/~yukez/visual7w/   
+下载地址：http://web.stanford.edu/~yukez/visual7w/   
 
 参考文献：Yuke Zhu, Oliver Groth, Michael Bernstein, and Li Fei-Fei. Visual7w: Grounded question answering in images. *In Proc. IEEE Conf. Comp. Vis. Patt. Recogn.*, 2016.
 
 #### 7）VQAv1
 
-**介绍：**该数据集由两部分组成：COCO-VQA 和 SYNTH-VQA；前者为真实图像（来自COCO数据集的204,721张图像），后者为合成卡通图像（50,000张）。VQA  Dataset 为为每幅图片提供了三个问题，每个问题有十个答案。
+介绍：该数据集由两部分组成：COCO-VQA 和 SYNTH-VQA；前者为真实图像（来自COCO数据集的204,721张图像），后者为合成卡通图像（50,000张）。VQA  Dataset 为为每幅图片提供了三个问题，每个问题有十个答案。
 
 COCO-VQA ：该数据集比较大，共包含614,163 数据，其中，训练数据248,349个, 验证数据121,512,测试数据244,302 个。
 
@@ -108,15 +108,15 @@ SYNTH-VQA由 50，000 个合成场景组成，包含 100 多个不同的对象�
 
 SYNTH-VQA 和 COCO-VQA 包含open-ended 和multiple-choice两种格式。VQAv1有很多语言偏见（bias），有些问题过于主观而无法得到正确的答案，有些问题通常不需要图像就能得到好的（或可能的）答案。还有些问题寻求解释或冗长的描述，而数据集提供的答案非常不可信。
 
-**下载地址：**https://visualqa.org/vqa_v1_download.html
+下载地址：https://visualqa.org/vqa_v1_download.html
 
 参考文献：S. Antol, A. Agrawal, J. Lu, M. Mitchell, D. Batra, C. L. Zitnick, and D. Parikh. VQA: Visual question answering. *In ICCV,* 2015.
 
 #### 8）VQAv2
 
-**介绍：**人工标注的开放式问答数据集，相较于VQAv1尽量减少了语言偏见（为每个问题补充了图片，为同一问题提供了不同答案的相似图像对），但是仍存在一些偏见。目前VQA自然数据集的基准一般是VQAv2。
+介绍：人工标注的开放式问答数据集，相较于VQAv1尽量减少了语言偏见（为每个问题补充了图片，为同一问题提供了不同答案的相似图像对），但是仍存在一些偏见。目前VQA自然数据集的基准一般是VQAv2。
 
-**下载地址：**https://visualqa.org/download.html
+下载地址：https://visualqa.org/download.html
 
 参考文献：Y. Goyal, T. Khot, D. Summers-Stay, D. Batra, and D. Parikh. Making the V in VQA matter: Elevating the role of image understanding in Visual Question Answering. *In CVPR*, 2017.
 
@@ -130,7 +130,7 @@ SYNTH-VQA 和 COCO-VQA 包含open-ended 和multiple-choice两种格式。VQAv1�
 
 #### 9）TDIUC
 
-**介绍：**人工标注的数据集，为了减少数据集类别偏见，将问题分成了12类具有明显差异的类别。实现了细致的任务驱动评估，包含跨问题类型的泛化的评估指标。
+介绍：人工标注的数据集，为了减少数据集类别偏见，将问题分成了12类具有明显差异的类别。实现了细致的任务驱动评估，包含跨问题类型的泛化的评估指标。
 
 下载地址：
 
@@ -138,7 +138,7 @@ SYNTH-VQA 和 COCO-VQA 包含open-ended 和multiple-choice两种格式。VQAv1�
 
 #### 10）CVQA 
 
-**介绍：**该数据集对VQAv1进行了重新切分，使其可以用来研究语言的组合性问题。
+介绍：该数据集对VQAv1进行了重新切分，使其可以用来研究语言的组合性问题。
 
 参考文献： A. Agrawal, A. Kembhavi, D. Batra, and D. Parikh. C-vqa: A compositional split of the visual question answering (vqa) v1.0 dataset. CoRR, abs/1704.08243, 2017.
 
@@ -150,7 +150,7 @@ SYNTH-VQA 和 COCO-VQA 包含open-ended 和multiple-choice两种格式。VQAv1�
 
 #### 12）CLEVR
 
-**介绍：**该数据集为合成数据集，是由一些简单的几何形状构成的视觉场景。数据集中的问题总是需要一长串的推理过程，为了对推理能力进行详细评估，所有问题分为了5类：属性查询（querying attribute），属性比较（comparing attributes），存在性（existence），计数（counting），整数比较（integer comparison）。所有的问题都是程序生成的。该数据集的人为标注数据子集为CLEVR-Humans，
+介绍：该数据集为合成数据集，是由一些简单的几何形状构成的视觉场景。数据集中的问题总是需要一长串的推理过程，为了对推理能力进行详细评估，所有问题分为了5类：属性查询（querying attribute），属性比较（comparing attributes），存在性（existence），计数（counting），整数比较（integer comparison）。所有的问题都是程序生成的。该数据集的人为标注数据子集为CLEVR-Humans，
 
 下载地址：
 
@@ -178,13 +178,13 @@ GQA 数据集的许多问题涉及多种推理技巧、空间理解以及多步�
 
 #### 1）KB-VQA
 
-**介绍：**知识库是基于DBpedia，图片来源于COCO，每张图会有3-5个QA pairs，总计有2402个问题，每个问题都是从23种模板里面选择的。
+介绍：知识库是基于DBpedia，图片来源于COCO，每张图会有3-5个QA pairs，总计有2402个问题，每个问题都是从23种模板里面选择的。
 
 参考文献：P. Wang, Q. Wu, C. Shen, A. v. d. Hengel, and A. Dick. Explicit knowledge-based reasoning for visual question answering. arXiv preprint arXiv:1511.02570, 2015
 
 #### 2）FVQA
 
-**介绍：**该数据集不仅有图像和QA pairs，还有外部知识（extra knowledge），知识库有193, 449个事实句子，包含图像2190张，问题5826个，整个数据集分成了5个train/test集，每个集合包含1100张训练图像和1090张测试图像，分别有2927和2899个问题，问题总共可以分成32类。
+介绍：该数据集不仅有图像和QA pairs，还有外部知识（extra knowledge），知识库有193, 449个事实句子，包含图像2190张，问题5826个，整个数据集分成了5个train/test集，每个集合包含1100张训练图像和1090张测试图像，分别有2927和2899个问题，问题总共可以分成32类。
 
 参考文献：Peng Wang, Qi Wu, Chunhua Shen, Anthony Dick, and Anton van den Hengel. FVQA: Fact-based visual question answering. *IEEE Trans. Pattern Anal. Mach. Intell.*, pages 1–1, 2017.
 
@@ -224,7 +224,7 @@ GQA 数据集的许多问题涉及多种推理技巧、空间理解以及多步�
 
 该方法的特点是在共同的特征空间学习图像和问题的嵌入，然后将它们一起喂入预测答案的分类器或者生成器。Joint embedding是处理多模态问题时的经典思路，在这里指对图像和问题进行联合编码。该方法的示意图为：
 
-![img](https://pic2.zhimg.com/v2-de40ab52f5dc9f86f59aecfb94de91b9_b.jpg)
+<div align=center><img src="https://pic2.zhimg.com/v2-de40ab52f5dc9f86f59aecfb94de91b9_b.jpg" alt="img" width=650" /></div>
 
 首先，图像和问题分别由CNN和RNN进行第一次编码得到各自的特征，问题embedding![](http://latex.codecogs.com/gif.latex?e^{q}=f_{q}\left(q\right)\)和图像embedding:![](http://latex.codecogs.com/gif.latex?e^{v}=f_{v}\left(v\right)\)，随后共同输入到另一个编码器中得到joint embedding：![](http://latex.codecogs.com/gif.latex?z=h\left(e^{q},e^{v}\right)\)，最后通过解码器输出答案。 值得注意的是，有的工作把VQA视为序列生成问题，而有的则把VQA简化为一个答案范围可预知的分类问题。在前者的设定下，解码器是一个RNN，输出长度不等的序列；后者的解码器则是一个分类器，从预定义的词汇表中选择答案。
 
@@ -328,7 +328,9 @@ DMN由input模块，episodic memory模块和answering模块组成。
 
 这方面的一个典型代表是Andreas等人的[Neural Module Networks](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1511.02799)。Neural Module Network（神经模块网络）使用外部解析器来寻找问题中的子问题，其最大的特点是根据问题的类型动态组装模块来产生答案。
 
-![img](https://pic1.zhimg.com/v2-21c40a68b00211609bd13a735a3c3074_b.jpg#pic-left)
+<div align=center><img src="https://pic1.zhimg.com/v2-21c40a68b00211609bd13a735a3c3074_b.jpg" alt="img" width=650" /></div>
+
+
 
 NMN 框架将 VQA 视为由**独立的子网络**执行的一系列子任务。每个子网络执行一个定义良好的任务。比如 find [X], describe [X], measure [X], transform[X] 等模块。这些模块必须组装成一个有意义的**布局**；该模型使用一个自然语言解析器来发现问题中的子问题，同时用于推断子任务需要的布局。
 
@@ -338,11 +340,13 @@ NMN 框架将 VQA 视为由**独立的子网络**执行的一系列子任务。�
 
 2）Dynamic Memory Networks
 
-![img](https://pic2.zhimg.com/v2-e2ebf848c5ce6893b5dc0ddd6ca3e8e9_b.jpg)
+<div align=center><img src="https://pic2.zhimg.com/v2-e2ebf848c5ce6893b5dc0ddd6ca3e8e9_b.jpg" alt="img" width=650" /></div>
+
+
 
 而在另一个例子中，当面对 *Is there a red shape above a circle?* 这种更为复杂的问题时，模型选择的模块也自动变得复杂了许多。另一个典型代表是Xiong等人的[Dynamic Memory Networks](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1603.01417)。该网络由四个主要的模块构成，分别是表征图像的input module、表征问题的question module、作为内存的episodic memory module和产生答案的answer module。 模型运作过程如下图。此网络在之前介绍过，不再重复。
 
-![img](https://pic3.zhimg.com/v2-67f6d297791d019776d49e4cd97bea6e_b.jpg)
+<div align=center><img src="https://pic3.zhimg.com/v2-67f6d297791d019776d49e4cd97bea6e_b.jpg" alt="img" width=450" /></div>
 
 
 
@@ -375,7 +379,7 @@ a message passing module：汇总对象attention和关系attention，并传递�
 
 首先用CNN提取图像的语义属性，然后从DBpedia检索相关属性的外部知识，将检索到的知识用Doc2Vec嵌入到词向量中，最后将词向量传入到LSTM网络，对问题进行解释并生成答案。该工作的模型框架如下。
 
-![img](https://pic3.zhimg.com/v2-c7625d3fbd368b167ad18b91dfed7f86_b.jpg)
+<div align=center><img src="https://pic3.zhimg.com/v2-c7625d3fbd368b167ad18b91dfed7f86_b.jpg" alt="img" width=650" /></div>
 
 模型虽然看似复杂，但理解起来不外乎以下几个要点：
 
