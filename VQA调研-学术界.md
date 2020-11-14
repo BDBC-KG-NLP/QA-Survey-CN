@@ -226,7 +226,7 @@ GQA 数据集的许多问题涉及多种推理技巧、空间理解以及多步�
 
 <div align=center><img src="https://pic2.zhimg.com/v2-de40ab52f5dc9f86f59aecfb94de91b9_b.jpg" alt="img" width=650" /></div>
 
-首先，图像和问题分别由CNN和RNN进行第一次编码得到各自的特征，问题embedding![](http://latex.codecogs.com/gif.latex?e^{q}=f_{q}\left(q\right)\)和图像embedding:![](http://latex.codecogs.com/gif.latex?e^{v}=f_{v}\left(v\right)\)，随后共同输入到另一个编码器中得到joint embedding：![](http://latex.codecogs.com/gif.latex?z=h\left(e^{q},e^{v}\right)\)，最后通过解码器输出答案。 值得注意的是，有的工作把VQA视为序列生成问题，而有的则把VQA简化为一个答案范围可预知的分类问题。在前者的设定下，解码器是一个RNN，输出长度不等的序列；后者的解码器则是一个分类器，从预定义的词汇表中选择答案。
+首先，图像和问题分别由CNN和RNN进行第一次编码得到各自的特征，问题embedding和图像embedding，随后共同输入到另一个编码器中得到joint embedding，最后通过解码器输出答案。 值得注意的是，有的工作把VQA视为序列生成问题，而有的则把VQA简化为一个答案范围可预知的分类问题。在前者的设定下，解码器是一个RNN，输出长度不等的序列；后者的解码器则是一个分类器，从预定义的词汇表中选择答案。
 
 #### （1）神经网络方法 
 
@@ -280,7 +280,7 @@ MCB（Multimodal Compact Bilinear pooling）近似估计图像和文本特征之
 
 与使用Edge Boxes 相比，堆叠注意力网络（SAN）和动态内存网络（DMN）都使用了CNN特征图空间网格中的视觉特征。
 
-1）[**SAN**](Z. Yang, X. He, J. Gao, L. Deng, and A. J. Smola, "Stacked attention networks for image question answering," in The IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016.)
+1）[SAN](Z. Yang, X. He, J. Gao, L. Deng, and A. J. Smola, "Stacked attention networks for image question answering," in The IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016.)
 
 模型提取 VGG19 最后一个 Pooling 层的 feature map 作为区域特征，其大小为 `14*14*512`。相当于把原始 `448*448` 的图像均匀划分为 `14*14` 个网格（grid），每个网格使用一个 `512` 维的向量表示其特征。
 
