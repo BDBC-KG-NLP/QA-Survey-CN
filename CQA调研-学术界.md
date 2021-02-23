@@ -331,7 +331,11 @@ listwise 类存在的主要缺陷是：一些排序算法需要基于排列来�
 |ACL2020 |DoQA - Accessing Domain-Specific FAQs via Conversational|https://arxiv.org/abs/2005.01328 |
 |ACL2020 |Harvesting and Refining Question-Answer Pairs for Unsupervised QA|https://arxiv.org/abs/2005.02925 |
 |ACL2020 |Rationalizing Text Matching: Learning Sparse Alignments via Optimal Transport|https://arxiv.org/abs/2005.13111 |
-
+|EMNLP2020 | MultiCQA: Zero-Shot Transfer of Self-Supervised Text Matching Models on a Massive Scale|https://arxiv.org/abs/2010.00980|
+|EMNLP2020 | Modularized Transformer-based Ranking Framework|https://arxiv.org/abs/2004.13313|
+|EMNLP2020 | Document Ranking with a Pretrained Sequence-to-Sequence Model| https://arxiv.org/abs/2003.06713|
+|WWW2020 | Automatic Knowledge Fusion in Transferrable Networks for Semantic Text Matching | https://dl.acm.org/doi/abs/10.1145/3366424.3382703|
+|WWW2020 | Distant Supervision for Multi-Stage Fine-Tuning in Retrieval-Based Question Answering. | https://dl.acm.org/doi/10.1145/3366423.3380060|
 
 
 ### 3.2. 论文解读
