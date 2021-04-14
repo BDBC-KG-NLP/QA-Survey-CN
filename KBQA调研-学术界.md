@@ -254,7 +254,7 @@ QALD-6:
 | ACL2017 | 其他方法-程序推断 | Neural Symbolic Machines: Learning Semantic Parsers on Freebase with Weak Supervision | https://www.aclweb.org/anthology/P17-1003.pdf                |
 | ACL2016 | 语义解析-编码器解码器 | Language to Logical Form with Neural Attention | https://www.aclweb.org/anthology/P16-1004.pdf                |
 | CIKM2019 | 信息检索-表示学习 |  Improving Question Answering over Incomplete KBs with Knowledge-Aware Reader |https://www.aclweb.org/anthology/P19-1417.pdf|
-| CIKM2019 | 其他方法-复杂问题分解 | Learning to Answer Complex Questionsover Knowledge Bases with Query Composition |https://www.researchgate.net/publication/337017270_Learning_to_Answer_Complex_Questions_over_Knowledge_Bases_with_Query_Composition|
+| CIKM2019 | 其他方法-复杂问题分解 | Learning to Answer Complex Questionsover Knowledge Bases with Query Composition |https://dl.acm.org/doi/pdf/10.1145/3357384.3358033|
 | CIKM2019  | 其他方法-Message Passing NN |  Message Passing for Complex Question Answering over Knowledge Graphs |https://arxiv.org/pdf/1908.06917.pdf|
 | IJCAI2020 | 语义解析-图神经网络 | Two-Phase Hypergraph Based Reasoning with Dynamic Relations for Multi-Hop KBQA. |https://www.ijcai.org/Proceedings/2020/0500.pdf|
 | IJCAI2020 | 语义解析-查询图 | Formal Query Building with Query Structure Prediction for Complex Question Answering over Knowledge Base |https://www.ijcai.org/Proceedings/2020/0519.pdf|
