@@ -61,11 +61,11 @@ SPARQL，λ-DCS、FunQL等查询语言可以用于查询以及操作KG中存储�
 | 数据集              | 数据规模                                                | 地址                                                         |
 | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Free917              |917         |https://github.com/pks/rebol/tree/master/data/free917         |
+| SimpleQuestions |100K |https://research.fb.com/downloads/babi/ |
 | WebQuestions        | 5810  | https://github.com/brmson/dataset-factoid-webquestions       |
 | WebQuestionsSP      | 4737 | https://www.microsoft.com/en-us/download/details.aspx?id=52763 |
 | ComplexQuestions | 2100 | https://github.com/JunweiBao/MulCQA/tree/ComplexQuestions |
 | ComplexWebQuestions | 34689                       | https://www.tau-nlp.org/compwebq                            |
-| SimpleQuestions     | 100K                  | https://research.fb.com/downloads/babi/                      |
 | FACTOID QUESTIONS   | 30M |  http://academictorrents.com/details/973fb709bdb9db6066213bbc5529482a190098ce|
 | GraphQuestions      | 5166                | https://github.com/ysu1989/GraphQuestions                    |
 | LC-QuAD             | 5000                      | https://github.com/AskNowQA/LC-QuAD                          |
@@ -103,7 +103,11 @@ ComplexWebQuestions:
 |SIMPQA + PRETRAINED|19.90|Repartitioning of the COMPLEXWEBQUESTIONS Dataset|2018|https://arxiv.org/pdf/1807.09623.pdf||
 
 
+
+
+
 SimpleQuestions：
+
 | 模型              |ACC                                        |论文题目|年份|论文链接|code|
 | ------------------- | -----------------------------------------|--|--|--|--|
 |MVA-MTQA-net(MTL)|95.7|Multi-Task Learning for Conversational Question Answering over a Large-Scale Knowledge Base|2019|https://www.aclweb.org/anthology/D19-1248.pdf|https://github.com/taoshen58/MaSP|
@@ -233,11 +237,11 @@ QALD-6:
 | AAAI2020 | 其他方法-依赖分析 | SPARQA: Skeleton-Based Semantic Parsing for Complex Questions over Knowledge Bases | https://ojs.aaai.org//index.php/AAAI/article/view/6426       |
 | AAAI2019  | 其他方法-多任务学习 |  Multi-Task Learning with Multi-View Attention for Answer Selection and Knowledge Base Question Answering |https://arxiv.org/pdf/1812.02354.pdf|
 | AAAI2018  | 信息检索-表示学习 | variational reasoning for question answering with knowledge graph  |https://arxiv.org/pdf/1709.04071.pdf|
-| EMNLP2019 |   | Multi-Task Learning for Conversational Question Answering over a Large-Scale Knowledge Base  |https://www.aclweb.org/anthology/D19-1248.pdf|
-| EMNLP2019 |                                     | PullNet: Open Domain Question Answering with Iterative Retrieval on Knowledge Bases and Text |https://www.aclweb.org/anthology/D19-1242.pdf|
+| EMNLP2019 | 其他领域与KBQA结合 | Multi-Task Learning for Conversational Question Answering over a Large-Scale Knowledge Base  |https://www.aclweb.org/anthology/D19-1248.pdf|
+| EMNLP2019 | 信息检索-表示学习 | PullNet: Open Domain Question Answering with Iterative Retrieval on Knowledge Bases and Text |https://www.aclweb.org/anthology/D19-1242.pdf|
 | EMNLP2018  | 语义解析-Transition-Based |  A State-transition Framework to Answer Complex Questions over Knowledge Base |https://www.aclweb.org/anthology/D18-1234.pdf|
 | EMNLP2018  | 语义解析-查询图 | knowledge base question answering via encoding of complex query graphs  |https://www.aclweb.org/anthology/D18-1242.pdf|
-| EMNLP2018 |  |  Open Domain Question Answering Using Early Fusion of Knowledge Bases and Text |https://arxiv.org/pdf/1809.00782.pdf|
+| EMNLP2018 | 信息检索-表示学习 |  Open Domain Question Answering Using Early Fusion of Knowledge Bases and Text |https://arxiv.org/pdf/1809.00782.pdf|
 | EMNLP2017  | 语义解析-模板生成 |  QUINT:Interpretable Question Answering over Knowledge Bases |https://www.aclweb.org/anthology/D17-2011.pdf|
 | EMNLP2016 | 语义解析-记忆网络 | Key-Value Memory Networks for Directly Reading Documents |https://www.aclweb.org/anthology/D16-1147/|
 | ACL2020 | 语义解析-查询图 | Query Graph Generation for Answering Multi-hop Complex Questions from Knowledge Bases |https://www.aclweb.org/anthology/2020.acl-main.91.pdf|
@@ -247,21 +251,21 @@ QALD-6:
 | ACL2017 | 语义解析-记忆网络 | Question Answering on Knowledge Bases and Text using Universal Schema and Memory Networks  |https://arxiv.org/pdf/1704.08384.pdf|
 | ACL2017 | 语义解析-查询图 | Improved Neural Relation Detection for Knowledge Base Question Answering |https://www.aclweb.org/anthology/P17-1053.pdf|
 | ACL2017 | 信息检索-表示学习 | An End-to-End Model for Question Answering over Knowledge Base with Cross-Attention Combining Global Knowledge | https://www.aclweb.org/anthology/P17-1021.pdf                |
-| ACL2017 | 其他方法-神经符号机 | Neural Symbolic Machines: Learning Semantic Parsers on Freebase with Weak Supervision | https://www.aclweb.org/anthology/P17-1003.pdf                |
+| ACL2017 | 其他方法-程序推断 | Neural Symbolic Machines: Learning Semantic Parsers on Freebase with Weak Supervision | https://www.aclweb.org/anthology/P17-1003.pdf                |
 | ACL2016 | 语义解析-编码器解码器 | Language to Logical Form with Neural Attention | https://www.aclweb.org/anthology/P16-1004.pdf                |
 | CIKM2019 | 信息检索-表示学习 |  Improving Question Answering over Incomplete KBs with Knowledge-Aware Reader |https://www.aclweb.org/anthology/P19-1417.pdf|
 | CIKM2019 | 其他方法-复杂问题分解 | Learning to Answer Complex Questionsover Knowledge Bases with Query Composition |https://www.researchgate.net/publication/337017270_Learning_to_Answer_Complex_Questions_over_Knowledge_Bases_with_Query_Composition|
 | CIKM2019  | 其他方法-Message Passing NN |  Message Passing for Complex Question Answering over Knowledge Graphs |https://arxiv.org/pdf/1908.06917.pdf|
 | IJCAI2020 | 语义解析-图神经网络 | Two-Phase Hypergraph Based Reasoning with Dynamic Relations for Multi-Hop KBQA. |https://www.ijcai.org/Proceedings/2020/0500.pdf|
 | IJCAI2020 | 语义解析-查询图 | Formal Query Building with Query Structure Prediction for Complex Question Answering over Knowledge Base |https://www.ijcai.org/Proceedings/2020/0519.pdf|
-| IJCAI2019  |   |  Neural Program Induction for KBQA Without Gold Programs or Query Annotations |https://www.ijcai.org/Proceedings/2019/0679.pdf|
-| IJCAI2019|   |  Knowledge Base Question Answering with Topic Units |https://www.ijcai.org/Proceedings/2019/0701.pdf|
+| IJCAI2019  | 其他方法-程序推断 |  Neural Program Induction for KBQA Without Gold Programs or Query Annotations |https://www.ijcai.org/Proceedings/2019/0679.pdf|
+| IJCAI2019| 语义解析-查询图 |  Knowledge Base Question Answering with Topic Units |https://www.ijcai.org/Proceedings/2019/0701.pdf|
 | NAACL2019 | 语义解析-记忆网络 | Enhancing Key-Value Memory Neural Networks for Knowledge Based Question Answering |https://www.aclweb.org/anthology/N19-1301.pdf|
-| NAACL2019 |  | UHop: An Unrestricted-Hop Relation Extraction Framework for Knowledge-Based Question Answering |https://arxiv.org/pdf/1904.01246.pdf|
+| NAACL2019 | 语义解析-查询图 | UHop: An Unrestricted-Hop Relation Extraction Framework for Knowledge-Based Question Answering |https://arxiv.org/pdf/1904.01246.pdf|
 |NAACL2019|信息检索-记忆网络|Bidirectional Attentive Memory Networks for Question Answering over Knowledge Bases|https://arxiv.org/pdf/1903.02188.pdf|
 |NAACL2018|其他方法-复杂问题分解|The Web as a Knowledge-Base for Answering Complex Questions| https://www.aclweb.org/anthology/N18-1059.pdf                |
 |NAACL2016|信息检索-记忆网络|Question Answering over Knowledge Base using Factual Memory Networks| https://www.aclweb.org/anthology/N16-2016.pdf                |
-|COLING2018||Modeling Semantics with Gated Graph Neural Networks for Knowledge Base Question Answering|https://www.aclweb.org/anthology/C18-1280.pdf|
+|COLING2018|语义解析-图神经网络|Modeling Semantics with Gated Graph Neural Networks for Knowledge Base Question Answering|https://www.aclweb.org/anthology/C18-1280.pdf|
 |COLING2018|语义解析-查询图|The APVA-TURBO Approach To Question Answering in Knowledge Base|https://www.aclweb.org/anthology/C18-1170.pdf|
 |COLING2016|语言解析-查询图|Constraint-Based Question Answering with Knowledge Graph|https://www.aclweb.org/anthology/C16-1236.pdf|
 |WWW2017|其他方法-依赖分析|Automated Template Generation for Question Answering over Knowledge Graphs|https://dl.acm.org/doi/pdf/10.1145/3038912.3052583|
