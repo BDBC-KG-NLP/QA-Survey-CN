@@ -74,8 +74,8 @@ MAP的最终得分为所有查询的AveP的平均值
 -  [**Quora Question Pairs**](https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs):  
 Quora Question Pairs数据集是社区问答网站Quora中问题对的集合。任务是确定一对问题在语义上是否等效，每个问题对都用1/0标签标注是否为重复问题。QQP中的数据分布并不不平衡（负63％），因此使用F1和ACC作为评测指标。其训练集包括364K条数据，训练集包括391k条数据。
 
-| Method  | ACC | 论文题目 | 年份 | 论文链接 | code |  
-| ------------- | ------------- |------------- |------------- |------------- |------------- |  
+| Method  | ACC | 论文题目 | 年份 | 论文链接 | code |
+| ------------- | ------------- |------------- |------------- |------------- |------------- |
 |ALBERT|90.5%|ALBERT: A Lite BERT for Self-supervised Learning of Language Representations|2020|https://arxiv.org/pdf/1909.11942v6.pdf |https://github.com/google-research/ALBERT |
 |T5-11B|90.4%|Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer|2019|https://arxiv.org/pdf/1910.10683v2.pdf |https://github.com/google-research/text-to-text-transfer-transformer |
 |XLNet|90.3%|XLNet: Generalized Autoregressive Pretraining for Language Understanding|2019|https://arxiv.org/pdf/1906.08237v2.pdf |https://github.com/zihangdai/xlnet |
@@ -86,7 +86,7 @@ Microsoft Research Paraphrase语料库微软构建的从在线新闻源中自动
 
 
 | Method  | ACC | 论文题目 | 年份 | 论文链接 | code |
-| ------------- | ------------- |------------- |------------- |------------- |------------- |  
+| ------------- | ------------- |------------- |------------- |------------- |------------- |
 |ALBERT|94.0%|ALBERT: A Lite BERT for Self-supervised Learning of Language Representations|2020|https://arxiv.org/pdf/1909.11942v6.pdf |https://github.com/google-research/ALBERT |
 |StructBERT|93.9%|StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding|2019|https://arxiv.org/abs/1908.04577 | - |
 |ERNIE2.0|93.5%|ERNIE 2.0: A Continual Pre-training Framework for Language Understanding|2019|https://arxiv.org/abs/1907.12412v1   |https://github.com/PaddlePaddle/ERNIE |
@@ -96,7 +96,7 @@ Microsoft Research Paraphrase语料库微软构建的从在线新闻源中自动
 百度发布的一个大型中文问题匹配数据集，数据来自百度知道。每条数据为两个问题和它们的相似性标签（用1/0代表相似/不相似)。 数据集包含260,068个具有手动注释的问题对，作者将其分为三个部分，即包含238,766个问题对的训练集，包含8,802个问题对的验证集和包含12,500个问题对的测试集。
 
 | Method  | ACC | 论文题目 | 年份 | 论文链接 | code |
-| ------------- | ------------- |------------- |------------- |------------- |------------- |  
+| ------------- | ------------- |------------- |------------- |------------- |------------- |
 |ERNIE2.0|87.9%|ERNIE 2.0: A Continual Pre-training Framework for Language Understanding|2019|https://arxiv.org/abs/1907.12412v1   |https://github.com/PaddlePaddle/ERNIE |
 |ERNIE1.0|87.4%|ERNIE: Enhanced Representation through Knowledge Integration|https://arxiv.org/abs/1904.09223 |https://github.com/PaddlePaddle/ERNIE |
 |BERT|87.0%|BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding|https://arxiv.org/abs/1810.04805 |https://github.com/google-research/bert |
@@ -116,10 +116,10 @@ Wikiqa是一个答案选择数据集，由Bing查询日志中的问题和从Wiki
 - [**TRECQA**](https://trec.nist.gov/data/qa.html)：  
 该数据集是答案句子选择使用最广泛的基准之一。从TRECQA8-13的数据中搜集整理，从每个问题的文档库中自动选择候选答案。包含用于训练的5300个QA对和用于验证和测试的1100/1500个QA对。  
 
-| Method  | MAP| MRR | 论文题目 | 年份 | 论文链接 | code |  
+| Method  | MAP| MRR | 论文题目 | 年份 | 论文链接 | code |
 | ------------- | ------------- |------------- |------------- |------------- |------------- |------------|
 |TANDA-ROberta|0.943|0.974|TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|2019|https://arxiv.org/pdf/1911.04118.pdf |https://github.com/alexa/wqa_tanda |
-|BERT-RNN|0.872|0.899|BAS: An Answer Selection Method Using BERT Language Model|https://arxiv.org/ftp/arxiv/papers/1911/1911.01528.pdf |-|
+|BERT-RNN|0.872|0.899|BAS: An Answer Selection Method Using BERT Language Model|2019|https://arxiv.org/ftp/arxiv/papers/1911/1911.01528.pdf |-|
 |Comp-Clip + LM + LC|0.868|0.928|A Compare-Aggregate Model with Latent Clustering for Answer Selection|2019|https://paperswithcode.com/paper/a-compare-aggregate-model-with-latent | -|
 
 
@@ -319,7 +319,23 @@ listwise 类存在的主要缺陷是：一些排序算法需要基于排列来�
 |NAACL2019  |Alignment over Heterogeneous Embeddings for Question Answering |https://www.aclweb.org/anthology/N19-1274/ |
 |ICLR2020   |ALBERT: A Lite BERT for Self-supervised Learning of Language Representations|https://arxiv.org/abs/1909.11942   |
 |AAAI2020   |TANDA: Transfer and Adapt Pre-Trained Transformer Models for Answer Sentence Selection|https://arxiv.org/abs/1911.04118    |
-
+|AAAI2020 |Attentive User-Engaged Adversarial Neural Network for Community Question Answering|https://aaai.org/Papers/AAAI/2020GB/AAAI-XieY.3142.pdf |
+|AAAI2020 |Joint Learning of Answer Selection and Answer Summary Generation in Community Question Answering|https://arxiv.org/abs/1911.09801 |
+|SIGIR2020 |Reranking for Efficient Transformer-based Answer Selection|https://www.amazon.science/publications/reranking-for-efficient-transformer-based-answer-selection |
+|SIGIR2020 |Read, Attend, and Exclude: Multi-Choice Reading Comprehension by Mimicking Human Reasoning Process|https://dl.acm.org/doi/pdf/10.1145/3397271.3401326 |
+|SIGIR2020 |Match^2: A Matching over Matching Model for Similar Question Identification|https://arxiv.org/abs/2006.11719 |
+|SIGIR2020 |ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT|https://arxiv.org/abs/2004.12832 |
+|SIGIR2020 |Finding the Best of Both Worlds: Faster and More Robust Top-k Document Retrieval|https://dl.acm.org/doi/pdf/10.1145/3397271.3401076 |
+|SIGIR2020 |Efficient Document Re-Ranking for Transformers by Precomputing Term Representations|https://arxiv.org/abs/2004.14255 |
+|SIGIR2020 |Improving Document-Level Text Retrieval using Local Attention in the Transformer-Kernel Pooling Model|https://dl.acm.org/doi/pdf/10.1145/3397271.3401224 |
+|ACL2020 |DoQA - Accessing Domain-Specific FAQs via Conversational|https://arxiv.org/abs/2005.01328 |
+|ACL2020 |Harvesting and Refining Question-Answer Pairs for Unsupervised QA|https://arxiv.org/abs/2005.02925 |
+|ACL2020 |Rationalizing Text Matching: Learning Sparse Alignments via Optimal Transport|https://arxiv.org/abs/2005.13111 |
+|EMNLP2020 | MultiCQA: Zero-Shot Transfer of Self-Supervised Text Matching Models on a Massive Scale|https://arxiv.org/abs/2010.00980|
+|EMNLP2020 | Modularized Transformer-based Ranking Framework|https://arxiv.org/abs/2004.13313|
+|EMNLP2020 | Document Ranking with a Pretrained Sequence-to-Sequence Model| https://arxiv.org/abs/2003.06713|
+|WWW2020 | Automatic Knowledge Fusion in Transferrable Networks for Semantic Text Matching | https://dl.acm.org/doi/abs/10.1145/3366424.3382703|
+|WWW2020 | Distant Supervision for Multi-Stage Fine-Tuning in Retrieval-Based Question Answering. | https://dl.acm.org/doi/10.1145/3366423.3380060|
 
 
 ### 3.2. 论文解读
@@ -430,10 +446,10 @@ ERNIE2.0构建了多个预训练任务，试图从 3 个层面去更好的理解
 - Semantic-aware Tasks: 语义 (semantic) 级别信息的学习
 同时，针对不同的 pre-training 任务，ERNIE2.0引入了Task Embedding来精细化地建模不同类型的任务。不同的任务用从0 到N的ID表示，每个ID代表了不同的预训练任务。  
 
-| 任务名称 | 任务详情 |  
-| ------------- | ------------- |  
+| 任务名称 | 任务详情 |
+| ------------- | ------------- |
 |Knowledge Masking|ERNIE 1.0 中已经引入的 phrase & named entity 知识增强 masking 策略。相较于 sub-word masking, 该策略可以更好的捕捉输入样本局部和全局的语义信息。|
-|Capitalization Prediction|针对英文首字母大写词汇（如 Apple）所包含的特殊语义信息,在英文 Pre-training 训练中构造了一个分类任务去学习该词汇是否为大写。| 
+|Capitalization Prediction|针对英文首字母大写词汇（如 Apple）所包含的特殊语义信息,在英文 Pre-training 训练中构造了一个分类任务去学习该词汇是否为大写。|
 |Token-Document Relation Prediction|针对一个 segment 中出现的词汇，去预测该词汇是否也在原文档的其他 segments 中出现。|
 |Sentence Reordering|针对一个paragraph（包含M个segments），随机打乱segments的顺序，通过一个分类任务去预测打乱的顺序类别|
 |Sentence Distance|通过一个 3 分类任务，去判断句对 (sentence pairs) 位置关系 (包含邻近句子、文档内非邻近句子、非同文档内句子 3 种类别)，更好的建模语义相关性。|

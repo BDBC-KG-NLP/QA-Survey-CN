@@ -109,9 +109,15 @@
 - 问题类型：简单问题（单跳问题）
 - 训练集：14609
 - 验证集 + 测试集：9870
-- 资源地址：[知识库](https://pan.baidu.com/s/1dEYcQXz)，[问答](https://github.com/duterscmy/ccks2019-ckbqa-4th-codes/tree/master/data)
+- 资源地址：[知识库](https://pan.baidu.com/s/1dEYcQXz)，[问答集](http://tcci.ccf.org.cn/conference/2018/taskdata.php)
 
 ### 1.4 SOTA Board
+
+### 1.4.1 CCKS2020 新冠百科知识图谱问答评测
+
+| 名次 | 队伍 | F1 | 论文链接 | 参考解读/源代码 |
+| ---- | ------------------------------ | ------- | ------------------------------------------------------------ | ----------------------------------------------------- |
+| 1 | Artemis（KingSoft AI	） | 86.078% | [基于特征融合的中文知识库问答方法](https://bj.bcebos.com/v1/conference/ccks2020/eval_paper/ccks2020_eval_paper_1_4_1.pdf) |   |
 
 #### 1.4.1 CCKS2019
 
