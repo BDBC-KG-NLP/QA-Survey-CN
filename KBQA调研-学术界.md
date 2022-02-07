@@ -6,7 +6,7 @@
      * [1.1. 背景](#11-背景)
      * [1.2. 任务定义](#12-任务定义)
      * [1.3. 数据集](#13-数据集)
-     * [1.4. SOTA](#14-SOTA)
+     * [1.4. SOTA](#14-SOTA(leaderboard))
      * [1.5. 评测标准](#15-评测标准)
      
   * [2. 方法总结](#2-方法总结)
@@ -59,6 +59,8 @@ SPARQL，λ-DCS、FunQL等查询语言可以用于查询以及操作KG中存储�
 - PQ：采用Freebase的两个子集和模板来构造的数据集，通过搜索互联网和两个现实世界的数据集WebQuestions和WikiAnswers，为关系提供了解释模板和同义词，提高了语言的多样性。
 - PQL：使用更大的KB来构造数据，并且相对于PQ提供更少的训练集，整体难度高于PQ。
 - KQA Pro : 基于Wikidata的KBQA数据集，包含120K个自然语言问题，并提供对应的SPARQL查询语句和推理过程。问题的答案可以从一个较小规模的合成KB中获取。
+- Compositional Freebase Questions (CFQ)：一个专门用于测量合成泛化的数据集。CFQ是一个简单而现实的大型自然语言问题和答案数据集，为每个问题提供了一个针对Freebase知识库的相应的SPARQL查询，即可以用于语义解析。
+- GrailQA：新的大规模数据集，用于在Freebase上的KBQA。每个问题都用SPARQL、S-expression等语法标注了答案和相应的逻辑形式，可用于测试KBQA三个级别的泛化（ i.i.d., compositional, and zero-shot）。
 
 | 数据集              | 数据规模                                                | 地址                                                         |
 | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -79,6 +81,8 @@ SPARQL，λ-DCS、FunQL等查询语言可以用于查询以及操作KG中存储�
 | PQ | 7106 | https://github.com/zmtkeke/IRN |
 | PQL | 2625 | https://github.com/zmtkeke/IRN |
 | KQA Pro | 117970 | https://cloud.tsinghua.edu.cn/seafhttp/files/f50fb309-8b21-4916-9eac-524d17d638ef/KQA-Pro-v1.0.zip |
+| CFQ     |       | https://github.com/google-research/google-research/tree/master/cfq |
+| GrailQA | 64331 | https://github.com/dki-lab/GrailQA                           |
 
 ### 1.4. SOTA(leaderboard)
 
@@ -99,7 +103,10 @@ WebQuestions:
 ComplexWebQuestions:
 | 模型              | P@1                                        |论文题目|年份|论文链接|code|
 | ------------------- | -----------------------------------------|--|--|--|--|
-|PullNet|45.90|PullNet: Open Domain Question Answering with Iterative Retrieval on Knowledge Bases and Text|2019|https://www.aclweb.org/anthology/D19-1242.pdf||
+| CBR-KBQA | 70.4 | Case-Based Reasoning for Natural Language Queries over Knowledge Bases | 2021 | https://arxiv.org/pdf/2104.08762v2.pdf        |                                                              |
+| NSM+h    | 53.9 | Improving Multi-hop Knowledge Base Question Answering by Learning Intermediate Supervision Signals | 2021 | https://arxiv.org/pdf/2101.03737v2.pdf        | https://github.com/RichardHGL/WSDM2021_NSM                   |
+| PullNet  | 45.9 | PullNet: Open Domain Question Answering with Iterative Retrieval on Knowledge Bases and Text | 2019 | https://aclanthology.org/D19-1242.pdf         |                                                              |
+| QGG      | 44.1 | Query Graph Generation for Answering Multi-hop Complex Questions from Knowledge Bases | 2020 | https://aclanthology.org/2020.acl-main.91.pdf | https://link.csdn.net/?target=https%3A%2F%2Fgithub.com%2Flanyunshi%2FMulti-hopComplexKBQA |
 |SPLITQA + data augmentation|34.20|Repartitioning of the COMPLEXWEBQUESTIONS Dataset|2018|https://arxiv.org/pdf/1807.09623.pdf||
 |SPARQA|31.57|SPARQA: Skeleton-based Semantic Parsing for Complex Questions over Knowledge Bases|2020|https://arxiv.org/pdf/2003.13956.pdf|https://github.com/nju-websoft/SPARQA|
 |MHQA-GRN|30.10|Exploring Graph-structured Passage Representation for Multi-hop Reading Comprehension with Graph Neural Networks|2018|https://arxiv.org/pdf/1809.02040.pdf||
@@ -164,6 +171,13 @@ QALD-6:
 
 
 
+GrailQA：
+| 模型     | F1   | 论文题目                                                     | 年份 | 论文链接                                      | code                                                     |
+| -------- | ---- | ------------------------------------------------------------ | ---- | --------------------------------------------- | -------------------------------------------------------- |
+| RnG-KBQA | 74.4 | RNG-KBQA: Generation Augmented Iterative Ranking for Knowledge Base Question Answering | 2021 | https://arxiv.org/pdf/2109.08678v1.pdf        | https://github.com/salesforce/rng-kbqa                   |
+| S2QL     | 66.2 |                                                              | 2021 |                                               |                                                          |
+| ReTraCk  | 65.3 | ReTraCk: A Flexible and Efficient Framework for Knowledge Base Question Answering | 2021 | https://aclanthology.org/2021.acl-demo.39.pdf | https://github.com/microsoft/KC/tree/main/papers/ReTraCk |
+| ArcaneQA | 64.9 |                                                              | 2021 |                                               |                                                          |
 
 ### 1.5. 评测标准
 
