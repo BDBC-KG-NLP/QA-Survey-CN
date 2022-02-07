@@ -81,7 +81,7 @@ SPARQL，λ-DCS、FunQL等查询语言可以用于查询以及操作KG中存储�
 | PQ | 7106 | https://github.com/zmtkeke/IRN |
 | PQL | 2625 | https://github.com/zmtkeke/IRN |
 | KQA Pro | 117970 | https://cloud.tsinghua.edu.cn/seafhttp/files/f50fb309-8b21-4916-9eac-524d17d638ef/KQA-Pro-v1.0.zip |
-| CFQ     |       | https://github.com/google-research/google-research/tree/master/cfq |
+| CFQ     | 239357 | https://github.com/google-research/google-research/tree/master/cfq |
 | GrailQA | 64331 | https://github.com/dki-lab/GrailQA                           |
 
 ### 1.4. SOTA(leaderboard)
