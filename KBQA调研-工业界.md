@@ -18,9 +18,11 @@
 
 &emsp;&emsp;&emsp;&emsp;[1.4&nbsp;SOTA&nbsp;Board](#14-SOTA-Board)
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[1.4.1&nbsp;CCKS2019](#141-CCKS2019)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[1.4.1&nbsp;CCKS2020](#141-CCKS2020)
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[1.4.2&nbsp;CCKS2018](#142-CCKS2018)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[1.4.2&nbsp;CCKS2019](#142-CCKS2019)
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[1.4.3&nbsp;CCKS2018](#143-CCKS2018)
 
 &emsp;&emsp;&emsp;&emsp;[1.5&nbsp;评测标准](#15-评测标准)
 
@@ -113,13 +115,16 @@
 
 ### 1.4 SOTA Board
 
-### 1.4.1 CCKS2020 新冠百科知识图谱问答评测
+#### 1.4.1 CCKS2020 新冠百科知识图谱问答评测
 
-| 名次 | 队伍 | F1 | 论文链接 | 参考解读/源代码 |
-| ---- | ------------------------------ | ------- | ------------------------------------------------------------ | ----------------------------------------------------- |
-| 1 | Artemis（KingSoft AI	） | 86.078% | [基于特征融合的中文知识库问答方法](https://bj.bcebos.com/v1/conference/ccks2020/eval_paper/ccks2020_eval_paper_1_4_1.pdf) |   |
+| 名次 | 队伍                   | F1      | 论文链接                                                     | 参考解读/源代码                               |
+| ---- | ---------------------- | ------- | ------------------------------------------------------------ | --------------------------------------------- |
+| 1    | Artemis（KingSoft AI） | 0.86078 | [基于特征融合的中文知识库问答方法](https://bj.bcebos.com/v1/conference/ccks2020/eval_paper/ccks2020_eval_paper_1_4_1.pdf) |                                               |
+| 2    | see（美团）            | 0.85474 | [基于预训练语言模型的检索-匹配式知识图谱问答系统](https://bj.bcebos.com/v1/conference/ccks2020/eval_paper/ccks2020_eval_paper_1_4_2.pdf) |                                               |
+| 3    | MiQa（小米）           | 0.85453 | [An Integrated Path Formulation Method for Open Domain Question Answering over Knowledge Base](https://bj.bcebos.com/v1/conference/ccks2020/eval_paper/ccks2020_eval_paper_1_4_3.pdf) |                                               |
+| 11   | 难民之路               | 0.54579 | [One Model Structure for All Sub-Tasks KBQA System](https://bj.bcebos.com/v1/conference/ccks2020/eval_paper/ccks2020_eval_paper_1_4_11.pdf) | https://github.com/BettyHcZhang/KBQA_AllenNLP |
 
-#### 1.4.1 CCKS2019
+#### 1.4.2 CCKS2019
 
 | 名次 | 队伍                           | F1      | 论文链接                                                     | 参考解读/源代码                                       |
 | ---- | ------------------------------ | ------- | ------------------------------------------------------------ | ----------------------------------------------------- |
@@ -129,7 +134,7 @@
 | 4    | baseline (平安人寿AI-FudanSDS) | 0.70448 | [Multi-Module System for Open Domain Chinese Question Answering over Knowledge Base](https://conference.bj.bcebos.com/ccks2019/eval/webpage/pdfs/eval_paper_6_3.pdf) | https://zhuanlan.zhihu.com/p/92317079                 |
 | 5    | DUTIR                          | 0.67683 | [DUTIR中文开放域知识库问答评测报告](https://conference.bj.bcebos.com/ccks2019/eval/webpage/pdfs/eval_paper_6_4.pdf) | https://github.com/duterscmy/ccks2019-ckbqa-4th-codes |
 
-#### 1.4.2 CCKS2018
+#### 1.4.3 CCKS2018
 
 | 名次 | 队伍          | F1      | 论文链接                                                     | 参考解读/源代码                         |
 | ---- | ------------- | ------- | ------------------------------------------------------------ | --------------------------------------- |
