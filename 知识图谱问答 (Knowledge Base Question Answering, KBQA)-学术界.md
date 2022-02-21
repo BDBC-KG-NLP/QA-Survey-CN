@@ -44,6 +44,7 @@ SPARQL，λ-DCS、FunQL等查询语言可以用于查询以及操作KG中存储�
 （注：该图来自中科院刘康老师的报告）
 
 ### 1.3. 数据集
+<<<<<<< Updated upstream
 - FREE917:第一个大规模的KBQA数据集，于2013年提出，包含917 个问题，同时提供相应逻辑查询，覆盖600多种freebase上的关系。
 - Webquestions：数据集中有6642个问题答案对，数据集规模虽然较FREE917提高了不少，但有两个突出的缺陷：没有提供对应的查询，不利于基于逻辑表达式模型的训练；另外webquestions中简单问句多而复杂问句少。
 - WebQSP：是WEBQUESTIONS的子集，问题都是需要多跳才能回答，属于multi-relation KBQA dataset，另外补全了对应的查询句。
@@ -83,6 +84,27 @@ SPARQL，λ-DCS、FunQL等查询语言可以用于查询以及操作KG中存储�
 | KQA Pro | 117970 | https://cloud.tsinghua.edu.cn/seafhttp/files/f50fb309-8b21-4916-9eac-524d17d638ef/KQA-Pro-v1.0.zip |
 | CFQ     | 239357 | https://github.com/google-research/google-research/tree/master/cfq |
 | GrailQA | 64331 | https://github.com/dki-lab/GrailQA                           |
+=======
+| 数据集(含下载链接)    | 数据规模                                                | 地址                                                         |
+| ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Free917](https://github.com/pks/rebol/tree/master/data/free917) |917         |第一个大规模的KBQA数据集，于2013年提出，包含917 个问题，同时提供相应逻辑查询，覆盖600多种freebase上的关系。         |
+| [SimpleQuestions](https://research.fb.com/downloads/babi/) |100K | 数据规模较大，共100K，数据形式为(quesition，knowledge base fact)，均为简单问题，只需KB中的一个三元组即可回答,即single-relation dataset。 |
+| [WebQuestions](https://github.com/brmson/dataset-factoid-webquestions) | 5810  | 数据集中有6642个问题答案对，数据集规模虽然较FREE917提高了不少，但有两个突出的缺陷：没有提供对应的查询，不利于基于逻辑表达式模型的训练。 |
+| [WebQuestionsSP](https://www.microsoft.com/en-us/download/details.aspx?id=52763) | 4737 | WebQuestions的子集，问题都是需要多跳才能回答，属于multi-relation KBQA dataset，另外补全了对应的查询句。 |
+| [ComplexQuestions](https://github.com/JunweiBao/MulCQA/tree/ComplexQuestions) | 2100 | 在问句的结构和表达多样性等方面进一步增强了WebQuestionsSP，包括类型约束，显\隐式的时间约束，聚合操作。 |
+| [ComplexWebQuestions](https://www.tau-nlp.org/compwebq) | 34689                       |                             |
+| [FactoidQuestions](http://academictorrents.com/details/973fb709bdb9db6066213bbc5529482a190098ce) | 30M | 将SimpleQuestion扩展为含30M句的FactoidQuestions，只包含答案不含问句。 |
+| [GraphQuestions](https://github.com/ysu1989/GraphQuestions) | 5166                | 在问句的结构和表达多样性等方面进一步增强了WEBQUESTIONSP，，包括类型约束，显\隐式的时间约束，聚合操作。 |
+| [LC-QuAD](https://github.com/AskNowQA/LC-QuAD) | 5000                      | 包含5000对问题及其相应的SPARQL查询的问答数据集。目标知识库是DBpedia-April。 |
+| [LC-QuAD 2.0](http://lc-quad.sda.tech/) | 30000                                | 发布了大规模的数据集LC-QuAD2，包含30000个问题，同时也提供相应的SPARQL查询。 |
+| [QALD-6](https://github.com/ag-sc/QALD/tree/master/6/data) | 450          | QALD有几个子任务，QALD-6是英语的QA任务，目标KB是DBpedia。训练集350个问题，测试集100个问题，提供 SPARQL查询和问题相应答案集。虽然数据集规模较小，但是更为口语化、复杂。 |
+| [QALD-9](https://github.com/ag-sc/QALD/tree/master/9) | 350               | 2018年发布，是QALD1-QALD8的超集。 |
+| [MetaQA](https://github.com/yuyuz/MetaQA) | 407513 | 基于MovieQA的电影KBQA数据集，数据集中已将问题按跳数进行了区分，其中1跳116045个问题答案对，2跳148724组问题答案对，3跳142744个问题答案对。 |
+| [CSQA](https://amritasaha1812.github.io/CSQA/) | 1.6M | 基于Wikidata的KBQA数据集，包含1.6M个自然语言问题，问题可组成200K次对话，不提供SPARQL查询语句。 |
+| [PQ](https://github.com/zmtkeke/IRN) | 7106 | 采用Freebase的两个子集和模板来构造的数据集，通过搜索互联网和两个现实世界的数据集WebQuestions和WikiAnswers，为关系提供了解释模板和同义词，提高了语言的多样性。 |
+| [PQL](https://github.com/zmtkeke/IRN) | 2625 | 使用更大的KB来构造数据，并且相对于PQ提供更少的训练集，整体难度高于PQ。 |
+| [KQA Pro](https://cloud.tsinghua.edu.cn/seafhttp/files/f50fb309-8b21-4916-9eac-524d17d638ef/KQA-Pro-v1.0.zip) | 117970 | 基于Wikidata的KBQA数据集，包含120K个自然语言问题，并提供对应的SPARQL查询语句和推理过程。问题的答案可以从一个较小规模的合成KB中获取。 |
+>>>>>>> Stashed changes
 
 ### 1.4. SOTA(leaderboard)
 
