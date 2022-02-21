@@ -38,7 +38,7 @@
 ## 致谢
 特此感谢支持数据公开与系统研发工作的北航高精尖中心及参与这项工作的各位团队成员（排名按字母顺序、不分先后）：
 
-[白宇航](https://github.com/lemonadeseason)、[鬲玲](https://github.com/geling114)、[胡志元](https://github.com/zhiyuanhubj)、[李航宇](https://github.com/lhy9816)、[李喣通](https://github.com/Leext)、[刘楚珉](https://github.com/ChorlingLau)、[聂志捷](https://github.com/Arthurizijar)、[田源](https://github.com/xzwj)、[张明辉](https://github.com/bigapple716)、[张淑慧](https://github.com/Hillary060)、[张延钊](https://github.com/zyznull)
+[白宇航](https://github.com/lemonadeseason)、[鬲玲](https://github.com/geling114)、[胡志元](https://github.com/zhiyuanhubj)、[黄海浪](https://github.com/lerogo)、[李航宇](https://github.com/lhy9816)、[李喣通](https://github.com/Leext)、[刘楚珉](https://github.com/ChorlingLau)、[聂志捷](https://github.com/Arthurizijar)、[田源](https://github.com/xzwj)、[王俊凯](https://github.com/GitWazaki)、[张明辉](https://github.com/bigapple716)、[张淑慧](https://github.com/Hillary060)、[张延钊](https://github.com/zyznull)
 
 ## 参与贡献方式
 欢迎pull requests。对于较大的更改，请先开issue以讨论您要更改的内容。
