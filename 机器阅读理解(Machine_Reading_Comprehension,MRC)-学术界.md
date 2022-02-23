@@ -162,44 +162,67 @@
 	- 其中含有大量的How还有what was等主导的问题，所以数据集的预测难度会比以往的数据集要高
 	- 问题开放性比较强，答案的长度也长于SQuAD。SQuAD回答的平均长度为3个词，DuAC的是15个词。
 
-#### 1.3.6 其余方向任务数据集
+#### 1.3.6 **Unanswerable Questions** 任务数据集
 
-- **Unanswerable Questions** 
-	- SQuAD 2.0
+|  数据集   |                            Paper                             |                             Data                             |
+| :-------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| SQuAD 2.0 | [Know What You Don’t Know: Unanswerable Questions for SQuAD](https://arxiv.org/pdf/1806.03822.pdf) | [链接](https://worksheets.codalab.org/worksheets/0x9a15a170809f4e2cb7940e1f256dee55/) |
 
-- **Multi-Passage Machine Reading Comprehension**
-	- MS MARCO
-	- TriviaQA
-	- SearchQA
-	- Dureader
+- 由Pranav Rajpurkar等人在2018年提出，并获得 ACL 2018 最佳论文奖的论文
+
+- 新增了超过五万个新增的、由人类众包者对抗性地设计的无法回答的问题
+
+- 要求模型不仅能够给出可回答问题的答案，还要识别出文本中没有知识支持的问题，并拒绝回答这些问题
+
+  
+
+#### 1.3.7 **Multi-Passage Machine Reading Comprehension**任务数据集
+
+|  数据集  |                            Paper                             |                          Data                          |
+| :------: | :----------------------------------------------------------: | :----------------------------------------------------: |
+| QAngaroo | [Constructing Datasets for Multi-hop Reading Comprehension Across Documents](https://arxiv.org/pdf/1710.06481.pdf) | [链接](https://qangaroo.cs.ucl.ac.uk/leaderboard.html) |
+| HotpotQA | [HOTPOTQA: A Dataset for Diverse, Explainable Multi-hop Question Answering](https://aclanthology.org/D18-1259/) |          [链接](https://hotpotqa.github.io/)           |
+| TriviaQA | [TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension](http://nlp.cs.washington.edu/triviaqa/docs/triviaQA.pdf?continueFlag=1de3221ee66021ccb578e73c8424f4df) |     [链接](http://nlp.cs.washington.edu/triviaqa/)     |
+
+- QAngaroo是由伦敦大学学院在2017年发布的多文档阅读理解数据集。最大的特点是问题的答案并不能从一个段落中单独得出，其线索分散在多个段落，所以答案需要通过推理得出。因此，需要模型利用多跳推理（multi-hop reasoning）获得答案。
+- HotpotQA是2018年由多家高校与Google公司等研究机构共同推出的多文档阅读理解数据集。共包含11万个问题和相关的维基百科段落，采用区间式答案。通过一些用户交互设计保证他们可以提问出基于两个选段进行多步推理才能得到答案的问题。
+- TriviaQA是2017年ACL 中提出的多轮推理的阅读理解数据集。其特点有：（1）数据集中的文本的句法比较复杂，需要很多复合信息；（2）数据集中的文本的语法和用词也比较复杂，简单的文本匹配方法可能会失效；（3）数据集中的信息常常跨过多句，为了得到答案需要多级推理（cross sentences）
 
 ### 1.4 SOTA
 
 - **SQuAD**
-	- SA-Net on Albert (ensemble)	**90.724	EM**
-	- SA-Net on Albert (ensemble)	**93.011     F1**
-	- **排行榜：**[链接](https://rajpurkar.github.io/SQuAD-explorer/)
-
+  - SA-Net on Albert (ensemble)	**90.724	EM**
+  - SA-Net on Albert (ensemble)	**93.011     F1**
+  - **排行榜：**[链接](https://rajpurkar.github.io/SQuAD-explorer/)
 - **MS MARCO Question Answering**
-	- Multi-doc Enriched BERT Ming Yan of Alibaba Damo NLP   **0.540     Rouge-L**
-	- Multi-doc Enriched BERT Ming Yan of Alibaba Damo NLP   **0.565     Bleu-1**
-	- **排行榜：**[链接](https://microsoft.github.io/msmarco/)
-
+  - Multi-doc Enriched BERT Ming Yan of Alibaba Damo NLP   **0.540     Rouge-L**
+  - Multi-doc Enriched BERT Ming Yan of Alibaba Damo NLP   **0.565     Bleu-1**
+  - **排行榜：**[链接](https://microsoft.github.io/msmarco/)
 - **RACE Reading Comprehension Dataset**
-	- **RACE数据集**	 Megatron-BERT (ensemble)	 **90.9	Accuracy**
-	- **RACE-M数据集**	 Megatron-BERT (ensemble)	 **93.1	Accuracy**
-	- **RACE-H数据集**	  Megatron-BERT (ensemble)	 **90.0	Accuracy**
-	- **排行榜：**[链接](http://www.qizhexie.com//data/RACE_leaderboard )
+  - **RACE数据集**	 Megatron-BERT (ensemble)	 **90.9	Accuracy**
+  - **RACE-M数据集**	 Megatron-BERT (ensemble)	 **93.1	Accuracy**
+  - **RACE-H数据集**	  Megatron-BERT (ensemble)	 **90.0	Accuracy**
+  - **排行榜：**[链接](http://www.qizhexie.com//data/RACE_leaderboard )
 - **CoQA**
-	- **In-domain**   TR-MT (ensemble) 	 **91.5	F1**
-	- **Out-of-domain**   RoBERTa + AT + KD (ensemble)	  **89.2	F1**
-	- **Overal**l   RoBERTa + AT + KD (ensemble)	  **90.7	F1**
-	- **排行榜：**[链接]( https://stanfordnlp.github.io/coqa/ )
+  - **In-domain**   TR-MT (ensemble) 	 **91.5	F1**
+  - **Out-of-domain**   RoBERTa + AT + KD (ensemble)	  **89.2	F1**
+  - **Overal**l   RoBERTa + AT + KD (ensemble)	  **90.7	F1**
+  - **排行榜：**[链接]( https://stanfordnlp.github.io/coqa/ )
 - **QuAC**
-	-  TR-MT (ensemble)    **74.4     F1**
-	-  TR-MT (ensemble)    **71.3     HEQQ**
-	-  TR-MT (ensemble)    **13.6     HEQD**
-	- **排行榜：**[链接](https://quac.ai/?qqdrsign=03085 )
+  -  TR-MT (ensemble)    **74.4     F1**
+  -  TR-MT (ensemble)    **71.3     HEQQ**
+  -  TR-MT (ensemble)    **13.6     HEQD**
+  - **排行榜：**[链接](https://quac.ai/?qqdrsign=03085 )
+- **Dureader**
+  - Cross-Reader	**64.9	ROUGE-L**
+  - Cross-Reader  **61.77	BLEU-4**
+  - **排行榜：**[链接](https://ai.baidu.com/broad/subordinate?dataset=dureader)
+
+
+- **HotpotQA**
+  - Ans	FE2H on ALBERT	**71.89**	**EM**
+  - Sup     FE2H on ALBERT    **64.98**    **EM**
+  - Joint    FE2H on ALBERT    **50.04 **   **EM**
 
 ### 1.5 评测标准
 
@@ -247,13 +270,22 @@
  <div align=center><img src="http://bbs-10075040.file.myqcloud.com/uploads/images/201610/14/23/YanABAeemB.png" alt="img" width=400  /></div>
  针对上述问题，Berant 等人提出了一种基于图匹配的方法。该方法首先通过类似于语义角色标注的方法，将整篇文章转化成一个图结构。然后将问题与答案组合（称为查询），也转化为一个图结构，最后考虑文章的图结构与查询的图结构之间的匹配度。
 
-### 2.4 小结
+### 2.4 基于预训练模型的方法
+
+​	近年来NLP领域通过大量通用领域数据进行训练，诞生了一批如ELMO、GPT、BERT、ENRIE等优秀的预训练语言模型。在具体的阅读理解任务时，可以通过进行领域微调、数据微调、任务微调，来把学到的句子特征信息应用到具体的任务。
+
+ <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/基于预训练的MRC微调结构图.png" alt="img" width=400  /></div>
+
+​	如图为基于BERT模型的预训练任务和机器阅读理解的微调结构，左侧是预训练过程，经过预训练得到较好的模型参数。右侧是用于机器阅读理解的微调示意图，该神经网络的参数由预训练得到的模型进行初始化，将问题与包含答案的上下文经过编码输入神经网络，获得答案的区间预测。
+
+### 2.5 小结
 
 本章介绍了在机器阅读理解任务中最常用的三种基本方法：基于特征工程的方法，基于神经网络的方法以及基于深层语义的图匹配方法。三种方法各有侧重，有着不同的应用场景。
 
 - **基于传统特征的方法**在模型结构以及实现上最为简单，在某些特定的数据集上也能起到较好的效果。但是由于特征本身所具有的局限性，该类方法很难处理复述以及远距离依赖问题。
 - **基于深度学习的方法**能够很好地处理复述和长距离依赖问题，但是对于某些需要引入外部知识进行更深层次推理、几乎不可能仅仅通过相似度匹配得到结果的任务则无能为力。
 - **基于深层语义的图匹配方法**通过在深层次的语义结构中引入人为定义的知识，从而使得模型具有捕捉更深层次语义信息的能力，大大提高了模型的理解以及推理能力。但是由于这类方法对于外部知识的依赖性极强，因此适用范围较窄，可拓展性较弱。
+- **基于预训练模型的方法**通过在大量文本上进行预训练，得到强健的预训练语言模型，能够捕获句子间更深层次的关联关系。在做机器阅读理解任务时，只需要设计适合具体任务的网络拼接到预训练模型网络上进行微调。
 
 ## 3 Paper List
 
@@ -273,6 +305,14 @@
 
 | 会议名称  |                           论文名称                           |
 | :-------: | :----------------------------------------------------------: |
+| AAAI2021  | [Semantics Altering Modifications for Evaluating Comprehension in Machine Reading](https://www.aaai.org/AAAI21Papers/AAAI-704.SchlegelV.pdf) |
+| AAAI2021  | [VisualMRC: Machine Reading Comprehension on Document Images](https://arxiv.org/pdf/2101.11272) |
+| AAAI2021  | [A Bidirectional Multi-Paragraph Reading Model for Zero-Shot Entity Linking](https://www.aaai.org/AAAI21Papers/AAAI-6269.TangH.pdf) |
+| AAAI2021  | [Bidirectional Machine Reading Comprehension for Aspect Sentiment Triplet Extraction](https://arxiv.org/pdf/2103.07665.pdf) |
+|  ACL2021  | [REPT: Bridging Language Models and Machine Reading Comprehension via Retrieval-Based Pre-training](https://arxiv.org/pdf/2105.04201.pdf) |
+|  ACL2021  | [Why Machine Reading Comprehension Models Learn Shortcuts?](https://arxiv.org/pdf/2106.01024.pdf) |
+|  ACL2021  | [Knowledge-Empowered Representation Learning for Chinese Medical Reading Comprehension: Task, Model and Resources](https://arxiv.org/pdf/2008.10327.pdf) |
+|  ACL2021  | [Benchmarking Robustness of Machine Reading Comprehension Models](https://arxiv.org/abs/2004.14004) |
 | AAAI2020  | [SG-Net: Syntax-Guided Machine Reading Comprehension.](https://arxiv.org/abs/1908.05147) |
 | AAAI2020  | [Generating Well-Formed Answers by Machine Reading with Stochastic Selector Networks.](https://aaai.org/ojs/index.php/AAAI/article/view/6238) |
 | AAAI2020  | [A Robust Adversarial Training Approach to Machine Reading Comprehension.](https://aaai.org/ojs/index.php/AAAI/article/view/6357/6213) |
