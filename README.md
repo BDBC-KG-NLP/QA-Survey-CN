@@ -7,7 +7,7 @@
 - [社区问答(Community Question Answering,CQA)-学术界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/社区问答(Community_Question_Answering,CQA)-学术界.md)
 - [社区问答(Community Question Answering,CQA)-工业界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/社区问答(Community_Question_Answering,CQA)-工业界.md)
 - [机器阅读理解(Machine Reading Comprehension,MRC)-学术界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/机器阅读理解(Machine_Reading_Comprehension,MRC)-学术界.md)
-- [机器阅读理解(Machine Reading Comprehension,MRC)-工业界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/机器阅读理解(Machine_Reading_Comprehension,MRC)-学术界.md)
+- [机器阅读理解(Machine Reading Comprehension,MRC)-工业界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/机器阅读理解(Machine_Reading_Comprehension,MRC)-工业界.md)
 - [知识图谱问答(Knowledge Base Question Answering,KBQA)-学术界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/知识图谱问答(Knowledge_Base_Question_Answering,KBQA)-学术界.md)
 - [知识图谱问答(Knowledge Base Question Answering,KBQA)-工业界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/知识图谱问答(Knowledge_Base_Question_Answering,KBQA)-工业界.md)
 - [表格问答(Table Question Answering,TQA)-学术界](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/表格问答(Table_Question_Answering,TQA)-学术界.md)

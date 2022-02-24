@@ -222,7 +222,8 @@
 - **HotpotQA**
   - Ans	FE2H on ALBERT	**71.89**	**EM**
   - Sup     FE2H on ALBERT    **64.98**    **EM**
-  - Joint    FE2H on ALBERT    **50.04 **   **EM**
+  - Joint    FE2H on ALBERT    **50.04**   **EM**
+  - **排行榜：**[链接](https://hotpotqa.github.io/)
 
 ### 1.5 评测标准
 

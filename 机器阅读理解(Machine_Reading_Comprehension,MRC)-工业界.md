@@ -34,8 +34,9 @@
         - 典型数据集：SQuAD，NewsQA，TriviaQA，DuoRC
         - 评测指标：**精准匹配分数（EM，exact match）**
         <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E5%8C%BA%E9%97%B4%E7%AD%94%E6%A1%88%E5%BC%8F.png"  width=550 alt=片段抽取式></div>
+
  
- 
+
     - **自由回答式（Free Answering）或总结回答式(Summary of human)**
         - 不限定模型生成答案的形式，允许模型自由生成语句。
         - 典型数据集：**bAbI，MS MARCO（milestone），SearchQA，NarrativeQA，DuReader**
@@ -231,8 +232,9 @@ YesNo（是非） | 24460 | 797 | 1777
     - 复赛，训练集约2.5万个问题-答案对，测试集：包含约1万个问题。
     - 决赛，测试集约0.5万个问题。
 - **评价指标**：主要是Rouge-L
+  
   <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E8%8E%B1%E6%96%AF%E6%9D%AF%E6%B5%8B%E8%AF%84%E5%85%AC%E5%BC%8F.png"  width=350 alt=“军事智能机器阅读”挑战赛评价指标></div>
-
+  
 - **rank1**：中科院信工所的向阳而生团队
     - 得分：79.797448
     - 技术点：[技术分享链接](https://www.kesci.com/home/project/5dbbec9f080dc300371eda5d)
@@ -301,6 +303,7 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
     - 在给定若干段文本下，选手需要在提供的候选项中，依次选出填入文本中的空格处最恰当的成语。
 - **数据量**：58.1w段落和72.9w个填空
 - **评测方法**：填空正确率
+  
   <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E6%88%90%E8%AF%AD%E7%AB%9E%E8%B5%9B%E8%AF%84%E6%B5%8B%E6%96%B9%E6%B3%95-%E5%A1%AB%E7%A9%BA%E6%AD%A3%E7%A1%AE%E7%8E%87.png  width=180 alt=成语阅读理解大赛评测指标正确率></div>
   
 - **rank1**：wssb
@@ -316,8 +319,10 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
 - **内容**
     - 数据内容来自中国法官文书网，主要涉及民事和刑事的一审判决书，总共约1万份数据。属于篇章片段抽取型阅读理解比赛
 - **数据量**
+    
     - 数据集共包括268万刑法法律文书，共涉及183条罪名，202条法条，刑期长短包括0-25年、无期、死刑。
 - **评测方法**：
+    
     - 罪名预测任务：微平均F1值（Micro-F1-measure）
     - 法条推荐任务：宏平均F1值（Macro-F1-measure）
     - 刑期预测任务：预测出的刑期与案件标准刑期之间的差值距离
@@ -342,21 +347,38 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
 - **数据量**：包含12.7万多个问题
 - **评测方法**：官方评估脚本
 - **rank1**：追一科技
+    
     - 论文：[《Technical report on Conversational Question Answering》](https://arxiv.org/abs/1909.10772)
     - 技术分享：[追一科技CoQA冠军方案分享：基于对抗训练和知识蒸馏的机器阅读理解方案](https://www.leiphone.com/news/201911/g5eqn6CjbLPI5GDU.html)
-
+    
     - 策略：
         - 1) Baseline模型：RoBERTa。原因：RoBERTa在语言模型预训练的过程中用了更多领域的语料
         - 2) 增加依据标注任务，并同步进行多任务训练。
         - 3) 采用对抗训练和知识蒸馏等训练方法
         <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/COQA%20rank1%20%E8%BF%BD%E4%B8%80%E7%A7%91%E6%8A%80%E4%BE%9D%E6%8D%AE%E6%A0%87%E6%B3%A8%E4%BB%BB%E5%8A%A1.png  width=500 alt=COQA rank1 追一科技依据标注任务></div>
 
+### LIC2021语言与智能技术竞赛：机器阅读理解任务
+
+- **比赛地址：**[链接](https://aistudio.baidu.com/aistudio/competition/detail/66/0/introduction)
+- **内容：**
+  - 本次评测的阅读理解数据集 (即DuReader_checklist) 旨在通过建立细粒度的评测体系（类似于checklist），系统性地评估当前模型能力的不足之处。数据集评测体系中涉及到的自然语言理解能力包含：词汇理解、短语理解、语义角色理解以及推理能力等等。具体的分类可参考下图。
+
+- **数据量：**
+  - 训练集包含实体、观点、描述类等问题类型的样本共3K个
+  - checklist开发集共包含130条，用于参赛选手分析模型在词汇、短语理解，语义角色理解，逻辑推理等多个维度的表现
+  - 鼓励选手在训练中使用额外的数据，如[DuReader 2.0](https://ai.baidu.com/broad/download?dataset=dureader), [DuReader_robust](https://github.com/PaddlePaddle/Research/tree/master/NLP/DuReader-Robust-BASELINE) 等
+- **评测方法：**
+  - 评价指标为F1-score和Exact Match (EM)。其中F1作为主要评价指标，EM作为辅助评价指标。系统最终排名根据在测试集中所有样本上的平均值（微平均，Micro Average）排序得到。
+
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/LIC2021数据.png"  width=500 alt=LIC2021数据></div>
+
 
 
 ## 3 模型介绍
+
 - 近年来模型总体框架图
 <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%80%BB%E4%BD%93%E6%A1%86%E6%9E%B6%E5%9B%BE.jpeg  width=650 alt=近年来模型的总体框架图></div>
-    
+
 
 ### 3.1 BIDAF--Allen AI
 - **论文**：[Bidirectional Attention Flow for Machine Comprehension ](https://arxiv.org/pdf/1611.01603.pdf)
@@ -378,8 +400,9 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
     - 其中前三层是一个多层级上下文不同粒度的表征编码器。第四层则是双向注意流层，这是原文的核心层。第五层是一个编码层，编码第四层输出的问题感知的上下文表征。第六层就是一个预测答案的范围。
     <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/BIDAF.png  width=650 alt=BIDAF></div>
 - **模型效果**
+    
     <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/BIDAF%E6%95%88%E6%9E%9C.png  width=450 alt=BIDAF模型效果></div>
-
+    
 - **解读文章**：[BiDAF：机器理解之双向注意力流 ](https://zhuanlan.zhihu.com/p/53470020)
 
 ### 3.2 R-NET--微软
@@ -426,7 +449,7 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
     - 这种做法的好处是，
         - 可以并行处理输入数据，使得模型的速度大大加快；
         - 可以利用cnn已经成熟的regularization方法(比如layer dropout、stochastic depth)等(↑0.2F1)。
-        
+    
 - **亮点**：速度快。训练速度和推理速度都比之前提高很多
 - **模型架构**：模型共有5层，依次是
     1. **Input Embedding Layer**
@@ -448,7 +471,7 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
     
 - **模型效果**
     > 实验过程中使用多倍的数据增强方式（回译法--Backtranslation），对EM和F1都有很大贡献。作者主要通过两个翻译模型来进行数据增强：一个将英语翻译成其他语言(1个句子变成k个句子，论文中k=5)，另一个将它所得的结果再翻译回英语(变成k*k个句子)
- 
+
     1. 准确率
     <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/QANet-acc.png  width=400 alt=QANET准确率></div>
     
@@ -528,6 +551,7 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
     <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E5%9F%BA%E4%BA%8E%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E7%9A%84%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B3-4.jpg  width=650 alt=基于阅读理解的问题处理流3&4></div>
     
 - **线上模型效果**
+    
     <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E7%BA%BF%E4%B8%8A%E6%A8%A1%E5%9E%8B%E6%95%88%E6%9E%9C.jpg  width=650 alt=线上模型效果></div>
 
 ### 4.3 Z-Reader -- 追一科技
@@ -553,6 +577,7 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
 
 ### 4.4 阅读理解(RC)模型-AmazonQA
 - **背景**
+
     - 每天都有成千上万的顾客针对亚马逊页面上的产品提出问题。如果他们幸运的话，一段时间过后会有一位知识渊博的客户回答他们的问题。
     - **基于评论的问答任务**：由于许多问题可以根据已有产品的评价进行回答，为此提出了基于评论的QA任务。
 - **方法描述**
@@ -560,6 +585,7 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
     - 亚马逊引入了一个新的数据集，并提出了一种结合信息检索技术来选择相关评论(给定问题)和“阅读理解”模型来综合答案(给定问题和评论)的方法。
     - 数据集中的问题、段落和答案都是从真实的人类交互中提取的。
 - **系统概念图**
+
     <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/AmazonQA%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E5%9B%BE.png  width=550 alt=AmazonQA系统概念图></div>
 
 - **代码**：[链接](https://github.com/amazonqa/amazonqa)
@@ -568,7 +594,30 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
         1. Language Models
         <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/AmazonQA%20LM.png  width=550 alt=AmazonQ LM></div>
         2. Span-based QA Model：Span-based QA Model
-            
+
+### 4.5 法小飞：中文法律智能助手
+
+- **背景简介**
+  - 由哈工大讯飞联合实验室出品的**“法小飞”智能法律咨询助手**应用了对话型阅读理解技术，在为用户提供精准答案的同时提升了用户的对话交互体验。
+  - “法小飞”通过学习大量的法律知识，对当事人提出的法律问题进行自动解答，并且能够针对刑事和民事案件进行深入的案情分析，拥有类案推送、法条推荐、判决预测和律师推荐的功能。
+- **方法描述**
+  - “法小飞”主要由法律咨询、法条查询、案情分析三个模块组成，其大致结构如下图所示。
+  - **法律咨询模块**主要面向负责回答用户提出的法律问题，由意图识别、法律QA等子模块组成。通过端到端的训练方式，对用户输入进行分析，并匹配到语料库中的适用回答。
+  - **法条查询模块**利用以自然语言推理模型为基础的法律语义检索方法，根据深度学习模型匹配语义表示并推荐最佳适用法条。
+  - **案情分析模块**阅读不同类型的文书，分析刑事案件中的刑期、罚金、法条预测，民事案情中胜率预测、罚金预测等结果。
+- **系统概念图**
+
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/法小飞结构图.png  width=550 alt=AmazonQ LM></div>
+
+- **论文**：[链接](IFlyLegal: A Chinese Legal System for Consultation, Law Searching, and Document Analysis)
+
+- **测试结果**：
+
+  - 各领域案情分析实验结果如下表所示：
+
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/法小飞实验结果.png  width=550 alt=AmazonQ LM></div>
+
+- **系统平台**：[链接](http://sf.xfyun.cn/services/IFlyLegal)
 
 ## 5 其他领域应用
 - 传统的搜索引擎只能返回与用户查询相关的文档，而阅读理解模型可以在文档中精确定位问题的答案，从而提高用户体验。
@@ -585,7 +634,7 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
 
 ## 总结
 - **机器阅读**与**人类阅读**的步骤对应关系
-    
+  
     步骤 | 机器阅读理解步骤 | 人类做阅读题思路
     --- | --- | ---
     1 | **Embedding** | 
