@@ -19,20 +19,19 @@
 
 ### 学术论文
 
-- Richong Zhang, Yue Wang, Yongyi Mao and Jinpeng Huai: Question Answering in Knowledge Bases: A Verification Assisted Model with Iterative Training. ACM Transactions on Information Systems. 37(4): 40:1-40:26 (2019)
+- Richong Zhang, Yue Wang, Yongyi Mao and Jinpeng Huai: [Question Answering in Knowledge Bases: A Verification Assisted Model with Iterative Training.](https://dl.acm.org/doi/abs/10.1145/3345557) ACM Transactions on Information Systems. 37(4): 40:1-40:26 (2019)
 
-- Yue Wang, Richong Zhang, Cheng Xu and Yongyi Mao: The APVA-TURBO Approach To Question Answering in Knowledge Base. COLING2018
+- Yue Wang, Richong Zhang, Cheng Xu and Yongyi Mao: [The APVA-TURBO Approach To Question Answering in Knowledge Base.](https://aclanthology.org/C18-1170/) Proceedings of the 27th International Conference on Computational Linguistics(COLING), pages 1998–2009 (2018)
 
 ###  专利
 
-- 一种基于知识图谱的问答方法
-- 一种机场服务的社区问答方法
-- 一种值机场景的多轮对话方法
+- CN107748757A | 一种基于知识图谱的问答方法
+- CN111858887A | 一种机场服务的社区问答系统
+- CN111858888A | 一种值机场景的多轮对话方法
 
 ### 应用产品
 
 - [知行知识图谱智能问答](https://www.actkg.com/search/)
-
 - 机场智能问答系统
 
 ## 致谢
@@ -45,7 +44,7 @@
 
 ## 关于我们
 
-![Logo](\image\Logo.png)
+<div align=left><img src="./image/Logo.png" alt="img" width=320" /></div>
 
 [北京市大数据科学与脑机智能高精尖创新中心](http://bdbc.buaa.edu.cn/?lang=zh)
 
