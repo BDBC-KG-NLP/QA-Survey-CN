@@ -44,5 +44,8 @@
 欢迎pull requests。对于较大的更改，请先开issue以讨论您要更改的内容。
 
 ## 关于我们
+
+![Logo](\image\Logo.png)
+
 [北京市大数据科学与脑机智能高精尖创新中心](http://bdbc.buaa.edu.cn/?lang=zh)
 
