@@ -23,6 +23,10 @@
 
 - Yue Wang, Richong Zhang, Cheng Xu and Yongyi Mao: [The APVA-TURBO Approach To Question Answering in Knowledge Base.](https://aclanthology.org/C18-1170/) Proceedings of the 27th International Conference on Computational Linguistics(COLING), pages 1998–2009 (2018)
 
+- 基于多源数据的知识图谱构建方法
+- 基于知识图谱的问答系统设计与实现
+- 基于知识库的问答方法研究
+
 ###  专利
 
 - CN107748757A | 一种基于知识图谱的问答方法
@@ -33,6 +37,7 @@
 
 - [知行知识图谱智能问答](https://www.actkg.com/search/)
 - 机场智能问答系统
+- 通用领域文本阅读理解（http://mrc.nlp.actkg.com/）
 
 ## 致谢
 特此感谢支持数据公开与系统研发工作的北航高精尖中心及参与这项工作的各位团队成员（排名按字母顺序、不分先后）：
