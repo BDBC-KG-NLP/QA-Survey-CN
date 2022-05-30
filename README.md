@@ -40,8 +40,10 @@
 ### 应用产品
 
 - [知行知识图谱智能问答](https://www.actkg.com/search/)
-- 机场智能问答系统
 - [通用领域文本阅读理解](http://mrc.nlp.actkg.com/)
+- [跨领域知识智能交互平台](http://zxqa.meta-ai.top/index)
+- [民航百科知识问答](http://10.1.1.30:3920)
+- [垂直领域问答应用实践](http://www.actkg.com/application)
 
 ## 致谢
 特此感谢支持数据公开与系统研发工作的北航高精尖中心及参与这项工作的各位团队成员：
