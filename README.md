@@ -18,6 +18,8 @@
 ## News！
  - ACL2022、IJCAI2022、NAACL2022、AAAI2022和SIGIR2022 中问答相关工作已经更新。（20220425）
 
+## 开源贡献
+目前我们在准备该Survey的英文版本，我们希望广大研究人员能参与进来，使得该survey不断完善演进，我们也将对于参与人员提供推广平台与相应物质激励。若有意参与开源贡献者，请邮箱联系zhiyuan.hu.bj@gmail.com。邮件将在3个工作日内回复！希望该survey能在大家的努力中进一步为QA研究与应用提供相关贡献。
 
 ## 相关成果
 
@@ -27,15 +29,20 @@
 
 - Yue Wang, Richong Zhang, Cheng Xu and Yongyi Mao: [The APVA-TURBO Approach To Question Answering in Knowledge Base.](https://aclanthology.org/C18-1170/) Proceedings of the 27th International Conference on Computational Linguistics(COLING), pages 1998–2009 (2018)
 
+### 书籍
 - 基于多源数据的知识图谱构建方法
-- 基于知识图谱的问答系统设计与实现
-- 基于知识库的问答方法研究
+- 将在2022年
+- 基于多源数据的知识图谱构建方法xi啊不能
+- 基于多源数据的知识图谱构建方
 
 ###  专利
 
 - CN107748757A | 一种基于知识图谱的问答方法
 - CN111858887A | 一种机场服务的社区问答系统
 - CN111858888A | 一种值机场景的多轮对话方法
+- 基于多源数据的知识图谱构建方法
+- 基于知识图谱的问答系统设计与实现
+- 基于知识库的问答方法研究
 
 ### 应用产品
 
@@ -50,8 +57,6 @@
 
 [聂志捷](https://github.com/Arthurizijar)、[胡志元](https://zhiyuanhubj.github.io/zhiyuan.github.io/)、[张存旺](https://github.com/)、[黄海浪](https://github.com/lerogo)、[李航宇](https://github.com/lhy9816)、[张淑慧](https://github.com/Hillary060)、[张延钊](https://github.com/zyznull)、[李喣通](https://github.com/Leext)、[刘楚珉](https://github.com/ChorlingLau)、[田源](https://github.com/xzwj)、[王俊凯](https://github.com/GitWazaki)、[张明辉](https://github.com/bigapple716)
 
-## 开源贡献
-目前我们在准备该Survey的英文版本，我们希望广大研究人员能参与进来，使得该survey不断完善演进，我们也将对于参与人员提供推广平台与相应物质激励。若有意参与开源贡献者，请邮箱联系zhiyuan.hu.bj@gmail.com。邮件将在3个工作日内回复！希望该survey能在大家的努力中进一步为QA研究与应用提供相关贡献。
 
 ## 关于我们
 
