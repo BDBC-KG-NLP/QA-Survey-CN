@@ -50,8 +50,8 @@
 
 [聂志捷](https://github.com/Arthurizijar)、[胡志元](https://zhiyuanhubj.github.io/zhiyuan.github.io/)、[张存旺](https://github.com/)、[黄海浪](https://github.com/lerogo)、[李航宇](https://github.com/lhy9816)、[张淑慧](https://github.com/Hillary060)、[张延钊](https://github.com/zyznull)、[李喣通](https://github.com/Leext)、[刘楚珉](https://github.com/ChorlingLau)、[田源](https://github.com/xzwj)、[王俊凯](https://github.com/GitWazaki)、[张明辉](https://github.com/bigapple716)
 
-## 参与贡献方式
-欢迎pull requests。对于较大的更改，请先开issue以讨论您要更改的内容。
+## 开源贡献
+目前我们在准备该Survey的英文版本，我们希望广大研究人员能参与进来，使得该survey不断完善演进，我们也将对于参与人员提供推广平台与相应物质激励。若有意参与开源贡献者，请邮箱联系zhiyuan.hu.bj@gmail.com。邮件将在3个工作日内回复！希望该survey能在大家的努力中进一步为QA研究与应用提供相关贡献。
 
 ## 关于我们
 
