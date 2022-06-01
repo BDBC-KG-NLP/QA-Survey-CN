@@ -30,10 +30,8 @@
 - Yue Wang, Richong Zhang, Cheng Xu and Yongyi Mao: [The APVA-TURBO Approach To Question Answering in Knowledge Base.](https://aclanthology.org/C18-1170/) Proceedings of the 27th International Conference on Computational Linguistics(COLING), pages 1998–2009 (2018)
 
 ### 书籍
-- 基于多源数据的知识图谱构建方法
-- 将在2022年
-- 基于多源数据的知识图谱构建方法xi啊不能
-- 基于多源数据的知识图谱构建方
+- 将在2022年下半年正式发布！
+
 
 ###  专利
 
