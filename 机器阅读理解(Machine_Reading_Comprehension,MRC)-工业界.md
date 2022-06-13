@@ -3,13 +3,13 @@
 ### 1.1 简介
 - 机器阅读理解是一种利用算法使计算机理解文章语义并回答相关问题的技术，利用人工智能技术为计算机赋予了阅读、分析和归纳文本的能力，本质上是无监督任务。
 - 它与英语考试中的阅读理解题目非常相似，阅读一篇英文文章之后，基于此，做后面的几道选择题或者填空题。
-<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9A%E4%B9%89.png"  width=500 alt=机器阅读理解任务样例></div>
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9A%E4%B9%89.png"  width=500 alt=机器阅读理解任务样例></div>
 
 
 ### 1.2 定义
 - 机器阅读理解基础任务是根据问题，从非结构化文档中寻找合适的答案，因此，研究人员通常将机器阅读理解形式化为一个关于（文档，问题，答案）三元组的监督学习问题。
 - 给定一个训练数据集{P，Q，A}，其中，P是文档集，Q是问题集，A是答案集。目标是学习一个函数f：
-<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E6%9C%BA%E5%99%A8%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E5%85%AC%E5%BC%8F.png  width=150 alt=公式></div>
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E6%9C%BA%E5%99%A8%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E5%85%AC%E5%BC%8F.png  width=150 alt=公式></div>
 
 
 
@@ -19,29 +19,30 @@
         - 模型需要从给定的若干选项中选出正确答案。
         - 典型数据集：**MCTest，RACE**
         - 评测指标：**准确率(Accuracy)**
-        <div align=center> <img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E5%A4%9A%E9%A1%B9%E9%80%89%E6%8B%A9%E5%BC%8F.png"  width=550 alt=多项选择式></div>
+        <div align=center> <img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E5%A4%9A%E9%A1%B9%E9%80%89%E6%8B%A9%E5%BC%8F.png"  width=550 alt=多项选择式></div>
 
 
     - **完形填空式（Cloze Test）**
         - 在原文中除去若干关键词，需要模型填入正确单词或短语。
         - 典型数据集：**CNN & Daily Mail、CBT (The Children’s Book Test)、LAMBADA(LAnguage Modeling Boardened to Account for Discourse Aspects)、Who-did-What、CLOTH、CliCR**
         - 评测指标：**准确率(Accuracy)**
-        <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E5%AE%8C%E5%BD%A2%E5%A1%AB%E7%A9%BA%E5%BC%8F.png"  width=550 alt=完形填空></div>
+        <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E5%AE%8C%E5%BD%A2%E5%A1%AB%E7%A9%BA%E5%BC%8F.png"  width=550 alt=完形填空></div>
 
 
     - **片段抽取式（Span Prediction）**
         - 答案限定是文章的一个子句（或片段），需要模型在文章中标明正确的答案起始位置和终止位置。
         - 典型数据集：SQuAD，NewsQA，TriviaQA，DuoRC
         - 评测指标：**精准匹配分数（EM，exact match）**
-        <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E5%8C%BA%E9%97%B4%E7%AD%94%E6%A1%88%E5%BC%8F.png"  width=550 alt=片段抽取式></div>
+        <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E5%8C%BA%E9%97%B4%E7%AD%94%E6%A1%88%E5%BC%8F.png"  width=550 alt=片段抽取式></div>
 
  
+
 
     - **自由回答式（Free Answering）或总结回答式(Summary of human)**
         - 不限定模型生成答案的形式，允许模型自由生成语句。
         - 典型数据集：**bAbI，MS MARCO（milestone），SearchQA，NarrativeQA，DuReader**
         - 评测指标：**ROUGE-L、BLEU**
-        <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E8%87%AA%E7%94%B1%E5%9B%9E%E7%AD%94%E5%BC%8F.png" width=550 alt=自由回答式></div>
+        <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E8%87%AA%E7%94%B1%E5%9B%9E%E7%AD%94%E5%BC%8F.png" width=550 alt=自由回答式></div>
 
 
 > 注：一些数据集设计了“无答案”问题，即一个问题可能在文章中没有合适答案，需要模型输出“无法回答”（unanswerable）。
@@ -53,7 +54,7 @@
         3. 答案形式复杂程度(flexibility)
         4. 进行评估的难易程度(evaluation)
         5. 真实应用程度（application）
-    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E5%9B%9B%E7%B1%BBMRC%E4%BB%BB%E5%8A%A1%E5%AF%B9%E6%AF%94.png"  width=650 alt=四类MRC任务对比></div>
+    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E5%9B%9B%E7%B1%BBMRC%E4%BB%BB%E5%8A%A1%E5%AF%B9%E6%AF%94.png"  width=650 alt=四类MRC任务对比></div>
 
 
 MRC任务类型 | 优点 | 缺点
@@ -70,7 +71,7 @@ MRC任务类型 | 优点 | 缺点
     - 表示每个问题回答的准确率。
     - 用于：**完形填空和多项选择**任务
     - 如果m个问题中答对n个，则Accuracy为
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/Accuracy.png  width=200 alt=Accuracy></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/Accuracy.png  width=200 alt=Accuracy></div>
   
 - **问题准确率（Question ACcuracy，QAC）**
     - 含义同准确率，该评测方法名称来自CMRC竞赛
@@ -78,7 +79,7 @@ MRC任务类型 | 优点 | 缺点
 - **篇章准确率（Passage ACcuracy, PAC）**
     - 计算篇章级别的准确率，来自[CMRC竞赛](https://hfl-rc.github.io/cmrc2019/task/)。例如篇章中共有10个空，完全答对所有的空缺才算正确，否则不得分
     - 设共有M篇文章，其中完全答对的篇章数为N，则篇章准确率为
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/PAC.png  width=150 alt=PAC></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/PAC.png  width=150 alt=PAC></div>
 
 - **精准匹配分数（EM，exact match）**
     - 用于：**片段抽取式**任务
@@ -87,14 +88,14 @@ MRC任务类型 | 优点 | 缺点
 - **F1**
     - 同时兼顾**精确率(P)和召回率(R)**。分为微平均F1值（Micro-F1-measure）、宏平均F1值（Macro-F1-measure）
     - 相比于EM，F1分数大致测量了预测值和真实值之间的平均重叠。
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/F1.png  width=250 alt=F1></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/F1.png  width=250 alt=F1></div>
     
 - **ROUGE-L (Recall-Oriented Understudy for Gisting Evaluation)**
     - 表示评测答案和预测值之间的相似性
     
     - 用于：**自由问答式**任务
     - 公式：设X为m个标记正确答案(ground truth)，Y为n个模型产生的答案，LCS(X,Y)，表示X和Y的最长公共子序列，则
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/Rlcs.png  width=250 alt=ROUGE-L></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/Rlcs.png  width=250 alt=ROUGE-L></div>
 
 - **BLEU (Bilingual Evaluation Understudy)**
     - 是一种双语互译质量辅助工具，最初用于衡量翻译性能，表示机器翻译文本与参考文本之间的相似程度
@@ -163,7 +164,7 @@ CoQA | 英文维基百科、文学、故事、考试、新闻 | 自由问答 | �
 - **论文**：[《Consensus Attention-based Neural Networks for Chinese Reading Comprehension》](https://arxiv.org/abs/1607.02250)
 - **内容**：《人民日报》新闻数据集和《儿童童话》数据集
 - **数据量**：数量较大，共87万篇
-<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/HFL-RC%20dataset.png  width=650 alt=HFL-RC dataset.png></div>
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/HFL-RC%20dataset.png  width=650 alt=HFL-RC dataset.png></div>
 
 ### 2.6 SQuAD 1.0-斯坦福（完型填空，答案是变长的，可能是一段话）
 - **下载地址**：[链接](https://rajpurkar.github.io/SQuAD-explorer/)
@@ -184,14 +185,14 @@ CoQA | 英文维基百科、文学、故事、考试、新闻 | 自由问答 | �
 - **内容**
     -   在原来的 SQuAD（SQuAD 1.1）的十万个问题 - 答案对的基础上，SQuAD 2.0 中新增了超过五万个新增的、由人类众包者对抗性地设计的无法回答的问题。
     -   执行 SQuAD 2.0 阅读理解任务的模型不仅要能够在问题可回答时给出答案，**还要判断哪些问题是阅读文本中没有材料支持的，并拒绝回答这些问题**。如下图中两个问题为不可回答问题，红色字体的答案是错误的。
-    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%20SQuAD2.0%E6%97%A0%E6%B3%95%E5%9B%9E%E7%AD%94%E9%97%AE%E9%A2%98.png" width=450 alt=SQuAD2.0不可回答问题></div>
+    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%20SQuAD2.0%E6%97%A0%E6%B3%95%E5%9B%9E%E7%AD%94%E9%97%AE%E9%A2%98.png" width=450 alt=SQuAD2.0不可回答问题></div>
 
 - **数据量**：数量较大，共500多篇文章，2万多个段落，10万个问题
 
 训练集 | 验证集 | 测试集
 --- | --- | --- 
 130319个问题 | 11873个问题 | 8862个问题
-<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/SQuAD%202.0%20%E6%95%B0%E6%8D%AE%E9%9B%86.png"  width=450 alt=SQuAD2.0数据集></div>
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/SQuAD%202.0%20%E6%95%B0%E6%8D%AE%E9%9B%86.png"  width=450 alt=SQuAD2.0数据集></div>
 
 ### 2.8 百度DuReader-2018机器阅读理解技术竞赛（多任务中文数据集）
 - **竞赛地址**：[2018机器阅读理解技术竞赛](http://mrc2018.cipsc.org.cn/)
@@ -222,7 +223,7 @@ YesNo（是非） | 24460 | 797 | 1777
         - 编码层（Encoding)
         - 匹配层（Matching)：利用Match-LSTM、BiDAF、DCA三种集成模型
         - 答案片段抽取层（Answer Span Extraction)
-    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/2018%E6%9C%BA%E5%99%A8%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E5%A4%A7%E8%B5%9B-%E5%A5%87%E7%82%B9%E6%9C%BA%E6%99%BA%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84.png"  width=550 alt=2018机器阅读理解大赛-奇点机智模型结构.png></div>
+    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/2018%E6%9C%BA%E5%99%A8%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E5%A4%A7%E8%B5%9B-%E5%A5%87%E7%82%B9%E6%9C%BA%E6%99%BA%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84.png"  width=550 alt=2018机器阅读理解大赛-奇点机智模型结构.png></div>
 
 ### 2.9 莱斯杯：全国第二届“军事智能机器阅读”挑战赛 数据集（中文）
 - **下载地址**：[链接](https://www.kesci.com/home/competition/5d142d8cbb14e6002c04e14a/content/5)
@@ -233,7 +234,7 @@ YesNo（是非） | 24460 | 797 | 1777
     - 决赛，测试集约0.5万个问题。
 - **评价指标**：主要是Rouge-L
   
-  <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E8%8E%B1%E6%96%AF%E6%9D%AF%E6%B5%8B%E8%AF%84%E5%85%AC%E5%BC%8F.png"  width=350 alt=“军事智能机器阅读”挑战赛评价指标></div>
+  <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E8%8E%B1%E6%96%AF%E6%9D%AF%E6%B5%8B%E8%AF%84%E5%85%AC%E5%BC%8F.png"  width=350 alt=“军事智能机器阅读”挑战赛评价指标></div>
   
 - **rank1**：中科院信工所的向阳而生团队
     - 得分：79.797448
@@ -243,7 +244,7 @@ YesNo（是非） | 24460 | 797 | 1777
         - 推理问题，设计了两阶段阅读的方法：提取子问题->回答子问题得到桥接实体->实体替换子问题重构新问题->回答新问题。这一过程，需要两次阅读。
         - ……
     - 具体模型框架如下：
-    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E8%8E%B1%E6%96%AF%E6%9D%AF%EF%BC%9A%E5%85%A8%E5%9B%BD%E7%AC%AC%E4%BA%8C%E5%B1%8A%E2%80%9C%E5%86%9B%E4%BA%8B%E6%99%BA%E8%83%BD%E6%9C%BA%E5%99%A8%E9%98%85%E8%AF%BB%E2%80%9D%E6%8C%91%E6%88%98%E8%B5%9Brank1%E6%A8%A1%E5%9E%8B.png"  width=650 alt=莱斯杯：全国第二届“军事智能机器阅读”挑战赛rank1模型></div>
+    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E8%8E%B1%E6%96%AF%E6%9D%AF%EF%BC%9A%E5%85%A8%E5%9B%BD%E7%AC%AC%E4%BA%8C%E5%B1%8A%E2%80%9C%E5%86%9B%E4%BA%8B%E6%99%BA%E8%83%BD%E6%9C%BA%E5%99%A8%E9%98%85%E8%AF%BB%E2%80%9D%E6%8C%91%E6%88%98%E8%B5%9Brank1%E6%A8%A1%E5%9E%8B.png"  width=650 alt=莱斯杯：全国第二届“军事智能机器阅读”挑战赛rank1模型></div>
 
 ### 2.10 ReCoRD-约翰斯·霍普金斯大学&微软研究院（完形填空）
 - **下载地址**：[链接](https://sheng-z.github.io/ReCoRD-explorer/)
@@ -251,7 +252,7 @@ YesNo（是非） | 24460 | 797 | 1777
 and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.pdf)
 - **内容**：包含来自70,000多个新闻文章的120,000多个问题。 与现有的阅读理解数据集不同，ReCoRD包含很大一部分需要常识推理的问题
 - **数据量**：总12万问题，其中训练集10万，验证集、测试集各1万
-<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/ReCoRD.%E6%95%B0%E6%8D%AE%E9%9B%86.png"  width=450 alt=ReCoRD数据集></div>
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/ReCoRD.%E6%95%B0%E6%8D%AE%E9%9B%86.png"  width=450 alt=ReCoRD数据集></div>
 
 - **评价指标**：精准匹配分数EM、F1
 - **rank2**：平安智慧医疗与上海交大
@@ -259,22 +260,22 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
     - 论文：[《Pingan Smart Health and SJTU at COIN - Shared Task: utilizing Pre-trained Language Models and Common-sense Knowledge in Machine Reading Tasks》](https://www.aclweb.org/anthology/D19-6011.pdf)
     - 技术：XLNetKGNet、Multi-head Attention、DistMult模型、利用Aho-Corasick算法将段落中的短语与WordNet中的实体进行匹配、KGNet
     - 模型架构
-    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E5%B9%B3%E5%AE%89%E6%99%BA%E6%85%A7%E5%8C%BB%E7%96%97%E4%B8%8E%E4%B8%8A%E6%B5%B7%E4%BA%A4%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.png"  width=550 alt=平安智慧医疗与上海交大模型架构></div>
+    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E5%B9%B3%E5%AE%89%E6%99%BA%E6%85%A7%E5%8C%BB%E7%96%97%E4%B8%8E%E4%B8%8A%E6%B5%B7%E4%BA%A4%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.png"  width=550 alt=平安智慧医疗与上海交大模型架构></div>
 
 ### 2.11 CMRC2019：第三届“讯⻜杯”中⽂机器阅读理解评测（句⼦级完形填空）
 - **下载地址**：[链接](https://github.com/ymcui/cmrc2019)
 - **论文地址**：[A Sentence Cloze Dataset for Chinese Machine Reading Comprehension](https://arxiv.org/abs/2004.03116)
 - **答案类型**：句子
 - **数据量**：1w文档和10w问题
-<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/CMRC2019dataset.png"  width=550 alt=CMRC2019dataset></div>
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/CMRC2019dataset.png"  width=550 alt=CMRC2019dataset></div>
 
 - **评价指标**
     - 问题准确率（Question ACcuracy, QAC）：计算问题（一个空即一个问题）级别的准确率
-    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/CMRC-QAC.png"  width=180 alt=CMRC-QAC></div>
+    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/CMRC-QAC.png"  width=180 alt=CMRC-QAC></div>
     
     - 篇章准确率（Passage ACcuracy, PAC）：计算篇章级别的准确率
         - 例如：篇章中共有10个空，完全答对所有的空缺才算正确，否则不得分。
-    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/CMRC-PAC.png"  width=180 alt=CMRC-PAC></div>
+    <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/CMRC-PAC.png"  width=180 alt=CMRC-PAC></div>
     
 - **rank1**：平安金融壹账通
     - 竞赛报告：[《平安金融壹账通gammalab团队CMRC2019竞赛报告》](https://hfl-rc.github.io/cmrc2019/resource/report.zip)
@@ -291,7 +292,7 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
         - **数据处理**   
             - SentencePiece字词混合模型
             - 动态预测
-            <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E5%B9%B3%E5%AE%89%E9%87%91%E8%9E%8D%E5%A3%B9%E8%B4%A6%E9%80%9Asentence-insertion.png"  width=650 alt=平安金融壹账通sentence-insertion></div>
+            <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E5%B9%B3%E5%AE%89%E9%87%91%E8%9E%8D%E5%A3%B9%E8%B4%A6%E9%80%9Asentence-insertion.png"  width=650 alt=平安金融壹账通sentence-insertion></div>
 
 
 
@@ -304,7 +305,7 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
 - **数据量**：58.1w段落和72.9w个填空
 - **评测方法**：填空正确率
   
-  <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E6%88%90%E8%AF%AD%E7%AB%9E%E8%B5%9B%E8%AF%84%E6%B5%8B%E6%96%B9%E6%B3%95-%E5%A1%AB%E7%A9%BA%E6%AD%A3%E7%A1%AE%E7%8E%87.png  width=180 alt=成语阅读理解大赛评测指标正确率></div>
+  <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E6%88%90%E8%AF%AD%E7%AB%9E%E8%B5%9B%E8%AF%84%E6%B5%8B%E6%96%B9%E6%B3%95-%E5%A1%AB%E7%A9%BA%E6%AD%A3%E7%A1%AE%E7%8E%87.png  width=180 alt=成语阅读理解大赛评测指标正确率></div>
   
 - **rank1**：wssb
     - 得分：90.97823
@@ -319,10 +320,10 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
 - **内容**
     - 数据内容来自中国法官文书网，主要涉及民事和刑事的一审判决书，总共约1万份数据。属于篇章片段抽取型阅读理解比赛
 - **数据量**
-    
+  
     - 数据集共包括268万刑法法律文书，共涉及183条罪名，202条法条，刑期长短包括0-25年、无期、死刑。
 - **评测方法**：
-    
+  
     - 罪名预测任务：微平均F1值（Micro-F1-measure）
     - 法条推荐任务：宏平均F1值（Macro-F1-measure）
     - 刑期预测任务：预测出的刑期与案件标准刑期之间的差值距离
@@ -335,7 +336,7 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
         - 4 阈值调整：解决不平衡数据集问题
     - 模型
         - 将google的bert输出接上词性等特征加上一层传统的highway与GRU后通过MLP来判断答案的label与Span的位置
-        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/CAIL2019-rank1%20model.jpg  width=650 alt=CAIL2019-rank1 model.jpg></div>
+        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/CAIL2019-rank1%20model.jpg  width=650 alt=CAIL2019-rank1 model.jpg></div>
         
 ### 2.14 CoQA stanford(自由回答)
 - **下载地址**：[链接](https://stanfordnlp.github.io/coqa/)
@@ -347,7 +348,7 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
 - **数据量**：包含12.7万多个问题
 - **评测方法**：官方评估脚本
 - **rank1**：追一科技
-    
+  
     - 论文：[《Technical report on Conversational Question Answering》](https://arxiv.org/abs/1909.10772)
     - 技术分享：[追一科技CoQA冠军方案分享：基于对抗训练和知识蒸馏的机器阅读理解方案](https://www.leiphone.com/news/201911/g5eqn6CjbLPI5GDU.html)
     
@@ -355,7 +356,7 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
         - 1) Baseline模型：RoBERTa。原因：RoBERTa在语言模型预训练的过程中用了更多领域的语料
         - 2) 增加依据标注任务，并同步进行多任务训练。
         - 3) 采用对抗训练和知识蒸馏等训练方法
-        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/COQA%20rank1%20%E8%BF%BD%E4%B8%80%E7%A7%91%E6%8A%80%E4%BE%9D%E6%8D%AE%E6%A0%87%E6%B3%A8%E4%BB%BB%E5%8A%A1.png  width=500 alt=COQA rank1 追一科技依据标注任务></div>
+        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/COQA%20rank1%20%E8%BF%BD%E4%B8%80%E7%A7%91%E6%8A%80%E4%BE%9D%E6%8D%AE%E6%A0%87%E6%B3%A8%E4%BB%BB%E5%8A%A1.png  width=500 alt=COQA rank1 追一科技依据标注任务></div>
 
 ### LIC2021语言与智能技术竞赛：机器阅读理解任务
 
@@ -370,14 +371,14 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
 - **评测方法：**
   - 评价指标为F1-score和Exact Match (EM)。其中F1作为主要评价指标，EM作为辅助评价指标。系统最终排名根据在测试集中所有样本上的平均值（微平均，Micro Average）排序得到。
 
-<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/LIC2021数据.png"  width=500 alt=LIC2021数据></div>
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/LIC2021数据.png"  width=500 alt=LIC2021数据></div>
 
 
 
 ## 3 模型介绍
 
 - 近年来模型总体框架图
-<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%80%BB%E4%BD%93%E6%A1%86%E6%9E%B6%E5%9B%BE.jpeg  width=650 alt=近年来模型的总体框架图></div>
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%80%BB%E4%BD%93%E6%A1%86%E6%9E%B6%E5%9B%BE.jpeg  width=650 alt=近年来模型的总体框架图></div>
 
 
 ### 3.1 BIDAF--Allen AI
@@ -398,10 +399,10 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
         - Modeling Layer
         - Output Layer
     - 其中前三层是一个多层级上下文不同粒度的表征编码器。第四层则是双向注意流层，这是原文的核心层。第五层是一个编码层，编码第四层输出的问题感知的上下文表征。第六层就是一个预测答案的范围。
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/BIDAF.png  width=650 alt=BIDAF></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/BIDAF.png  width=650 alt=BIDAF></div>
 - **模型效果**
-    
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/BIDAF%E6%95%88%E6%9E%9C.png  width=450 alt=BIDAF模型效果></div>
+  
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/BIDAF%E6%95%88%E6%9E%9C.png  width=450 alt=BIDAF模型效果></div>
     
 - **解读文章**：[BiDAF：机器理解之双向注意力流 ](https://zhuanlan.zhihu.com/p/53470020)
 
@@ -426,12 +427,12 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
     - 4）**Answer Prediction**
         - 基于答案边界预测层的提示网络（pointer-network）
         - 针对挑出的答案候选区中的每一个词汇进行预测，哪一个词是答案的开始，到哪个词是答案的结束。
-        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/R-net.jpg  width=650 alt=R-net></div>
+        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/R-net.jpg  width=650 alt=R-net></div>
 - **模型效果**
     - 1 在SQuaAD数据集上的结果
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/R-Net%E6%95%88%E6%9E%9C.png  width=650 alt=R-net在SQuaAD数据集上的结果></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/R-Net%E6%95%88%E6%9E%9C.png  width=650 alt=R-net在SQuaAD数据集上的结果></div>
     - 2 在MS-MARCO数据集上的结果
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/R-Net%E5%9C%A8MS-MARCO%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8A%E7%9A%84%E7%BB%93%E6%9E%9C.png  width=650 alt=R-net在MS-MARCO数据集上的结果></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/R-Net%E5%9C%A8MS-MARCO%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8A%E7%9A%84%E7%BB%93%E6%9E%9C.png  width=650 alt=R-net在MS-MARCO数据集上的结果></div>
     
 - **解读文章**：[R-NET机器阅读理解（原理解析）](https://zhuanlan.zhihu.com/p/36855204)
 
@@ -467,16 +468,16 @@ and Machine Commonsense Reading Comprehension](https://arxiv.org/pdf/1810.12885.
     
     5. **Output Layer**
         - loss中使用了了context中的一个词是answer的首词和尾词的概率
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/QANET.png  width=650 alt=QANET></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/QANET.png  width=650 alt=QANET></div>
     
 - **模型效果**
     > 实验过程中使用多倍的数据增强方式（回译法--Backtranslation），对EM和F1都有很大贡献。作者主要通过两个翻译模型来进行数据增强：一个将英语翻译成其他语言(1个句子变成k个句子，论文中k=5)，另一个将它所得的结果再翻译回英语(变成k*k个句子)
 
     1. 准确率
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/QANet-acc.png  width=400 alt=QANET准确率></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/QANet-acc.png  width=400 alt=QANET准确率></div>
     
     2. 速度
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/QANet-speed.png  width=650 alt=QANET速度></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/QANet-speed.png  width=650 alt=QANET速度></div>
 
 ### 3.4 BERT
 - **简介**
@@ -493,11 +494,11 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
     - 改变的是输入数据流：问题+分隔符+段落的顺序序列
     - 迁移学习：句子信息的迁移
 - **模型架构**
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/BERT%20MRC.png  width=450 alt=BERT MRC></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/BERT%20MRC.png  width=450 alt=BERT MRC></div>
 
     1. 输入数据流：**[CLS]标记+问题+special tokens[SEP]分隔符+段落**拼接
         - BERT首先在问题前面添加special classification token[CLS]标记，然后问题和段落连在一起，中间使用special tokens[SEP]分开。
-        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/BERT%20embedding.png  width=650 alt=BERT Embedding></div>
+        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/BERT%20embedding.png  width=650 alt=BERT Embedding></div>
     2. **Embedding**
         - 序列通过token Embedding、segment embedding 和 positional embedding输入到BERT
     3. 最后，通过**全连接层和softmax函数**将BERT的最终隐藏状态转换为**答案跨度的概率**。
@@ -517,21 +518,21 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
             - nn（神经网络）由机器阅读理解中的常用组件组成，可以快速构建和训练原型模型，避免部分重复工作。model中集成了常见的机器理解模型，如双向注意力流BiDAF、DrQA、融合网络FusionNet、QANet等等。
         4. **模型训练与评估**（examples）
             - 这一部分是运行不同模型的示例
-        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/SMRCarchitecture.png  width=650 alt=SMRC architecture></div>
+        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/SMRCarchitecture.png  width=650 alt=SMRC architecture></div>
 
 ### 4.2 SLQA -- 阿里
 - **全称**：Semantic Learning for Question Answering
 - **应用场景**：
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E5%88%86%E9%A2%86%E5%9F%9F%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81.jpg  width=650 alt=分领域的模型支持></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E5%88%86%E9%A2%86%E5%9F%9F%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%94%AF%E6%8C%81.jpg  width=650 alt=分领域的模型支持></div>
     
     - **阿里小蜜**：把机器阅读理解应用在大规模客服场景下
     - **店小蜜**：通过机器阅读理解技术，让机器对详情页中的商品描述文本进行更为智能的阅读和回答，在降低卖家服务成本的同时提高购买转化率。
     - **企业小蜜**：税务法规解读场景
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E7%A8%8E%E5%8A%A1%E6%B3%95%E8%A7%84%E8%A7%A3%E8%AF%BB%E5%9C%BA%E6%99%AF.jpg  width=650 alt=税务法规解读场景></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E7%A8%8E%E5%8A%A1%E6%B3%95%E8%A7%84%E8%A7%A3%E8%AF%BB%E5%9C%BA%E6%99%AF.jpg  width=650 alt=税务法规解读场景></div>
 - **技术分享**：[链接](https://myslide.cn/slides/6148?vertical=1)
 - **模型结构**
     - 基于分层融合注意力机制的深度神经网络系统
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E4%B8%9A%E5%8A%A1%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84.jpg  width=650 alt=阅读理解业务模型结构></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E4%B8%9A%E5%8A%A1%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84.jpg  width=650 alt=阅读理解业务模型结构></div>
     
     - SLQA 系统包含如下基本结构：Encoder Layer（文本表征），Attention Layer（注意力机制），Match Layer（问题篇章匹配）以及 Output Layer（答案预测）。
         1. **Encoder Layer**
@@ -547,12 +548,12 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
         4. **Output Layer** 
             - **基于问题和篇章匹配预测答案位置**。结合匹配信息对篇章中词汇进行标注，预测相应词汇是答案开始位置或结束位置的概率。之后，模型会抽取可能性最高的一段连续文本作为答案。
 - **基于阅读理解的问答处理流程**
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E5%9F%BA%E4%BA%8E%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E7%9A%84%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B1-2.jpg  width=650 alt=基于阅读理解的问题处理流程1&2></div>
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E5%9F%BA%E4%BA%8E%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E7%9A%84%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B3-4.jpg  width=650 alt=基于阅读理解的问题处理流3&4></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E5%9F%BA%E4%BA%8E%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E7%9A%84%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B1-2.jpg  width=650 alt=基于阅读理解的问题处理流程1&2></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E5%9F%BA%E4%BA%8E%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E7%9A%84%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B3-4.jpg  width=650 alt=基于阅读理解的问题处理流3&4></div>
     
 - **线上模型效果**
-    
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E7%BA%BF%E4%B8%8A%E6%A8%A1%E5%9E%8B%E6%95%88%E6%9E%9C.jpg  width=650 alt=线上模型效果></div>
+  
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/%E9%98%BF%E9%87%8C%E5%B0%8F%E8%9C%9C/%E7%BA%BF%E4%B8%8A%E6%A8%A1%E5%9E%8B%E6%95%88%E6%9E%9C.jpg  width=650 alt=线上模型效果></div>
 
 ### 4.3 Z-Reader -- 追一科技
 - **简介**
@@ -562,7 +563,7 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
 - **模型描述**
     - Embedding
         - 由四部分组成：ELMO、pos embedding、query type embedding、word match
-        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/Z-Reader%20Embedding.png  width=350 alt=Z-Reader Embedding></div>
+        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/Z-Reader%20Embedding.png  width=350 alt=Z-Reader Embedding></div>
     - Encoding
         - Bidirectional GRU, multi-layers
     - Attention
@@ -572,7 +573,7 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
         - prob = start * stop
     - Training
         - Born-Again Neural Networks 再生神经网络：利用知识蒸馏收敛到更优的模型
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/Z-Reader.png  width=550 alt=Z-Reader></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/Z-Reader.png  width=550 alt=Z-Reader></div>
     
 
 ### 4.4 阅读理解(RC)模型-AmazonQA
@@ -586,13 +587,13 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
     - 数据集中的问题、段落和答案都是从真实的人类交互中提取的。
 - **系统概念图**
 
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/AmazonQA%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E5%9B%BE.png  width=550 alt=AmazonQA系统概念图></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/AmazonQA%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E5%9B%BE.png  width=550 alt=AmazonQA系统概念图></div>
 
 - **代码**：[链接](https://github.com/amazonqa/amazonqa)
 - **模型描述**
     - Baseline Models
         1. Language Models
-        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/AmazonQA%20LM.png  width=550 alt=AmazonQ LM></div>
+        <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/AmazonQA%20LM.png  width=550 alt=AmazonQ LM></div>
         2. Span-based QA Model：Span-based QA Model
 
 ### 4.5 法小飞：中文法律智能助手
@@ -607,7 +608,7 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
   - **案情分析模块**阅读不同类型的文书，分析刑事案件中的刑期、罚金、法条预测，民事案情中胜率预测、罚金预测等结果。
 - **系统概念图**
 
-<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/法小飞结构图.png  width=550 alt=AmazonQ LM></div>
+<div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/法小飞结构图.png  width=550 alt=AmazonQ LM></div>
 
 - **论文**：[链接](IFlyLegal: A Chinese Legal System for Consultation, Law Searching, and Document Analysis)
 
@@ -615,7 +616,7 @@ Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
 
   - 各领域案情分析实验结果如下表所示：
 
-    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/法小飞实验结果.png  width=550 alt=AmazonQ LM></div>
+    <div align=center><img src=https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/法小飞实验结果.png  width=550 alt=AmazonQ LM></div>
 
 - **系统平台**：[链接](http://sf.xfyun.cn/services/IFlyLegal)
 

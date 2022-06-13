@@ -1,5 +1,10 @@
 # MRC调研——学术界
 
+## News！
+
+ - ACL2022、AAAI2022和SIGIR2022 中阅读理解相关工作已经更新。（20220612）
+ - 增加Logical Reasoning逻辑推理阅读理解相关数据集和模型介绍（20220608）
+
 ## 1.任务
 
 ### 1.1 背景
@@ -188,6 +193,16 @@
 - HotpotQA是2018年由多家高校与Google公司等研究机构共同推出的多文档阅读理解数据集。共包含11万个问题和相关的维基百科段落，采用区间式答案。通过一些用户交互设计保证他们可以提问出基于两个选段进行多步推理才能得到答案的问题。
 - TriviaQA是2017年ACL 中提出的多轮推理的阅读理解数据集。其特点有：（1）数据集中的文本的句法比较复杂，需要很多复合信息；（2）数据集中的文本的语法和用词也比较复杂，简单的文本匹配方法可能会失效；（3）数据集中的信息常常跨过多句，为了得到答案需要多级推理（cross sentences）
 
+#### 1.3.8 Logical Reasoning 任务数据集
+
+| 数据集 |                            Paper                             |                       Data                       |
+| :----: | :----------------------------------------------------------: | :----------------------------------------------: |
+| ReClor | [ReClor: A Reading Comprehension Dataset Requiring Logical Reasoning](https://arxiv.org/abs/2002.04326) |         [链接](https://whyu.me/reclor/)          |
+| LogiQA | [LogiQA: A Challenge Dataset for Machine Reading Comprehension with Logical Reasoning](https://aclanthology.org/D18-1259/) | [链接](https://github.com/lgw863/LogiQA-dataset) |
+
+- ReClor是一个四选一的单项选择问答数据集，其来自于美国研究生管理科入学考试（GMAT）和法学院入学考试（LSAT）经过筛选、过滤得到6138条考察逻辑推理能力的数据。ReClor来自侧重考察逻辑推理的考试，只有基于篇章、问题和选项进行逻辑推理和分析才能得到正确的答案。
+- LogiQA是一个四选一的单项选择问答数据集，数据来自于中国的国家公务员考试题目，其旨在考察公务员候选人的批判性思维和解决问题的能力。经过专业的英文使用者由中文翻译到英文，经过筛选、过滤后得到8678条数据。针对输入的问题、篇章和四个选项，模型需要根据问题和篇章找出唯一正确的选项作为答案。
+
 ### 1.4 SOTA
 
 - **SQuAD**
@@ -224,6 +239,13 @@
   - Sup     FE2H on ALBERT    **64.98**    **EM**
   - Joint    FE2H on ALBERT    **50.04**   **EM**
   - **排行榜：**[链接](https://hotpotqa.github.io/)
+- **ReClor**
+
+  -  easy	XLNet-large	 **75.7	Accuracy**
+  - standard 	XLNet-large	**56.0	Accuracy**
+  - hard	XLNet-large	 **40.5	Accuracy**
+  - 排行版：[链接](https://paperswithcode.com/paper/reclor-a-reading-comprehension-dataset-1)
+
 
 ### 1.5 评测标准
 
@@ -271,15 +293,17 @@
  <div align=center><img src="http://bbs-10075040.file.myqcloud.com/uploads/images/201610/14/23/YanABAeemB.png" alt="img" width=400  /></div>
  针对上述问题，Berant 等人提出了一种基于图匹配的方法。该方法首先通过类似于语义角色标注的方法，将整篇文章转化成一个图结构。然后将问题与答案组合（称为查询），也转化为一个图结构，最后考虑文章的图结构与查询的图结构之间的匹配度。
 
+​	但是语篇关系能否充分表示基于逻辑关系的符号推理有待商榷，且图结构稀疏，长路径较多限制了GNN模型中节点与节点间的消息传递。为解决上述问题，**AdaLoGN**采用有向的文本逻辑图(Text Logic Graph，TLG)，使用符号化的推理规则对原始语篇图进行扩展，基于已知推理得到未知的逻辑关系。**Logiformer**则提出基于篇章分别构建逻辑图和句法图，使用一个两支的graph transformer网络来从两个角度建模长距离依赖。
+
 ### 2.4 基于预训练模型的方法
 
 ​	近年来NLP领域通过大量通用领域数据进行训练，诞生了一批如ELMO、GPT、BERT、ENRIE等优秀的预训练语言模型。在具体的阅读理解任务时，可以通过进行领域微调、数据微调、任务微调，来把学到的句子特征信息应用到具体的任务。
 
- <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/MRC/基于预训练的MRC微调结构图.png" alt="img" width=400  /></div>
+ <div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/MRC/基于预训练的MRC微调结构图.png" alt="img" width=400  /></div>
 
 ​	如图为基于BERT模型的预训练任务和机器阅读理解的微调结构，左侧是预训练过程，经过预训练得到较好的模型参数。右侧是用于机器阅读理解的微调示意图，该神经网络的参数由预训练得到的模型进行初始化，将问题与包含答案的上下文经过编码输入神经网络，获得答案的区间预测。
 
-### 2.5 小结
+​	基于一些启发式规则捕捉大规模文本语料中存在的逻辑关系，针对其设计相应的预训练任务，对已有的预训练语言模型进行二次预训练，从而增强预训练语言模型的逻辑推理能力，已成为模型训练的一重要途径。LogiGAN将视线转向了生成式模型（T5）以及包括逻辑推理MRC在内的多种需要推理能力任务上，通过对MLM预训练任务进行改进来强化模型的逻辑推理能力，并引入验证器（verifier）来为生成式模型提供额外反馈。
 
 本章介绍了在机器阅读理解任务中最常用的三种基本方法：基于特征工程的方法，基于神经网络的方法以及基于深层语义的图匹配方法。三种方法各有侧重，有着不同的应用场景。
 
@@ -306,6 +330,13 @@
 
 | 会议名称  |                           论文名称                           |
 | :-------: | :----------------------------------------------------------: |
+|  ACL2022  | [AdaLoGN: Adaptive Logic Graph Network for Reasoning-Based Machine Reading Comprehension ](https://arxiv.org/abs/2203.08992) |
+|  ACL2022  | [Deep Inductive Logic Reasoning for Multi-Hop Reading Comprehension - ACL Anthology](https://aclanthology.org/2022.acl-long.343/) |
+|  ACL2022  | [MultiHiertt: Numerical Reasoning over Multi Hierarchical Tabular and Textual Data](https://arxiv.org/abs/2206.01347) |
+|  ACL2022  | [Improving Machine Reading Comprehension with Contextualized Commonsense Knowledge ](https://arxiv.org/abs/2009.05831) |
+| AAAI2022  | [Zero-Shot Cross-Lingual Machine Reading Comprehension via Inter-Sentence Dependency Graph](https://arxiv.org/abs/2112.00503) |
+| AAAI2022  | [From Good to Best: Two-Stage Training for Cross-lingual Machine Reading Comprehension ](https://arxiv.org/abs/2112.04735) |
+| SIGIR2022 | [Logiformer: A Two-Branch Graph Transformer Network for Interpretable Logical Reasoning](https://arxiv.org/abs/2205.00731) |
 | AAAI2021  | [Semantics Altering Modifications for Evaluating Comprehension in Machine Reading](https://www.aaai.org/AAAI21Papers/AAAI-704.SchlegelV.pdf) |
 | AAAI2021  | [VisualMRC: Machine Reading Comprehension on Document Images](https://arxiv.org/pdf/2101.11272) |
 | AAAI2021  | [A Bidirectional Multi-Paragraph Reading Model for Zero-Shot Entity Linking](https://www.aaai.org/AAAI21Papers/AAAI-6269.TangH.pdf) |
