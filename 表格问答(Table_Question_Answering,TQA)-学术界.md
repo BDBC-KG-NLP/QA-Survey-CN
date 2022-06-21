@@ -14,7 +14,7 @@
 
  目前，与表格相关的自然语言处理研究刚刚起步，方法尚未成熟，对应的标注数据集也相对有限。我们按照MSRA的相关工作，将任务定义为以下五类。
 
-<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CNblob/master/image/TQA_X_1.png" alt="img" width=650" /></div>
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/TQA_X_1.png" alt="img" width=650" /></div>
 
 - 表格检索：从表格集合中找到与输入问题最相关的表格
 - 语义解析：将自然语言问题转换成可被机器理解的语义表示（meaning representation，一般指SQL语句），在表格中执行该表示即可获得答案
