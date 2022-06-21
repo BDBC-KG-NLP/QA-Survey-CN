@@ -36,7 +36,7 @@ VQA相关扩展任务有：（1）图像集问答 （2）视频问答 （3）图
 
 对于VQA数据集，注释者为每个问题生成了十个答案。精确度指标的变化形式为
 
-<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/VAQ评估公式.jpeg" alt="img" width=200"/></div>
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/VAQ评估公式.jpeg" alt="img" width=200"/></div>
 
 其中n是与算法具有相同答案的注释者总数。	
 
@@ -204,7 +204,7 @@ GQA 数据集的许多问题涉及多种推理技巧、空间理解以及多步�
 
 对于图像特征，大多数算法使用在ImageNet上经过预训练的CNN，常见示例为VGGNet，ResNet和GoogLeNet。问题特征化，包括词袋（BOW），长期短期记忆（LSTM）编码器，门控递归单元（GRU）等。
 
-<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/VQA流程.jpeg" alt="img" width=650" /></div>
+<div align=center><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/VQA流程.jpeg" alt="img" width=650" /></div>
 
 各种模型在集成图像特征和问题特征上有所不同。有（1）贝叶斯方法，使用贝叶斯模型，利用问题图像-答案特征分布预测答案。（2）借助神经网络，在神经网络框架中使用双线性池或相关机制（如简单机制，使用串联，逐元素乘法或逐元素加法集成，输入给线性分类器和神经网络）。（3）注意力机制：根据相对重要性自适应的缩放局部特征，关注特征从全局变为局部。（4）组合模型，将VQA任务分解为一系列子问题。
 
