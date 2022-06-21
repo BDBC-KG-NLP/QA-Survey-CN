@@ -36,7 +36,7 @@
     - 中科汇联公司的“爱客服”
     - 阿里巴巴的“小蜜”客服
 - 这些机器人不仅提供情感聊天的闲聊功能，而且还能提供私人秘书和智能客服这样的专业功能。这些智能系统的出现标志着智能问答技术正在走向成熟，预计未来还会有更多功能的机器人问世和解决用户的各种需求。  
-<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/智能问答历史.png" width = 60% ></div>  
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/智能问答历史.png" width = 60% ></div>  
 
 #### 1.1.2 社区问答
 - 根据系统处理的数据格式，问答系统又可以分为：基于结构化数据的问答系统、基于自由文本数据的问答系统、基于问题答案对数据的问答系统。这里我们主要考虑基于问题答案对的问答系统。基于问答对的问答系统通常可以分为两种：  
