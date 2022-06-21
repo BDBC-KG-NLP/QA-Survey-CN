@@ -18,6 +18,7 @@
 ## News！
 
  - [CCL2022测评：面向领域问答的知识抽取评](https://github.com/BDBC-KG-NLP/CCL2022-DQAB)。该测评由我们团队与航旅纵横联合举办开展，欢迎大家关注与参加！
+ - 视觉问答VQA在ACL2021、ACL2022、EMNLP2021、NAACL2021、NAACL2022、CVPR2021、ICCV2021中的最近研究进展工作即将更新。（预计于2022年7月中更新）
  - ACL2022、IJCAI2022、NAACL2022、AAAI2022和SIGIR2022 中问答相关工作已经更新。（20220425）
  - 增加Logical Reasoning逻辑推理阅读理解相关数据集和模型介绍（20220608）
  - ACL2022、AAAI2022和SIGIR2022 中阅读理解相关工作已经更新。（20220612）
