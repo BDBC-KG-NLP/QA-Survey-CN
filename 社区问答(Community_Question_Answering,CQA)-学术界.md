@@ -188,7 +188,7 @@ QA-LSTM模型采用双向长期短期记忆（biLSTM）网络和池化层来独�
 训练方法：loss的计算公式如下  
 L = max{0, M − cosine(q, a+) + cosine(q, a−)}
 其中a+为正确答案，a-为错误答案
-<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/基于表示的方法.png" ></div>  
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/基于表示的方法.png" ></div>  
 
 #### 2.2.2 基于比较的方法
 基于比较的方法通常比较输入句子的较小单位（例如单词），然后将比较结果汇总（例如，通过CNN或RNN），以做出最终决定。与基于表示的方法相比，基于比较的方法可以捕获输入句子之间的更多交互功能，因此在对TrecQA等公共数据集进行评估时，通常具有更好的性能。下图显示了来自《Bilateral Multi-Perspective Matching for Natural Language Sentences》一个典型的基于比较的方法的模型。该模型包括以下五层。  
@@ -202,7 +202,7 @@ L = max{0, M − cosine(q, a+) + cosine(q, a−)}
 该层的目标是汇总来自上一层的比较结果。 BiMPM使用另一个BiLSTM将匹配向量的两个序列聚合为固定长度向量。  
 5. 预测层（Prediction Layer）  
 该层的目标是做出最终预测。 BiMPM使用两层前馈神经网络来消耗前一层的固定长度矢量，并应用softmax函数获得最终分数。  
-<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/基于比较的方法.png" ></div>  
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/基于比较的方法.png" ></div>  
 
 #### 2.2.3 基于预训练的方法  
 近年来，随着Bert等预训练模型的出现，由于其在大规模的语料库上进行过训练，所以能捕捉到更多的语义信息。近期社区问答领域效果最好的模型通常都采用了基于预训练的方法。这种方法通常将社区问答任务作为一个二分类任务（相似/不相似）来解决，通过[cls]标记将两个句子拼接作为模型的输入，输出为两者为相似的概率。  
@@ -211,7 +211,7 @@ L = max{0, M − cosine(q, a+) + cosine(q, a−)}
 首先将查询和每一个候选文档一起作为Bert模型的输入，开始加入[CLS]标记。查询和文档之间加入[SEP]标记。利用BPE算法等进行分词，得到Bert模型的输入特征向量。  
 2. 相似度计算：  
 将特征向量输入Bert后，经计算将得到BERT的输出（句子中每个词的向量表示），取[CLS]  标记的向量表示，通过一个单层或多层的线性神经网络，得到两个文档的相似度得分（相似的概率)。  
-<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/基于预训练的方法.png" ></div>  
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/基于预训练的方法.png" ></div>  
 
 ### 2.3 训练方法
 基于语义的方法的训练方法通常可以分为pointwise，pairwise，listwise三种  
@@ -249,7 +249,7 @@ Pairwise类方法，其框架具有以下特征：
 - 输出空间中样本是样本的相对关系；
 - 损失函数评估 doc pair 的预测 preference 和真实 preference 之间差异。
 通常来说，Pairwise方法采用margin loss作为优化目标：  
-![image](https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/marginloss.svg)
+![image](https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/marginloss.svg)
 
 ##### 缺陷
 虽然Pairwise方法相较Pointwise方法多考虑了文档对间的相对顺序信息，但还是存在不少问题。
@@ -347,7 +347,7 @@ listwise 类存在的主要缺陷是：一些排序算法需要基于排列来�
 **模型**  
 1. ARC-I  
 模型结构如下图所示
-<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ARC-I.jpg" ></div>  
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/ARC-I.jpg" ></div>  
 比较经典的基于表示的匹配模型结构，对于查询和文档分别进行特征提取得到固定维度的向量，而后用MLP进行聚合和分类。因此重点是CNN的用法：
 - 运用了多层卷积+pooling的方法
 - 卷积操作采用窗口宽度为k1的卷积核，采用宽度为2的max-pooling提取特征，max-pooling可以提取最重要的特征，进而得到查询和文档的表示。
@@ -355,7 +355,7 @@ listwise 类存在的主要缺陷是：一些排序算法需要基于排列来�
 - 虽然多层 CNN 的堆叠通过感受野的扩张可以得一定的全局信息，但对于序列信息还是不敏感。对语义依赖强的任务效果一般。
 
 2. ARC-II
-<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ARC-II.jpg" ></div>  
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/ARC-II.jpg" ></div>  
 ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维卷积提取特征，而后用多层二维卷积 + 池化进行计算，最终输入 MLP进行分类。下面介绍卷积层的具体做法：
 - 先构建矩阵，假设查询的长度为m，嵌入维度为H，文档长度为n，嵌入维度为H。则矩阵中每个元素是查询中的第i个词向量与 文档中第j个词向量进行拼接得到的向量。因此矩阵的维度是 [m, n, 2H] 。
 - 用1维卷积进行扫描。通过这种方式即可以得到查询和文档间的匹配关系，还保留了语义和位置信息。
@@ -367,7 +367,7 @@ ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维�
 
 >《DRr-Net: Dynamic Re-read Network for Sentence Semantic Matching》
 
-<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/dr-net.png" ></div>  
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/dr-net.png" ></div>  
 **介绍**  
 语义匹配一直是一项十分重要的任务，目前，注意力机制大大提升了语义匹配的效果。不过过去的注意力机制通常是一次性关注所有关键词，而人类阅读过程中对关键词的注意往往是变化的。为此，本文提出了一种动态关注关键词的模型  
 **模型**  
@@ -384,7 +384,7 @@ ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维�
 
 >《Simple and Effective Text Matching with Richer Alignment Features》  
 
-<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/re2.png" ></div>  
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/re2.png" ></div>  
 
 **介绍**  
 提出了一种简单的，不存在复杂特殊结构的文本匹配模型，主要通过point wise信息，上下文相关信息，和前一层提取的相关性信息的结合来表示文档的相关性。  
@@ -403,7 +403,7 @@ ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维�
 
 > 《TANDA: Transfer and Adapt Pre-Trained Transformer Models》
 
-<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/bert.png" ></div>  
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/bert.png" ></div>  
 
 **介绍**   
 这篇文章主要是通过利用预训练模型来解决答案选择任务。本文提出了一种用于自然语言任务的预训练变换模型精调的有效技术-TANDA( Transfer AND Adapt)。为解决答案选择问题的数据稀缺性问题和精调步骤的不稳定性提供了有效的解决方案。  
@@ -429,11 +429,11 @@ ARC-II首先计算查询和文档的单词级别的相似度矩阵，先用1维�
 
 **总结**  
 基于上述的这3个设计，ALBERT能够扩展为更大的版本，在参数量仍然小于BERT-large的同时，性能可以显著提升。本文在GLUE、SQuAD 和 RACE 这3个自然语言理解基准测试上都刷新了记录：在 RACE 上的准确率为 89.4%，在 GLUE 上的得分为 89.4，在 SQuAD2.0上的 F1 得分为 92.2。
-<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ALBERT.png" ></div>  
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/ALBERT.png" ></div>  
 
 > 《ERNIE 2.0: A Continual Pre-training Framework for Language Understanding》  
 
-<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey/blob/master/image/ERNIE2.0.png" ></div>  
+<div align="center"><img src="https://github.com/BDBC-KG-NLP/QA-Survey-CN/blob/master/image/ERNIE2.0.png" ></div>  
 
 **介绍**  
 在ERNIE1.0中，通过将BERT中的随机masking改为实体或短语级别（entity or phrase）的masking，使得模型能够从中学习到更多句法语义知识，在许多中文任务上取得了SOTA。  
