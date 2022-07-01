@@ -326,25 +326,46 @@
 | ACL 2017  | [Gated Self-Matching Networks for Reading Comprehension and Question Answering](https://www.aclweb.org/anthology/P17-1018) |
 | ACL 2018  | [Simple and Effective Multi-Paragraph Reading Comprehension](https://arxiv.org/abs/1710.10723) |
 
-### 3.2 近3年顶会论文
+### 3.2 近3年技术类论文
 
 | 会议名称  |                           论文名称                           |
 | :-------: | :----------------------------------------------------------: |
+|  ACL2022  | [Modeling Multi-hop Question Answering as Single Sequence Prediction](https://arxiv.org/pdf/2205.09226.pdf) |
 |  ACL2022  | [AdaLoGN: Adaptive Logic Graph Network for Reasoning-Based Machine Reading Comprehension ](https://arxiv.org/abs/2203.08992) |
-|  ACL2022  | [Deep Inductive Logic Reasoning for Multi-Hop Reading Comprehension - ACL Anthology](https://aclanthology.org/2022.acl-long.343/) |
+|  ACL2022  | [Deep Inductive Logic Reasoning for Multi-Hop Reading Comprehension](https://aclanthology.org/2022.acl-long.343/) |
 |  ACL2022  | [MultiHiertt: Numerical Reasoning over Multi Hierarchical Tabular and Textual Data](https://arxiv.org/abs/2206.01347) |
+|  ACL2022  | [Learning Disentangled Semantic Representations for Zero-Shot CrossLingual Transfer in Multilingual Machine Reading Comprehension](https://arxiv.org/pdf/2204.00996.pdf) |
+|  ACL2022  | [Lite Unified Modeling for Discriminative Reading Comprehension](https://arxiv.org/pdf/2203.14103.pdf) |
+|  ACL2022  | [Modeling Temporal-Modal Entity Graph for Procedural Multimodal Machine Comprehension](https://arxiv.org/pdf/2204.02566.pdf) |
 |  ACL2022  | [Improving Machine Reading Comprehension with Contextualized Commonsense Knowledge ](https://arxiv.org/abs/2009.05831) |
+|  ACL2021  | [REPT: Bridging Language Models and Machine Reading Comprehension via Retrieval-Based Pre-training](https://arxiv.org/pdf/2105.04201.pdf) |
+|  ACL2021  | [Knowledge-Empowered Representation Learning for Chinese Medical Reading Comprehension: Task, Model and Resources](https://arxiv.org/pdf/2008.10327.pdf) |
+|  ACL2021  | [Benchmarking Robustness of Machine Reading Comprehension Models](https://arxiv.org/abs/2004.14004) |
+| ACL 2020  | [Explicit Memory Tracker with Coarse-to-Fine Reasoning for Conversational Machine Reading](https://arxiv.org/abs/2005.12484) |
+| ACL 2020  | [Recurrent Chunking Mechanisms for Long-Text Machine Reading Comprehension.](https://arxiv.org/abs/2005.08056) |
+| ACL 2020  | [A Frame-based Sentence Representation for Machine Reading Comprehension.](https://www.aclweb.org/anthology/2020.acl-main.83) |
+| ACL 2020  | [Machine Reading of Historical Events.](https://www.aclweb.org/anthology/2020.acl-main.668) |
+| ACL 2020  | [A Self-Training Method for Machine Reading Comprehension with Soft Evidence Extraction.](https://arxiv.org/abs/2005.05189) |
+| ACL 2020  | [Enhancing Answer Boundary Detection for Multilingual Machine Reading Comprehension.](https://arxiv.org/abs/2004.14069) |
+| ACL 2020  | [Document Modeling with Graph Attention Networks for Multi-grained Machine Reading Comprehension.](https://arxiv.org/abs/2005.05806) |
+| NAACL2022 | [Topological Information Enhanced Structural Reading Comprehension on Web Pages](https://arxiv.org/pdf/2205.06435.pdf) |
+| NAACL2022 | [Understand before Answer: Improve Temporal Reading Comprehension via Precise Question Understanding](https://openreview.net/pdf?id=BOWeq59WHZc) |
+| NAACL2022 | [Cooperative Self-training of Machine Reading Comprehension](https://openreview.net/pdf?id=rExe7FqZBWc) |
+| NAACL2022 | Continual Machine Reading Comprehension via Uncertainty-aware Fixed Memory and Adversarial Domain Adaptation |
+| NAACL2022 | To Answer or Not To Answer? Improving Machine Reading Comprehension Model with Span-based Contrastive Learning |
+| NAACL2022 | [Compositional Task-Oriented Parsing as Abstractive Question Answering](https://arxiv.org/pdf/2205.02068.pdf) |
+| SIGIR2022 | [Logiformer: A Two-Branch Graph Transformer Network for Interpretable Logical Reasoning](https://arxiv.org/abs/2205.00731) |
+| SIGIR2022 | [QUASER: Question Answering with Scalable Extractive Rationalization](https://openreview.net/pdf?id=BhMiwEP5ZM7) |
+| SIGIR2022 |  Detecting Frozen Phrases in Open-Domain Question Answering  |
+| SIGIR2022 |  PTAU: Prompt Tuning for Attributing Unanswerable Questions  |
+| SIGIR2022 | [Answering Count Query with Explanatory Evidence](https://arxiv.org/pdf/2204.05039.pdf) |
 | AAAI2022  | [Zero-Shot Cross-Lingual Machine Reading Comprehension via Inter-Sentence Dependency Graph](https://arxiv.org/abs/2112.00503) |
 | AAAI2022  | [From Good to Best: Two-Stage Training for Cross-lingual Machine Reading Comprehension ](https://arxiv.org/abs/2112.04735) |
-| SIGIR2022 | [Logiformer: A Two-Branch Graph Transformer Network for Interpretable Logical Reasoning](https://arxiv.org/abs/2205.00731) |
+| AAAI2022  | [Block-Skim: Efficient Question Answering for Transformer](https://arxiv.org/abs/2112.08560) |
 | AAAI2021  | [Semantics Altering Modifications for Evaluating Comprehension in Machine Reading](https://www.aaai.org/AAAI21Papers/AAAI-704.SchlegelV.pdf) |
 | AAAI2021  | [VisualMRC: Machine Reading Comprehension on Document Images](https://arxiv.org/pdf/2101.11272) |
 | AAAI2021  | [A Bidirectional Multi-Paragraph Reading Model for Zero-Shot Entity Linking](https://www.aaai.org/AAAI21Papers/AAAI-6269.TangH.pdf) |
 | AAAI2021  | [Bidirectional Machine Reading Comprehension for Aspect Sentiment Triplet Extraction](https://arxiv.org/pdf/2103.07665.pdf) |
-|  ACL2021  | [REPT: Bridging Language Models and Machine Reading Comprehension via Retrieval-Based Pre-training](https://arxiv.org/pdf/2105.04201.pdf) |
-|  ACL2021  | [Why Machine Reading Comprehension Models Learn Shortcuts?](https://arxiv.org/pdf/2106.01024.pdf) |
-|  ACL2021  | [Knowledge-Empowered Representation Learning for Chinese Medical Reading Comprehension: Task, Model and Resources](https://arxiv.org/pdf/2008.10327.pdf) |
-|  ACL2021  | [Benchmarking Robustness of Machine Reading Comprehension Models](https://arxiv.org/abs/2004.14004) |
 | AAAI2020  | [SG-Net: Syntax-Guided Machine Reading Comprehension.](https://arxiv.org/abs/1908.05147) |
 | AAAI2020  | [Generating Well-Formed Answers by Machine Reading with Stochastic Selector Networks.](https://aaai.org/ojs/index.php/AAAI/article/view/6238) |
 | AAAI2020  | [A Robust Adversarial Training Approach to Machine Reading Comprehension.](https://aaai.org/ojs/index.php/AAAI/article/view/6357/6213) |
@@ -357,6 +378,12 @@
 | AAAI2019  | [Teaching Machines to Extract Main Content for Machine Reading Comprehension.](https://www.aaai.org/ojs/index.php/AAAI/article/view/5123) |
 | AAAI2018  | [Byte-Level Machine Reading Across Morphologically Varied Languages.](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16605) |
 | AAAI2018  | [S-Net: From Answer Extraction to Answer Synthesis for Machine Reading Comprehension.](https://arxiv.org/abs/1706.04815) |
+| EMNLP2021 | [Interactive Machine Comprehension with Dynamic Knowledge Graphs](https://aclanthology.org/2021.emnlp-main.540.pdf) |
+| EMNLP2021 | [Summarize-then-Answer: Generating Concise Explanations for Multi-hop Reading Comprehension](https://aclanthology.org/2021.emnlp-main.490.pdf) |
+| EMNLP2021 | [Learning with Instance Bundles for Reading Comprehension](https://aclanthology.org/2021.emnlp-main.584.pdf) |
+| EMNLP2021 | [Enhancing Multiple-choice Machine Reading Comprehension by Punishing Illogical Interpretations](https://aclanthology.org/2021.emnlp-main.295.pdf) |
+| EMNLP2021 | [Smoothing Dialogue States for Open Conversational Machine Reading](https://aclanthology.org/2021.emnlp-main.299.pdf) |
+| EMNLP2021 | [Mitigating False-Negative Contexts in Multi-Document Question Answering with Retrieval Marginalization](https://aclanthology.org/2021.emnlp-main.497.pdf) |
 | EMNLP2019 | [Incorporating External Knowledge into Machine Reading for Generative Question Answering.](https://arxiv.org/abs/1909.02745) |
 | EMNLP2019 | [Cross-Lingual Machine Reading Comprehension.](https://arxiv.org/abs/1909.00361) |
 | EMNLP2019 | [A Span-Extraction Dataset for Chinese Machine Reading Comprehension.](https://arxiv.org/abs/1810.07366) |
@@ -366,29 +393,20 @@
 | EMNLP2019 | [Machine Reading Comprehension Using Structural Knowledge Graph-aware Network.](https://www.aclweb.org/anthology/D19-1602) |
 | EMNLP2019 | [NumNet: Machine Reading Comprehension with Numerical Reasoning.](https://arxiv.org/abs/1910.06701) |
 | EMNLP2019 | [Adversarial Domain Adaptation for Machine Reading Comprehension.](https://arxiv.org/abs/1908.09209) |
-| ACL 2020  | [Explicit Memory Tracker with Coarse-to-Fine Reasoning for Conversational Machine Reading.](https://arxiv.org/abs/2005.12484) |
-| ACL 2020  | [Recurrent Chunking Mechanisms for Long-Text Machine Reading Comprehension.](https://arxiv.org/abs/2005.08056) |
-| ACL 2020  | [A Frame-based Sentence Representation for Machine Reading Comprehension.](https://www.aclweb.org/anthology/2020.acl-main.83) |
-| ACL 2020  | [Machine Reading of Historical Events.](https://www.aclweb.org/anthology/2020.acl-main.668) |
-| ACL 2020  | [A Self-Training Method for Machine Reading Comprehension with Soft Evidence Extraction.](https://arxiv.org/abs/2005.05189) |
-| ACL 2020  | [Enhancing Answer Boundary Detection for Multilingual Machine Reading Comprehension.](https://arxiv.org/abs/2004.14069) |
-| ACL 2020  | [Document Modeling with Graph Attention Networks for Multi-grained Machine Reading Comprehension.](https://arxiv.org/abs/2005.05806) |
-|  ACL2019  | [Conversing by Reading: Contentful Neural Conversation with On-demand Machine Reading.](https://arxiv.org/abs/1906.02738) |
-|  ACL2019  | [Explicit Utilization of General Knowledge in Machine Reading Comprehension.](https://arxiv.org/abs/1809.03449) |
-|  ACL2019  | [Enhancing Pre-Trained Language Representations with Rich Knowledge for Machine Reading Comprehension.](https://www.aclweb.org/anthology/P19-1226) |
-|  ACL2019  | [MC\2: Multi-perspective Convolutional Cube for Conversational Machine Reading Comprehension.](https://www.aclweb.org/anthology/P19-1622) |
-|  ACL2019  | [E3: Entailment-driven Extracting and Editing for Conversational Machine Reading.](https://arxiv.org/abs/1906.05373) |
-|  ACL2019  | [Learning to Ask Unanswerable Questions for Machine Reading Comprehension.](https://arxiv.org/abs/1906.06045) |
-|  ACL2018  | [Stochastic Answer Networks for Machine Reading Comprehension.](https://arxiv.org/abs/1712.03556) |
-|  ACL2018  | [Jack the Reader - A Machine Reading Framework.](https://arxiv.org/abs/1806.08727) |
-|  ACL2018  | [Multi-Passage Machine Reading Comprehension with Cross-Passage Answer Verification.](https://arxiv.org/abs/1805.02220) |
-|  ACL2018  | [Multi-Relational Question Answering from Narratives: Machine Reading and Reasoning in Simulated Worlds.](https://arxiv.org/abs/1902.09093) |
 | IJCAI2020 | [LogiQA: A Challenge Dataset for Machine Reading Comprehension with Logical Reasoning.](https://arxiv.org/abs/2007.08124) |
 | IJCAI2020 | [An Iterative Multi-Source Mutual Knowledge Transfer Framework for Machine Reading Comprehension.](https://www.ijcai.org/Proceedings/2020/525) |
 | IJCAI2020 | [Asking Effective and Diverse Questions: A Machine Reading Comprehension based Framework for Joint Entity-Relation Extraction.](https://www.ijcai.org/Proceedings/2020/546) |
-| IJCAI2018 | [Reinforced Mnemonic Reader for Machine Reading Comprehension.](https://www.ijcai.org/Proceedings/2018/570) |
-| CIKM2019  | [Machine Reading Comprehension: Matching and Orders.](https://dl.acm.org/doi/10.1145/3357384.3358139) |
-| CIKM2018  | [An Option Gate Module for Sentence Inference on Machine Reading Comprehension.](https://dl.acm.org/doi/10.1145/3269206.3269280) |
+
+### 3.3 近三年分析类论文
+
+| 会议名称  | 论文名称                                                     |
+| --------- | ------------------------------------------------------------ |
+| ACL2022   | [What Makes Reading Comprehension Questions Difficult?](https://arxiv.org/pdf/2203.06342.pdf) |
+| NAACL2022 | [On the Robustness of Reading Comprehension Models to Entity Renaming](https://arxiv.org/pdf/2110.08555.pdf) |
+| EMNLP2021 | [Connecting Attributions and QA Model Behavior on Realistic Counterfactuals](https://aclanthology.org/2021.emnlp-main.447.pdf) |
+| ACL2021   | [Why Machine Reading Comprehension Models Learn Shortcuts?](https://arxiv.org/pdf/2106.01024.pdf) |
+
+
 
 ## 4 相关链接
 
