@@ -17,8 +17,10 @@
         * [2.2.3. 训练分类器，判断候选答案是否正确](#223-训练分类器判断候选答案是否正确)
      * [2.3. 基于向量建模（Vector Modeling）的方法](#23-基于向量建模vector-modeling的方法)
   * [3. Paper List](#3-paper-list)
-     * [3.1. 论文列表](#31-论文列表)
-     * [3.2. 论文解读](#32-论文解读)
+     * [3.1. 简单问题论文列表](#31-简单问题论文列表)
+     * [3.2. 复杂/多跳论文列表](#32-复杂/多跳问题论文列表)
+     * [3.3. 相关研究论文列表](#33-相关研究论文列表)
+     * [3.4. 论文解读](#34-论文解读)
   * [4.相关链接](#4-相关链接)
   * [5.参考资源](#4-参考资源)
 
@@ -222,7 +224,7 @@ GrailQA：
 得到问题和答案的分布式表达之后，采用点乘的方式对候选答案打分。
 
 ## 3. Paper List
-### 3.1  简单问题论文列表
+### 3.1. 简单问题论文列表
 
 | 会议/年份 | 论文                                                         | 链接                                                     |
 | --------- | ------------------------------------------------------------ | -------------------------------------------------------- |
@@ -231,7 +233,7 @@ GrailQA：
 | WWW2017   | Neural Network-based Question Answering over Knowledge Graphs on Word and Character Level | http://jens-lehmann.org/files/2017/www_nn_factoid_qa.pdf |
 | EMNLP2016 | Character-Level Question Answering with Attention            | https://aclanthology.org/D16-1166.pdf                    |
 
-### 3.2. 复杂/多跳论文列表
+### 3.2. 复杂/多跳问题论文列表
 
 | 会议/年份  | 涉及的方法类型 | 论文 |论文链接|代码链接|
 | ------------- | ------------- |------------- | ------------- | ------------- |
@@ -288,8 +290,14 @@ GrailQA：
 |WWW2017|其他方法-依赖分析|Automated Template Generation for Question Answering over Knowledge Graphs|https://dl.acm.org/doi/pdf/10.1145/3038912.3052583||
 |WSDM2020|其他方法-Stepwise Reasoning Network|Stepwise Reasoning for Multi-Relation Question Answering over Knowledge Graph with Weak Supervision|https://dl.acm.org/doi/pdf/10.1145/3336191.3371812||
 
+### 3.3. 相关研究论文列表
 
-### 3.3. 论文解读
+| 会议/年份 | 涉及内容               | 论文                                                         | 论文链接                             |
+| --------- | ---------------------- | ------------------------------------------------------------ | ------------------------------------ |
+| SIGIR2022 | 数据集问题流畅性改写   | Would You Ask it that Way? Measuring and Improving Question Naturalness for Knowledge Graph Question Answering | https://arxiv.org/pdf/2205.12768.pdf |
+| SIGIR2022 | 数据集泛化性评估与提升 | Knowledge Graph Question Answering Datasets and their Generalizability: Are they enough for future research? | https://arxiv.org/pdf/2205.06573.pdf |
+
+### 3.4. 论文解读
 
 >《skeleton-based Semantic Parsing for Complex Questions over Knowledge Bases》
 
