@@ -49,7 +49,7 @@
         <td rowspan="2">数据类别</td><td>仅包含表格(Table Only)</td><td>数据集里仅包含表格这一种数据形式</td>
     </tr>
     <tr>
-        <td>表格+其他数据形式(Non Table Only)</td><td>除了表格本体，还包含文本信息</td>
+        <td>表格+其他数据形式(Non Table Only)</td><td>除了表格本体，还包含表格附近的文本或其他文本信息，甚至是其他数据模态</td>
     </tr>
     <tr>
         <td rowspan="2">表格类别</td><td>普通表格(Flat)</td><td>表格较为规整，一般只有一级的列表头</td>
@@ -64,6 +64,7 @@
         <td>封闭域(Close Domain)</td><td>面向有限数量的表格或文本，一般仅包含一个表格或少量的文本片段，从中推理得到答案</td>
     </tr>
 </table>
+
 
 #### 1.1.5 发展趋势
 
@@ -130,10 +131,10 @@
 
 <table>
     <tr>
-        <td>数据类型</td><td>数据集(下载链接)</td><td>年份</td><td>问题类型</td><td>开放域</td><td>表格结构</td><td>数据集论文</td>
+        <td>数据类型</td><td>数据集(下载链接)</td><td>年份</td><td>问题类型</td><td>开放域</td><td>表格<br>结构</td><td>数据集论文</td>
     </tr>
     <tr>
-        <td rowspan="6">仅包含表格</td>
+        <td rowspan="6">只有表格</td>
         <td><a href='https://ppasupat.github.io/WikiTableQuestions/'>WikiTableQuestion</a></td>
         <td>2015</td>
         <td>事实</td>
@@ -181,7 +182,7 @@
         <td><a href='https://aclanthology.org/2022.acl-long.78.pdf'>HiTab: Hierarchical Table Dataset for Question Answering and Natural Language Generation</a></td>
     </tr>
     <tr>
-        <td rowspan="9">表格+文本混合</td>
+        <td rowspan="9">表格+<br>文本</td>
         <td><a href='https://github.com/wenhuchen/Table-Fact-Checking'>TabMCQ</a></td>
         <td>2016</td>
         <td>多项选择</td>
@@ -193,7 +194,7 @@
         <td><a href='https://github.com/wenhuchen/OTT-QA'>OTTQA</a></td>
         <td>2020</td>
         <td>事实</td>
-        <td>开放域</td>
+        <td>是</td>
         <td></td>
         <td><a href='https://openreview.net/pdf?id=MmCRswl1UYl'>Open question answering over tables and text</a></td>
     </tr>
@@ -217,7 +218,7 @@
         <td>NQ-tables</td>
         <td>2021</td>
         <td>事实</td>
-        <td>开放域</td>
+        <td>是</td>
         <td></td>
         <td><a href='https://aclanthology.org/2021.naacl-main.43.pdf'>Open domain question answering over tables via dense retrieval</a></td>
     </tr>
@@ -246,7 +247,7 @@
         <td><a href='https://direct.mit.edu/tacl/article-pdf/doi/10.1162/tacl_a_00446/2012156/tacl_a_00446.pdf'>FeTaQA: Free-form Table Question Answering</a></td>
     </tr>
     <tr>
-        <td><a href='https://github.com/psunlpgroup/MultiHiertt'>MultiHierrt</a></td>
+        <td><a href='https://github.com/psunlpgroup/MultiHiertt'>MultiHiertt</a></td>
         <td>2022</td>
         <td>事实</td>
         <td></td>
@@ -254,6 +255,7 @@
         <td><a href='https://aclanthology.org/2022.acl-long.454.pdf'>MultiHiertt: Numerical Reasoning over Multi Hierarchical Tabular and Textual Data</a></td>
     </tr>
 </table>
+
 
 #### 1.4.2 部分数据集介绍
 
