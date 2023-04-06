@@ -237,6 +237,8 @@ GrailQA：
 
 | 会议/年份  | 涉及的方法类型 | 论文 |论文链接|代码链接|
 | ------------- | ------------- |------------- | ------------- | ------------- |
+| ICLR2023 | 信息检索-表示学习 | UniKGQA: Unified Retrieval and Reasoning for Solving Multi-hop Question Answering Over Knowledge Graph |https://openreview.net/forum?id=XHc5zRPxqV9|https://github.com/RUCAIBox/UniKGQA|
+| ICLR2023 | 语义解析-编码器解码器 | DecAF: Joint Decoding of Answers and Logical Forms for Question Answering over Knowledge Bases |https://openreview.net/forum?id=XHc5zRPxqV9||
 | AAAI2022   | 语义解析-编码器解码器 | Zero-Shot Commonsense Question Answering with Cloze Translation and Consistency Optimization |https://arxiv.org/abs/2201.00136|https://github.com/PlusLabNLP/zero_shot_cqa|
 | AAAI2021 | 语义解析-AMR | A Semantic Parsing and Reasoning-Based Approach to Knowledge Base Question Answering |https://ojs.aaai.org/index.php/AAAI/article/view/17988||
 | AAAI2020 | 其他方法-依赖分析 | SPARQA: Skeleton-Based Semantic Parsing for Complex Questions over Knowledge Bases | https://ojs.aaai.org//index.php/AAAI/article/view/6426       |        |

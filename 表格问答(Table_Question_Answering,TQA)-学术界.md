@@ -369,29 +369,30 @@
 
 2020年以来的有关表格问答的论文（已排除数据集），收集包含表格作为问答数据源的相关论文（即包含部分混合数据）。
 
-| 会议/年份                        | 论文                                                         | 方法      |
-| -------------------------------- | ------------------------------------------------------------ | --------- |
-| ACL2022                          | [FORTAP: Using Formulas for Numerical-Reasoning-Aware Table Pretraining](https://aclanthology.org/2022.acl-long.82.pdf) |           |
-| ACL2022                          | [TableFormer: Robust Transformer Modeling for Table-Text Encoding](https://aclanthology.org/2022.acl-long.40.pdf) | 提取      |
-| ACL2021                          | [CLTR: An End-to-End, Transformer-Based System for Cell-Level Table Retrieval and Table Question Answering](https://aclanthology.org/2021.acl-demo.24.pdf) | 检索+匹配 |
-| ACL2021                          | [Dual Reader-Parser on Hybrid Textual and Tabular Evidence for Open Domain Question Answering](https://aclanthology.org/2021.acl-long.315.pdf) | 检索+生成 |
-| ACL2021                          | [LGESQL: Line Graph Enhanced Text-to-SQL Model with Mixed Local and Non-Local Relations](https://aclanthology.org/2021.acl-long.198.pdf) | 语义解析  |
-| ACL2020                          | [RAT-SQL: Relation-Aware Schema Encoding and Linking for Text-to-SQL Parsers](https://aclanthology.org/2020.acl-main.677.pdf) | 语义解析  |
-| ACL2020                          | [TaBERT: Pretraining for Joint Understanding of Textual and Tabular Data](https://aclanthology.org/2020.acl-main.745.pdf) |           |
-| <span id="TaPas" >ACL2020</span> | [TaPas: Weakly Supervised Table Parsing via Pre-training](https://aclanthology.org/2020.acl-main.398.pdf) | 提取      |
-| AAAI2022                         | [Generation-focused table-based intermediate pre-training for free-form question answering](https://ojs.aaai.org/index.php/AAAI/article/view/21382) |           |
-| AAAI2020                         | [CFGNN: Cross Flow Graph Neural Networks for Question Answering on Complex Tables](https://ojs.aaai.org/index.php/AAAI/article/view/6506/6362) | 图结构    |
-| IJCAI2022                        | [Reasoning over hybrid chain for table-and-text open domain question answering](https://www.ijcai.org/proceedings/2022/0629.pdf) | 检索+提取 |
-| ICLR2022                         | [TAPEX: Table Pre-training via Learning a Neural SQL Executor](https://openreview.net/pdf?id=O50443AsCP) |           |
-| ICLR2021                         | [MultiModalQA: complex question answering over text, tables and images](https://openreview.net/pdf?id=ee6W5UgQLa) |           |
-| NAACL2022                        | [OmniTab: Pretraining with Natural and Synthetic Data for Few-shot Table-based Question Answering](https://aclanthology.org/2022.naacl-main.68.pdf) |           |
-| <span id="RCI" >NAACL2021</span> | [Capturing Row and Column Semantics in Transformer Based Question Answering over Tables](https://aclanthology.org/2021.naacl-main.96.pdf) | 提取      |
-| NAACL2021                        | [Unsupervised Multi-hop Question Answering by Question Generation](https://aclanthology.org/2021.naacl-main.469.pdf) |           |
-| EMNLP2022                        | [Uni-Parser: Unified Semantic Parser for Question Answering on Knowledge Base and Database](https://aclanthology.org/2022.emnlp-main.605.pdf) |           |
-| EMNLP2021                        | [MATE: Multi-view Attention for Table Transformer Efficiency](https://aclanthology.org/2021.emnlp-main.600.pdf) | 提取      |
-| EMNLP2021                        | [Topic Transferable Table Question Answering](https://aclanthology.org/2021.emnlp-main.342.pdf) |           |
-| COLING2022                       | [Answering Numerical Reasoning Questions in Table-Text Hybrid Contents with Graph-based Encoder and Tree-based Decoder](https://aclanthology.org/2022.coling-1.118.pdf) |           |
-| COLING2020                       | [A Graph Representation of Semi-structured Data for Web Question Answering](https://aclanthology.org/2020.coling-main.5.pdf) | 图结构    |
+| 会议/年份                        | 论文                                                         | 方法       |
+| -------------------------------- | ------------------------------------------------------------ | ---------- |
+| ICLR2023                         | [Binding Language Models in Symbolic Languages](https://openreview.net/forum?id=lH1PV42cbF) | 嵌入大模型 |
+| ACL2022                          | [FORTAP: Using Formulas for Numerical-Reasoning-Aware Table Pretraining](https://aclanthology.org/2022.acl-long.82.pdf) |            |
+| ACL2022                          | [TableFormer: Robust Transformer Modeling for Table-Text Encoding](https://aclanthology.org/2022.acl-long.40.pdf) | 提取       |
+| ACL2021                          | [CLTR: An End-to-End, Transformer-Based System for Cell-Level Table Retrieval and Table Question Answering](https://aclanthology.org/2021.acl-demo.24.pdf) | 检索+匹配  |
+| ACL2021                          | [Dual Reader-Parser on Hybrid Textual and Tabular Evidence for Open Domain Question Answering](https://aclanthology.org/2021.acl-long.315.pdf) | 检索+生成  |
+| ACL2021                          | [LGESQL: Line Graph Enhanced Text-to-SQL Model with Mixed Local and Non-Local Relations](https://aclanthology.org/2021.acl-long.198.pdf) | 语义解析   |
+| ACL2020                          | [RAT-SQL: Relation-Aware Schema Encoding and Linking for Text-to-SQL Parsers](https://aclanthology.org/2020.acl-main.677.pdf) | 语义解析   |
+| ACL2020                          | [TaBERT: Pretraining for Joint Understanding of Textual and Tabular Data](https://aclanthology.org/2020.acl-main.745.pdf) |            |
+| <span id="TaPas" >ACL2020</span> | [TaPas: Weakly Supervised Table Parsing via Pre-training](https://aclanthology.org/2020.acl-main.398.pdf) | 提取       |
+| AAAI2022                         | [Generation-focused table-based intermediate pre-training for free-form question answering](https://ojs.aaai.org/index.php/AAAI/article/view/21382) |            |
+| AAAI2020                         | [CFGNN: Cross Flow Graph Neural Networks for Question Answering on Complex Tables](https://ojs.aaai.org/index.php/AAAI/article/view/6506/6362) | 图结构     |
+| IJCAI2022                        | [Reasoning over hybrid chain for table-and-text open domain question answering](https://www.ijcai.org/proceedings/2022/0629.pdf) | 检索+提取  |
+| ICLR2022                         | [TAPEX: Table Pre-training via Learning a Neural SQL Executor](https://openreview.net/pdf?id=O50443AsCP) |            |
+| ICLR2021                         | [MultiModalQA: complex question answering over text, tables and images](https://openreview.net/pdf?id=ee6W5UgQLa) |            |
+| NAACL2022                        | [OmniTab: Pretraining with Natural and Synthetic Data for Few-shot Table-based Question Answering](https://aclanthology.org/2022.naacl-main.68.pdf) |            |
+| <span id="RCI" >NAACL2021</span> | [Capturing Row and Column Semantics in Transformer Based Question Answering over Tables](https://aclanthology.org/2021.naacl-main.96.pdf) | 提取       |
+| NAACL2021                        | [Unsupervised Multi-hop Question Answering by Question Generation](https://aclanthology.org/2021.naacl-main.469.pdf) |            |
+| EMNLP2022                        | [Uni-Parser: Unified Semantic Parser for Question Answering on Knowledge Base and Database](https://aclanthology.org/2022.emnlp-main.605.pdf) |            |
+| EMNLP2021                        | [MATE: Multi-view Attention for Table Transformer Efficiency](https://aclanthology.org/2021.emnlp-main.600.pdf) | 提取       |
+| EMNLP2021                        | [Topic Transferable Table Question Answering](https://aclanthology.org/2021.emnlp-main.342.pdf) |            |
+| COLING2022                       | [Answering Numerical Reasoning Questions in Table-Text Hybrid Contents with Graph-based Encoder and Tree-based Decoder](https://aclanthology.org/2022.coling-1.118.pdf) |            |
+| COLING2020                       | [A Graph Representation of Semi-structured Data for Web Question Answering](https://aclanthology.org/2020.coling-main.5.pdf) | 图结构     |
 
 2020年之前的表格问答相关论文（已排除数据集）
 
